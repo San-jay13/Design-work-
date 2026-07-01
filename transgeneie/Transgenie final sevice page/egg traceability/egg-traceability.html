@@ -1,0 +1,1683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Egg Traceability Software for Producers, Packers &amp; Exporters | TransGenie</title>
+  <meta name="description" content="Track every egg, lot, & batch from farm to shelf with TransGenie's egg traceability software. Improve compliance, recalls, & supply chain visibility. Get a demo." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── DESIGN TOKENS ── */
+    :root {
+      --color-primary: #0BA56A;
+      --color-primary-dark: #078857;
+      --color-primary-soft: #EAF7EF;
+      --color-primary-text: #111B24;
+      --color-secondary-text: #707070;
+      --color-light-shade: #D9D9D9;
+      --color-stroke: #DCE1E5;
+      --color-bg: #FFFFFF;
+      --color-bg-soft: #F7F9F7;
+      --color-bg-muted: #F3F6F4;
+      --surface-card: #FFFFFF;
+      --surface-soft-green: #F4FAF6;
+
+      --font-primary: "Inter", sans-serif;
+
+      --space-4: 4px; --space-8: 8px; --space-12: 12px; --space-16: 16px;
+      --space-20: 20px; --space-24: 24px; --space-32: 32px; --space-40: 40px;
+      --space-48: 48px; --space-56: 56px; --space-64: 64px; --space-80: 80px;
+      --space-100: 100px; --space-120: 120px; --space-140: 140px;
+
+      --radius-card: 24px;
+      --radius-large: 32px;
+      --radius-pill: 999px;
+
+      --transition-base: 0.25s ease;
+      --transition-slow: 0.45s ease;
+    }
+
+    /* ── RESET / BASE ── */
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-primary);
+      color: var(--color-primary-text);
+      background: var(--color-bg);
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* ── LAYOUT ── */
+    .tg-container {
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+    .tg-section { padding-top: 100px; padding-bottom: 100px; }
+    .tg-section-compact { padding-top: 72px; padding-bottom: 72px; }
+
+    /* ── TYPOGRAPHY ── */
+    .eyebrow {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-primary);
+      line-height: normal;
+      display: block;
+      margin-bottom: 14px;
+    }
+    .main-heading {
+      font-size: 32px;
+      line-height: 128%;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--color-primary-text);
+    }
+    .sub-heading {
+      font-size: 24px;
+      line-height: 135%;
+      font-weight: 600;
+      color: var(--color-primary-text);
+    }
+    .para-heading {
+      font-size: 18px;
+      line-height: 120%;
+      font-weight: 600;
+      color: var(--color-primary-text);
+    }
+    .para-semibold {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-primary-text);
+    }
+    .para {
+      font-size: 16px;
+      line-height: 175%;
+      font-weight: 400;
+      color: var(--color-secondary-text);
+    }
+    .section-header { max-width: 760px; margin-bottom: 48px; }
+    .section-header .main-heading { margin-bottom: 20px; }
+
+    /* ── BUTTONS ── */
+    .btn-tg-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      height: 52px; padding: 0 28px;
+      border-radius: var(--radius-pill);
+      background: var(--color-primary);
+      color: #fff; border: 1px solid var(--color-primary);
+      font-size: 16px; font-weight: 600; line-height: 1;
+      text-decoration: none; transition: all var(--transition-base);
+      white-space: nowrap;
+    }
+    .btn-tg-primary:hover {
+      background: var(--color-primary-dark);
+      border-color: var(--color-primary-dark);
+      color: #fff; transform: translateY(-2px);
+    }
+    .btn-tg-secondary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      height: 50px; padding: 0 24px;
+      border-radius: var(--radius-pill);
+      background: #fff; color: var(--color-primary-text);
+      border: 1px solid var(--color-stroke);
+      font-size: 16px; font-weight: 600; line-height: 1;
+      text-decoration: none; transition: all var(--transition-base);
+      white-space: nowrap;
+    }
+    .btn-tg-secondary:hover {
+      border-color: var(--color-primary); color: var(--color-primary);
+      transform: translateY(-2px);
+    }
+    .btn-group-row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+
+    /* ── BENEFIT CHIPS ── */
+    .benefit-chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      min-height: 40px; padding: 0 16px;
+      border-radius: var(--radius-pill);
+      background: var(--color-primary-soft);
+      color: var(--color-primary-text);
+      border: 1px solid rgba(11,165,106,0.16);
+      font-size: 15px; font-weight: 600; line-height: normal;
+    }
+    .benefit-chip-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 36px; }
+
+    /* ── NAVBAR ── */
+    .tg-navbar {
+      height: 80px;
+      background: #fff;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      position: sticky; top: 0; z-index: 100;
+      display: flex; align-items: center;
+    }
+    .tg-navbar .tg-container {
+      display: flex; align-items: center; justify-content: space-between; width: 100%;
+    }
+    .tg-logo { font-size: 22px; font-weight: 800; color: var(--color-primary); text-decoration: none; }
+    .tg-logo span { color: var(--color-primary-text); }
+    .tg-nav-links { display: flex; gap: 32px; list-style: none; margin: 0; padding: 0; }
+    .tg-nav-links a { font-size: 15px; font-weight: 500; color: var(--color-primary-text); text-decoration: none; transition: color var(--transition-base); }
+    .tg-nav-links a:hover { color: var(--color-primary); }
+
+    /* ── HERO ── */
+    .hero-section {
+      padding-top: 140px; padding-bottom: 96px;
+      background: linear-gradient(160deg, #fff 60%, #F4FAF6 100%);
+    }
+    .hero-title {
+      font-size: 40px; line-height: 118%; font-weight: 800;
+      letter-spacing: -0.8px; color: var(--color-primary-text);
+      margin-bottom: 24px;
+    }
+    .hero-para { font-size: 17px; line-height: 175%; color: var(--color-secondary-text); margin-bottom: 32px; max-width: 560px; }
+    .hero-visual {
+      border-radius: var(--radius-large); overflow: hidden;
+      box-shadow: 0 28px 80px rgba(22,70,39,0.12);
+      background: var(--surface-soft-green);
+      aspect-ratio: 4/3;
+    }
+    .hero-visual img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-cta-band {
+      margin-top: 30px;
+      display: grid;
+      gap: 18px;
+    }
+    .hero-cta-copy {
+      font-size: 15px; line-height: 1.45; font-weight: 700;
+      color: var(--color-primary-text);
+      letter-spacing: 0;
+      margin: 0;
+    }
+    .hero-cta-copy span { color: var(--color-primary); }
+    .hero-cta-actions { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .hero-cta-actions .btn-tg-primary { height: 50px; min-width: 150px; box-shadow: 0 10px 24px rgba(11,165,106,0.20); }
+    .hero-cta-actions .btn-tg-secondary { height: 50px; background: #fff; min-width: 240px; }
+    .metric-strip {
+      display: flex; gap: 0; flex-wrap: wrap;
+      margin-top: 40px; border-radius: var(--radius-card);
+      border: 1px solid var(--color-stroke); overflow: hidden;
+      background: #fff; box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    }
+    .metric-item {
+      flex: 1; min-width: 160px; padding: 20px 24px;
+      border-right: 1px solid var(--color-stroke);
+      text-align: center;
+    }
+    .metric-item:last-child { border-right: none; }
+    .metric-val { font-size: 22px; font-weight: 800; color: var(--color-primary); line-height: 1.2; }
+    .metric-lbl { font-size: 13px; color: var(--color-secondary-text); font-weight: 500; margin-top: 4px; }
+
+    /* ── TRUST STRIP ── */
+    .trust-strip {
+      background: var(--color-primary);
+      padding: 20px 0;
+    }
+    .trust-strip-inner {
+      display: flex; gap: 0; align-items: center; justify-content: center; flex-wrap: wrap;
+    }
+    .trust-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 32px; color: #fff;
+      font-size: 15px; font-weight: 600;
+      border-right: 1px solid rgba(255,255,255,0.25);
+    }
+    .trust-item:last-child { border-right: none; }
+    .trust-icon { font-size: 18px; }
+
+    /* ── COMPLIANCE BADGES ── */
+    .compliance-grid {
+      display: grid; grid-template-columns: repeat(12, 1fr); gap: 20px; margin-top: 48px;
+    }
+    .compliance-badge {
+      grid-column: span 3;
+      background: #fff; border: 1px solid var(--color-stroke);
+      border-radius: 20px; padding: 24px 22px;
+      transition: all var(--transition-base);
+    }
+    .compliance-badge:nth-child(5) { grid-column: 2 / span 3; }
+    .compliance-badge:nth-child(6) { grid-column: 5 / span 3; }
+    .compliance-badge:nth-child(7) { grid-column: 8 / span 3; }
+    .compliance-badge:hover { border-color: rgba(11,165,106,0.3); transform: translateY(-4px); box-shadow: 0 12px 36px rgba(22,70,39,0.07); }
+    .compliance-badge-icon { font-size: 28px; margin-bottom: 12px; }
+    .compliance-badge-title { font-size: 15px; font-weight: 700; color: var(--color-primary-text); margin-bottom: 6px; }
+    .compliance-badge-desc { font-size: 14px; color: var(--color-secondary-text); line-height: 1.55; }
+
+    /* ── KEY DRIVERS ── */
+    .drivers-section { background: var(--color-bg-soft); }
+    .drivers-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+    .drivers-list { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 16px; }
+    .drivers-list li {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 16px; font-weight: 500; color: var(--color-primary-text); line-height: 1.55;
+    }
+    .drivers-list li::before {
+      content: "→"; color: var(--color-primary); font-weight: 700; flex-shrink: 0; margin-top: 2px;
+    }
+    .drivers-visual { border-radius: var(--radius-large); overflow: hidden; box-shadow: 0 20px 60px rgba(22,70,39,0.10); }
+    .drivers-visual img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+
+    /* ── COST TABLE ── */
+    .cost-table-wrapper { overflow-x: auto; border-radius: var(--radius-card); border: 1px solid var(--color-stroke); }
+    .cost-table { width: 100%; border-collapse: collapse; }
+    .cost-table thead th {
+      background: var(--color-primary-soft); color: var(--color-primary-text);
+      font-size: 15px; font-weight: 700; padding: 18px 24px;
+      text-align: left; border-bottom: 2px solid rgba(11,165,106,0.2);
+    }
+    .cost-table tbody tr { border-bottom: 1px solid var(--color-stroke); transition: background var(--transition-base); }
+    .cost-table tbody tr:last-child { border-bottom: none; }
+    .cost-table tbody tr:hover { background: var(--color-bg-soft); }
+    .cost-table td { padding: 18px 24px; font-size: 15px; color: var(--color-primary-text); vertical-align: top; line-height: 1.6; }
+    .cost-table td:first-child { font-weight: 600; white-space: nowrap; }
+    .cost-table td:last-child { color: var(--color-secondary-text); }
+
+    /* ── SIMPLIFY 6 FEATURES ── */
+    .simplify-section { background: var(--surface-soft-green); }
+    .simplify-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .simplify-card {
+      background: #fff; border: 1px solid var(--color-stroke);
+      border-radius: 20px; padding: 24px 24px;
+      transition: all var(--transition-base);
+      display: flex; flex-direction: column;
+    }
+    .simplify-card:hover { transform: translateY(-5px); border-color: rgba(11,165,106,0.28); box-shadow: 0 16px 44px rgba(22,70,39,0.08); }
+    .simplify-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+    .simplify-num { order: 2; margin-left: auto; font-size: 26px; line-height: 1; font-weight: 800; color: rgba(11,165,106,0.22); letter-spacing: 0; text-transform: uppercase; }
+    .simplify-metric {
+      order: 1; display: inline-flex; align-items: center; width: fit-content; font-size: 12px; font-weight: 700;
+      background: var(--color-primary-soft); color: var(--color-primary);
+      border-radius: var(--radius-pill); padding: 5px 11px;
+    }
+    .simplify-card .sub-heading { margin-top: 18px; margin-bottom: 8px; font-size: 18px; line-height: 1.3; }
+    .simplify-card .para { font-size: 14px; line-height: 158%; }
+    .simplify-card::before {
+      content: ""; order: 0; display: none;
+    }
+
+    /* ── JOURNEY TIMELINE ── */
+    .journey-section { background: #fff; }
+    .journey-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; }
+    .journey-step { position: relative; padding: 32px 28px; border-right: 1px solid var(--color-stroke); border-bottom: 1px solid var(--color-stroke); display: flex; flex-direction: column; }
+    .journey-step:nth-child(4n) { border-right: none; }
+    .journey-step:nth-child(5), .journey-step:nth-child(6), .journey-step:nth-child(7), .journey-step:nth-child(8) { border-bottom: none; }
+    .journey-step-num { font-size: 36px; font-weight: 800; color: var(--color-primary-soft); letter-spacing: -1px; line-height: 1; margin-bottom: 16px; }
+    .journey-step-title { font-size: 18px; font-weight: 700; color: var(--color-primary-text); margin-bottom: 10px; }
+    .journey-step-desc { font-size: 14px; line-height: 165%; color: var(--color-secondary-text); margin-bottom: 14px; }
+    .journey-step-tag { font-size: 13px; font-weight: 600; color: var(--color-primary); display: flex; align-items: center; gap: 6px; margin-top: auto; }
+    .journey-step-tag::before { content: "→"; }
+    .journey-header-bar {
+      background: var(--color-primary-text); border-radius: 20px 20px 0 0;
+      padding: 20px 28px; margin-bottom: 0;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .journey-header-bar span { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.75); }
+    .journey-header-bar strong { color: #fff; }
+    .journey-wrapper { border: 1px solid var(--color-stroke); border-radius: 20px; overflow: hidden; }
+
+    /* ── ADVANCED FEATURES ── */
+    .features-section { background: var(--color-bg-soft); }
+    .feature-explorer {
+      display: grid; grid-template-columns: minmax(320px, 1fr) minmax(0, 1.15fr);
+      gap: 20px; align-items: stretch;
+    }
+    .feature-tabs { display: grid; gap: 8px; }
+    .feature-tab {
+      width: 100%; border: 1px solid var(--color-stroke); background: #fff;
+      border-radius: 14px; padding: 13px 15px;
+      display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: center;
+      text-align: left; color: var(--color-primary-text);
+      transition: all var(--transition-base);
+      cursor: pointer;
+    }
+    .feature-tab:hover,
+    .feature-tab.is-active {
+      border-color: rgba(11,165,106,0.38);
+      background: var(--color-primary-soft);
+      box-shadow: 0 12px 32px rgba(22,70,39,0.07);
+      transform: translateY(-2px);
+    }
+    .feature-tab-num {
+      width: 34px; height: 34px; border-radius: 11px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--color-bg-soft); color: var(--color-primary);
+      font-size: 13px; font-weight: 800;
+    }
+    .feature-tab-title { font-size: 14px; font-weight: 700; line-height: 1.3; }
+    .feature-tab-meta { display: block; margin-top: 2px; font-size: 12px; font-weight: 600; color: var(--color-secondary-text); }
+    .feature-panel-wrap {
+      background: #fff; border: 1px solid var(--color-stroke);
+      border-radius: 20px; padding: 28px;
+      box-shadow: 0 18px 54px rgba(22,70,39,0.08);
+      height: 560px; overflow: hidden;
+    }
+    .feature-panel { display: none; height: 100%; min-height: 0; }
+    .feature-panel.is-active { display: flex; flex-direction: column; }
+    .feature-panel-title { order: 2; font-size: 24px; font-weight: 800; line-height: 1.25; margin-bottom: 12px; }
+    .feature-panel-metric {
+      display: inline-flex; align-items: center; width: fit-content;
+      border-radius: var(--radius-pill); padding: 8px 14px;
+      background: var(--color-primary-soft); color: var(--color-primary);
+      order: 1; font-size: 14px; font-weight: 800; margin-bottom: 14px;
+    }
+    .feature-panel-desc { order: 3; font-size: 16px; line-height: 165%; color: var(--color-secondary-text); margin-bottom: 16px; }
+    .feature-panel-image {
+      order: 5; margin-top: auto; border-radius: 18px; overflow: hidden;
+      height: 320px; min-height: 320px; background: var(--color-bg-soft);
+      border: 1px solid var(--color-stroke);
+    }
+    .feature-panel-image img { width: 100%; height: 100%; min-height: 0; object-fit: cover; }
+
+    /* ── DASHBOARD / IN ACTION ── */
+    .action-section { background: var(--color-primary-text); }
+    .action-section .main-heading, .action-section .eyebrow { color: #fff; }
+    .action-section .para { color: rgba(255,255,255,0.65); }
+    .action-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 42px; }
+    .action-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 18px; padding: 24px;
+      display: flex; flex-direction: column;
+      transition: all var(--transition-base);
+    }
+    .action-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(11,165,106,0.4); }
+    .action-card-featured {
+      grid-column: 1 / -1;
+      display: flex; flex-direction: column; align-items: flex-start;
+      gap: 0;
+      padding: 34px;
+      background: linear-gradient(135deg, rgba(11,165,106,0.18), rgba(255,255,255,0.06));
+    }
+    .action-card-num { font-size: 12px; font-weight: 700; color: var(--color-primary); letter-spacing: 1.2px; text-transform: uppercase; margin-bottom: 14px; }
+    .action-card-title { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+    .action-card-featured .action-card-title { font-size: 26px; line-height: 1.25; }
+    .action-card-desc { font-size: 15px; line-height: 168%; color: rgba(255,255,255,0.6); margin-bottom: 14px; }
+    .action-card-featured .action-card-desc { font-size: 16px; max-width: 720px; }
+    .action-card-tag {
+      width: fit-content; font-size: 13px; font-weight: 700; color: var(--color-primary);
+      margin-top: auto; border-radius: var(--radius-pill); background: rgba(11,165,106,0.12);
+      padding: 8px 12px;
+    }
+    .action-card-featured .action-card-tag {
+      justify-self: start; align-self: flex-start; margin-top: 8px;
+      background: var(--color-primary); color: #fff;
+    }
+
+    /* ── FSMA SECTION ── */
+    .fsma-section { background: #fff; }
+    .fsma-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .fsma-table-wrapper { overflow-x: auto; border-radius: 18px; border: 1px solid var(--color-stroke); }
+    .fsma-table { width: 100%; border-collapse: collapse; }
+    .fsma-table thead th { background: var(--color-primary); color: #fff; font-size: 15px; font-weight: 700; padding: 16px 20px; text-align: left; }
+    .fsma-table tbody tr { border-bottom: 1px solid var(--color-stroke); }
+    .fsma-table tbody tr:last-child { border-bottom: none; }
+    .fsma-table td { padding: 16px 20px; font-size: 15px; color: var(--color-primary-text); vertical-align: top; line-height: 1.55; }
+    .fsma-table td:first-child { font-weight: 600; }
+    .fsma-table td:last-child { color: var(--color-secondary-text); }
+    .fsma-checklist { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 14px; }
+    .fsma-checklist li { display: flex; gap: 12px; font-size: 16px; color: var(--color-primary-text); line-height: 1.55; }
+    .fsma-check { color: var(--color-primary); font-weight: 700; flex-shrink: 0; }
+
+    /* ── ROI SECTION ── */
+    .roi-section { background: var(--surface-soft-green); }
+    .roi-points-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px; margin-bottom: 48px; }
+    .roi-point {
+      background: #fff; border: 1px solid var(--color-stroke);
+      border-radius: 20px; padding: 26px 24px;
+      transition: all var(--transition-base);
+    }
+    .roi-point:hover { transform: translateY(-4px); border-color: rgba(11,165,106,0.28); box-shadow: 0 10px 28px rgba(22,70,39,0.07); }
+    .roi-point-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; margin-bottom: 16px; }
+    .roi-point-icon-wrap {
+      width: 56px; height: 56px; border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--color-primary-soft);
+      flex-shrink: 0;
+    }
+    .roi-point-icon {
+      width: 36px; height: 36px; object-fit: contain; flex-shrink: 0;
+    }
+    .roi-point-num { font-size: 13px; font-weight: 800; color: var(--color-primary); }
+    .roi-point-title { font-size: 17px; font-weight: 700; color: var(--color-primary-text); margin-bottom: 8px; }
+    .roi-point-desc { font-size: 14px; line-height: 165%; color: var(--color-secondary-text); }
+    .roi-table-wrapper { overflow-x: auto; border-radius: var(--radius-card); border: 1px solid var(--color-stroke); background: #fff; }
+    .roi-table { width: 100%; border-collapse: collapse; }
+    .roi-table thead th { background: var(--color-primary-soft); font-size: 14px; font-weight: 700; color: var(--color-primary-text); padding: 16px 20px; text-align: left; border-bottom: 2px solid rgba(11,165,106,0.2); }
+    .roi-table tbody tr { border-bottom: 1px solid var(--color-stroke); }
+    .roi-table tbody tr:last-child { border-bottom: none; }
+    .roi-table tbody tr:hover { background: var(--color-bg-soft); }
+    .roi-table td { padding: 16px 20px; font-size: 14px; color: var(--color-primary-text); vertical-align: top; line-height: 1.55; }
+    .roi-table td:nth-child(2) { font-weight: 700; color: var(--color-primary); white-space: nowrap; }
+    .roi-table td:last-child { color: var(--color-secondary-text); }
+
+    /* ── AUDIENCE SECTION ── */
+    .audience-section { background: #fff; }
+    .audience-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .audience-card {
+      background: var(--color-bg-soft); border: 1px solid var(--color-stroke);
+      border-radius: 20px; padding: 28px 22px;
+      transition: all var(--transition-base);
+    }
+    .audience-card:hover { background: var(--color-primary-soft); border-color: rgba(11,165,106,0.28); transform: translateY(-4px); }
+    .audience-num { font-size: 28px; font-weight: 800; color: rgba(11,165,106,0.2); line-height: 1; margin-bottom: 12px; }
+    .audience-title { font-size: 17px; font-weight: 700; color: var(--color-primary-text); margin-bottom: 10px; }
+    .audience-desc { font-size: 14px; line-height: 165%; color: var(--color-secondary-text); }
+
+    /* ── COMPARISON TABLE ── */
+    .comparison-section { background: var(--color-bg-soft); }
+    .comparison-table-wrapper { overflow-x: auto; border-radius: var(--radius-card); border: 1px solid var(--color-stroke); }
+    .comparison-table { width: 100%; border-collapse: collapse; }
+    .comparison-table thead th { padding: 18px 22px; font-size: 15px; font-weight: 700; text-align: left; border-bottom: 2px solid var(--color-stroke); background: #fff; }
+    .comparison-table thead th.tg-col { background: var(--color-primary); color: #fff; }
+    .comparison-table tbody tr { border-bottom: 1px solid var(--color-stroke); }
+    .comparison-table tbody tr:last-child { border-bottom: none; }
+    .comparison-table tbody tr:hover { background: rgba(11,165,106,0.03); }
+    .comparison-table td { padding: 16px 22px; font-size: 14px; color: var(--color-secondary-text); vertical-align: top; line-height: 1.55; }
+    .comparison-table td:first-child { font-weight: 600; color: var(--color-primary-text); }
+    .comparison-table td.tg-col { background: var(--color-primary-soft); color: var(--color-primary-text); font-weight: 600; }
+    .comparison-cta-box {
+      background: #fff;
+      border: 1px solid var(--color-stroke);
+      border-radius: 28px;
+      padding: 40px 44px; margin-top: 44px;
+      min-height: 146px;
+      display: grid; grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center; gap: 40px;
+    }
+    .comparison-cta-box p {
+      font-size: 20px; line-height: 1.4; font-weight: 600;
+      color: var(--color-primary-text); margin: 0; max-width: 820px;
+    }
+    .btn-tg-white {
+      display: inline-flex; align-items: center; justify-content: center;
+      height: 64px; padding: 0 38px; border-radius: var(--radius-pill);
+      background: var(--color-primary); color: #fff;
+      border: 1px solid var(--color-primary); font-size: 20px; font-weight: 700;
+      text-decoration: none; transition: all var(--transition-base); white-space: nowrap;
+    }
+    .btn-tg-white:hover { background: var(--color-primary-dark); color: #fff; border-color: var(--color-primary-dark); }
+
+    /* ── CASE STUDIES ── */
+    .cases-section { background: #fff; }
+    .cases-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+    .case-card {
+      background: var(--color-bg-soft); border: 1px solid var(--color-stroke);
+      border-radius: var(--radius-card); overflow: hidden;
+      transition: all var(--transition-base);
+    }
+    .case-card:hover { transform: translateY(-5px); box-shadow: 0 18px 44px rgba(22,70,39,0.09); border-color: rgba(11,165,106,0.2); }
+    .case-card-img { width: 100%; aspect-ratio: 2/1; object-fit: cover; }
+    .case-card-body { padding: 28px; }
+    .case-tag { font-size: 13px; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 10px; }
+    .case-title { font-size: 22px; font-weight: 700; color: var(--color-primary-text); margin-bottom: 12px; }
+    .case-desc { font-size: 15px; line-height: 165%; color: var(--color-secondary-text); }
+    .cases-cta-row { margin-top: 40px; padding: 32px 36px; background: var(--color-bg-soft); border: 1px solid var(--color-stroke); border-radius: var(--radius-card); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .cases-cta-row p { font-size: 18px; font-weight: 600; color: var(--color-primary-text); margin: 0; }
+
+    /* ── TESTIMONIALS ── */
+    .testimonials-section { background: var(--color-primary-text); }
+    .testimonials-section .main-heading { color: #fff; }
+    .testimonials-section .eyebrow { color: var(--color-primary); }
+    .testimonials-section .para { color: rgba(255,255,255,0.6); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+    .testimonial-card {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10);
+      border-radius: var(--radius-card); padding: 32px 28px;
+      display: grid; grid-template-rows: 1fr auto; gap: 24px;
+    }
+    .testimonial-quote { font-size: 15px; line-height: 175%; color: rgba(255,255,255,0.75); font-style: italic; }
+    .testimonial-quote::before { content: '"'; font-size: 40px; color: var(--color-primary); line-height: 1; display: block; margin-bottom: 8px; font-style: normal; }
+    .testimonial-author-name { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+    .testimonial-author-role { font-size: 13px; color: rgba(255,255,255,0.5); }
+    .testimonial-company { font-size: 12px; font-weight: 700; color: var(--color-primary); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 6px; }
+
+    /* ── FAQ ── */
+    .faq-section { background: var(--color-bg-soft); }
+    .faq-layout { display: grid; gap: 48px; align-items: start; }
+    .faq-sticky { text-align: center; max-width: 720px; margin: 0 auto; }
+    .faq-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 56px; }
+    .faq-item { border-bottom: 1px solid var(--color-stroke); }
+    .faq-question {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      gap: 20px; padding: 24px 0; cursor: pointer;
+      font-size: 18px; font-weight: 600; color: var(--color-primary-text);
+      line-height: 1.4; user-select: none; transition: color var(--transition-base);
+      list-style: none; background: none; border: none; width: 100%; text-align: left;
+    }
+    .faq-question:hover { color: var(--color-primary); }
+    .faq-question.open { color: var(--color-primary); }
+    .faq-icon {
+      width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--color-stroke);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 18px; font-weight: 300; color: var(--color-primary);
+      transition: transform var(--transition-base);
+    }
+    .faq-question.open .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      font-size: 16px; line-height: 175%; color: var(--color-secondary-text);
+      max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.3s ease;
+      padding-bottom: 0;
+    }
+    .faq-answer.open { max-height: 400px; padding-bottom: 24px; }
+
+    /* ── FINAL CTA ── */
+    .final-cta-section { background: #fff; }
+    .final-cta-panel {
+      background: var(--color-primary-soft); border-radius: 36px;
+      padding: 80px 80px;
+      border: 1px solid rgba(11,165,106,0.18);
+      text-align: center;
+    }
+    .final-cta-panel .main-heading { font-size: 36px; margin-bottom: 20px; }
+    .final-cta-panel .para { max-width: 600px; margin: 0 auto 32px; font-size: 17px; }
+    /* ── FOOTER ── */
+    .tg-footer { background: var(--color-bg-soft); padding-top: 80px; padding-bottom: 32px; border-top: 1px solid var(--color-stroke); }
+    .footer-brand { font-size: 22px; font-weight: 800; color: var(--color-primary); margin-bottom: 12px; }
+    .footer-brand span { color: var(--color-primary-text); }
+    .footer-desc { font-size: 15px; color: var(--color-secondary-text); line-height: 1.65; max-width: 280px; }
+    .footer-heading { font-size: 15px; font-weight: 700; color: var(--color-primary-text); margin-bottom: 18px; }
+    .footer-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .footer-links a { font-size: 14px; color: var(--color-secondary-text); text-decoration: none; transition: color var(--transition-base); }
+    .footer-links a:hover { color: var(--color-primary); }
+    .footer-bottom { border-top: 1px solid var(--color-stroke); margin-top: 48px; padding-top: 24px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 14px; color: var(--color-secondary-text); }
+
+    /* ── SCROLL REVEAL ── */
+    [data-animate] { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    [data-animate].is-visible { opacity: 1; transform: translateY(0); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1199px) {
+      .tg-container { padding-left: 48px; padding-right: 48px; }
+      .hero-title { font-size: 34px; }
+      .compliance-grid { grid-template-columns: repeat(3, 1fr); }
+      .compliance-badge,
+      .compliance-badge:nth-child(5),
+      .compliance-badge:nth-child(6),
+      .compliance-badge:nth-child(7) { grid-column: auto; }
+      .compliance-badge:nth-child(7) { grid-column: 2; }
+      .audience-grid { grid-template-columns: repeat(2, 1fr); }
+      .final-cta-panel { padding: 60px 56px; }
+    }
+    @media (max-width: 991px) {
+      .tg-container { padding-left: 40px; padding-right: 40px; }
+      .tg-section { padding-top: 80px; padding-bottom: 80px; }
+      .hero-section { padding-top: 100px; padding-bottom: 72px; }
+      .hero-title { font-size: 30px; }
+      .hero-cta-band { margin-top: 26px; }
+      .drivers-layout { grid-template-columns: 1fr; gap: 48px; }
+      .simplify-grid { grid-template-columns: repeat(2, 1fr); }
+      .journey-grid { grid-template-columns: repeat(2, 1fr); }
+      .journey-step:nth-child(2n) { border-right: none; }
+      .journey-step:nth-child(5), .journey-step:nth-child(6), .journey-step:nth-child(7), .journey-step:nth-child(8) { border-bottom: 1px solid var(--color-stroke); }
+      .journey-step:nth-child(7), .journey-step:nth-child(8) { border-bottom: none; }
+      .feature-explorer { grid-template-columns: 1fr; }
+      .feature-tabs { grid-template-columns: repeat(2, 1fr); }
+      .feature-panel-wrap { height: 520px; }
+      .feature-panel-image { height: 290px; min-height: 290px; }
+      .action-grid { grid-template-columns: repeat(2, 1fr); }
+      .action-card-featured { grid-template-columns: 1fr; }
+      .action-card-featured .action-card-tag { justify-self: start; margin-top: 8px; }
+      .fsma-layout { grid-template-columns: 1fr; gap: 48px; }
+      .roi-points-grid { grid-template-columns: repeat(2, 1fr); }
+      .audience-grid { grid-template-columns: repeat(2, 1fr); }
+      .cases-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .faq-layout { gap: 42px; }
+      .faq-list { grid-template-columns: 1fr; }
+      .comparison-cta-box { grid-template-columns: 1fr; min-height: auto; padding: 36px 34px; gap: 24px; }
+      .comparison-cta-box p { font-size: 20px; }
+      .final-cta-panel { padding: 48px 40px; }
+    }
+    @media (max-width: 767px) {
+      .tg-container { padding-left: 20px; padding-right: 20px; }
+      .tg-section { padding-top: 64px; padding-bottom: 64px; }
+      .hero-section { padding-top: 88px; padding-bottom: 64px; }
+      .hero-title { font-size: 26px; }
+      .hero-cta-band { margin-top: 24px; }
+      .hero-cta-copy { font-size: 14px; }
+      .hero-cta-actions { width: 100%; }
+      .hero-cta-actions .btn-tg-primary,
+      .hero-cta-actions .btn-tg-secondary { width: 100%; }
+      .main-heading { font-size: 26px; }
+      .metric-strip { border-radius: 16px; }
+      .metric-item { min-width: 130px; }
+      .trust-strip-inner { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding: 0 20px; }
+      .trust-item { white-space: nowrap; }
+      .compliance-grid { grid-template-columns: repeat(2, 1fr); }
+      .compliance-badge,
+      .compliance-badge:nth-child(5),
+      .compliance-badge:nth-child(6),
+      .compliance-badge:nth-child(7) { grid-column: auto; }
+      .simplify-grid { grid-template-columns: 1fr; }
+      .journey-grid { grid-template-columns: 1fr; }
+      .journey-step { border-right: none; }
+      .journey-step { border-bottom: 1px solid var(--color-stroke); }
+      .journey-step:last-child { border-bottom: none; }
+      .feature-tabs { grid-template-columns: 1fr; }
+      .feature-panel-wrap { height: 500px; padding: 26px 22px; }
+      .feature-panel-title { font-size: 24px; }
+      .feature-panel-image { height: 250px; min-height: 250px; }
+      .action-grid { grid-template-columns: 1fr; }
+      .action-card-featured { padding: 28px 24px; }
+      .action-card-featured .action-card-title { font-size: 22px; }
+      .roi-points-grid { grid-template-columns: 1fr; }
+      .audience-grid { grid-template-columns: 1fr; }
+      .comparison-cta-box { padding: 28px 22px; border-radius: 22px; }
+      .comparison-cta-box p { font-size: 18px; }
+      .comparison-cta-box .btn-tg-white { width: 100%; }
+      .final-cta-panel { padding: 40px 24px; border-radius: 24px; }
+      .final-cta-panel .main-heading { font-size: 26px; }
+      .tg-nav-links { display: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      [data-animate] { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ NAVBAR ═══ -->
+<nav class="tg-navbar" aria-label="Main navigation">
+  <div class="tg-container">
+    <a href="/" class="tg-logo">Trans<span>Genie</span></a>
+    <ul class="tg-nav-links">
+      <li><a href="#">Traceability</a></li>
+      <li><a href="#">Industries</a></li>
+      <li><a href="#">Technology</a></li>
+      <li><a href="#">Insights</a></li>
+      <li><a href="#">Company</a></li>
+    </ul>
+    <a href="#demo" class="btn-tg-primary">Contact Us</a>
+  </div>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero-section">
+  <div class="tg-container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <h1 class="hero-title">Egg Traceability Software That Tracks Every Egg, Every Batch, Every Movement</h1>
+        <p class="hero-para">Track every egg, lot, and batch from hatchery to retail with TransGenie's egg traceability software. Built for producers, packers, processors, &amp; exporters, our platform simplifies compliance, strengthens recall readiness, and delivers end-to-end egg supply chain visibility.</p>
+        <div class="hero-cta-band" data-animate>
+          <div class="hero-cta-actions">
+            <a href="#demo" class="btn-tg-primary">Book a Demo</a>
+            <a href="#journey" class="btn-tg-secondary">Explore the Traceability Journey</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-visual">
+          <img src="https://images.unsplash.com/photo-1612257999786-5dfae4e13f8d?w=800&auto=format&fit=crop&q=80" alt="Egg packing station showing traceability in action" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST STRIP ═══ -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-item"><span class="trust-icon">✓</span> FSMA 204 Ready</div>
+    <div class="trust-item"><span class="trust-icon">✓</span> EU Egg Labelling &amp; Traceability Support</div>
+    <div class="trust-item"><span class="trust-icon">✓</span> Recall-Ready Lot &amp; Batch Tracking</div>
+    <div class="trust-item"><span class="trust-icon">✓</span> Live in Under 30 Days</div>
+  </div>
+</div>
+
+<!-- ═══ COMPLIANCE TRUST ═══ -->
+<section class="tg-section">
+  <div class="tg-container">
+    <div class="section-header" data-animate>
+      <h2 class="main-heading">Egg Traceability Built on Real Compliance, Real Operations</h2>
+      <p class="para" style="margin-top:20px;">Our FDA egg traceability compliance software for producers &amp; EU egg traceability software help businesses maintain the records needed for domestic and international markets.</p>
+    </div>
+    <div class="compliance-grid">
+      <div class="compliance-badge" data-animate>
+        <div class="compliance-badge-icon">🇺🇸</div>
+        <div class="compliance-badge-title">FDA FSMA 204</div>
+        <div class="compliance-badge-desc">KDE records at every CTE</div>
+      </div>
+      <div class="compliance-badge" data-animate>
+        <div class="compliance-badge-icon">🇪🇺</div>
+        <div class="compliance-badge-title">EU Directive 589/2008</div>
+        <div class="compliance-badge-desc">Egg labelling &amp; origin records</div>
+      </div>
+      <div class="compliance-badge" data-animate>
+        <div class="compliance-badge-icon">🌿</div>
+        <div class="compliance-badge-title">Free-Range Certification</div>
+        <div class="compliance-badge-desc">Chain-of-custody audit trail</div>
+      </div>
+      <div class="compliance-badge" data-animate>
+        <div class="compliance-badge-icon">🌱</div>
+        <div class="compliance-badge-title">Organic Certification</div>
+        <div class="compliance-badge-desc">Feed-to-packing integrity</div>
+      </div>
+      <div class="compliance-badge" data-animate>
+        <div class="compliance-badge-icon">📦</div>
+        <div class="compliance-badge-title">Export Compliance</div>
+        <div class="compliance-badge-desc">Health certs &amp; customs docs</div>
+      </div>
+      <div class="compliance-badge" data-animate>
+        <div class="compliance-badge-icon">⚡</div>
+        <div class="compliance-badge-title">Recall Readiness</div>
+        <div class="compliance-badge-desc">Lot isolation in 60 seconds</div>
+      </div>
+      <div class="compliance-badge" data-animate>
+        <div class="compliance-badge-icon">📊</div>
+        <div class="compliance-badge-title">Traceability Reporting</div>
+        <div class="compliance-badge-desc">FDA, EU &amp; retailer formats</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY 2026 ═══ -->
+<section class="tg-section drivers-section">
+  <div class="tg-container">
+    <div class="drivers-layout">
+      <div>
+        <h2 class="main-heading" data-animate>Why Does Egg Traceability Matter in 2026?</h2>
+        <p class="para" style="margin-top:20px;" data-animate>As compliance requirements and buyer expectations grow, egg businesses need better visibility across production, packing, storage, and distribution. TransGenie, a modern egg traceability system, helps maintain accurate records, support recalls, and improve supply chain transparency.</p>
+        <ul class="drivers-list" data-animate>
+          <li>FSMA 204 enforcement is live</li>
+          <li>Recall windows are shrinking</li>
+          <li>Supplier qualification has changed</li>
+          <li>Export markets demand digital records</li>
+          <li>Consumers expect origin transparency</li>
+        </ul>
+      </div>
+      <div class="drivers-visual" data-animate>
+        <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=800&auto=format&fit=crop&q=80" alt="Poultry farm showing modern egg production operations" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COST OF DISCONNECTED ═══ -->
+<section class="tg-section">
+  <div class="tg-container">
+    <div class="section-header" data-animate>
+      <h2 class="main-heading">The Cost of Disconnected Egg Traceability</h2>
+      <p class="para" style="margin-top:20px;">When data are spread across spreadsheets, paper logs, and different systems, traceability becomes harder to manage. Small gaps can quickly turn into compliance, recall, and operational risks.</p>
+    </div>
+    <div class="cost-table-wrapper" data-animate>
+      <table class="cost-table">
+        <thead>
+          <tr>
+            <th>Challenge</th>
+            <th>Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lot &amp; Batch Records Don't Connect</td>
+            <td>Finding the history of a specific egg lot takes longer &amp; often requires manual checks.</td>
+          </tr>
+          <tr>
+            <td>Compliance Records Are Scattered</td>
+            <td>Important FDA, EU, and certification records are stored in different places, making audits more difficult.</td>
+          </tr>
+          <tr>
+            <td>Slow Recall Response</td>
+            <td>Identifying affected products during a recall can take valuable time.</td>
+          </tr>
+          <tr>
+            <td>Limited Supply Chain Visibility</td>
+            <td>Product movement from farm to packing, storage, &amp; distribution is difficult to track in one place.</td>
+          </tr>
+          <tr>
+            <td>Manual Export Documentation</td>
+            <td>Preparing origin records and shipment documents manually increases the risk of delays &amp; errors.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW TRANSGENIE SIMPLIFIES ═══ -->
+<section class="tg-section simplify-section">
+  <div class="tg-container">
+    <div class="section-header" data-animate>
+      <h2 class="main-heading">How TransGenie Simplifies Egg Traceability from Farm to Shelf</h2>
+      <p class="para" style="margin-top:20px;">From flock and farm to packing, storage, &amp; distribution, our egg traceability software connects every record in one place. Helping teams maintain visibility, compliance, and traceability across the egg supply chain.</p>
+    </div>
+    <div class="simplify-grid">
+      <div class="simplify-card" data-animate>
+        <div class="simplify-card-top"><div class="simplify-num">01</div>
+        <span class="simplify-metric">8+ compliance standards</span></div>
+        <h3 class="sub-heading">Built for the Egg Industry</h3>
+        <p class="para">Unlike generic food traceability tools, our egg traceability solution is designed for egg producers, packers, processors, &amp; exporters globally.</p>
+      </div>
+      <div class="simplify-card" data-animate>
+        <div class="simplify-card-top"><div class="simplify-num">02</div>
+        <span class="simplify-metric">100% lot-to-batch traceability</span></div>
+        <h3 class="sub-heading">One Record Across Every Handoff</h3>
+        <p class="para">We connect production, grading, packing, storage, and shipment records into a single traceability chain. Reducing manual tracking &amp; disconnected data.</p>
+      </div>
+      <div class="simplify-card" data-animate>
+        <div class="simplify-card-top"><div class="simplify-num">03</div>
+        <span class="simplify-metric">Under 8-second traceability</span></div>
+        <h3 class="sub-heading">Complete Supply Chain Visibility</h3>
+        <p class="para">Our platform provides visibility across farms, packing facilities, warehouses, &amp; distributors. Track product movement from farm to shelf in one place.</p>
+      </div>
+      <div class="simplify-card" data-animate>
+        <div class="simplify-card-top"><div class="simplify-num">04</div>
+        <span class="simplify-metric">Lot isolation in under 60 seconds</span></div>
+        <h3 class="sub-heading">Faster Recall Response</h3>
+        <p class="para">We help teams quickly identify affected lots and access the records needed to support investigations, recalls, and corrective actions.</p>
+      </div>
+      <div class="simplify-card" data-animate>
+        <div class="simplify-card-top"><div class="simplify-num">05</div>
+        <span class="simplify-metric">24/7 inventory &amp; temperature monitoring</span></div>
+        <h3 class="sub-heading">Inventory &amp; Cold Chain Tracking</h3>
+        <p class="para">Our solution collects inventory movement, storage locations, and cold chain records throughout the egg supply chain. Helps maintain product quality &amp; traceability.</p>
+      </div>
+      <div class="simplify-card" data-animate>
+        <div class="simplify-card-top"><div class="simplify-num">06</div>
+        <span class="simplify-metric">10+ integration-ready business systems</span></div>
+        <h3 class="sub-heading">Compliance &amp; Export Ready</h3>
+        <p class="para">We help businesses maintain the records needed for FDA requirements, EU labelling, retailer audits, certifications, and export documentation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ JOURNEY TIMELINE ═══ -->
+<section class="tg-section journey-section" id="journey">
+  <div class="tg-container">
+    <div class="section-header" data-animate>
+      <h2 class="main-heading">How Our Egg Traceability Software Tracks Every Step of the Journey</h2>
+      <p class="para" style="margin-top:20px;">Our egg traceability software captures and connects records across production, grading, packing, storage, distribution, and retail operations. The result is a complete traceability record that follows every lot and batch from farm to shelf.</p>
+    </div>
+    <div class="journey-wrapper" data-animate>
+      <div class="journey-header-bar">
+        <strong>🥚 Complete Egg Traceability Chain</strong>
+        <span>Hatchery → Retail · 8 Tracked Stages</span>
+      </div>
+      <div class="journey-grid">
+        <div class="journey-step">
+          <div class="journey-step-num">01</div>
+          <div class="journey-step-title">Hatchery</div>
+          <div class="journey-step-desc">Track flock origin, breeder data, &amp; hatchery records from the start of the production cycle.</div>
+          <div class="journey-step-tag">Foundation for flock-to-lot traceability</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-step-num">02</div>
+          <div class="journey-step-title">Pullet Management</div>
+          <div class="journey-step-desc">Maintain flock movement, health, &amp; growth records even before the birds enter the production.</div>
+          <div class="journey-step-tag">Preserve flock history and lineage records</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-step-num">03</div>
+          <div class="journey-step-title">Layer Farm Production</div>
+          <div class="journey-step-desc">Capture production data, flock details, and egg collection records at the farm level.</div>
+          <div class="journey-step-tag">Generate GS1-ready lot identification records</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-step-num">04</div>
+          <div class="journey-step-title">Grading &amp; Classification</div>
+          <div class="journey-step-desc">Record grading results, quality checks, and batch creation activities.</div>
+          <div class="journey-step-tag">Maintain audit-ready grading &amp; quality records</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-step-num">05</div>
+          <div class="journey-step-title">Packing Station</div>
+          <div class="journey-step-desc">Link lots, carton codes, packaging details, and labeling records to each batch.</div>
+          <div class="journey-step-tag">Support GS1-128, QR, and carton codes</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-step-num">06</div>
+          <div class="journey-step-title">Storage &amp; Cold Chain</div>
+          <div class="journey-step-desc">Monitor inventory, storage locations, and temperature records throughout handling and distribution.</div>
+          <div class="journey-step-tag">Track cold chain and inventory events</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-step-num">07</div>
+          <div class="journey-step-title">Distribution &amp; Export</div>
+          <div class="journey-step-desc">Track shipments, transfer records, export documentation, and delivery status.</div>
+          <div class="journey-step-tag">Supports shipment &amp; export traceability records</div>
+        </div>
+        <div class="journey-step">
+          <div class="journey-step-num">08</div>
+          <div class="journey-step-title">Retail &amp; Consumer Verification</div>
+          <div class="journey-step-desc">Provide complete product history to support retailer requirements, audits, and traceability requests.</div>
+          <div class="journey-step-tag">Access farm-to-shelf traceability records</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ADVANCED FEATURES ═══ -->
+<section class="tg-section features-section">
+  <div class="tg-container">
+    <div class="section-header" data-animate>
+      <h2 class="main-heading">Advanced Egg Traceability Software Features for Complete Farm-to-Shelf Visibility</h2>
+      <p class="para" style="margin-top:20px;">Our egg traceability platform combines traceability, inventory, compliance, and recall management tools in one system. Explore the features offered by our egg lot tracking software that helps businesses maintain visibility across every lot, batch, and shipment.</p>
+    </div>
+    <div class="feature-explorer" data-animate>
+      <div class="feature-tabs" role="tablist" aria-label="Advanced traceability features">
+        <button class="feature-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="feature-panel-1" id="feature-tab-1" data-feature-target="feature-panel-1"><span class="feature-tab-num">01</span><span><span class="feature-tab-title">Egg Lot &amp; Batch Tracking</span><span class="feature-tab-meta">100% lot-to-batch traceability</span></span></button>
+        <button class="feature-tab" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-2" id="feature-tab-2" data-feature-target="feature-panel-2"><span class="feature-tab-num">02</span><span><span class="feature-tab-title">Recall Management</span><span class="feature-tab-meta">97% unaffected inventory clearance</span></span></button>
+        <button class="feature-tab" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-3" id="feature-tab-3" data-feature-target="feature-panel-3"><span class="feature-tab-num">03</span><span><span class="feature-tab-title">Compliance Document Generation</span><span class="feature-tab-meta">8+ compliance frameworks supported</span></span></button>
+        <button class="feature-tab" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-4" id="feature-tab-4" data-feature-target="feature-panel-4"><span class="feature-tab-num">04</span><span><span class="feature-tab-title">Cold Chain Integration</span><span class="feature-tab-meta">IoT &amp; mobile data capture</span></span></button>
+        <button class="feature-tab" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-5" id="feature-tab-5" data-feature-target="feature-panel-5"><span class="feature-tab-num">05</span><span><span class="feature-tab-title">Egg Inventory Traceability Dashboard</span><span class="feature-tab-meta">Real-time inventory visibility</span></span></button>
+        <button class="feature-tab" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-6" id="feature-tab-6" data-feature-target="feature-panel-6"><span class="feature-tab-num">06</span><span><span class="feature-tab-title">Free-Range &amp; Organic Traceability</span><span class="feature-tab-meta">End-to-end chain-of-custody records</span></span></button>
+        <button class="feature-tab" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-7" id="feature-tab-7" data-feature-target="feature-panel-7"><span class="feature-tab-num">07</span><span><span class="feature-tab-title">QR Code Traceability</span><span class="feature-tab-meta">Instant access to product history</span></span></button>
+        <button class="feature-tab" type="button" role="tab" aria-selected="false" aria-controls="feature-panel-8" id="feature-tab-8" data-feature-target="feature-panel-8"><span class="feature-tab-num">08</span><span><span class="feature-tab-title">ERP &amp; System Integration</span><span class="feature-tab-meta">SAP, Oracle, Dynamics &amp; Odoo ready</span></span></button>
+      </div>
+      <div class="feature-panel-wrap">
+        <div class="feature-panel is-active" role="tabpanel" id="feature-panel-1" aria-labelledby="feature-tab-1">
+          <div class="feature-panel-title">Egg Lot &amp; Batch Tracking</div>
+          <div class="feature-panel-metric">100% lot-to-batch traceability</div>
+          <p class="feature-panel-desc">Our software generates unique lot and batch IDs at the farm level and maintains traceability through grading, packing, storage, &amp; distribution.</p><div class="feature-panel-image"><img src="https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=900&auto=format&fit=crop&q=80" alt="Egg lot and batch tracking in a packing workflow" /></div>
+        </div>
+        <div class="feature-panel" role="tabpanel" id="feature-panel-2" aria-labelledby="feature-tab-2">
+          <div class="feature-panel-title">Recall Management</div>
+          <div class="feature-panel-metric">97% unaffected inventory clearance</div>
+          <p class="feature-panel-desc">When a quality or safety issue is identified, our platform helps isolate affected lots while minimizing disruption to unaffected inventory.</p><div class="feature-panel-image"><img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=900&auto=format&fit=crop&q=80" alt="Recall management records and investigation workflow" /></div>
+        </div>
+        <div class="feature-panel" role="tabpanel" id="feature-panel-3" aria-labelledby="feature-tab-3">
+          <div class="feature-panel-title">Compliance Document Generation</div>
+          <div class="feature-panel-metric">8+ compliance frameworks supported</div>
+          <p class="feature-panel-desc">TransGenie also functions as an egg safety compliance software, helping teams maintain audit-ready records across operations.</p><div class="feature-panel-image"><img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=900&auto=format&fit=crop&q=80" alt="Compliance documents and audit-ready records" /></div>
+        </div>
+        <div class="feature-panel" role="tabpanel" id="feature-panel-4" aria-labelledby="feature-tab-4">
+          <div class="feature-panel-title">Cold Chain Integration</div>
+          <div class="feature-panel-metric">IoT &amp; mobile data capture</div>
+          <p class="feature-panel-desc">Our egg traceability solution links temperature logs, storage records, and transportation events within the same traceability record.</p><div class="feature-panel-image"><img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=900&auto=format&fit=crop&q=80" alt="Cold chain logistics and temperature-controlled storage" /></div>
+        </div>
+        <div class="feature-panel" role="tabpanel" id="feature-panel-5" aria-labelledby="feature-tab-5">
+          <div class="feature-panel-title">Egg Inventory Traceability Dashboard</div>
+          <div class="feature-panel-metric">Real-time inventory visibility</div>
+          <p class="feature-panel-desc">Our dashboard provides a live view of inventory status, lot movement, storage locations, and distribution progress across facilities.</p><div class="feature-panel-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&auto=format&fit=crop&q=80" alt="Inventory traceability dashboard analytics" /></div>
+        </div>
+        <div class="feature-panel" role="tabpanel" id="feature-panel-6" aria-labelledby="feature-tab-6">
+          <div class="feature-panel-title">Free-Range &amp; Organic Traceability</div>
+          <div class="feature-panel-metric">End-to-end chain-of-custody records</div>
+          <p class="feature-panel-desc">We help free range egg certification traceability and organic egg supply chain traceability with documented chain-of-custody records.</p><div class="feature-panel-image"><img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=900&auto=format&fit=crop&q=80" alt="Free-range organic egg production traceability" /></div>
+        </div>
+        <div class="feature-panel" role="tabpanel" id="feature-panel-7" aria-labelledby="feature-tab-7">
+          <div class="feature-panel-title">QR Code Traceability</div>
+          <div class="feature-panel-metric">Instant access to product history</div>
+          <p class="feature-panel-desc">With our egg traceability platform, teams, buyers, and retailers can effortlessly access traceability records through carton-level QR codes.</p><div class="feature-panel-image"><img src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=900&auto=format&fit=crop&q=80" alt="QR code product traceability scan" /></div>
+        </div>
+        <div class="feature-panel" role="tabpanel" id="feature-panel-8" aria-labelledby="feature-tab-8">
+          <div class="feature-panel-title">ERP &amp; System Integration</div>
+          <div class="feature-panel-metric">SAP, Oracle, Dynamics &amp; Odoo ready</div>
+          <p class="feature-panel-desc">Connect TransGenie's egg traceability platform with existing ERP, WMS, and business systems through pre-built integrations and APIs.</p>
+          <div class="feature-panel-image"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=900&auto=format&fit=crop&q=80" alt="ERP system integration and connected business data" /></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ IN ACTION / DASHBOARD ═══ -->
+<section class="tg-section action-section">
+  <div class="tg-container">
+    <div class="section-header" data-animate>
+      <h2 class="main-heading" style="color:#fff;">See TransGenie's Egg Traceability Software in Action</h2>
+      <p class="para" data-animate>Explore how TransGenie helps egg businesses track lots, manage compliance, and maintain visibility across the supply chain.</p>
+    </div>
+    <div class="action-grid">
+      <div class="action-card action-card-featured" data-animate>
+        <div class="action-card-num">01 · Dashboard</div>
+        <div class="action-card-title">Complete Farm &amp; Flock Visibility</div>
+        <div class="action-card-desc">Track active flocks, daily production, &amp; egg lots from a single dashboard without relying on spreadsheets or disconnected systems.</div>
+        <div class="action-card-tag">Real-time flock status &amp; active lot tracking</div>
+      </div>
+      <div class="action-card" data-animate>
+        <div class="action-card-num">02 · Trace</div>
+        <div class="action-card-title">One-Click Forward &amp; Backward Traceability</div>
+        <div class="action-card-desc">Select any lot or batch and instantly view its journey across production, grading, packing, storage, and distribution.</div>
+        <div class="action-card-tag">Trace lot in 8 seconds approx.</div>
+      </div>
+      <div class="action-card" data-animate>
+        <div class="action-card-num">03 · Recall</div>
+        <div class="action-card-title">Recall Management</div>
+        <div class="action-card-desc">Quickly find out the affected products and access the records required to support recall investigations.</div>
+        <div class="action-card-tag">Lot isolation in under 60 seconds</div>
+      </div>
+      <div class="action-card" data-animate>
+        <div class="action-card-num">04 · Cold Chain</div>
+        <div class="action-card-title">Inventory &amp; Cold Chain Tracking</div>
+        <div class="action-card-desc">Monitor inventory movement, storage locations, &amp; temperature records across your operations.</div>
+        <div class="action-card-tag">Real-time operational visibility</div>
+      </div>
+      <div class="action-card" data-animate>
+        <div class="action-card-num">05 · Compliance</div>
+        <div class="action-card-title">Compliance Reporting</div>
+        <div class="action-card-desc">Supports FDA egg traceability compliance software for producers and EU egg labeling traceability software requirements.</div>
+        <div class="action-card-tag">Audit-ready records</div>
+      </div>
+      <div class="action-card" data-animate>
+        <div class="action-card-num">06 · Export</div>
+        <div class="action-card-title">Export &amp; Shipment Tracking</div>
+        <div class="action-card-desc">Manage shipment history, origin records, and export documentation from one place.</div>
+        <div class="action-card-tag">Export-ready documentation</div>
+      </div>
+      <div class="action-card" data-animate>
+        <div class="action-card-num">07 · Overview</div>
+        <div class="action-card-title">Business Dashboard</div>
+        <div class="action-card-desc">Get a clear view of traceability, inventory, compliance, and supply chain activities across your operation.</div>
+        <div class="action-card-tag">One platform. Complete visibility</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FSMA 204 ═══ -->
+<section class="tg-section fsma-section">
+  <div class="tg-container">
+    <div class="section-header" data-animate>
+      <h2 class="main-heading">How Our Egg Traceability Software Supports FSMA 204 Compliance</h2>
+      <p class="para" style="margin-top:20px;">Eggs are included on the FDA Food Traceability List (FTL) and businesses should maintain lot-level traceability records across key supply chain events. Our egg traceability software helps producers, packers, &amp; distributors capture, organize, and retrieve the records needed to support FSMA 204 compliance.</p>
+    </div>
+    <div class="fsma-layout">
+      <div data-animate>
+        <h3 class="para-heading" style="margin-bottom:20px;">Key Traceability Requirements</h3>
+        <div class="fsma-table-wrapper">
+          <table class="fsma-table">
+            <thead>
+              <tr>
+                <th>Critical Tracking Event (CTE)</th>
+                <th>Key Data Elements (KDEs)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Farm / Harvesting</td>
+                <td>Flock ID, collection date, farm location</td>
+              </tr>
+              <tr>
+                <td>Cooling &amp; Storage</td>
+                <td>Temperature records, facility details</td>
+              </tr>
+              <tr>
+                <td>Grading &amp; Packing</td>
+                <td>Lot code, packing date, grade classification</td>
+              </tr>
+              <tr>
+                <td>Shipping &amp; Receiving</td>
+                <td>Origin, destination, quantity, lot reference</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div data-animate>
+        <h3 class="para-heading" style="margin-bottom:20px;">How We Help</h3>
+        <ul class="fsma-checklist">
+          <li><span class="fsma-check">✓</span> Maintain traceability lot records across every stage</li>
+          <li><span class="fsma-check">✓</span> Capture KDEs throughout the supply chain</li>
+          <li><span class="fsma-check">✓</span> Access FDA-ready traceability records on demand</li>
+          <li><span class="fsma-check">✓</span> Identify missing or incomplete traceability data</li>
+          <li><span class="fsma-check">✓</span> Retrieve lot history, shipment, and audit records from one platform</li>
+        </ul>
+        <div style="margin-top:36px;">
+          <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=700&auto=format&fit=crop&q=80" alt="Compliance dashboard for egg traceability and FDA records" style="border-radius:20px; box-shadow: 0 16px 44px rgba(22,70,39,0.10); width:100%;" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ROI ═══ -->
+<section class="tg-section roi-section">
+  <div class="tg-container">
+    <div class="section-header" data-animate>
+      <h2 class="main-heading">The ROI of Egg Traceability Software</h2>
+      <p class="para" style="margin-top:20px;">For many egg businesses, the biggest costs aren't always trackable. They appear as time spent searching for records, delayed audits, shipment holds, unnecessary product withdrawals, &amp; growing administrative workloads. Our egg traceability software helps turn those hidden costs into measurable operational gains.</p>
+    </div>
+    <div class="roi-points-grid">
+      <div class="roi-point" data-animate>
+        <div class="roi-point-top"><div class="roi-point-icon-wrap"><img class="roi-point-icon" src="egg-roi-icons/records-time.svg" alt="3D icon for time saved managing records" /></div><div class="roi-point-num">01</div></div>
+        <div class="roi-point-title">Spend Less Time Managing Records</div>
+        <div class="roi-point-desc">Our platform automates traceability recordkeeping &amp; reduces the time teams spend compiling spreadsheets, audit files, &amp; compliance records.</div>
+      </div>
+      <div class="roi-point" data-animate>
+        <div class="roi-point-top"><div class="roi-point-icon-wrap"><img class="roi-point-icon" src="egg-roi-icons/recall-protection.svg" alt="3D icon for recall revenue protection" /></div><div class="roi-point-num">02</div></div>
+        <div class="roi-point-title">Protect Revenue During Recalls</div>
+        <div class="roi-point-desc">With accurate lot-level traceability, businesses can find the affected products faster while reducing disruption and unnecessary inventory losses.</div>
+      </div>
+      <div class="roi-point" data-animate>
+        <div class="roi-point-top"><div class="roi-point-icon-wrap"><img class="roi-point-icon" src="egg-roi-icons/buyer-confidence.svg" alt="3D icon for buyer and retailer confidence" /></div><div class="roi-point-num">03</div></div>
+        <div class="roi-point-title">Strengthen Buyer &amp; Retailer Confidence</div>
+        <div class="roi-point-desc">Verified traceability records help meet supplier requirements as well as support long-term relationships with retailers, distributors, and export partners.</div>
+      </div>
+      <div class="roi-point" data-animate>
+        <div class="roi-point-top"><div class="roi-point-icon-wrap"><img class="roi-point-icon" src="egg-roi-icons/market-access.svg" alt="3D icon for higher-value market access" /></div><div class="roi-point-num">04</div></div>
+        <div class="roi-point-title">Access Higher-Value Markets</div>
+        <div class="roi-point-desc">Verified traceability records helps support free-range, organic, certified, and export programs. With better records, businesses can actively participate in these markets.</div>
+      </div>
+      <div class="roi-point" data-animate>
+        <div class="roi-point-top"><div class="roi-point-icon-wrap"><img class="roi-point-icon" src="egg-roi-icons/team-productivity.svg" alt="3D icon for team productivity" /></div><div class="roi-point-num">05</div></div>
+        <div class="roi-point-title">Improve Team Productivity</div>
+        <div class="roi-point-desc">With our software, farm, grading, packing, quality, and compliance teams can spend less time on administration and more time on operational priorities.</div>
+      </div>
+      <div class="roi-point" data-animate>
+        <div class="roi-point-top"><div class="roi-point-icon-wrap"><img class="roi-point-icon" src="egg-roi-icons/scale-growth.svg" alt="3D icon for scaling operations" /></div><div class="roi-point-num">06</div></div>
+        <div class="roi-point-title">Scale Operations with Confidence</div>
+        <div class="roi-point-desc">As production volumes grow, our solution helps businesses manage additional products, facilities, and compliance requirements without increasing recordkeeping complexity.</div>
+      </div>
+    </div>
+    <h3 class="para-heading" style="margin-bottom:24px;" data-animate>Where Businesses See Value</h3>
+    <div class="roi-table-wrapper" data-animate>
+      <table class="roi-table">
+        <thead>
+          <tr>
+            <th>Operational Impact</th>
+            <th>Metric</th>
+            <th>Business Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Faster lot and batch investigations</td><td>Under 8 Seconds</td><td>Quicker decision-making and response times</td></tr>
+          <tr><td>Rapid identification of affected products</td><td>Under 60 Seconds</td><td>Reduced recall exposure and product loss</td></tr>
+          <tr><td>Minimized unnecessary inventory withdrawals</td><td>97% Preserved Inventory</td><td>Better revenue protection during recalls</td></tr>
+          <tr><td>Faster deployment and user adoption</td><td>2–4 Week Go-Live</td><td>Quicker return on investment</td></tr>
+          <tr><td>Connected records across every handoff</td><td>100% Lot-to-Batch Traceability</td><td>Stronger compliance and audit readiness</td></tr>
+          <tr><td>Continuous inventory and temperature monitoring</td><td>24/7 Visibility</td><td>Improved operational control and product integrity</td></tr>
+          <tr><td>Centralized traceability, compliance, and inventory records</td><td>1 Connected Platform</td><td>Lower administrative effort and system complexity</td></tr>
+          <tr><td>Support for FDA, EU, certification, and export requirements</td><td>8+ Compliance Standards</td><td>Greater market access and buyer confidence</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="para" style="margin-top:28px;" data-animate>TransGenie's egg traceability software helps businesses reduce operational friction, protect revenue, &amp; thereby build a more efficient, verifiable farm-to-shelf supply chain.</p>
+  </div>
+</section>
+
+<!-- ═══ AUDIENCE ═══ -->
+<section class="tg-section audience-section">
+  <div class="tg-container">
+    <div class="section-header" data-animate>
+      <h2 class="main-heading">From Layer Farms to Exporters—Built for the Entire Egg Supply Chain</h2>
+      <p class="para" style="margin-top:20px;">Our egg traceability software is designed for egg producers, packers, processors, distributors, and exporters. Whether you are managing a single farm or a multi-site supply chain, our team helps you maintain traceability, compliance, and operational visibility from one platform.</p>
+    </div>
+    <div class="audience-grid">
+      <div class="audience-card" data-animate>
+        <div class="audience-num">01</div>
+        <div class="audience-title">Egg Producers</div>
+        <div class="audience-desc">Helps track flock records, production data, lot creation, &amp; farm-level traceability from collection through shipment.</div>
+      </div>
+      <div class="audience-card" data-animate>
+        <div class="audience-num">02</div>
+        <div class="audience-title">Layer Farms</div>
+        <div class="audience-desc">Helpful to maintain flock history, housing records, feed inputs, &amp; production activities linked to every egg lot.</div>
+      </div>
+      <div class="audience-card" data-animate>
+        <div class="audience-num">03</div>
+        <div class="audience-title">Egg Packing Stations</div>
+        <div class="audience-desc">Supports connecting with grading, packing, labelling, &amp; carton-level records while maintaining complete batch traceability.</div>
+      </div>
+      <div class="audience-card" data-animate>
+        <div class="audience-num">04</div>
+        <div class="audience-title">Egg Processors</div>
+        <div class="audience-desc">Our egg processing traceability software helps manage traceability across incoming lots, processing activities, storage, &amp; outbound shipments.</div>
+      </div>
+      <div class="audience-card" data-animate>
+        <div class="audience-num">05</div>
+        <div class="audience-title">Egg Distributors</div>
+        <div class="audience-desc">Used to track inventory movement, shipment transfers, receiving records, &amp; product history across distribution networks.</div>
+      </div>
+      <div class="audience-card" data-animate>
+        <div class="audience-num">06</div>
+        <div class="audience-title">Egg Exporters</div>
+        <div class="audience-desc">Helps maintain export documentation, origin records, shipment history, &amp; compliance data required for international markets.</div>
+      </div>
+      <div class="audience-card" data-animate>
+        <div class="audience-num">07</div>
+        <div class="audience-title">Organic &amp; Free-Range Egg Producers</div>
+        <div class="audience-desc">Support certification requirements with documented chain-of-custody and traceability records across the supply chain.</div>
+      </div>
+      <div class="audience-card" data-animate>
+        <div class="audience-num">08</div>
+        <div class="audience-title">Multi-Site Egg Operations</div>
+        <div class="audience-desc">Helps standardize traceability processes &amp; reporting across farms, packing facilities, warehouses, and distribution centres.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ COMPARISON TABLE ═══ -->
+<section class="tg-section comparison-section">
+  <div class="tg-container">
+    <div class="section-header" data-animate>
+      <h2 class="main-heading">Built for Egg Operations, Not Generic Food Traceability</h2>
+      <p class="para" style="margin-top:20px;">Most traceability systems were designed for general food operations &amp; later adapted for eggs. TransGenie's egg traceability software is built around the workflows, compliance requirements, and traceability challenges unique to the egg supply chain.</p>
+    </div>
+    <div class="comparison-table-wrapper" data-animate>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Capability</th>
+            <th>Traditional Methods</th>
+            <th>Generic Traceability Software</th>
+            <th class="tg-col">TransGenie</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Egg lot &amp; batch tracking</td>
+            <td>Manual records</td>
+            <td>Limited customization</td>
+            <td class="tg-col">Purpose-built for egg operations</td>
+          </tr>
+          <tr>
+            <td>Flock-to-lot traceability</td>
+            <td>Difficult to maintain</td>
+            <td>Often requires custom setup</td>
+            <td class="tg-col">Built into the platform</td>
+          </tr>
+          <tr>
+            <td>FSMA 204 support</td>
+            <td>Manual preparation</td>
+            <td>Partial support</td>
+            <td class="tg-col">Designed for traceability requirements</td>
+          </tr>
+          <tr>
+            <td>Cold chain tracking</td>
+            <td>Separate systems</td>
+            <td>Additional integrations</td>
+            <td class="tg-col">Connected within one platform</td>
+          </tr>
+          <tr>
+            <td>Export documentation</td>
+            <td>Manual compilation</td>
+            <td>Limited workflows</td>
+            <td class="tg-col">Generated from traceability records</td>
+          </tr>
+          <tr>
+            <td>Recall readiness</td>
+            <td>Time-consuming investigations</td>
+            <td>Basic record access</td>
+            <td class="tg-col">Rapid lot-level traceability</td>
+          </tr>
+          <tr>
+            <td>Supply chain visibility</td>
+            <td>Fragmented records</td>
+            <td>Limited operational context</td>
+            <td class="tg-col">End-to-end visibility</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="comparison-cta-box" data-animate>
+      <p>Ready to replace disconnected systems and manual recordkeeping with a single egg traceability platform?</p>
+      <a href="#demo" class="btn-tg-white">Book a Demo <span aria-hidden="true">→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CASE STUDIES ═══ -->
+<section class="tg-section cases-section">
+  <div class="tg-container">
+    <div class="section-header" data-animate>
+      <h2 class="main-heading">Real-World Traceability Success Stories</h2>
+      <p class="para" style="margin-top:20px;">See how businesses use TransGenie to improve traceability, visibility, and operational efficiency across their supply chains.</p>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card" data-animate>
+        <img class="case-card-img" src="https://images.unsplash.com/photo-1527525443983-6e60c75fff46?w=700&auto=format&fit=crop&q=80" alt="Farmsent blockchain food traceability platform" />
+        <div class="case-card-body">
+          <div class="case-tag">Blockchain Food Traceability</div>
+          <div class="case-title">Farmsent</div>
+          <div class="case-desc">We helped Farmsent build a blockchain-enabled traceability platform that connects farmers, buyers, and product records through a transparent digital ecosystem.</div>
+        </div>
+      </div>
+      <div class="case-card" data-animate>
+        <img class="case-card-img" src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=700&auto=format&fit=crop&q=80" alt="First TrackIt real-time production tracking" />
+        <div class="case-card-body">
+          <div class="case-tag">Real-Time Production Tracking</div>
+          <div class="case-title">First TrackIt</div>
+          <div class="case-desc">We developed a production tracking solution that gives teams real-time visibility into operations, helping improve workflow monitoring and operational efficiency.</div>
+        </div>
+      </div>
+      <div class="case-card" data-animate>
+        <img class="case-card-img" src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=700&auto=format&fit=crop&q=80" alt="Truely product transparency and consumer trust" />
+        <div class="case-card-body">
+          <div class="case-tag">Product Transparency &amp; Consumer Trust</div>
+          <div class="case-title">Truely</div>
+          <div class="case-desc">We enabled end-to-end product traceability, helping Truely strengthen transparency and provide greater visibility into product origins and movement.</div>
+        </div>
+      </div>
+      <div class="case-card" data-animate>
+        <img class="case-card-img" src="https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=700&auto=format&fit=crop&q=80" alt="BoxFood digitized food supply chain" />
+        <div class="case-card-body">
+          <div class="case-tag">Digitized Food Supply Chain Operations</div>
+          <div class="case-title">BoxFood</div>
+          <div class="case-desc">We helped BoxFood digitize traceability processes across sourcing, inventory, &amp; distribution, creating better visibility throughout the supply chain.</div>
+        </div>
+      </div>
+    </div>
+    <div class="cases-cta-row" data-animate>
+      <p>Let's build a traceability system that fits your operation—not the other way around.</p>
+      <a href="#demo" class="btn-tg-primary">See How TransGenie Works</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="tg-section testimonials-section">
+  <div class="tg-container">
+    <h2 class="main-heading" data-animate>What Our Customers Say About Working with TransGenie</h2>
+    <p class="para" style="margin-top:20px;" data-animate>Businesses across food, supply chain, and traceability ecosystems trust our team to turn complex operational requirements into practical, scalable solutions.</p>
+    <div class="testimonials-grid">
+      <div class="testimonial-card" data-animate>
+        <div class="testimonial-quote">We want to convey our sincere appreciation to Transgenie for their steadfast patience, unyielding persistence, and exemplary professionalism. The decision to partner with Transgenie for the food traceability initiative proved to be a strategic choice, yielding outstanding results. Their unwavering commitment and deep expertise have not only elevated our collaboration but have also positioned them as the preferred team for avant-garde and trustworthy technological solutions.</div>
+        <div>
+          <div class="testimonial-author-name">Yog Shrusti</div>
+          <div class="testimonial-author-role">CEO, Farmsent — Dubai</div>
+          <div class="testimonial-company">Blockchain Food Traceability | Farm-to-Buyer Platform</div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-animate>
+        <div class="testimonial-quote">We express our sincere gratitude to Transgenie for their invaluable role in developing our FirstTrackIt app. Their unwavering support and technical expertise have been instrumental in bringing our vision to life. With Transgenie's collaboration, we now have a cutting-edge and user-friendly app that has revolutionized our order-tracking process. Thank you for your dedication and exceptional contributions.</div>
+        <div>
+          <div class="testimonial-author-name">First Solutions</div>
+          <div class="testimonial-author-role">CEO of FirstTrackIt, United States</div>
+          <div class="testimonial-company">Real-Time Production Tracking</div>
+        </div>
+      </div>
+      <div class="testimonial-card" data-animate>
+        <div class="testimonial-quote">We extend our sincere appreciation to Transgenie for their remarkable patience, tenacity, and professionalism. Opting for Transgenie for our food delivery app development proved to be a strategic choice that yielded outstanding results. Their unwavering commitment and profound expertise have significantly elevated the standards of our partnership, establishing them as our preferred team for cutting-edge and dependable tech solutions.</div>
+        <div>
+          <div class="testimonial-author-name">Krishna</div>
+          <div class="testimonial-author-role">CEO of Truely, India</div>
+          <div class="testimonial-company">Product Transparency &amp; Consumer Trust</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="tg-section faq-section">
+  <div class="tg-container">
+    <div class="faq-layout">
+      <div class="faq-sticky" data-animate>
+        <h2 class="main-heading">Frequently Asked Questions</h2>
+      </div>
+      <ul class="faq-list" data-animate>
+        <li class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How does an egg traceability system work?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">An egg traceability system designed at TransGenie captures and links records from farms, grading stations, packing facilities, warehouses, and distribution channels. This helps businesses maintain complete lot and batch history throughout the supply chain.</div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Who uses egg traceability software?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Egg producers, layer farms, packing stations, processors, distributors, exporters, and certification-focused operations use our egg traceability software to improve visibility, compliance, and recall readiness.</div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How does egg traceability software support recalls?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">By maintaining lot-level traceability records, businesses can identify affected products faster, review product history, and access the records needed during recall investigations.</div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can egg traceability software help with FDA compliance?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Yes. Our platform helps businesses maintain traceability records that support FDA traceability requirements, audits, inspections, and food safety initiatives.</div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Does TransGenie support free-range and organic egg operations?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Yes. Our egg traceability solution helps maintain chain-of-custody records and traceability documentation needed to support free-range, organic, and certification-based production programs.</div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can I integrate TransGenie with my existing systems?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Yes. Our platform supports integrations with ERP, inventory, warehouse, and business systems through APIs and pre-built connectors.</div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Is TransGenie egg traceability software suitable for exporters?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Yes. Our egg traceability software helps exporters manage shipment records, origin information, traceability documentation, and compliance data needed for international markets.</div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How quickly can TransGenie be implemented?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Most egg traceability deployments are completed within 2–4 weeks, depending on facilities, integrations, workflows, and operational complexity.</div>
+        </li>
+        <li class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            How much does TransGenie's egg traceability software cost?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">Pricing depends on facility count, users, integrations, compliance requirements, and deployment scope. Contact our team for a tailored demo and pricing discussion.</div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="tg-section final-cta-section" id="demo">
+  <div class="tg-container">
+    <div class="final-cta-panel" data-animate>
+      <h2 class="main-heading" style="text-align:center; max-width:720px; margin:0 auto 20px;">Ready to Modernize Egg Traceability?</h2>
+      <p class="para" style="text-align:center;">Replace spreadsheets, paper records, &amp; disconnected systems with an egg traceability software built for producers, packers, processors, and exporters.</p>
+      <div style="display:flex; justify-content:center;">
+        <a href="https://www.transgenie.io/contact" class="btn-tg-primary" style="height:56px; font-size:17px; padding: 0 36px;">Talk to Our Team</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="tg-footer">
+  <div class="tg-container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand">Trans<span>Genie</span></div>
+        <p class="footer-desc">End-to-end supply chain traceability software for food producers, packers, processors, and exporters worldwide.</p>
+      </div>
+      <div class="col-lg-2 col-6">
+        <div class="footer-heading">Solutions</div>
+        <ul class="footer-links">
+          <li><a href="#">Egg Traceability</a></li>
+          <li><a href="#">Meat &amp; Seafood</a></li>
+          <li><a href="#">Supply Chain DPP</a></li>
+          <li><a href="#">FSMA Compliance</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-6">
+        <div class="footer-heading">Company</div>
+        <ul class="footer-links">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Insights</a></li>
+          <li><a href="#">Case Studies</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-6">
+        <div class="footer-heading">Technology</div>
+        <ul class="footer-links">
+          <li><a href="#">Blockchain</a></li>
+          <li><a href="#">IoT Integration</a></li>
+          <li><a href="#">AI Platform</a></li>
+          <li><a href="#">API &amp; ERP</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-6">
+        <div class="footer-heading">Compliance</div>
+        <ul class="footer-links">
+          <li><a href="#">FSMA 204</a></li>
+          <li><a href="#">EU Directive</a></li>
+          <li><a href="#">Organic Cert</a></li>
+          <li><a href="#">Export Docs</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 TransGenie. All rights reserved.</span>
+      <div style="display:flex; gap:24px;">
+        <a href="#" style="font-size:13px; color:var(--color-secondary-text); text-decoration:none;">Privacy Policy</a>
+        <a href="#" style="font-size:13px; color:var(--color-secondary-text); text-decoration:none;">Terms of Use</a>
+        <a href="#" style="font-size:13px; color:var(--color-secondary-text); text-decoration:none;">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══ FAQ SCHEMA ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does an egg traceability system work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An egg traceability system designed at TransGenie captures and links records from farms, grading stations, packing facilities, warehouses, and distribution channels. This helps businesses maintain complete lot and batch history throughout the supply chain."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who uses egg traceability software?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Egg producers, layer farms, packing stations, processors, distributors, exporters, and certification-focused operations use our egg traceability software to improve visibility, compliance, and recall readiness."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How does egg traceability software support recalls?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "By maintaining lot-level traceability records, businesses can identify affected products faster, review product history, and access the records needed during recall investigations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can egg traceability software help with FDA compliance?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our platform helps businesses maintain traceability records that support FDA traceability requirements, audits, inspections, and food safety initiatives."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does TransGenie support free-range and organic egg operations?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our egg traceability solution helps maintain chain-of-custody records and traceability documentation needed to support free-range, organic, and certification-based production programs."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I integrate TransGenie with my existing systems?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our platform supports integrations with ERP, inventory, warehouse, and business systems through APIs and pre-built connectors."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is TransGenie egg traceability software suitable for exporters?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Our egg traceability software helps exporters manage shipment records, origin information, traceability documentation, and compliance data needed for international markets."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How quickly can TransGenie be implemented?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most egg traceability deployments are completed within 2–4 weeks, depending on facilities, integrations, workflows, and operational complexity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much does TransGenie's egg traceability software cost?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Pricing depends on facility count, users, integrations, compliance requirements, and deployment scope. Contact our team for a tailored demo and pricing discussion."
+      }
+    }
+  ]
+}
+</script>
+
+<script>
+  // ── FAQ ACCORDION ──
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.faq-question.open').forEach(b => {
+        b.classList.remove('open');
+        b.setAttribute('aria-expanded', 'false');
+        b.nextElementSibling.classList.remove('open');
+      });
+      if (!isOpen) {
+        btn.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+        answer.classList.add('open');
+      }
+    });
+  });
+
+  // ── SCROLL REVEAL ──
+  // Interactive feature explorer
+  const featureTabs = document.querySelectorAll('.feature-tab');
+  const featurePanels = document.querySelectorAll('.feature-panel');
+
+  featureTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const targetId = tab.getAttribute('data-feature-target');
+
+      featureTabs.forEach(item => {
+        item.classList.remove('is-active');
+        item.setAttribute('aria-selected', 'false');
+      });
+
+      featurePanels.forEach(panel => {
+        panel.classList.toggle('is-active', panel.id === targetId);
+      });
+
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+    });
+  });
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('is-visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Interactive seafood supply chain traceability self-assessment." />
+  <title>Seafood Traceability Self-Assessment | TransGenie</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green: #2e9f4d;
+      --green-dark: #1f7f3c;
+      --green-soft: #eaf7ef;
+      --text: #151515;
+      --muted: #6b7280;
+      --border: #e6eae7;
+      --canvas: #f7f7f7;
+      --amber: #b7791f;
+      --amber-soft: #fff7e5;
+      --red: #b4534f;
+      --red-soft: #fff0ee;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-width: 320px;
+      margin: 0;
+      background: #fff;
+      color: var(--text);
+      font-family: "Inter", Arial, sans-serif;
+    }
+
+    .infographic {
+      position: relative;
+      isolation: isolate;
+      width: min(777px, calc(100vw - 32px));
+      margin: 16px auto;
+      padding: 43px 52px 40px;
+      overflow: hidden;
+      border-radius: 30px;
+      background: var(--canvas);
+    }
+
+    .infographic::before {
+      position: absolute;
+      z-index: -1;
+      inset: 28px;
+      border: 2px solid #989898;
+      border-radius: 30px;
+      content: "";
+    }
+
+    .corner-lines {
+      position: absolute;
+      z-index: -1;
+      width: 225px;
+      height: 225px;
+      border: 1px solid rgba(134, 134, 134, .17);
+      border-radius: 50%;
+    }
+
+    .corner-lines::before,
+    .corner-lines::after {
+      position: absolute;
+      inset: 27px;
+      border: 1px solid rgba(134, 134, 134, .14);
+      border-radius: inherit;
+      content: "";
+    }
+
+    .corner-lines::after { inset: 54px; }
+    .corner-lines.top { top: -173px; left: -106px; }
+    .corner-lines.bottom { right: -106px; bottom: -173px; }
+
+    .header { max-width: 560px; margin: 0 auto 22px; text-align: center; }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(24px, 3.8vw, 30px);
+      font-weight: 700;
+      letter-spacing: -.055em;
+      line-height: 1.16;
+    }
+
+    .intro {
+      margin: 9px 0 0;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    .interactive-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(184px, .78fr);
+      align-items: start;
+      gap: 14px;
+    }
+
+    .status-panel {
+      grid-column: 2;
+      grid-row: 1;
+      padding: 14px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, .76);
+    }
+
+    .score-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+      margin-bottom: 13px;
+      padding: 15px;
+      border: 1px solid #cde8d6;
+      border-radius: 15px;
+      background: rgba(234, 247, 239, .78);
+    }
+
+    .score-copy { color: var(--green-dark); font-size: 13px; font-weight: 600; }
+    .score-value { color: var(--green-dark); font-size: 34px; font-weight: 700; letter-spacing: -.055em; line-height: 1; }
+    .score-value span { font-size: 14px; font-weight: 600; }
+
+    .assessment { grid-column: 1; grid-row: 1; align-self: start; display: grid; gap: 8px; }
+
+    .check-row {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-height: 52px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, .96);
+      cursor: pointer;
+      transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+    }
+
+    .check-row:hover { border-color: #cde8d6; box-shadow: 0 8px 20px rgba(22, 70, 39, .06); transform: translateY(-1px); }
+    .check-row.is-checked { border-color: #a7d8b5; background: #fbfefc; }
+
+    .check-row input {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .checkbox {
+      display: grid;
+      width: 21px;
+      height: 21px;
+      flex: 0 0 21px;
+      place-items: center;
+      border: 1.5px solid #a8b0ac;
+      border-radius: 6px;
+      color: #fff;
+      transition: background .2s ease, border-color .2s ease;
+    }
+
+    .checkbox svg { width: 14px; height: 14px; fill: none; opacity: 0; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.5; transition: opacity .2s ease; }
+    .check-row.is-checked .checkbox { border-color: var(--green); background: var(--green); }
+    .check-row.is-checked .checkbox svg { opacity: 1; }
+
+    .question { flex: 1; font-size: clamp(12px, 1.65vw, 14px); font-weight: 500; line-height: 1.35; }
+    .point { color: var(--green); font-size: 12px; font-weight: 700; white-space: nowrap; }
+
+    .results { display: grid; gap: 7px; margin-top: 0; }
+
+    .result {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      min-height: 40px;
+      padding: 8px 11px;
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      background: rgba(255,255,255,.7);
+      color: var(--muted);
+      transition: background .22s ease, border-color .22s ease, color .22s ease, box-shadow .22s ease;
+    }
+
+    .range { min-width: 34px; font-size: 13px; font-weight: 700; }
+    .result-text { font-size: 12px; font-weight: 600; line-height: 1.3; }
+    .result.is-active { box-shadow: 0 8px 20px rgba(22, 70, 39, .08); }
+    .result.gap.is-active { border-color: #efc9c5; background: var(--red-soft); color: var(--red); }
+    .result.moderate.is-active { border-color: #f0d69b; background: var(--amber-soft); color: var(--amber); }
+    .result.strong.is-active { border-color: #a7d8b5; background: var(--green-soft); color: var(--green-dark); }
+
+    .reset {
+      display: block;
+      margin: 12px auto 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      font: inherit;
+      font-size: 12px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .reset:hover { color: var(--green-dark); }
+    :focus-visible { outline: 3px solid rgba(46, 159, 77, .35); outline-offset: 3px; }
+
+    @media (max-width: 520px) {
+      .infographic { width: calc(100vw - 20px); padding: 42px 26px 34px; border-radius: 24px; }
+      .infographic::before { inset: 14px; border-radius: 22px; }
+      .interactive-layout { grid-template-columns: 1fr; }
+      .status-panel { grid-column: auto; order: 2; }
+      .assessment { grid-column: auto; }
+      .score-card { flex-direction: row; align-items: center; justify-content: space-between; }
+      .question { font-size: 12px; }
+      .check-row { padding-right: 11px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="infographic" aria-labelledby="assessment-title">
+    <span class="corner-lines top" aria-hidden="true"></span>
+    <span class="corner-lines bottom" aria-hidden="true"></span>
+
+    <header class="header">
+      <h1 id="assessment-title">How Traceable is Your<br />Seafood Supply Chain?</h1>
+    </header>
+
+    <section class="interactive-layout" aria-label="Interactive seafood traceability self-assessment">
+      <aside class="status-panel">
+        <section class="score-card" aria-live="polite" aria-atomic="true">
+          <span class="score-copy">Your traceability score</span>
+          <strong class="score-value"><span id="score">0</span> <span>/ 5</span></strong>
+        </section>
+        <section class="results" aria-label="Traceability readiness result">
+          <div class="result gap" data-result="gap"><span class="range">0–2</span><span class="result-text">Significant traceability gaps</span></div>
+          <div class="result moderate" data-result="moderate"><span class="range">3–4</span><span class="result-text">Moderate traceability maturity</span></div>
+          <div class="result strong" data-result="strong"><span class="range">5</span><span class="result-text">Strong traceability readiness</span></div>
+        </section>
+        <button class="reset" type="button">Reset assessment</button>
+      </aside>
+
+      <form class="assessment" aria-label="Seafood traceability self-assessment">
+      <label class="check-row">
+        <input type="checkbox" value="1" />
+        <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8.2 6.3 11.4 13 4.8" /></svg></span>
+        <span class="question">Can you trace products back to harvest?</span>
+        <span class="point">(+1)</span>
+      </label>
+      <label class="check-row">
+        <input type="checkbox" value="1" />
+        <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8.2 6.3 11.4 13 4.8" /></svg></span>
+        <span class="question">Do you maintain digital traceability records?</span>
+        <span class="point">(+1)</span>
+      </label>
+      <label class="check-row">
+        <input type="checkbox" value="1" />
+        <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8.2 6.3 11.4 13 4.8" /></svg></span>
+        <span class="question">Can you locate affected batches quickly?</span>
+        <span class="point">(+1)</span>
+      </label>
+      <label class="check-row">
+        <input type="checkbox" value="1" />
+        <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8.2 6.3 11.4 13 4.8" /></svg></span>
+        <span class="question">Are you prepared for FSMA 204 requirements?</span>
+        <span class="point">(+1)</span>
+      </label>
+      <label class="check-row">
+        <input type="checkbox" value="1" />
+        <span class="checkbox" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8.2 6.3 11.4 13 4.8" /></svg></span>
+        <span class="question">Can customers access sourcing information?</span>
+        <span class="point">(+1)</span>
+      </label>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const assessment = document.querySelector('.assessment');
+    const inputs = [...assessment.querySelectorAll('input[type="checkbox"]')];
+    const scoreElement = document.getElementById('score');
+    const results = [...document.querySelectorAll('.result')];
+    let hasInteracted = false;
+
+    function updateAssessment() {
+      const score = inputs.filter((input) => input.checked).length;
+      scoreElement.textContent = score;
+
+      inputs.forEach((input) => input.closest('.check-row').classList.toggle('is-checked', input.checked));
+      const activeResult = score <= 2 ? 'gap' : score <= 4 ? 'moderate' : 'strong';
+      results.forEach((result) => result.classList.toggle('is-active', hasInteracted && result.dataset.result === activeResult));
+    }
+
+    assessment.addEventListener('change', () => {
+      hasInteracted = true;
+      updateAssessment();
+    });
+    document.querySelector('.reset').addEventListener('click', () => {
+      inputs.forEach((input) => { input.checked = false; });
+      hasInteracted = false;
+      updateAssessment();
+    });
+  </script>
+</body>
+</html>
