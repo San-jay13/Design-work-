@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sparkout Technology Adoption Chat Section</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --white: #ffffff;
+      --page-bg: #f8fafc;
+      --font: #0b1220;
+      --navy: #192a44;
+      --muted: #6b7280;
+      --stroke: #64748b;
+      --border: #e5e7eb;
+      --orange: #ff6c1a;
+      --orange-deep: #ff4d0d;
+      --success: #14885f;
+      --amber-soft: #fff4ec;
+      --green-soft: #ecfdf5;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.08);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --cycle: 7s;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      background: var(--page-bg);
+      color: var(--font);
+      font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .chat-section {
+      width: min(915px, 100%);
+      height: 390px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(90deg, rgba(255, 108, 26, 0.052) 0 1px, transparent 1px 100%),
+        linear-gradient(0deg, rgba(25, 42, 68, 0.045) 0 1px, transparent 1px 100%),
+        linear-gradient(135deg, rgba(255, 244, 236, 0.9), rgba(255, 255, 255, 0.62) 46%, rgba(248, 250, 252, 0.92)),
+        var(--white);
+      background-size: 34px 34px, 34px 34px, auto, auto;
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+
+    .section-head {
+      position: relative;
+      z-index: 2;
+      height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 26px 12px;
+      border-bottom: 1px solid rgba(229, 231, 235, 0.9);
+      background: rgba(255, 255, 255, 0.76);
+      backdrop-filter: blur(14px);
+    }
+
+    .section-title {
+      min-width: 0;
+    }
+
+    .section-title strong {
+      display: block;
+      color: var(--navy);
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    .section-title span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .type-pill {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      padding: 0 13px;
+      border: 1px solid rgba(255, 108, 26, 0.26);
+      border-radius: 999px;
+      background: var(--amber-soft);
+      color: var(--orange-deep);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .chat-board {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 94px minmax(0, 1fr);
+      gap: 18px;
+      height: calc(100% - 66px);
+      padding: 18px 26px 24px;
+    }
+
+    .chat-lane {
+      min-width: 0;
+      position: relative;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      border: 1px solid rgba(229, 231, 235, 0.92);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow-md);
+    }
+
+    .chat-lane.before {
+      border-color: rgba(100, 116, 139, 0.28);
+      animation: beforeLane var(--cycle) ease-in-out infinite;
+    }
+
+    .chat-lane.after {
+      border-color: rgba(255, 108, 26, 0.3);
+      background:
+        linear-gradient(180deg, rgba(255, 244, 236, 0.92), rgba(255, 255, 255, 0.9));
+      animation: afterLane var(--cycle) ease-in-out infinite;
+    }
+
+    .lane-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 12px 14px 4px;
+    }
+
+    .lane-label b {
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .lane-label span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 0 10px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .before .lane-label span {
+      color: var(--stroke);
+      background: #f8fafc;
+      border: 1px solid rgba(100, 116, 139, 0.2);
+    }
+
+    .after .lane-label span {
+      color: var(--orange-deep);
+      background: var(--amber-soft);
+      border: 1px solid rgba(255, 108, 26, 0.22);
+    }
+
+    .messages {
+      display: grid;
+      gap: 8px;
+      padding: 10px 14px 14px;
+      align-content: start;
+    }
+
+    .bubble {
+      position: relative;
+      min-height: 42px;
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 9px;
+      align-items: center;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      color: var(--stroke);
+    }
+
+    .bubble::before {
+      content: "";
+      position: absolute;
+      left: 24px;
+      bottom: -9px;
+      width: 2px;
+      height: 8px;
+      background: currentColor;
+      opacity: 0.45;
+    }
+
+    .bubble:last-child::before {
+      display: none;
+    }
+
+    .bubble-icon {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      border: 1px solid rgba(100, 116, 139, 0.2);
+      background: #f8fafc;
+      color: inherit;
+    }
+
+    .bubble-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 2;
+    }
+
+    .bubble b {
+      display: block;
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .bubble small {
+      display: block;
+      margin-top: 1px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .before .bubble:nth-child(2) {
+      animation: resistanceShake var(--cycle) ease-in-out infinite;
+    }
+
+    .before .bubble:nth-child(3),
+    .before .bubble:nth-child(4) {
+      animation: weakOutcome var(--cycle) ease-in-out infinite;
+    }
+
+    .before .bubble:nth-child(1) {
+      animation: beforeBuildOne var(--cycle) ease-in-out infinite;
+    }
+
+    .before .bubble:nth-child(3) {
+      animation-name: beforeBuildDim;
+    }
+
+    .before .bubble:nth-child(4) {
+      animation-name: beforeBuildDrop;
+    }
+
+    .after .bubble {
+      color: var(--orange);
+      animation: adoptionReveal var(--cycle) ease-in-out infinite;
+    }
+
+    .after .bubble:nth-child(2) {
+      border-color: rgba(255, 108, 26, 0.24);
+      background: linear-gradient(135deg, rgba(255, 244, 236, 0.96), rgba(255, 255, 255, 0.98));
+      animation-name: trainingReveal;
+    }
+
+    .after .bubble:nth-child(2) .bubble-icon {
+      background: linear-gradient(135deg, var(--orange), var(--orange-deep));
+      border-color: transparent;
+      color: var(--white);
+      box-shadow: 0 8px 18px rgba(255, 108, 26, 0.22);
+    }
+
+    .after .bubble:nth-child(3) {
+      color: var(--orange);
+      animation-name: adoptionStepReveal;
+    }
+
+    .after .bubble:nth-child(4) {
+      color: var(--success);
+      border-color: rgba(20, 136, 95, 0.22);
+      animation-name: businessGrowthReveal;
+    }
+
+    .after .bubble:nth-child(4) .bubble-icon {
+      color: var(--success);
+      background: var(--green-soft);
+      border-color: rgba(20, 136, 95, 0.2);
+    }
+
+    .transform-zone {
+      position: relative;
+      display: grid;
+      place-items: center;
+      overflow: visible;
+    }
+
+    .transform-zone::before,
+    .transform-zone::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 50%;
+      height: 1px;
+      background: rgba(255, 108, 26, 0.38);
+      z-index: 0;
+    }
+
+    .transform-zone::before {
+      left: 0;
+    }
+
+    .transform-zone::after {
+      right: 0;
+    }
+
+    .transform-button {
+      width: 68px;
+      height: 68px;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255, 108, 26, 0.28);
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--orange), var(--orange-deep));
+      color: var(--white);
+      box-shadow: 0 16px 34px rgba(255, 108, 26, 0.24);
+      animation: transformPulse var(--cycle) ease-in-out infinite;
+    }
+
+    .transform-button::after {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border: 1px solid rgba(255, 108, 26, 0.28);
+      border-radius: inherit;
+      opacity: 0;
+      animation: transformRing var(--cycle) ease-in-out infinite;
+    }
+
+    .transform-button svg {
+      width: 32px;
+      height: 32px;
+      stroke-width: 2.45;
+      animation: arrowSlide var(--cycle) ease-in-out infinite;
+    }
+
+    .moving-signal {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      border: 3px solid var(--orange);
+      border-radius: 999px;
+      background: var(--white);
+      box-shadow: 0 0 0 8px rgba(255, 108, 26, 0.16), 0 0 24px rgba(255, 108, 26, 0.32);
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      z-index: 3;
+      animation: signalTravel var(--cycle) ease-in-out infinite;
+    }
+
+    @keyframes beforeLane {
+      0%, 43% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: saturate(1);
+      }
+      56%, 100% {
+        opacity: 0.48;
+        transform: translateX(-5px);
+        filter: saturate(0.46);
+      }
+    }
+
+    @keyframes afterLane {
+      0%, 48% {
+        opacity: 0.34;
+        transform: translateX(5px);
+        filter: saturate(0.58);
+      }
+      62%, 100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: saturate(1);
+      }
+    }
+
+    @keyframes beforeBuildOne {
+      0% {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      10%, 100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes resistanceShake {
+      0%, 10% {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+      18%, 28%, 100% {
+        opacity: 1;
+        transform: translateX(0);
+        box-shadow: var(--shadow-sm);
+      }
+      34%, 43% {
+        transform: translateX(-4px);
+        border-color: rgba(100, 116, 139, 0.34);
+        box-shadow: 0 10px 26px rgba(100, 116, 139, 0.12);
+      }
+      38%, 47% {
+        transform: translateX(4px);
+      }
+      51% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes beforeBuildDim {
+      0%, 18% {
+        opacity: 0;
+        transform: translateY(8px) scale(1);
+      }
+      28%, 42% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      54%, 100% {
+        opacity: 0.45;
+        transform: translateY(0) scale(0.985);
+      }
+    }
+
+    @keyframes beforeBuildDrop {
+      0%, 28% {
+        opacity: 0;
+        transform: translateY(8px) scale(1);
+      }
+      38%, 46% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+      56%, 100% {
+        opacity: 0.36;
+        transform: translateY(0) scale(0.975);
+        border-color: rgba(100, 116, 139, 0.3);
+      }
+    }
+
+    @keyframes adoptionReveal {
+      0%, 50% {
+        opacity: 0;
+        transform: translateY(10px);
+        box-shadow: var(--shadow-sm);
+      }
+      58%, 100% {
+        opacity: 1;
+        transform: translateY(0);
+        box-shadow: 0 14px 28px rgba(255, 108, 26, 0.12);
+      }
+    }
+
+    @keyframes trainingReveal {
+      0%, 57% {
+        opacity: 0;
+        transform: translateY(10px);
+        box-shadow: var(--shadow-sm);
+      }
+      65%, 100% {
+        opacity: 1;
+        transform: translateY(0);
+        box-shadow: 0 14px 30px rgba(255, 108, 26, 0.16);
+      }
+    }
+
+    @keyframes adoptionStepReveal {
+      0%, 65% {
+        opacity: 0;
+        transform: translateY(10px);
+        box-shadow: var(--shadow-sm);
+      }
+      74%, 100% {
+        opacity: 1;
+        transform: translateY(0);
+        box-shadow: 0 14px 30px rgba(255, 108, 26, 0.13);
+      }
+    }
+
+    @keyframes businessGrowthReveal {
+      0%, 73% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+        box-shadow: var(--shadow-sm);
+      }
+      82%, 92% {
+        opacity: 1;
+        transform: translateY(0) scale(1.035);
+        box-shadow: 0 16px 34px rgba(20, 136, 95, 0.16);
+        background: linear-gradient(135deg, rgba(236, 253, 245, 0.95), rgba(255, 255, 255, 0.98));
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        box-shadow: var(--shadow-sm);
+      }
+    }
+
+    @keyframes transformPulse {
+      0%, 38%, 100% {
+        transform: scale(1);
+      }
+      48%, 62% {
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes transformRing {
+      0%, 40% {
+        opacity: 0;
+        transform: scale(0.72);
+      }
+      50%, 66% {
+        opacity: 1;
+        transform: scale(1.18);
+      }
+      78%, 100% {
+        opacity: 0;
+        transform: scale(1.34);
+      }
+    }
+
+    @keyframes arrowSlide {
+      0%, 38%, 100% {
+        transform: translateX(0);
+      }
+      48%, 62% {
+        transform: translateX(7px);
+      }
+    }
+
+    @keyframes signalTravel {
+      0%, 42% {
+        left: 0;
+        opacity: 0;
+      }
+      48% {
+        left: 0;
+        opacity: 1;
+      }
+      61% {
+        left: 50%;
+        opacity: 1;
+      }
+      74% {
+        left: 100%;
+        opacity: 1;
+      }
+      88%, 100% {
+        left: 100%;
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      body {
+        padding: 16px;
+      }
+
+      .chat-section {
+        height: auto;
+        min-height: 390px;
+      }
+
+      .section-head {
+        height: auto;
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 18px 20px 14px;
+      }
+
+      .chat-board {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding: 18px;
+      }
+
+      .chat-lane.before,
+      .chat-lane.after {
+        animation: none;
+      }
+
+      .transform-zone {
+        min-height: 82px;
+      }
+
+      .transform-zone::before,
+      .transform-zone::after {
+        left: 50%;
+        right: auto;
+        width: 1px;
+        height: 50%;
+      }
+
+      .transform-zone::before {
+        top: 0;
+      }
+
+      .transform-zone::after {
+        bottom: 0;
+        top: auto;
+      }
+
+      .transform-button svg {
+        transform: rotate(90deg);
+      }
+
+      .moving-signal {
+        left: 50%;
+        top: 0;
+        animation: signalTravelDown var(--cycle) ease-in-out infinite;
+      }
+
+      @keyframes arrowSlide {
+        0%, 38%, 100% {
+          transform: rotate(90deg) translateX(0);
+        }
+        48%, 62% {
+          transform: rotate(90deg) translateX(7px);
+        }
+      }
+
+      @keyframes signalTravelDown {
+        0%, 42% {
+          top: 0;
+          opacity: 0;
+        }
+        48% {
+          top: 0;
+          opacity: 1;
+        }
+        61% {
+          top: 50%;
+          opacity: 1;
+        }
+        74% {
+          top: 100%;
+          opacity: 1;
+        }
+        88%, 100% {
+          top: 100%;
+          opacity: 0;
+        }
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="chat-section" aria-label="Technology adoption transformation chat animation">
+    <header class="section-head">
+      <div class="section-title">
+        <strong>New Technology</strong>
+        <span>Training turns resistance into measurable business growth.</span>
+      </div>
+    </header>
+
+    <div class="chat-board">
+      <article class="chat-lane before" aria-label="Before training adoption path">
+        <div class="lane-label">
+          <b>Before</b>
+          <span>Low return path</span>
+        </div>
+
+        <div class="messages">
+          <div class="bubble">
+            <div class="bubble-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 2v20"/>
+                <path d="M5 8h14"/>
+                <path d="M7 15h10"/>
+              </svg>
+            </div>
+            <div>
+              <b>New Technology</b>
+              <small>Rollout begins</small>
+            </div>
+          </div>
+
+          <div class="bubble">
+            <div class="bubble-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M18 6 6 18"/>
+                <path d="M6 6h12v12"/>
+              </svg>
+            </div>
+            <div>
+              <b>Resistance</b>
+              <small>Teams hesitate to change</small>
+            </div>
+          </div>
+
+          <div class="bubble">
+            <div class="bubble-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M4 19h16"/>
+                <path d="M7 15v2"/>
+                <path d="M12 11v6"/>
+                <path d="M17 7v10"/>
+              </svg>
+            </div>
+            <div>
+              <b>Low Adoption</b>
+              <small>Usage does not scale</small>
+            </div>
+          </div>
+
+          <div class="bubble">
+            <div class="bubble-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M4 5v14h16"/>
+                <path d="m8 10 3 3 4-6 4 5"/>
+              </svg>
+            </div>
+            <div>
+              <b>Poor ROI</b>
+              <small>Value is not realized</small>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="transform-zone" aria-label="Transforms into">
+        <div class="transform-button" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+            <path d="M5 12h14"/>
+            <path d="m12 5 7 7-7 7"/>
+          </svg>
+        </div>
+        <div class="moving-signal" aria-hidden="true"></div>
+      </div>
+
+      <article class="chat-lane after" aria-label="After training adoption path">
+        <div class="lane-label">
+          <b>After</b>
+          <span>Growth path</span>
+        </div>
+
+        <div class="messages">
+          <div class="bubble">
+            <div class="bubble-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M12 2v20"/>
+                <path d="M5 8h14"/>
+                <path d="M7 15h10"/>
+              </svg>
+            </div>
+            <div>
+              <b>New Technology</b>
+              <small>Rollout begins</small>
+            </div>
+          </div>
+
+          <div class="bubble">
+            <div class="bubble-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M4 19.5V6a2 2 0 0 1 2-2h11.5"/>
+                <path d="M8 8h8"/>
+                <path d="M8 12h6"/>
+                <path d="m14 19 2 2 4-5"/>
+              </svg>
+            </div>
+            <div>
+              <b>Training</b>
+              <small>Teams learn the workflow</small>
+            </div>
+          </div>
+
+          <div class="bubble">
+            <div class="bubble-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+            </div>
+            <div>
+              <b>Adoption</b>
+              <small>Usage becomes consistent</small>
+            </div>
+          </div>
+
+          <div class="bubble">
+            <div class="bubble-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M4 19h16"/>
+                <path d="m7 15 4-4 3 3 5-7"/>
+                <path d="M17 7h2v2"/>
+              </svg>
+            </div>
+            <div>
+              <b>Business Growth</b>
+              <small>Value turns measurable</small>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+</body>
+</html>

@@ -1,0 +1,390 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Interactive Chatbot Scorecard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --content-width: 915px;
+      --white: #ffffff;
+      --page-bg: #f8fafc;
+      --font: #0b1220;
+      --navy: #192a44;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --orange: #ff6c1a;
+      --orange-deep: #ff4d0d;
+      --soft-orange: #fff4ec;
+      --soft-green: #ecfdf5;
+      --green: #14885f;
+      --soft-amber: #fffbeb;
+      --amber: #b7791f;
+      --soft-red: #fff1f1;
+      --red: #d64545;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.08);
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 16px;
+      background:
+        linear-gradient(90deg, rgba(255, 108, 26, 0.045) 0 1px, transparent 1px 100%),
+        linear-gradient(0deg, rgba(25, 42, 68, 0.04) 0 1px, transparent 1px 100%),
+        var(--page-bg);
+      background-size: 42px 42px;
+      color: var(--font);
+      font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .scorecard-section {
+      width: min(100%, var(--content-width));
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(255, 108, 26, 0.09), transparent 26%),
+        linear-gradient(135deg, rgba(255, 244, 236, 0.7), rgba(255, 255, 255, 0.9) 46%, rgba(248, 250, 252, 0.94)),
+        var(--white);
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+
+    .scorecard-section::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(229, 231, 235, 0.92);
+      border-radius: 16px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .scorecard-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(100, 116, 139, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 116, 139, 0.07) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.52), transparent 82%);
+      z-index: -1;
+    }
+
+    .scorecard-canvas {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 28px;
+      align-items: stretch;
+      min-height: auto;
+      padding: 58px;
+    }
+
+    .score-panel {
+      min-width: 0;
+      height: 100%;
+      overflow: hidden;
+      border: 1px solid rgba(229, 231, 235, 0.98);
+      border-radius: var(--radius-lg);
+      background: var(--white);
+      box-shadow: var(--shadow-lg);
+      opacity: 0;
+      transform: translateY(18px) scale(0.98);
+      animation: cardIn 0.72s ease 0.08s forwards;
+    }
+
+    .score-header {
+      display: block;
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(14px);
+    }
+
+    .score-header h2 {
+      color: var(--navy);
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .score-body {
+      padding: 24px;
+      background:
+        linear-gradient(180deg, rgba(248, 250, 252, 0.72), rgba(255, 255, 255, 0.96)),
+        var(--white);
+    }
+
+    .score-display {
+      display: grid;
+      grid-template-columns: 132px 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .score-ring {
+      position: relative;
+      width: 132px;
+      height: 132px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background:
+        conic-gradient(var(--active-color) calc(var(--score-percent) * 1%), #eef2f7 0),
+        #eef2f7;
+      box-shadow: inset 0 0 0 1px rgba(229, 231, 235, 0.85), var(--shadow-sm);
+      transition: background 0.4s ease;
+    }
+
+    .score-ring::before {
+      content: "";
+      position: absolute;
+      inset: 13px;
+      border-radius: inherit;
+      background: var(--white);
+      box-shadow: inset 0 0 0 1px rgba(229, 231, 235, 0.9);
+    }
+
+    .score-value {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .score-value strong {
+      display: block;
+      color: var(--navy);
+      font-size: 46px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    .result-copy strong {
+      display: block;
+      color: var(--navy);
+      font-size: 23px;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .result-copy p {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    .score-controls {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .score-button {
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      color: var(--navy);
+      font: inherit;
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .score-button:hover,
+    .score-button:focus-visible {
+      outline: none;
+      border-color: color-mix(in srgb, var(--active-color) 45%, var(--border));
+      transform: translateY(-2px);
+    }
+
+    .score-button.is-active {
+      border-color: transparent;
+      color: var(--white);
+      background: var(--active-color);
+      box-shadow: 0 12px 24px color-mix(in srgb, var(--active-color) 24%, transparent);
+    }
+
+    .range-bar {
+      position: relative;
+      height: 10px;
+      margin-top: 22px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #eef2f7;
+    }
+
+    .range-bar span {
+      display: block;
+      width: calc(var(--score-percent) * 1%);
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--red), var(--amber), var(--green));
+      transition: width 0.4s ease;
+    }
+
+    .note-card {
+      margin-top: 18px;
+      padding: 15px 16px;
+      border: 1px solid rgba(255, 108, 26, 0.2);
+      border-radius: var(--radius-md);
+      background: var(--soft-orange);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.65;
+    }
+
+    .scorecard-section[data-risk="high"] { --active-color: var(--red); --score-percent: 40; }
+    .scorecard-section[data-risk="moderate"] { --active-color: var(--amber); --score-percent: 80; }
+    .scorecard-section[data-risk="strong"] { --active-color: var(--green); --score-percent: 100; }
+
+    @keyframes cardIn { to { opacity: 1; transform: translateY(0) scale(1); } }
+    @keyframes revealUp { to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 820px) {
+      body { padding: 26px 14px; }
+      .scorecard-canvas { grid-template-columns: 1fr; min-height: 0; padding: 38px 30px; }
+    }
+
+    @media (max-width: 560px) {
+      .scorecard-section::before { inset: 14px; }
+      .scorecard-canvas { gap: 22px; padding: 28px 20px; }
+      .score-display { align-items: flex-start; grid-template-columns: 1fr; }
+      .score-ring { justify-self: center; }
+      .score-controls { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.001ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="scorecard-section" data-risk="moderate" aria-label="Interactive chatbot scorecard">
+    <div class="scorecard-canvas">
+      <section class="score-panel" aria-label="Interactive score result">
+        <header class="score-header">
+          <div>
+            <h2 id="scoreRange">3–4 Points: Moderate Risk</h2>
+          </div>
+        </header>
+
+        <div class="score-body">
+          <div class="score-display">
+            <div class="score-ring" aria-hidden="true">
+              <div class="score-value">
+                <strong id="scoreValue">4</strong>
+              </div>
+            </div>
+
+            <div class="result-copy">
+              <strong id="resultTitle">3–4 Points: Moderate Risk</strong>
+              <p id="resultText">Your chatbot is performing reasonably well but still has room for improvement.</p>
+            </div>
+          </div>
+
+          <div class="score-controls" aria-label="Choose chatbot score">
+            <button class="score-button" type="button" data-score="0">0</button>
+            <button class="score-button" type="button" data-score="1">1</button>
+            <button class="score-button" type="button" data-score="2">2</button>
+            <button class="score-button" type="button" data-score="3">3</button>
+            <button class="score-button is-active" type="button" data-score="4">4</button>
+            <button class="score-button" type="button" data-score="5">5</button>
+          </div>
+
+          <div class="range-bar" aria-hidden="true">
+            <span id="rangeFill"></span>
+          </div>
+
+          <p class="note-card">
+            The lower your score, the more likely your chatbot is to experience common AI chatbot mistakes that affect customer trust, support efficiency, and overall business results.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const scorecard = document.querySelector(".scorecard-section");
+    const scoreValue = document.getElementById("scoreValue");
+    const scoreRange = document.getElementById("scoreRange");
+    const resultTitle = document.getElementById("resultTitle");
+    const resultText = document.getElementById("resultText");
+    const buttons = Array.from(document.querySelectorAll(".score-button"));
+
+    const scoreContent = {
+      high: {
+        range: "0–2 Points: High Risk",
+        text: "Your chatbot may be vulnerable to common AI chatbot mistakes & customer frustration."
+      },
+      moderate: {
+        range: "3–4 Points: Moderate Risk",
+        text: "Your chatbot is performing reasonably well but still has room for improvement."
+      },
+      strong: {
+        range: "5 Points: Strong Foundation",
+        text: "Your chatbot follows key best practices and is well-positioned for long-term success."
+      }
+    };
+
+    function getRisk(score) {
+      if (score <= 2) return "high";
+      if (score <= 4) return "moderate";
+      return "strong";
+    }
+
+    function updateScore(score) {
+      const risk = getRisk(score);
+      const content = scoreContent[risk];
+      scorecard.dataset.risk = risk;
+      scorecard.style.setProperty("--score-percent", String((score / 5) * 100));
+      scoreValue.textContent = score;
+      scoreRange.textContent = content.range;
+      resultTitle.textContent = content.range;
+      resultText.textContent = content.text;
+
+      buttons.forEach((button) => {
+        const isActive = Number(button.dataset.score) === score;
+        button.classList.toggle("is-active", isActive);
+        button.setAttribute("aria-pressed", isActive ? "true" : "false");
+      });
+    }
+
+    buttons.forEach((button) => {
+      button.setAttribute("aria-pressed", button.classList.contains("is-active") ? "true" : "false");
+      button.addEventListener("click", () => updateScore(Number(button.dataset.score)));
+    });
+  </script>
+</body>
+</html>
+
+

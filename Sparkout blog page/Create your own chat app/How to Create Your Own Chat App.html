@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Create Your Own Chat App - A Step-by-Step Process</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --frame-width: 900px;
+      --frame-height: 620px;
+      --white: #ffffff;
+      --page-bg: #f7f9fc;
+      --navy: #172640;
+      --border: #dce5f0;
+      --soft-border: #edf2f7;
+      --orange: #ff681f;
+      --blue: #1778d2;
+      --green: #158c61;
+      --violet: #6848bd;
+      --red: #dc3d3d;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: start center;
+      padding: 28px 16px;
+      background: var(--page-bg);
+      color: var(--navy);
+      font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .blog-frame {
+      width: min(100%, var(--frame-width));
+      height: var(--frame-height);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 9% 12%, rgba(255, 104, 31, 0.05), transparent 28%),
+        radial-gradient(circle at 90% 84%, rgba(23, 120, 210, 0.055), transparent 30%),
+        linear-gradient(135deg, rgba(250, 252, 255, 0.95), #fff 48%, rgba(248, 251, 255, 0.93));
+      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.08);
+    }
+
+    .blog-frame::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(220, 229, 240, 0.96);
+      border-radius: 17px;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .canvas {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 25px;
+      padding: 39px 50px 42px;
+    }
+
+    .page-title {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--navy);
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1.16;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .process-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: repeat(3, 1fr);
+      gap: 20px;
+      min-height: 0;
+    }
+
+    .process-grid::before {
+      content: "";
+      position: absolute;
+      inset: 50%;
+      width: 76%;
+      height: 66%;
+      border: 4px solid rgba(255, 104, 31, 0.15);
+      border-right-color: rgba(23, 120, 210, 0.18);
+      border-bottom-color: rgba(21, 140, 97, 0.18);
+      border-left-color: rgba(104, 72, 189, 0.16);
+      border-radius: 30px;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      display: none;
+    }
+
+    .step-card {
+      --accent: var(--orange);
+      position: relative;
+      display: grid;
+      grid-template-rows: auto 54px minmax(0, auto);
+      align-content: center;
+      justify-items: center;
+      gap: 9px;
+      min-height: 125px;
+      padding: 15px 14px 17px;
+      border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--border));
+      border-radius: 17px;
+      background: color-mix(in srgb, var(--accent) 5%, var(--white));
+      box-shadow: 0 11px 22px rgba(15, 23, 42, 0.06);
+      text-align: center;
+      transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease, background 0.24s ease;
+    }
+
+    .step-card::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 20px;
+      bottom: 20px;
+      width: 5px;
+      border-radius: 999px;
+      background: var(--accent);
+      transform: scaleY(0.36);
+      transform-origin: center;
+      opacity: 0.9;
+      transition: transform 0.24s ease;
+    }
+
+    .step-card:hover,
+    .step-card:focus-within {
+      transform: translateY(-5px);
+      border-color: color-mix(in srgb, var(--accent) 58%, var(--border));
+      background: color-mix(in srgb, var(--accent) 9%, var(--white));
+      box-shadow: 0 18px 32px rgba(15, 23, 42, 0.12);
+    }
+
+    .step-card:hover::after,
+    .step-card:focus-within::after { transform: scaleY(1); }
+
+    .step-card:nth-child(1) { --accent: var(--orange); }
+    .step-card:nth-child(2) { --accent: var(--blue); }
+    .step-card:nth-child(3) { --accent: var(--green); }
+    .step-card:nth-child(4) { --accent: var(--violet); }
+    .step-card:nth-child(5) { --accent: var(--red); }
+    .step-card:nth-child(6) { --accent: var(--orange); }
+    .step-card:nth-child(7) { --accent: var(--blue); }
+    .step-card:nth-child(8) { --accent: var(--green); }
+    .step-card:nth-child(9) { --accent: var(--violet); }
+
+    .step-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      color: var(--accent);
+      background: #fff;
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 20%, var(--border)), 0 10px 18px rgba(15, 23, 42, 0.07);
+      transition: color 0.24s ease, background 0.24s ease, transform 0.24s ease;
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 58px;
+      height: 24px;
+      padding: 0 10px;
+      border-radius: 999px;
+      color: var(--accent);
+      background: color-mix(in srgb, var(--accent) 10%, #fff);
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: 0;
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 22%, var(--border));
+      transition: color 0.24s ease, background 0.24s ease;
+    }
+
+    .step-card:hover .step-number,
+    .step-card:focus-within .step-number {
+      color: #fff;
+      background: var(--accent);
+    }
+
+    .step-card:hover .step-icon,
+    .step-card:focus-within .step-icon {
+      color: #fff;
+      background: var(--accent);
+      transform: scale(1.06);
+    }
+
+    .step-icon svg {
+      width: 28px;
+      height: 28px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.25;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .step-title {
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.24;
+      letter-spacing: 0;
+    }
+
+    @media (max-width: 760px) {
+      .blog-frame { height: auto; min-height: 850px; }
+      .canvas { padding: 32px 24px; }
+      .page-title { font-size: 23px; }
+      .process-grid { grid-template-columns: 1fr; grid-template-rows: none; gap: 12px; }
+      .process-grid::before { display: none; }
+      .step-card { min-height: 88px; grid-template-columns: 50px minmax(0, 1fr); grid-template-rows: auto auto; justify-items: start; text-align: left; padding: 14px 16px; }
+      .step-card::after { left: auto; top: 14px; right: 12px; bottom: 14px; width: 4px; height: auto; transform: scaleY(0.38); transform-origin: center; }
+      .step-card:hover::after, .step-card:focus-within::after { transform: scaleY(1); }
+      .step-icon { width: 50px; height: 50px; }
+      .step-number { grid-column: 2; grid-row: 1; min-width: 52px; height: 21px; font-size: 9px; }
+      .step-icon { grid-column: 1; grid-row: 1 / span 2; align-self: center; }
+      .step-title { grid-column: 2; grid-row: 2; }
+      .step-title { font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="blog-frame">
+    <section class="canvas" aria-label="How to Create Your Own Chat App - A Step-by-Step Process">
+      <h1 class="page-title">How to Create Your Own Chat App<br>A Step-by-Step Process</h1>
+
+      <div class="process-grid">
+        <article class="step-card" tabindex="0">
+          <span class="step-number">Step 01</span>
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" /><path d="m20 20-4-4M11 8v3l2 2" /></svg></span>
+          <h2 class="step-title">Strategic Planning &amp; Research</h2>
+        </article>
+        <article class="step-card" tabindex="0">
+          <span class="step-number">Step 02</span>
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h16v12H4z" /><path d="M8 21h8M12 17v4M8 9h8M8 13h5" /></svg></span>
+          <h2 class="step-title">Design (UI&amp; UX)</h2>
+        </article>
+        <article class="step-card" tabindex="0">
+          <span class="step-number">Step 03</span>
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" /><path d="M19.4 15a8 8 0 0 0 .1-2l2-1.5-2-3.5-2.4 1a8 8 0 0 0-1.7-1L15 5.5h-6L8.6 8a8 8 0 0 0-1.7 1l-2.4-1-2 3.5 2 1.5a8 8 0 0 0 .1 2l-2.1 1.5 2 3.5 2.4-1a8 8 0 0 0 1.7 1l.4 2.5h6l.4-2.5a8 8 0 0 0 1.7-1l2.4 1 2-3.5L19.4 15Z" /></svg></span>
+          <h2 class="step-title">Development Setup</h2>
+        </article>
+        <article class="step-card" tabindex="0">
+          <span class="step-number">Step 04</span>
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14" /></svg></span>
+          <h2 class="step-title">Core Development</h2>
+        </article>
+        <article class="step-card" tabindex="0">
+          <span class="step-number">Step 05</span>
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 11l2 2 4-5" /><path d="M20 6 9 17l-5-5" /><path d="M3 20h18" /></svg></span>
+          <h2 class="step-title">Core Features Implementation</h2>
+        </article>
+        <article class="step-card" tabindex="0">
+          <span class="step-number">Step 06</span>
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2 9.8 8.4 3 9l5.2 4.4L6.7 20 12 16.5 17.3 20l-1.5-6.6L21 9l-6.8-.6L12 2Z" /></svg></span>
+          <h2 class="step-title">Advanced Features</h2>
+        </article>
+        <article class="step-card" tabindex="0">
+          <span class="step-number">Step 07</span>
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 8V5h8v3M7 11h10M6 15h12" /><path d="M5 11a7 7 0 0 0 14 0v-1H5v1Z" /><path d="M9 19l-2 2M15 19l2 2M4 13H2M22 13h-2" /></svg></span>
+          <h2 class="step-title">Testing &amp; QA</h2>
+        </article>
+        <article class="step-card" tabindex="0">
+          <span class="step-number">Step 08</span>
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c4 2 6 5 6 9 0 5-6 9-6 9s-6-4-6-9c0-4 2-7 6-9Z" /><path d="M12 11v6M9 14h6" /></svg></span>
+          <h2 class="step-title">Deployment &amp; Launch</h2>
+        </article>
+        <article class="step-card" tabindex="0">
+          <span class="step-number">Step 09</span>
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 17V7M4 17h16" /><path d="m7 14 4-4 3 3 5-6" /><path d="M17 7h2v2" /></svg></span>
+          <h2 class="step-title">Post-Launch Optimization</h2>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,2189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agent Development Cost 2026 | How Much Does It Cost</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --orange:#FF6C1A;
+  --orange-dark:#FF4D0D;
+  --navy:#192A44;
+  --white:#FFFFFF;
+  --font-default:#0B1220;
+  --border:#E5E7EB;
+  --stroke:#64748B;
+  --light-bg:#F8FAFC;
+  --muted:#6B7280;
+  --shadow-sm:0 2px 8px rgba(0,0,0,0.04);
+  --shadow-md:0 10px 30px rgba(0,0,0,0.06);
+  --shadow-lg:0 20px 50px rgba(0,0,0,0.08);
+  --radius-sm:8px;
+  --radius-md:12px;
+  --radius-lg:20px;
+  --radius-pill:999px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;font-size:16px;line-height:1.7;color:var(--font-default);background:#fff;overflow-x:hidden}
+
+/* NAVBAR */
+.navbar{position:sticky;top:0;z-index:100;background:#fff;height:88px;border-bottom:1px solid var(--border);display:flex;align-items:center;transition:box-shadow 0.3s ease}
+.navbar.scrolled{box-shadow:var(--shadow-md)}
+.navbar-inner{max-width:1280px;margin:0 auto;width:100%;padding:0 80px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:22px;font-weight:800;color:var(--navy);text-decoration:none;letter-spacing:-0.5px}
+.logo span{color:var(--orange)}
+.nav-links{display:flex;align-items:center;gap:36px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--font-default);font-size:14px;font-weight:500;transition:color 0.3s ease}
+.nav-links a:hover{color:var(--orange)}
+.nav-cta{background:var(--orange);color:#fff;padding:12px 24px;border-radius:var(--radius-md);font-weight:600;font-size:14px;text-decoration:none;transition:all 0.3s ease}
+.nav-cta:hover{background:var(--orange-dark);transform:translateY(-1px);box-shadow:0 8px 20px rgba(255,108,26,0.3)}
+
+/* HERO */
+.hero{padding:80px 80px 60px;max-width:1440px;margin:0 auto}
+.blog-hero{max-width:1180px;padding-top:64px;padding-bottom:44px}
+.blog-meta-row{display:flex;align-items:center;gap:12px;margin-bottom:24px;flex-wrap:wrap}
+.cat-badge{background:rgba(255,108,26,0.1);color:var(--orange);padding:6px 14px;border-radius:var(--radius-pill);font-size:12px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase}
+.meta-dot{width:4px;height:4px;border-radius:50%;background:var(--border)}
+.meta-text{font-size:13px;color:var(--muted);font-weight:500}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+.hero-content{}
+.hero h1{font-size:48px;font-weight:700;line-height:1.2;letter-spacing:-1px;color:var(--navy);margin-bottom:20px}
+.hero h1 span{background:linear-gradient(135deg,var(--orange),var(--orange-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-intro{font-size:17px;line-height:1.8;color:var(--muted);margin-bottom:32px}
+.author-block{display:flex;align-items:center;gap:14px;padding:20px 24px;background:var(--light-bg);border-radius:var(--radius-lg);border:1px solid var(--border)}
+.author-avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:16px;flex-shrink:0}
+.author-info{}
+.author-name{font-weight:700;font-size:15px;color:var(--navy)}
+.author-role{font-size:12px;color:var(--muted);margin-top:2px}
+.read-stats{display:flex;gap:20px;margin-top:12px}
+.read-stat{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.read-stat svg{flex-shrink:0}
+.hero-image-wrap{position:relative}
+.hero-feature-wrap{margin-top:34px}
+.blog-hero .hero-image-wrap{position:relative;width:100%}
+.blog-hero .cost-journey-video{aspect-ratio:16/7;min-height:420px}
+.reference-author-card{margin-top:28px;display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:16px;align-items:center;padding:22px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.reference-author-copy p{font-size:13px;line-height:1.65;color:var(--muted);margin:4px 0 0;max-width:680px}
+.reference-author-name{font-size:15px;font-weight:800;color:var(--navy);text-decoration:none}
+.reference-author-date{font-size:13px;font-weight:700;color:var(--muted);white-space:nowrap}
+.hero-image{width:100%;aspect-ratio:16/10;background:linear-gradient(135deg,var(--navy) 0%,#1e3a5f 50%,#0f2236 100%);border-radius:var(--radius-lg);overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
+.hero-image-bg{position:absolute;inset:0;opacity:0.08;background-image:radial-gradient(circle at 25px 25px,#fff 2px,transparent 0);background-size:50px 50px}
+.hero-graphic{position:relative;z-index:1;text-align:center}
+.hero-graphic-title{color:rgba(255,255,255,0.9);font-size:22px;font-weight:700;margin-bottom:16px}
+.hero-cost-pills{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.hero-pill{padding:10px 20px;border-radius:var(--radius-pill);font-size:13px;font-weight:600}
+.pill-basic{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.8);border:1px solid rgba(255,255,255,0.2)}
+.pill-advanced{background:rgba(255,108,26,0.3);color:#ff9d6a;border:1px solid rgba(255,108,26,0.4)}
+.pill-enterprise{background:rgba(255,108,26,0.6);color:#fff;border:1px solid var(--orange)}
+.floating-stat{position:absolute;background:#fff;border-radius:var(--radius-md);padding:12px 16px;box-shadow:var(--shadow-lg);display:flex;align-items:center;gap:10px}
+.fs-1{bottom:-16px;left:-20px}
+.fs-2{top:-16px;right:-20px}
+.floating-stat .fs-icon{width:36px;height:36px;border-radius:var(--radius-sm);background:rgba(255,108,26,0.1);display:flex;align-items:center;justify-content:center;color:var(--orange);font-size:18px}
+.floating-stat .fs-val{font-size:18px;font-weight:700;color:var(--navy)}
+.floating-stat .fs-label{font-size:11px;color:var(--muted);font-weight:500}
+
+/* HERO COST JOURNEY ANIMATION */
+.cost-journey-video{position:relative;width:100%;aspect-ratio:16/10;border-radius:var(--radius-lg);overflow:hidden;background:radial-gradient(circle at 50% 18%,rgba(31,255,154,.22),transparent 28%),linear-gradient(135deg,#030712 0%,#07111f 48%,#020617 100%);border:1px solid rgba(31,255,154,.18);box-shadow:0 28px 70px rgba(2,6,23,.28);isolation:isolate}
+.cost-journey-video::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(31,255,154,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(31,255,154,.08) 1px,transparent 1px);background-size:34px 34px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.95),rgba(0,0,0,.2));animation:journeyGrid 12s linear infinite}
+.cost-journey-video::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,transparent 0 38%,rgba(2,6,23,.45) 72%);pointer-events:none}
+.journey-orbit{position:absolute;left:50%;top:18%;width:94px;height:94px;transform:translate(-50%,-50%);border-radius:28px;background:linear-gradient(135deg,rgba(31,255,154,.22),rgba(16,185,129,.08));border:1px solid rgba(31,255,154,.45);box-shadow:0 0 34px rgba(31,255,154,.34);display:grid;place-items:center;z-index:2;animation:journeyChip 3.2s ease-in-out infinite}
+.journey-chip{width:56px;height:56px;border-radius:18px;background:rgba(2,6,23,.8);border:1px solid rgba(255,255,255,.18);display:grid;place-items:center;position:relative}
+.journey-chip::before,.journey-chip::after{content:'';position:absolute;inset:-11px;border:1px solid rgba(31,255,154,.25);border-radius:24px}
+.journey-chip span{font-size:24px;font-weight:800;color:#1fff9a;text-shadow:0 0 16px rgba(31,255,154,.8)}
+.journey-title{position:absolute;left:24px;right:24px;top:22px;z-index:3;color:#fff;font-size:15px;font-weight:800;letter-spacing:.2px}
+.journey-subtitle{display:block;margin-top:4px;color:rgba(226,232,240,.72);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px}
+.journey-timeline{position:absolute;left:8%;right:8%;top:47%;height:2px;background:rgba(148,163,184,.22);z-index:1}
+.journey-timeline::before{content:'';position:absolute;left:0;top:0;height:100%;width:100%;background:linear-gradient(90deg,#1fff9a,#22c55e,#14b8a6);box-shadow:0 0 18px rgba(31,255,154,.7);transform-origin:left;animation:journeyLine 12s cubic-bezier(.2,.8,.2,1) infinite}
+.journey-cards{position:absolute;left:5%;right:5%;bottom:22px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;z-index:3}
+.journey-card{min-height:138px;padding:12px;border-radius:16px;background:linear-gradient(180deg,rgba(15,23,42,.76),rgba(2,6,23,.74));border:1px solid rgba(255,255,255,.12);box-shadow:0 14px 36px rgba(0,0,0,.22),inset 0 1px 0 rgba(255,255,255,.08);backdrop-filter:blur(14px);opacity:0;transform:translateY(18px) scale(.96);animation:journeyCard 12s ease-in-out infinite;animation-delay:var(--journey-delay)}
+.journey-card::before{content:'';display:block;width:9px;height:9px;border-radius:50%;background:#1fff9a;box-shadow:0 0 0 6px rgba(31,255,154,.1),0 0 18px rgba(31,255,154,.8);margin-bottom:9px}
+.journey-stage{font-size:10px;color:#1fff9a;text-transform:uppercase;letter-spacing:.7px;font-weight:800;margin-bottom:4px}
+.journey-name{font-size:12px;line-height:1.3;color:#fff;font-weight:800;margin-bottom:7px}
+.journey-price{font-size:17px;line-height:1.15;color:#1fff9a;font-weight:800;margin-bottom:5px;white-space:nowrap}
+.journey-time{font-size:10px;color:rgba(226,232,240,.7);font-weight:700}
+.journey-icons{position:absolute;left:7%;right:7%;top:28%;display:flex;justify-content:space-between;z-index:2}
+.journey-icon{width:38px;height:38px;border-radius:14px;display:grid;place-items:center;background:rgba(15,23,42,.72);border:1px solid rgba(31,255,154,.22);color:#d1fae5;font-size:14px;font-weight:800;box-shadow:0 0 18px rgba(31,255,154,.08);opacity:.75;animation:journeyIcon 12s ease-in-out infinite;animation-delay:var(--journey-delay)}
+.journey-icon-label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.journey-fallback{display:none;position:absolute;inset:auto 18px 18px 18px;z-index:4;color:#fff;font-size:12px;line-height:1.5}
+@keyframes journeyGrid{from{background-position:0 0,0 0}to{background-position:34px 34px,34px 34px}}
+@keyframes journeyChip{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.05);box-shadow:0 0 46px rgba(31,255,154,.48)}}
+@keyframes journeyLine{0%,8%{transform:scaleX(0)}58%,92%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+@keyframes journeyCard{0%,12%{opacity:0;transform:translateY(18px) scale(.96)}22%,88%{opacity:1;transform:translateY(0) scale(1)}96%,100%{opacity:0;transform:translateY(8px) scale(.98)}}
+@keyframes journeyIcon{0%,14%{opacity:.25;transform:translateY(8px)}30%,88%{opacity:1;transform:translateY(0)}100%{opacity:.25;transform:translateY(8px)}}
+@media(prefers-reduced-motion:reduce){
+  .cost-journey-video::before,.journey-orbit,.journey-timeline::before,.journey-card,.journey-icon{animation:none}
+  .journey-timeline::before{transform:scaleX(1)}
+  .journey-card{opacity:1;transform:none}
+  .journey-icon{opacity:1;transform:none}
+}
+
+/* CONTENT LAYOUT */
+.blog-layout{max-width:1180px;margin:0 auto;padding:0 80px 100px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:58px;align-items:start}
+
+/* STICKY TOC */
+.toc-sidebar{order:2;position:sticky;top:108px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;max-height:calc(100vh - 130px);overflow-y:auto}
+.toc-sidebar::-webkit-scrollbar{width:4px}
+.toc-sidebar::-webkit-scrollbar-track{background:transparent}
+.toc-sidebar::-webkit-scrollbar-thumb{background:var(--border);border-radius:4px}
+.toc-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--navy);margin-bottom:16px;display:flex;align-items:center;gap:8px}
+.toc-title::before{content:'';width:3px;height:14px;background:var(--orange);border-radius:2px;display:block}
+.toc-list{list-style:none}
+.toc-list li{margin-bottom:2px}
+.toc-list a{display:block;padding:8px 12px;border-radius:var(--radius-sm);font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;transition:all 0.2s ease;border-left:2px solid transparent;line-height:1.4}
+.toc-list a:hover{color:var(--orange);background:rgba(255,108,26,0.05);border-left-color:rgba(255,108,26,0.3)}
+.toc-list a.active{color:var(--orange);background:rgba(255,108,26,0.08);border-left-color:var(--orange);font-weight:600}
+.toc-progress{margin-top:20px;padding-top:16px;border-top:1px solid var(--border)}
+.progress-label{font-size:11px;color:var(--muted);margin-bottom:8px;font-weight:500}
+.progress-bar{height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--orange),var(--orange-dark));border-radius:2px;transition:width 0.1s ease;width:0%}
+
+/* ARTICLE BODY */
+.article-body{order:1;min-width:0}
+.section-block{padding:60px 0;border-bottom:1px solid var(--border)}
+.section-block:last-child{border-bottom:none}
+.section-block h2{font-size:32px;font-weight:700;line-height:1.3;letter-spacing:-0.5px;color:var(--navy);margin-bottom:20px;position:relative}
+.section-block h2::after{content:'';display:block;width:48px;height:3px;background:linear-gradient(90deg,var(--orange),var(--orange-dark));border-radius:2px;margin-top:12px}
+.section-block h3{font-size:22px;font-weight:600;color:var(--navy);margin:32px 0 14px;line-height:1.4}
+.section-block p{font-size:16px;line-height:1.8;color:var(--muted);margin-bottom:18px}
+.section-block p strong,.section-block li strong{color:var(--font-default);font-weight:600}
+.section-block ul,.section-block ol{padding-left:0;list-style:none;margin-bottom:20px}
+.section-block ul li,.section-block ol li{font-size:16px;line-height:1.8;color:var(--muted);margin-bottom:10px;padding-left:22px;position:relative}
+.section-block ul li::before{content:'';position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:50%;background:var(--orange)}
+.section-block ol{counter-reset:item}
+.section-block ol li{counter-increment:item}
+.section-block ol li::before{content:counter(item);position:absolute;left:0;top:2px;width:18px;height:18px;background:var(--orange);color:#fff;border-radius:50%;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;line-height:1}
+.section-block a{color:var(--orange);text-decoration:none;font-weight:500}
+.section-block a:hover{text-decoration:underline}
+
+/* INTRO SECTION */
+.intro-section{padding:60px 0 40px;border-bottom:1px solid var(--border)}
+.intro-section p{font-size:17px;line-height:1.9;color:var(--muted);margin-bottom:18px}
+
+/* COST ESTIMATOR HOOK */
+.cost-estimator{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,0.65fr);gap:28px;align-items:start;margin-top:28px}
+.estimator-panel{position:sticky;top:108px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;box-shadow:var(--shadow-sm);max-height:calc(100vh - 132px);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--orange) var(--light-bg)}
+.estimator-panel::-webkit-scrollbar{width:8px}
+.estimator-panel::-webkit-scrollbar-track{background:var(--light-bg);border-radius:var(--radius-pill)}
+.estimator-panel::-webkit-scrollbar-thumb{background:rgba(255,108,26,.55);border-radius:var(--radius-pill)}
+.estimator-form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.estimator-group{padding:0;border-bottom:none}
+.estimator-group-wide{grid-column:1 / -1}
+.estimator-group-title{font-size:13px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:0.7px;margin-bottom:14px}
+.estimator-field-label{display:block;font-size:10px;font-weight:800;color:var(--navy);text-transform:uppercase;letter-spacing:.6px;margin-bottom:6px}
+.estimator-select{width:100%;min-height:44px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--light-bg);padding:0 42px 0 13px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:700;line-height:1.45;color:var(--font-default);cursor:pointer;appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--orange) 50%),linear-gradient(135deg,var(--orange) 50%,transparent 50%);background-position:calc(100% - 18px) 18px,calc(100% - 12px) 18px;background-size:6px 6px,6px 6px;background-repeat:no-repeat;transition:all .2s ease}
+.estimator-select:hover,.estimator-select:focus{background-color:#fff;border-color:rgba(255,108,26,.45);box-shadow:0 0 0 3px rgba(255,108,26,.08);outline:none}
+.estimator-addon-dropdown{grid-column:1 / -1;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--light-bg);overflow:hidden}
+.estimator-addon-dropdown summary{list-style:none;min-height:44px;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:0 14px;font-size:12px;font-weight:800;color:var(--navy);cursor:pointer}
+.estimator-addon-dropdown summary::-webkit-details-marker{display:none}
+.estimator-addon-dropdown summary::after{content:'v';font-size:14px;color:var(--orange);transition:transform .2s ease}
+.estimator-addon-dropdown[open] summary::after{transform:rotate(180deg)}
+.estimator-addon-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:0 12px 12px}
+.estimator-addon-item{display:flex;align-items:flex-start;gap:9px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:9px;font-size:12px;font-weight:700;line-height:1.4;color:var(--font-default);cursor:pointer}
+.estimator-addon-item input{accent-color:var(--orange);margin-top:2px}
+.estimator-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.estimator-option{appearance:none;border:1px solid var(--border);background:var(--light-bg);border-radius:var(--radius-md);padding:13px 14px;text-align:left;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:600;line-height:1.45;color:var(--font-default);cursor:pointer;transition:all 0.2s ease;min-height:58px}
+.estimator-option:hover{background:#fff;border-color:rgba(255,108,26,0.35);box-shadow:var(--shadow-sm);transform:translateY(-1px)}
+.estimator-option.active{background:rgba(255,108,26,0.08);border-color:var(--orange);color:var(--navy);box-shadow:0 0 0 3px rgba(255,108,26,0.08)}
+.estimator-option.addon.active{background:rgba(25,42,68,0.06);border-color:var(--navy)}
+.estimate-summary{position:relative;top:auto;background:linear-gradient(135deg,var(--navy),#10223a);border-radius:var(--radius-lg);padding:28px;color:#fff;box-shadow:var(--shadow-lg);overflow:hidden}
+.estimate-summary::after{content:'';position:absolute;right:-60px;top:-60px;width:180px;height:180px;border-radius:50%;background:rgba(255,108,26,0.16)}
+.estimate-kicker{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.58);margin-bottom:10px;position:relative;z-index:1}
+.estimate-range{font-size:34px;font-weight:800;line-height:1.15;color:var(--orange);margin-bottom:8px;position:relative;z-index:1}
+.estimate-note{font-size:13px;line-height:1.7;color:rgba(255,255,255,0.68);margin-bottom:22px;position:relative;z-index:1}
+.estimate-selected{display:grid;gap:10px;margin-bottom:24px;position:relative;z-index:1}
+.estimate-chip{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.12);font-size:12px;line-height:1.5}
+.estimate-chip span:first-child{color:rgba(255,255,255,0.55);font-weight:700}
+.estimate-chip span:last-child{color:#fff;text-align:right;font-weight:600}
+.estimate-actions{display:grid;gap:10px;position:relative;z-index:1}
+.estimate-primary{display:inline-flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:#fff !important;border:none;border-radius:var(--radius-md);min-height:48px;padding:0 18px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:14px;text-decoration:none !important;cursor:pointer;transition:all 0.25s ease}
+.estimate-primary:visited,.estimate-primary:hover,.estimate-primary:focus-visible{color:#fff !important;text-decoration:none !important}
+.estimate-primary:hover{transform:translateY(-1px);box-shadow:0 12px 30px rgba(255,108,26,0.35)}
+.estimate-secondary{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:0 18px;border:1px solid rgba(255,255,255,0.25);border-radius:var(--radius-md);color:#fff !important;text-decoration:none !important;font-size:13px;font-weight:700;transition:background 0.25s ease}
+.estimate-secondary:visited,.estimate-secondary:hover,.estimate-secondary:focus-visible{color:#fff !important;text-decoration:none !important}
+.estimate-secondary:hover{background:rgba(255,255,255,0.08)}
+
+/* ANIMATED COST INFOGRAPHIC */
+.cost-infographic{margin:34px 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:linear-gradient(180deg,#fff 0%,var(--light-bg) 100%);box-shadow:var(--shadow-md);overflow:hidden}
+.ci-header{padding:26px 30px 18px;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;justify-content:space-between;gap:24px}
+.ci-eyebrow{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1px;color:var(--orange);margin-bottom:8px}
+.ci-title{font-size:22px;font-weight:800;line-height:1.25;color:var(--navy);margin-bottom:6px}
+.ci-sub{font-size:13px;line-height:1.7;color:var(--muted)}
+.ci-pulse{width:70px;height:70px;border-radius:50%;background:rgba(255,108,26,0.1);display:grid;place-items:center;position:relative;flex-shrink:0}
+.ci-pulse::before,.ci-pulse::after{content:'';position:absolute;inset:0;border:1px solid rgba(255,108,26,0.35);border-radius:50%;animation:ciPulse 2.6s ease-out infinite}
+.ci-pulse::after{animation-delay:1.3s}
+.ci-pulse span{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:#fff;font-size:18px;font-weight:800;display:grid;place-items:center;position:relative;z-index:1}
+.ci-body{padding:28px 30px 30px}
+.ci-ladder{display:grid;gap:16px}
+.ci-row{display:grid;grid-template-columns:170px 1fr 110px;gap:18px;align-items:center}
+.ci-label{font-size:13px;font-weight:800;color:var(--navy)}
+.ci-track{height:40px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-pill);overflow:hidden;position:relative}
+.ci-bar{height:100%;width:var(--ci-width);border-radius:var(--radius-pill);background:linear-gradient(90deg,var(--orange),var(--orange-dark));transform-origin:left;animation:ciGrow 1.2s cubic-bezier(.2,.8,.2,1) both;animation-delay:var(--ci-delay)}
+.ci-track::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.42),transparent);transform:translateX(-100%);animation:ciShimmer 2.8s ease-in-out infinite;animation-delay:1s}
+.ci-price{font-size:13px;font-weight:800;color:var(--orange);white-space:nowrap;text-align:right}
+.ci-drivers{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:26px}
+.ci-driver{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;min-height:112px;position:relative;overflow:hidden;animation:ciFloat 4s ease-in-out infinite;animation-delay:var(--ci-delay)}
+.ci-driver::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--orange-dark))}
+.ci-driver-title{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:7px}
+.ci-driver-text{font-size:12px;line-height:1.55;color:var(--muted)}
+@keyframes ciGrow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes ciPulse{from{opacity:0.8;transform:scale(1)}to{opacity:0;transform:scale(1.65)}}
+@keyframes ciShimmer{0%,35%{transform:translateX(-100%)}75%,100%{transform:translateX(100%)}}
+@keyframes ciFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+@media(prefers-reduced-motion:reduce){
+  .ci-pulse::before,.ci-pulse::after,.ci-bar,.ci-track::after,.ci-driver{animation:none}
+}
+
+/* TABLE TO ANIMATED INFOGRAPHIC */
+.animated-info-grid{margin:24px 0;display:grid;grid-template-columns:repeat(var(--info-cols,3),minmax(0,1fr));gap:14px}
+.info-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);position:relative;overflow:hidden;animation:infoRise 0.65s ease both;animation-delay:var(--info-delay);cursor:pointer}
+.info-card:hover,.info-card.open{border-color:rgba(255,108,26,0.4);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.info-card-visual{min-height:154px;padding:18px;position:relative;background:linear-gradient(135deg,#fff 0%,var(--light-bg) 68%,rgba(255,108,26,0.08) 100%)}
+.info-card-visual::before{content:'';position:absolute;right:-34px;top:-34px;width:120px;height:120px;border-radius:50%;background:rgba(255,108,26,0.12)}
+.info-card-visual::after{content:'';position:absolute;left:18px;right:18px;bottom:18px;height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+.info-node{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--orange),var(--orange-dark));box-shadow:0 0 0 8px rgba(255,108,26,0.1);color:#fff;font-size:14px;font-weight:800;display:grid;place-items:center;margin-bottom:14px;position:relative;z-index:1;animation:infoNodePulse 2.6s ease-in-out infinite;animation-delay:var(--info-delay)}
+.info-card-title{font-size:16px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:10px;position:relative;z-index:1}
+.info-cost{display:inline-flex;align-items:center;min-height:30px;padding:0 11px;border-radius:var(--radius-pill);background:rgba(255,108,26,0.1);color:var(--orange);font-size:12px;font-weight:800;margin-bottom:12px;position:relative;z-index:1}
+.info-bar-track{height:7px;background:var(--border);border-radius:var(--radius-pill);overflow:hidden;position:relative;z-index:1}
+.info-bar{height:100%;width:var(--info-width);background:linear-gradient(90deg,var(--orange),var(--orange-dark));border-radius:var(--radius-pill);transform-origin:left;animation:infoBar 1s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--info-delay) + 0.15s)}
+.info-dropdown{max-height:0;overflow:hidden;transition:max-height 0.35s ease}
+.info-card:hover .info-dropdown,.info-card.open .info-dropdown{max-height:420px}
+.info-fields{display:grid;gap:8px;padding:0 18px 18px;background:#fff}
+.info-field{background:var(--light-bg);border:1px solid rgba(229,231,235,0.72);border-radius:var(--radius-sm);padding:9px 10px}
+.info-field-label{font-size:10px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.info-field-value{font-size:12px;font-weight:600;line-height:1.5;color:var(--font-default)}
+.info-drop-hint{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 18px;border-top:1px solid var(--border);font-size:11px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.5px;background:#fff}
+.info-drop-hint span:last-child{font-size:14px;color:var(--orange);transition:transform 0.25s ease}
+.info-card:hover .info-drop-hint span:last-child,.info-card.open .info-drop-hint span:last-child{transform:rotate(180deg)}
+@keyframes infoRise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes infoBar{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes infoNodePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.08)}}
+@media(prefers-reduced-motion:reduce){
+  .info-card,.info-bar,.info-node{animation:none}
+  .info-dropdown{transition:none}
+}
+
+/* BUILD VS BUY DECISION BOARD */
+.decision-board{margin:28px 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.decision-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow-sm);overflow:hidden;animation:infoRise 0.65s ease both;animation-delay:var(--decision-delay);cursor:pointer;transition:all 0.25s ease}
+.decision-card:hover,.decision-card.open{border-color:rgba(255,108,26,0.4);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.decision-top{min-height:178px;padding:20px;background:linear-gradient(135deg,#fff 0%,var(--light-bg) 72%,rgba(255,108,26,0.08) 100%);position:relative;overflow:hidden}
+.decision-top::after{content:'';position:absolute;right:-40px;top:-40px;width:130px;height:130px;border-radius:50%;background:rgba(255,108,26,0.11)}
+.decision-node{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:#fff;font-size:15px;font-weight:800;box-shadow:0 0 0 8px rgba(255,108,26,0.1);margin-bottom:14px;position:relative;z-index:1;animation:infoNodePulse 2.6s ease-in-out infinite;animation-delay:var(--decision-delay)}
+.decision-title{font-size:18px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:10px;position:relative;z-index:1}
+.decision-cost{display:inline-flex;align-items:center;min-height:30px;border-radius:var(--radius-pill);background:rgba(255,108,26,0.1);color:var(--orange);padding:0 11px;font-size:12px;font-weight:800;position:relative;z-index:1}
+.decision-bar-track{height:7px;background:var(--border);border-radius:var(--radius-pill);overflow:hidden;margin-top:16px;position:relative;z-index:1}
+.decision-bar{height:100%;width:var(--decision-width);background:linear-gradient(90deg,var(--orange),var(--orange-dark));border-radius:var(--radius-pill);transform-origin:left;animation:infoBar 1s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--decision-delay) + 0.15s)}
+.decision-hint{display:flex;justify-content:space-between;align-items:center;padding:11px 18px;border-top:1px solid var(--border);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.5px;color:var(--muted)}
+.decision-hint span:last-child{font-size:14px;color:var(--orange);transition:transform 0.25s ease}
+.decision-card:hover .decision-hint span:last-child,.decision-card.open .decision-hint span:last-child{transform:rotate(180deg)}
+.decision-details{max-height:0;overflow:hidden;transition:max-height 0.35s ease;background:#fff}
+.decision-card:hover .decision-details,.decision-card.open .decision-details{max-height:520px}
+.decision-list{display:grid;gap:8px;padding:0 18px 18px}
+.decision-item{background:var(--light-bg);border:1px solid rgba(229,231,235,0.72);border-radius:var(--radius-sm);padding:9px 10px}
+.decision-label{font-size:10px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+.decision-value{font-size:12px;font-weight:600;line-height:1.5;color:var(--font-default)}
+@media(prefers-reduced-motion:reduce){
+  .decision-card,.decision-node,.decision-bar{animation:none}
+  .decision-details{transition:none}
+}
+
+/* COMPACT BUILD VS BUY PATH SELECTOR */
+.path-compare{margin:28px 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-sm);overflow:hidden}
+.path-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1px solid var(--border);background:var(--light-bg)}
+.path-tab{appearance:none;border:none;border-right:1px solid var(--border);background:transparent;padding:18px 20px;text-align:left;font-family:'Montserrat',sans-serif;cursor:pointer;position:relative;transition:all 0.25s ease}
+.path-tab:last-child{border-right:none}
+.path-tab::after{content:'';position:absolute;left:20px;right:20px;bottom:0;height:3px;background:var(--orange);border-radius:3px 3px 0 0;transform:scaleX(0);transform-origin:left;transition:transform 0.25s ease}
+.path-tab::before{content:'Select';position:absolute;right:16px;top:16px;font-size:10px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;color:var(--orange);background:rgba(255,108,26,0.08);border:1px solid rgba(255,108,26,0.18);border-radius:var(--radius-pill);padding:3px 8px;opacity:0;transform:translateY(4px);transition:all 0.25s ease}
+.path-tab:hover{background:#fff;box-shadow:inset 0 0 0 1px rgba(255,108,26,0.22)}
+.path-tab:hover::before{opacity:1;transform:translateY(0)}
+.path-tab:hover .path-tab-title{color:var(--orange)}
+.path-tab.active{background:#fff;box-shadow:inset 0 0 0 1px rgba(255,108,26,0.28)}
+.path-tab.active::before{content:'Selected';opacity:1;transform:translateY(0);background:var(--orange);border-color:var(--orange);color:#fff}
+.path-tab.active::after{transform:scaleX(1)}
+.path-tab-title{display:block;font-size:15px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:7px}
+.path-tab-cost{display:block;font-size:12px;font-weight:800;color:var(--orange);line-height:1.35}
+.path-panel{padding:24px;animation:phaseFade 0.3s ease}
+.path-panel-top{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;margin-bottom:18px}
+.path-panel-title{font-size:22px;font-weight:800;color:var(--navy);line-height:1.3}
+.path-panel-cost{display:inline-flex;align-items:center;min-height:34px;border-radius:var(--radius-pill);background:rgba(255,108,26,0.1);color:var(--orange);font-size:13px;font-weight:800;padding:0 13px;white-space:nowrap}
+.path-bar-track{height:8px;background:var(--border);border-radius:var(--radius-pill);overflow:hidden;margin-bottom:20px}
+.path-bar{height:100%;width:var(--path-width,52%);background:linear-gradient(90deg,var(--orange),var(--orange-dark));border-radius:var(--radius-pill);transform-origin:left;animation:infoBar 0.75s cubic-bezier(.2,.8,.2,1) both}
+.path-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.path-item{background:var(--light-bg);border:1px solid rgba(229,231,235,0.75);border-radius:var(--radius-sm);padding:11px 12px}
+.path-label{font-size:10px;font-weight:800;letter-spacing:0.5px;text-transform:uppercase;color:var(--muted);margin-bottom:5px}
+.path-value{font-size:13px;font-weight:600;line-height:1.55;color:var(--font-default)}
+@media(prefers-reduced-motion:reduce){
+  .path-tab::after,.path-panel,.path-bar{animation:none;transition:none}
+}
+
+/* COMPACT COST DRIVER LAYOUT */
+.factor-explorer{margin:24px 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-sm);overflow:hidden}
+.factor-tabs{display:grid;grid-template-columns:repeat(5,1fr);background:var(--light-bg);border-bottom:1px solid var(--border)}
+.factor-tab{appearance:none;border:none;border-right:1px solid var(--border);background:transparent;padding:14px 12px;text-align:left;font-family:'Montserrat',sans-serif;cursor:pointer;position:relative;transition:all 0.25s ease}
+.factor-tab:last-child{border-right:none}
+.factor-tab::after{content:'';position:absolute;left:12px;right:12px;bottom:0;height:3px;background:var(--orange);border-radius:3px 3px 0 0;transform:scaleX(0);transform-origin:left;transition:transform 0.25s ease}
+.factor-tab:hover,.factor-tab.active{background:#fff}
+.factor-tab.active::after{transform:scaleX(1)}
+.factor-num{display:block;font-size:11px;font-weight:800;color:var(--orange);margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px}
+.factor-tab-title{display:block;font-size:12px;font-weight:800;line-height:1.35;color:var(--navy)}
+.factor-panel{padding:22px;animation:phaseFade 0.3s ease}
+.factor-panel-title{font-size:20px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:10px}
+.factor-panel-text{font-size:14px;line-height:1.75;color:var(--muted);margin-bottom:14px}
+.factor-panel-impact{background:var(--light-bg);border:1px solid rgba(229,231,235,0.75);border-left:4px solid var(--orange);border-radius:var(--radius-sm);padding:12px 14px;font-size:13px;line-height:1.7;color:var(--font-default)}
+.factor-panel-impact strong{color:var(--orange);font-weight:800}
+.industry-explorer{margin:20px 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-sm);overflow:hidden}
+.industry-tabs{display:grid;grid-template-columns:repeat(4,1fr);background:var(--light-bg);border-bottom:1px solid var(--border)}
+.industry-tab{appearance:none;border:none;border-right:1px solid var(--border);background:transparent;padding:14px 12px;text-align:left;font-family:'Montserrat',sans-serif;cursor:pointer;position:relative;transition:all 0.25s ease}
+.industry-tab:last-child{border-right:none}
+.industry-tab::after{content:'';position:absolute;left:12px;right:12px;bottom:0;height:3px;background:var(--orange);border-radius:3px 3px 0 0;transform:scaleX(0);transform-origin:left;transition:transform 0.25s ease}
+.industry-tab:hover,.industry-tab.active{background:#fff}
+.industry-tab.active::after{transform:scaleX(1)}
+.industry-tab-title{display:block;font-size:12px;font-weight:800;line-height:1.35;color:var(--navy)}
+.industry-panel{padding:20px;animation:phaseFade 0.3s ease}
+.industry-panel-title{font-size:18px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:10px}
+.industry-panel-text{font-size:14px;line-height:1.75;color:var(--muted);margin-bottom:12px}
+.industry-panel-impact{font-size:13px;line-height:1.65;color:var(--font-default);font-weight:700;background:var(--light-bg);border-radius:var(--radius-sm);padding:11px 12px;border-left:4px solid var(--orange)}
+.hitl-box{margin:22px 0;background:linear-gradient(135deg,rgba(255,108,26,0.06),rgba(255,108,26,0.02));border:1px solid rgba(255,108,26,0.2);border-radius:var(--radius-lg);padding:22px}
+.hitl-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:14px 0}
+.hitl-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 12px;font-size:13px;font-weight:700;line-height:1.5;color:var(--font-default)}
+
+/* COMPACT SECTION VISUALS */
+.capability-stack{margin:22px 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-sm);padding:20px;display:grid;grid-template-columns:240px minmax(0,1fr);gap:18px;align-items:start}
+.capability-invest{background:var(--navy);color:#fff;border-radius:var(--radius-md);padding:18px;position:sticky;top:108px}
+.capability-invest-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:rgba(255,255,255,0.6);margin-bottom:8px}
+.capability-invest-value{font-size:24px;font-weight:800;color:var(--orange);line-height:1.2}
+.capability-summary{font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:var(--navy);margin-bottom:12px}
+.capability-main{min-width:0}
+.capability-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-bottom:12px}
+.capability-item{background:var(--light-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:11px 12px;display:flex;gap:10px;align-items:flex-start}
+.capability-dot{width:10px;height:10px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 5px rgba(255,108,26,0.1);margin-top:5px;flex-shrink:0;animation:infoNodePulse 2.5s ease-in-out infinite;animation-delay:var(--cap-delay)}
+.capability-text{font-size:12px;font-weight:700;line-height:1.5;color:var(--font-default)}
+.capability-note{margin:0 0 10px;padding:12px 14px;background:rgba(255,108,26,0.07);border-left:4px solid var(--orange);border-radius:var(--radius-sm);font-size:13px;line-height:1.65;color:var(--font-default)}
+.capability-note:last-child{margin-bottom:0}
+.ops-tabs{margin:22px 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-sm);overflow:hidden}
+.ops-tab-list{display:grid;grid-template-columns:repeat(3,1fr);background:var(--light-bg);border-bottom:1px solid var(--border)}
+.ops-tab{appearance:none;border:none;border-right:1px solid var(--border);background:transparent;padding:16px;text-align:left;font-family:'Montserrat',sans-serif;cursor:pointer;position:relative;transition:all 0.25s ease}
+.ops-tab:last-child{border-right:none}
+.ops-tab::after{content:'';position:absolute;left:16px;right:16px;bottom:0;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform 0.25s ease}
+.ops-tab:hover,.ops-tab.active{background:#fff}
+.ops-tab.active::after{transform:scaleX(1)}
+.ops-title{display:block;font-size:14px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:6px}
+.ops-cost{display:block;font-size:12px;font-weight:800;color:var(--orange)}
+.ops-panel{padding:22px;animation:phaseFade 0.3s ease}
+.ops-metrics{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:18px}
+.ops-metric{background:var(--light-bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px}
+.ops-label{font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:0.6px;margin-bottom:6px}
+.ops-value{font-size:18px;font-weight:800;color:var(--navy)}
+.cost-chip-list{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}
+.cost-chip{background:#fff;border:1px solid var(--border);border-radius:var(--radius-pill);padding:8px 12px;font-size:12px;font-weight:700;color:var(--font-default);box-shadow:var(--shadow-sm)}
+.hidden-cost-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0}
+.hidden-cost-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;box-shadow:var(--shadow-sm)}
+.hidden-cost-title{font-size:15px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:8px}
+.hidden-cost-text{font-size:13px;line-height:1.65;color:var(--muted)}
+.roi-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}
+.roi-profile-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:18px;box-shadow:var(--shadow-sm)}
+.roi-profile-title{font-size:17px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:12px}
+.roi-profile-list{display:grid;gap:8px}
+.roi-profile-row{display:flex;justify-content:space-between;gap:12px;background:var(--light-bg);border:1px solid rgba(229,231,235,0.75);border-radius:var(--radius-sm);padding:9px 10px;font-size:12px;line-height:1.45}
+.roi-profile-row span:first-child{font-weight:800;color:var(--muted)}
+.roi-profile-row span:last-child{font-weight:800;color:var(--font-default);text-align:right}
+.roi-impact{margin-top:10px;background:rgba(255,108,26,0.07);border-left:3px solid var(--orange);border-radius:var(--radius-sm);padding:10px;font-size:12px;font-weight:700;line-height:1.55;color:var(--font-default)}
+.spend-bars{margin:22px 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-sm);padding:18px}
+.spend-row{display:grid;grid-template-columns:180px minmax(0,1fr);gap:14px;align-items:center;margin-bottom:12px}
+.spend-row:last-child{margin-bottom:0}
+.spend-label{font-size:13px;font-weight:800;color:var(--navy);line-height:1.35}
+.spend-track{height:34px;background:var(--light-bg);border:1px solid var(--border);border-radius:var(--radius-pill);overflow:hidden;position:relative}
+.spend-fill{height:100%;width:var(--spend-width);background:linear-gradient(90deg,var(--orange),var(--orange-dark));border-radius:var(--radius-pill);transform-origin:left;animation:infoBar 1s cubic-bezier(.2,.8,.2,1) both}
+.spend-text{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:800;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.2)}
+
+/* PRICING MODEL SELECTOR */
+.pricing-modeler{margin:26px 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-sm);overflow:hidden}
+.pricing-strip{display:grid;grid-template-columns:repeat(5,1fr);background:var(--light-bg);border-bottom:1px solid var(--border)}
+.pricing-tab{appearance:none;border:none;border-right:1px solid var(--border);background:transparent;padding:16px 12px;text-align:left;font-family:'Montserrat',sans-serif;cursor:pointer;position:relative;transition:all 0.25s ease}
+.pricing-tab:last-child{border-right:none}
+.pricing-tab::after{content:'';position:absolute;left:12px;right:12px;bottom:0;height:3px;background:var(--orange);border-radius:3px 3px 0 0;transform:scaleX(0);transform-origin:left;transition:transform 0.25s ease}
+.pricing-tab:hover,.pricing-tab.active{background:#fff}
+.pricing-tab.active::after{transform:scaleX(1)}
+.pricing-name{display:block;font-size:13px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:7px}
+.pricing-price{display:block;font-size:11px;font-weight:800;color:var(--orange);line-height:1.35}
+.pricing-panel{display:grid;grid-template-columns:260px minmax(0,1fr);gap:20px;padding:24px;animation:phaseFade 0.3s ease}
+.pricing-badge{background:var(--navy);border-radius:var(--radius-md);padding:18px;color:#fff;display:flex;flex-direction:column;justify-content:center;min-height:140px}
+.pricing-badge-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.8px;color:rgba(255,255,255,0.62);margin-bottom:8px}
+.pricing-badge-value{font-size:24px;font-weight:800;line-height:1.25;color:var(--orange)}
+.pricing-detail-title{font-size:22px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:10px}
+.pricing-detail-text{font-size:15px;line-height:1.8;color:var(--font-default)}
+.pricing-meter{height:8px;background:var(--border);border-radius:var(--radius-pill);overflow:hidden;margin-top:18px}
+.pricing-meter-fill{height:100%;width:var(--pricing-width,50%);border-radius:var(--radius-pill);background:linear-gradient(90deg,var(--orange),var(--orange-dark));transform-origin:left;animation:infoBar 0.75s cubic-bezier(.2,.8,.2,1) both}
+@media(prefers-reduced-motion:reduce){
+  .pricing-tab::after,.pricing-panel,.pricing-meter-fill{animation:none;transition:none}
+}
+
+/* LEADING AI PLATFORM PRICE SHOWCASE */
+.platform-showcase{margin:26px 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-sm);overflow:hidden}
+.platform-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:var(--light-bg);border-bottom:1px solid var(--border)}
+.platform-card{appearance:none;border:none;border-right:1px solid var(--border);background:transparent;padding:18px;text-align:left;font-family:'Montserrat',sans-serif;cursor:pointer;position:relative;transition:all 0.25s ease}
+.platform-card:last-child{border-right:none}
+.platform-card::after{content:'';position:absolute;left:18px;right:18px;bottom:0;height:3px;background:var(--orange);border-radius:3px 3px 0 0;transform:scaleX(0);transform-origin:left;transition:transform 0.25s ease}
+.platform-card:hover,.platform-card.active{background:#fff}
+.platform-card.active::after{transform:scaleX(1)}
+.platform-mark{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:#fff;font-size:14px;font-weight:800;box-shadow:0 0 0 8px rgba(255,108,26,0.08);margin-bottom:12px}
+.platform-title{display:block;font-size:16px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:7px}
+.platform-price{display:block;font-size:12px;font-weight:800;color:var(--orange);line-height:1.45}
+.platform-panel{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:20px;padding:24px;animation:phaseFade 0.3s ease}
+.platform-panel-title{font-size:22px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:10px}
+.platform-panel-text{font-size:15px;line-height:1.8;color:var(--font-default)}
+.platform-price-box{background:var(--navy);border-radius:var(--radius-md);padding:18px;display:grid;gap:10px;align-content:center}
+.platform-price-row{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:var(--radius-sm);padding:10px}
+.platform-price-label{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.6px;color:rgba(255,255,255,0.58);margin-bottom:5px}
+.platform-price-value{font-size:14px;font-weight:800;line-height:1.45;color:#fff}
+.platform-price-value strong{color:var(--orange)}
+.platform-meter{height:8px;background:rgba(255,255,255,0.16);border-radius:var(--radius-pill);overflow:hidden;margin-top:4px}
+.platform-meter-fill{height:100%;width:var(--platform-width,50%);background:linear-gradient(90deg,var(--orange),var(--orange-dark));border-radius:var(--radius-pill);transform-origin:left;animation:infoBar 0.75s cubic-bezier(.2,.8,.2,1) both}
+@media(prefers-reduced-motion:reduce){
+  .platform-card::after,.platform-panel,.platform-meter-fill{animation:none;transition:none}
+}
+
+/* LATE PAGE COMPACT INTERACTIVE SECTIONS */
+.rate-panel{margin:24px 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-sm);overflow:hidden}
+.rate-tabs{display:grid;grid-template-columns:repeat(5,1fr);background:var(--light-bg);border-bottom:1px solid var(--border)}
+.rate-tab{appearance:none;border:none;border-right:1px solid var(--border);background:transparent;padding:14px 12px;text-align:left;font-family:'Montserrat',sans-serif;cursor:pointer;position:relative;transition:all .25s ease}
+.rate-tab:last-child{border-right:none}
+.rate-tab::after{content:'';position:absolute;left:12px;right:12px;bottom:0;height:3px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .25s ease}
+.rate-tab:hover,.rate-tab.active{background:#fff}
+.rate-tab.active::after{transform:scaleX(1)}
+.rate-name{display:block;font-size:12px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:6px}
+.rate-value{display:block;font-size:11px;font-weight:800;color:var(--orange)}
+.rate-detail{padding:20px;animation:phaseFade .3s ease}
+.rate-detail-title{font-size:20px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.rate-detail-value{font-size:24px;font-weight:800;color:var(--orange);margin-bottom:12px}
+.rate-track{height:8px;background:var(--border);border-radius:var(--radius-pill);overflow:hidden}
+.rate-fill{height:100%;width:var(--rate-width,50%);background:linear-gradient(90deg,var(--orange),var(--orange-dark));border-radius:var(--radius-pill);transform-origin:left;animation:infoBar .75s cubic-bezier(.2,.8,.2,1) both}
+.role-rate-grid,.saving-grid,.question-grid,.redflag-grid,.spark-grid,.spark-service-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:20px 0}
+.role-card,.saving-card,.question-card,.redflag-card,.spark-card,.spark-service{background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);padding:15px;box-shadow:var(--shadow-sm)}
+.role-title,.saving-title,.question-card,.redflag-card,.spark-title,.spark-service{font-size:13px;font-weight:800;line-height:1.55;color:var(--font-default)}
+.role-values{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
+.role-value{background:var(--light-bg);border-radius:var(--radius-sm);padding:9px}
+.role-label{font-size:10px;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.role-price{font-size:12px;font-weight:800;color:var(--orange)}
+.rate-cta,.spark-cta{margin:22px 0;background:linear-gradient(135deg,var(--navy),#10223a);border-radius:var(--radius-lg);padding:22px;color:#fff}
+.rate-cta p,.spark-cta p{color:rgba(255,255,255,.72);margin-bottom:10px}
+.rate-cta strong,.spark-cta strong{display:block;color:#fff;font-size:18px;margin-bottom:8px}
+.rate-cta .cta-primary,.spark-cta .cta-primary,
+.rate-cta .cta-primary:visited,.spark-cta .cta-primary:visited{display:inline-flex;align-items:center;justify-content:center;margin-top:8px;color:#fff !important;text-decoration:none}
+.rate-cta .cta-primary:hover,.spark-cta .cta-primary:hover,
+.rate-cta .cta-primary:focus-visible,.spark-cta .cta-primary:focus-visible{color:#fff !important}
+.saving-value{display:inline-flex;margin:8px 0 10px;padding:5px 10px;border-radius:var(--radius-pill);background:rgba(255,108,26,.1);color:var(--orange);font-size:12px;font-weight:800}
+.saving-text{font-size:13px;line-height:1.65;color:var(--muted)}
+.avoid-box{margin:20px 0;padding:18px;border:1px solid rgba(255,108,26,.2);border-radius:var(--radius-lg);background:rgba(255,108,26,.05)}
+.avoid-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.avoid-item{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px;font-size:12px;font-weight:800;color:var(--font-default)}
+.redflag-card{border-left:4px solid var(--orange)}
+.spark-wrap{margin:22px 0}
+.spark-lead{background:var(--light-bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px;margin-bottom:16px}
+.spark-lead p{margin-bottom:0}
+
+
+/* ANIMATED MATURITY LADDER */
+.maturity-ladder{margin:28px 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-sm);padding:20px;position:relative;overflow:hidden}
+.maturity-ladder::before{content:'';position:absolute;left:32px;right:32px;top:44px;height:2px;background:var(--border)}
+.maturity-ladder::after{content:'';position:absolute;left:32px;top:44px;height:2px;width:calc(100% - 64px);background:linear-gradient(90deg,var(--orange),var(--orange-dark));transform:scaleX(0);transform-origin:left;animation:ladderLine 3.2s ease-in-out infinite}
+.maturity-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;position:relative;z-index:1}
+.maturity-card{background:var(--light-bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px;box-shadow:var(--shadow-sm);animation:ladderCard 0.7s ease both;animation-delay:var(--ladder-delay);position:relative}
+.maturity-card::before{content:'';display:block;width:14px;height:14px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 5px rgba(255,108,26,0.12);margin-bottom:14px;animation:ladderDot 2.4s ease-in-out infinite;animation-delay:var(--ladder-delay)}
+.maturity-card:hover{border-color:rgba(255,108,26,0.35);box-shadow:var(--shadow-md)}
+.maturity-title{font-size:16px;font-weight:800;color:var(--navy);margin-bottom:8px}
+.maturity-desc{font-size:12px;line-height:1.55;color:var(--muted);margin-bottom:12px}
+.maturity-chips{display:grid;grid-template-columns:1fr;gap:6px;margin-bottom:12px}
+.maturity-chip{font-size:10px;font-weight:700;color:var(--font-default);background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:5px 8px;line-height:1.35}
+.maturity-cost{display:inline-flex;align-items:center;justify-content:center;min-height:30px;border-radius:var(--radius-pill);padding:0 11px;background:rgba(255,108,26,0.1);color:var(--orange);font-size:12px;font-weight:800;animation:ladderPulse 2.4s ease-in-out infinite;animation-delay:var(--ladder-delay)}
+@keyframes ladderLine{0%{transform:scaleX(0)}65%,100%{transform:scaleX(1)}}
+@keyframes ladderCard{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ladderPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,108,26,0.18)}50%{box-shadow:0 0 0 6px rgba(255,108,26,0)}}
+@keyframes ladderDot{0%,100%{transform:scale(1)}50%{transform:scale(1.18)}}
+@media(prefers-reduced-motion:reduce){
+  .maturity-ladder::after,.maturity-card,.maturity-card::before,.maturity-cost{animation:none}
+}
+
+/* AI AGENT VS CHATBOT ANIMATED VISUAL */
+ .agentic-compare-visual{width:min(831px,100%);margin:22px 0 28px;border:1px solid var(--border);border-radius:var(--radius-lg);background:linear-gradient(180deg,#fff 0%,var(--light-bg) 100%);box-shadow:var(--shadow-md);padding:22px;position:relative;overflow:hidden;isolation:isolate}
+.agentic-compare-visual::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 18px 18px,rgba(255,108,26,.12) 1.5px,transparent 0);background-size:36px 36px;opacity:.65;animation:agenticGrid 14s linear infinite;z-index:-2}
+.agentic-compare-visual::after{content:'';position:absolute;left:9%;right:9%;top:68px;height:2px;background:linear-gradient(90deg,var(--orange),var(--orange-dark));box-shadow:0 0 14px rgba(255,108,26,.28);transform-origin:left;animation:agenticLine 5s ease-in-out infinite;z-index:-1}
+.agentic-compare-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;position:relative;z-index:1}
+.agentic-compare-card{min-height:308px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow-sm);padding:15px;position:relative;animation:agenticCard 5s ease-in-out infinite;animation-delay:var(--agentic-delay)}
+.agentic-compare-card::before{content:'';width:14px;height:14px;border-radius:50%;display:block;background:var(--orange);box-shadow:0 0 0 7px rgba(255,108,26,.1),0 0 20px rgba(255,108,26,.3);margin-bottom:12px;animation:agenticDot 2.4s ease-in-out infinite;animation-delay:var(--agentic-delay)}
+.agentic-compare-title{font-size:17px;font-weight:800;color:var(--navy);line-height:1.25;margin-bottom:8px}
+.agentic-compare-cost{display:inline-flex;align-items:center;min-height:28px;border-radius:var(--radius-pill);padding:0 10px;background:rgba(255,108,26,.1);border:1px solid rgba(255,108,26,.22);color:var(--orange);font-size:12px;font-weight:800;margin-bottom:12px}
+.agentic-compare-features{display:grid;gap:7px}
+.agentic-feature{display:flex;justify-content:space-between;gap:10px;align-items:center;border:1px solid var(--border);border-radius:10px;background:var(--light-bg);padding:8px}
+.agentic-feature span{font-size:10px;line-height:1.35;color:var(--muted);font-weight:700}
+.agentic-feature strong{font-size:11px;color:var(--navy);text-align:right}
+@media(prefers-reduced-motion:reduce){
+  .agentic-compare-visual::before,.agentic-compare-visual::after,.agentic-compare-card,.agentic-compare-card::before{animation:none}
+  .agentic-compare-visual::after{transform:scaleX(1)}
+  .agentic-compare-card{opacity:1;transform:none}
+}
+
+/* MVP PHASED ROADMAP */
+.mvp-cost-visual{width:min(831px,100%);margin:18px 0 24px;border:1px solid var(--border);border-radius:var(--radius-lg);background:linear-gradient(180deg,#fff 0%,var(--light-bg) 100%);box-shadow:var(--shadow-md);padding:16px;position:relative;overflow:hidden;isolation:isolate}
+.mvp-cost-visual::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 18px 18px,rgba(255,108,26,.12) 1.5px,transparent 0);background-size:36px 36px;opacity:.65;animation:agenticGrid 14s linear infinite;z-index:-2}
+.mvp-cost-visual::after{content:'';position:absolute;left:10%;right:10%;top:58px;height:2px;background:linear-gradient(90deg,var(--orange),var(--orange-dark));box-shadow:0 0 14px rgba(255,108,26,.28);transform-origin:left;animation:mvpRoadLine 5.8s ease-in-out infinite;z-index:-1}
+.mvp-cost-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;position:relative;z-index:1}
+.mvp-cost-card{min-height:178px;border:1px solid var(--border);border-radius:16px;background:#fff;box-shadow:var(--shadow-sm);padding:13px;position:relative;animation:mvpRoadCard 5.8s ease-in-out infinite;animation-delay:var(--mvp-delay)}
+.mvp-cost-card::before{content:'';width:12px;height:12px;border-radius:50%;display:block;background:var(--orange);box-shadow:0 0 0 6px rgba(255,108,26,.1),0 0 20px rgba(255,108,26,.3);margin-bottom:10px;animation:agenticDot 2.4s ease-in-out infinite;animation-delay:var(--mvp-delay)}
+.mvp-cost-stage{font-size:10px;font-weight:800;color:var(--orange);text-transform:uppercase;letter-spacing:.75px;margin-bottom:6px}
+.mvp-cost-title{font-size:14px;font-weight:800;color:var(--navy);line-height:1.28;margin-bottom:7px}
+.mvp-cost-price{display:inline-flex;align-items:center;min-height:26px;border-radius:var(--radius-pill);padding:0 9px;background:rgba(255,108,26,.1);border:1px solid rgba(255,108,26,.22);color:var(--orange);font-size:11px;font-weight:800;margin-bottom:9px}
+.mvp-cost-points{display:grid;gap:0}
+.mvp-cost-point{font-size:10.5px;line-height:1.45;color:var(--muted);font-weight:650}
+.mvp-cost-point:not(:first-child){display:none}
+@keyframes mvpRoadLine{0%,12%{transform:scaleX(0)}62%,90%{transform:scaleX(1)}100%{transform:scaleX(0)}}
+@keyframes mvpRoadCard{0%,10%{opacity:0;transform:translateY(16px) scale(.96)}24%,86%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(8px) scale(.98)}}
+@media(prefers-reduced-motion:reduce){
+  .mvp-cost-visual::before,.mvp-cost-visual::after,.mvp-cost-card,.mvp-cost-card::before{animation:none}
+  .mvp-cost-visual::after{transform:scaleX(1)}
+  .mvp-cost-card{opacity:1;transform:none}
+}
+.phase-roadmap{margin:30px 0;border:1px solid var(--border);border-radius:var(--radius-lg);background:#fff;box-shadow:var(--shadow-sm);padding:22px;display:grid;grid-template-columns:280px minmax(0,1fr);gap:20px;align-items:stretch}
+.phase-tabs{display:grid;grid-template-columns:1fr;gap:10px;position:relative;margin-bottom:0}
+.phase-tabs::before,.phase-tabs::after{display:none}
+.phase-tab{position:relative;background:var(--light-bg);border:1px solid var(--border);border-radius:var(--radius-md);padding:14px 14px 14px 46px;text-align:left;cursor:pointer;font-family:'Montserrat',sans-serif;transition:all 0.25s ease;color:var(--font-default);min-height:82px}
+.phase-tab:hover{background:#fff;border-color:rgba(255,108,26,0.35);box-shadow:var(--shadow-sm)}
+.phase-tab.active{background:var(--navy);border-color:var(--navy);box-shadow:var(--shadow-md);color:#fff}
+.phase-dot{position:absolute;left:15px;top:18px;width:18px;height:18px;border-radius:50%;background:#fff;border:3px solid var(--border);transition:all 0.25s ease}
+.phase-dot::after{content:'';position:absolute;left:50%;top:24px;width:2px;height:42px;background:var(--border);transform:translateX(-50%)}
+.phase-tab:last-child .phase-dot::after{display:none}
+.phase-tab.active .phase-dot{border-color:var(--orange);box-shadow:0 0 0 5px rgba(255,108,26,0.18);animation:phaseDot 2.2s ease-in-out infinite}
+.phase-tab.active .phase-dot::after{background:rgba(255,255,255,0.3)}
+.phase-name{display:block;font-size:14px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:7px}
+.phase-cost{display:block;font-size:12px;font-weight:800;color:var(--orange);line-height:1.35}
+.phase-tab.active .phase-name{color:#fff}
+.phase-tab.active .phase-cost{color:#ffb184}
+.phase-detail{background:linear-gradient(180deg,#fff,var(--light-bg));border:1px solid var(--border);border-radius:var(--radius-lg);padding:26px;animation:phaseFade 0.3s ease;display:flex;flex-direction:column;justify-content:center;min-height:266px}
+.phase-detail-title{font-size:21px;font-weight:800;color:var(--navy);line-height:1.35;margin-bottom:12px}
+.phase-detail-cost{display:inline-flex;align-items:center;align-self:flex-start;min-height:34px;border-radius:var(--radius-pill);background:rgba(255,108,26,0.1);color:var(--orange);font-size:13px;font-weight:800;padding:0 12px;margin-bottom:18px}
+.phase-detail p{font-size:15px;line-height:1.85;color:var(--font-default);margin-bottom:12px}
+.phase-detail p:last-child{margin-bottom:0}
+@keyframes phaseFade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+@keyframes phaseDot{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+@media(prefers-reduced-motion:reduce){
+  .phase-tabs::after,.phase-detail,.phase-tab.active .phase-dot{animation:none;transition:none}
+}
+
+/* INFOGRAPHIC: AGENT TYPES TABLE */
+.infographic-block{margin:36px 0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.infographic-header{background:linear-gradient(135deg,var(--navy),#1e3a5f);padding:24px 32px;display:flex;align-items:center;gap:14px}
+.infographic-header h4{color:#fff;font-size:18px;font-weight:700;margin:0}
+.infographic-header .ih-icon{width:40px;height:40px;background:rgba(255,108,26,0.25);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;color:var(--orange);font-size:20px;flex-shrink:0}
+.agent-type-cards{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.atc{padding:20px 16px;text-align:center;border-right:1px solid var(--border);transition:all 0.3s ease;cursor:default;position:relative;overflow:hidden}
+.atc:last-child{border-right:none}
+.atc:hover{background:rgba(255,108,26,0.04);transform:translateY(-2px)}
+.atc::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:3px;background:var(--orange);border-radius:2px;transition:width 0.3s ease}
+.atc:hover::after{width:100%}
+.atc-icon{font-size:28px;margin-bottom:10px}
+.atc-name{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3}
+.atc-desc{font-size:11px;color:var(--muted);line-height:1.5}
+.atc-example{margin-top:8px;font-size:10px;color:var(--orange);font-weight:600;background:rgba(255,108,26,0.1);padding:3px 8px;border-radius:var(--radius-pill);display:inline-block}
+
+/* FUNCTIONALITY CARDS */
+.func-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0}
+.func-card{background:var(--light-bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;display:flex;gap:16px;align-items:flex-start;transition:all 0.3s ease;cursor:default}
+.func-card:hover{background:#fff;border-color:rgba(255,108,26,0.3);box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.func-icon{width:44px;height:44px;border-radius:var(--radius-md);background:linear-gradient(135deg,var(--orange),var(--orange-dark));display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;color:#fff}
+.func-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.func-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* APPLICATION CARDS */
+.app-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.app-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;transition:all 0.3s ease;cursor:default;position:relative;overflow:hidden}
+.app-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--orange),var(--orange-dark));transform:scaleX(0);transform-origin:left;transition:transform 0.3s ease}
+.app-card:hover::before{transform:scaleX(1)}
+.app-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.app-card-num{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--orange);margin-bottom:10px}
+.app-card-name{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.app-card-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:14px}
+.app-benefit{background:rgba(255,108,26,0.08);border-radius:var(--radius-sm);padding:12px;font-size:12px;color:var(--font-default);line-height:1.6;border-left:3px solid var(--orange)}
+.app-benefit strong{color:var(--orange);font-weight:600}
+
+/* CTA BLOCK */
+.cta-block{margin:40px 0;background:linear-gradient(135deg,var(--navy) 0%,#1e3a5f 100%);border-radius:var(--radius-lg);padding:48px;display:flex;align-items:center;justify-content:space-between;gap:32px;position:relative;overflow:hidden}
+.cta-block::after{content:'';position:absolute;right:-50px;top:-50px;width:200px;height:200px;border-radius:50%;background:rgba(255,108,26,0.1);pointer-events:none}
+.cta-content{}
+.cta-eyebrow{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--orange);margin-bottom:10px}
+.cta-title{font-size:24px;font-weight:700;color:#fff;margin-bottom:10px;line-height:1.3}
+.cta-sub{font-size:14px;color:rgba(255,255,255,0.65);line-height:1.6}
+.cta-btn{background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:#fff;padding:16px 32px;border-radius:var(--radius-md);font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap;transition:all 0.3s ease;border:none;cursor:pointer;display:inline-block;flex-shrink:0}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(255,108,26,0.4)}
+
+/* COST FACTORS: ANIMATED REVEAL */
+.factors-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0}
+.factor-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;transition:all 0.3s ease;cursor:default;opacity:0;transform:translateY(20px)}
+.factor-card.revealed{opacity:1;transform:translateY(0)}
+.factor-card:hover{border-color:rgba(255,108,26,0.3);box-shadow:var(--shadow-md)}
+.fc-num{font-size:11px;font-weight:700;color:var(--orange);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px}
+.fc-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.fc-desc{font-size:13px;color:var(--muted);line-height:1.6}
+.fc-impact{margin-top:12px;padding:10px 12px;background:var(--light-bg);border-radius:var(--radius-sm);font-size:12px;color:var(--font-default);border-left:3px solid var(--orange)}
+.fc-impact span{font-weight:600;color:var(--orange)}
+
+/* DEVELOPMENT APPROACH TABS */
+.approach-tabs{margin:24px 0}
+.tab-nav{display:flex;gap:0;border-bottom:2px solid var(--border);margin-bottom:32px}
+.tab-btn{padding:14px 28px;font-size:14px;font-weight:600;color:var(--muted);border:none;background:none;cursor:pointer;transition:all 0.3s ease;border-bottom:2px solid transparent;margin-bottom:-2px;font-family:'Montserrat',sans-serif}
+.tab-btn.active{color:var(--orange);border-bottom-color:var(--orange)}
+.tab-btn:hover{color:var(--font-default)}
+.tab-pane{display:none}
+.tab-pane.active{display:block}
+.approach-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px}
+.approach-header{display:flex;align-items:center;gap:16px;margin-bottom:24px}
+.approach-badge{padding:6px 14px;border-radius:var(--radius-pill);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px}
+.badge-low{background:rgba(34,197,94,0.1);color:#16a34a}
+.badge-mid{background:rgba(234,179,8,0.1);color:#b45309}
+.badge-high{background:rgba(239,68,68,0.1);color:#dc2626}
+.approach-name{font-size:22px;font-weight:700;color:var(--navy)}
+.approach-desc{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.approach-platforms{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px}
+.platform-tag{background:var(--light-bg);border:1px solid var(--border);border-radius:var(--radius-pill);padding:6px 14px;font-size:12px;font-weight:600;color:var(--font-default)}
+.approach-metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.am-item{text-align:center;padding:16px;background:var(--light-bg);border-radius:var(--radius-md)}
+.am-label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px}
+.am-val{font-size:15px;font-weight:700;color:var(--navy)}
+.am-val.low{color:#16a34a}
+.am-val.mid{color:#b45309}
+.am-val.high{color:#dc2626}
+
+/* COMPARISON TABLE */
+.comp-table-wrap{margin:24px 0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow-sm)}
+.comp-table{width:100%;border-collapse:collapse}
+.comp-table th{background:var(--navy);color:#fff;padding:16px 20px;font-size:13px;font-weight:600;text-align:left;border-right:1px solid rgba(255,255,255,0.1)}
+.comp-table th:last-child{border-right:none}
+.comp-table td{padding:14px 20px;font-size:14px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);vertical-align:top;transition:background 0.2s ease;line-height:1.6}
+.comp-table td:last-child{border-right:none}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table tr:hover td{background:rgba(255,108,26,0.03)}
+.comp-table .row-label{font-weight:600;color:var(--font-default);background:var(--light-bg)}
+.tag-low{background:rgba(34,197,94,0.1);color:#16a34a;padding:3px 10px;border-radius:var(--radius-pill);font-size:12px;font-weight:600;white-space:nowrap;display:inline-block}
+.tag-mid{background:rgba(234,179,8,0.1);color:#b45309;padding:3px 10px;border-radius:var(--radius-pill);font-size:12px;font-weight:600;white-space:nowrap;display:inline-block}
+.tag-high{background:rgba(239,68,68,0.1);color:#dc2626;padding:3px 10px;border-radius:var(--radius-pill);font-size:12px;font-weight:600;white-space:nowrap;display:inline-block}
+
+/* COST BREAKDOWN STAGES */
+.stages-visual{margin:32px 0}
+.stage-item{display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:start;padding:24px;border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:12px;cursor:pointer;transition:all 0.3s ease;position:relative;overflow:hidden}
+.stage-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--orange);transform:scaleY(0);transform-origin:top;transition:transform 0.3s ease}
+.stage-item:hover::before,.stage-item.expanded::before{transform:scaleY(1)}
+.stage-item:hover,.stage-item.expanded{box-shadow:var(--shadow-md);border-color:rgba(255,108,26,0.3)}
+.stage-num-wrap{width:48px;height:48px;background:linear-gradient(135deg,var(--orange),var(--orange-dark));border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px;flex-shrink:0}
+.stage-main{}
+.stage-title{font-size:17px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.stage-sub{font-size:13px;color:var(--muted)}
+.stage-cost-badge{padding:6px 14px;background:rgba(255,108,26,0.1);color:var(--orange);border-radius:var(--radius-pill);font-size:12px;font-weight:700;white-space:nowrap;align-self:center}
+.stage-details{display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);grid-column:1/-1}
+.stage-item.expanded .stage-details{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.sd-point{background:var(--light-bg);border-radius:var(--radius-md);padding:14px;font-size:13px;color:var(--muted);line-height:1.6}
+.sd-point strong{color:var(--font-default);display:block;margin-bottom:4px;font-weight:600}
+.stage-impact{grid-column:1/-1;background:rgba(255,108,26,0.08);border-radius:var(--radius-md);padding:14px;font-size:13px;border-left:3px solid var(--orange)}
+.stage-impact strong{color:var(--orange)}
+
+/* COST RANGE INTERACTIVE */
+.cost-tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:32px 0}
+.tier-card{border:2px solid var(--border);border-radius:var(--radius-lg);padding:28px;text-align:center;cursor:pointer;transition:all 0.3s ease;position:relative;overflow:hidden}
+.tier-card.featured{border-color:var(--orange);box-shadow:0 0 0 4px rgba(255,108,26,0.08)}
+.tier-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.tier-badge{position:absolute;top:16px;right:16px;background:var(--orange);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:var(--radius-pill);text-transform:uppercase;letter-spacing:0.5px}
+.tier-icon{font-size:40px;margin-bottom:16px}
+.tier-name{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.tier-price{font-size:32px;font-weight:800;background:linear-gradient(135deg,var(--orange),var(--orange-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:6px}
+.tier-price-note{font-size:12px;color:var(--muted);margin-bottom:20px}
+.tier-features{list-style:none;text-align:left;margin-bottom:0}
+.tier-features li{font-size:13px;color:var(--muted);padding:7px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+.tier-features li:last-child{border-bottom:none}
+.tf-check{color:var(--orange);font-size:16px;margin-top:1px;flex-shrink:0;font-weight:700}
+
+/* TIMELINE TABLE */
+.timeline-table-wrap{margin:24px 0;border-radius:var(--radius-lg);overflow:hidden;border:1px solid var(--border)}
+.timeline-table{width:100%;border-collapse:collapse}
+.timeline-table th{background:var(--navy);color:#fff;padding:14px 20px;font-size:13px;font-weight:600;text-align:left;border-right:1px solid rgba(255,255,255,0.1)}
+.timeline-table th:last-child{border-right:none}
+.timeline-table td{padding:14px 20px;font-size:13px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);color:var(--muted);line-height:1.6;vertical-align:top}
+.timeline-table td:first-child{font-weight:600;color:var(--font-default)}
+.timeline-table td:last-child{border-right:none}
+.timeline-table tr:last-child td{border-bottom:none}
+.timeline-table tr:hover td{background:rgba(255,108,26,0.03)}
+.pct-bar-wrap{display:flex;align-items:center;gap:10px}
+.pct-bar-bg{flex:1;height:6px;background:var(--border);border-radius:3px;overflow:hidden}
+.pct-bar-fill{height:100%;background:linear-gradient(90deg,var(--orange),var(--orange-dark));border-radius:3px;transition:width 0.8s ease}
+.pct-val{font-size:12px;font-weight:700;color:var(--orange);white-space:nowrap}
+
+/* OPTIMIZE TIPS */
+.tips-accordion{margin:24px 0}
+.tip-item{border:1px solid var(--border);border-radius:var(--radius-lg);margin-bottom:10px;overflow:hidden;transition:border-color 0.3s ease}
+.tip-item.open{border-color:rgba(255,108,26,0.3)}
+.tip-toggle{display:flex;align-items:center;gap:14px;padding:18px 24px;cursor:pointer;background:#fff;transition:background 0.2s ease}
+.tip-toggle:hover{background:var(--light-bg)}
+.tip-num{width:28px;height:28px;background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:#fff;border-radius:50%;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tip-label{font-size:15px;font-weight:600;color:var(--navy);flex:1}
+.tip-arrow{color:var(--muted);font-size:18px;transition:transform 0.3s ease;font-weight:300}
+.tip-item.open .tip-arrow{transform:rotate(180deg);color:var(--orange)}
+.tip-body{display:none;padding:0 24px 20px;padding-left:66px}
+.tip-item.open .tip-body{display:block}
+.tip-body p{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:12px}
+.tip-body p:last-child{margin-bottom:0}
+.tip-body strong{color:var(--font-default);font-weight:600}
+
+/* HIDDEN COSTS */
+.hidden-costs-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0}
+.hc-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;position:relative;overflow:hidden;transition:all 0.3s ease}
+.hc-card::after{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:rgba(255,108,26,0.06);transition:transform 0.3s ease}
+.hc-card:hover::after{transform:scale(2)}
+.hc-card:hover{border-color:rgba(255,108,26,0.3);box-shadow:var(--shadow-md)}
+.hc-icon{font-size:28px;margin-bottom:14px}
+.hc-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.hc-desc{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* ROI CALCULATOR */
+.roi-section{margin:32px 0}
+.roi-formula-box{background:linear-gradient(135deg,var(--navy),#1e3a5f);border-radius:var(--radius-lg);padding:32px;text-align:center;margin-bottom:28px}
+.roi-formula-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,0.5);margin-bottom:10px}
+.roi-formula-text{font-size:18px;font-weight:700;color:#fff;line-height:1.7;font-family:'Montserrat',monospace}
+.roi-formula-text em{color:var(--orange);font-style:normal}
+
+.roi-examples{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px}
+.roi-ex{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;transition:all 0.3s ease}
+.roi-ex:hover{box-shadow:var(--shadow-md);border-color:rgba(255,108,26,0.3)}
+.roi-ex-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--orange);margin-bottom:12px}
+.roi-ex-calc{background:var(--light-bg);border-radius:var(--radius-md);padding:16px;margin-bottom:16px}
+.roi-ex-line{display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px}
+.roi-ex-line:last-child{margin-bottom:0;padding-top:6px;border-top:1px solid var(--border);font-weight:700}
+.roi-ex-result{text-align:center;background:rgba(255,108,26,0.08);border-radius:var(--radius-md);padding:14px;border:1px solid rgba(255,108,26,0.2)}
+.roi-result-num{font-size:32px;font-weight:800;background:linear-gradient(135deg,var(--orange),var(--orange-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.roi-result-label{font-size:12px;color:var(--muted);font-weight:600}
+
+/* ROI CALCULATOR INTERACTIVE */
+.roi-calc{background:var(--light-bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:32px;margin:28px 0}
+.roi-calc-title{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:24px;display:flex;align-items:center;gap:10px}
+.roi-calc-title svg{color:var(--orange)}
+.roi-inputs{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+.ri-group label{display:block;font-size:13px;font-weight:600;color:var(--font-default);margin-bottom:8px}
+.ri-group input{width:100%;height:56px;border:1px solid var(--border);border-radius:var(--radius-md);padding:0 16px;font-size:15px;font-family:'Montserrat',sans-serif;color:var(--font-default);background:#fff;transition:border-color 0.3s ease;-moz-appearance:textfield}
+.ri-group input::-webkit-outer-spin-button,.ri-group input::-webkit-inner-spin-button{-webkit-appearance:none}
+.ri-group input:focus{outline:none;border-color:var(--orange)}
+.roi-calc-result{background:#fff;border-radius:var(--radius-lg);padding:24px;border:1px solid var(--border);display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.rcr-item{text-align:center;padding:16px;background:var(--light-bg);border-radius:var(--radius-md)}
+.rcr-val{font-size:24px;font-weight:800;color:var(--orange);margin-bottom:4px}
+.rcr-label{font-size:11px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:0.5px}
+
+/* BREAKEVEN SECTION */
+.breakeven-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.be-card{text-align:center;padding:28px 20px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);transition:all 0.3s ease}
+.be-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
+.be-period{font-size:28px;font-weight:800;color:var(--orange);margin-bottom:8px}
+.be-type{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.be-desc{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* SAVINGS STATS */
+.savings-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin:24px 0}
+.stat-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:28px;text-align:center;transition:all 0.3s ease;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,108,26,0.03),rgba(255,77,13,0.06));opacity:0;transition:opacity 0.3s ease}
+.stat-card:hover::before{opacity:1}
+.stat-card:hover{box-shadow:var(--shadow-md);border-color:rgba(255,108,26,0.2)}
+.stat-icon{font-size:32px;margin-bottom:12px}
+.stat-pct{font-size:42px;font-weight:800;background:linear-gradient(135deg,var(--orange),var(--orange-dark));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.stat-num{display:inline-block;transition:all 0.1s}
+.stat-area{font-size:16px;font-weight:700;color:var(--navy);margin:8px 0 6px}
+.stat-detail{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* WHY SPARKOUT */
+.sparkout-features{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0}
+.sf-card{background:var(--light-bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:24px;display:flex;gap:16px;transition:all 0.3s ease}
+.sf-card:hover{background:#fff;box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.sf-icon{width:44px;height:44px;background:linear-gradient(135deg,var(--orange),var(--orange-dark));border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sf-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.sf-desc{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* FAQ */
+.faq-list{margin:24px 0;display:grid;gap:12px}
+.faq-interactive{counter-reset:faqItem}
+.faq-item{border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;background:#fff;box-shadow:var(--shadow-sm);transition:border-color .25s ease,box-shadow .25s ease,transform .25s ease}
+.faq-item:hover{transform:translateY(-1px);box-shadow:var(--shadow-md)}
+.faq-item.open{border-color:rgba(255,108,26,0.42);box-shadow:0 16px 36px rgba(25,42,68,0.08)}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;cursor:pointer;background:#fff;font-family:'Montserrat',sans-serif;font-size:15px;font-weight:800;color:var(--navy);gap:16px;transition:background 0.2s ease;border:0;text-align:left}
+.faq-q span:first-child{line-height:1.45}
+.faq-q:hover{background:var(--light-bg)}
+.faq-arrow{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:rgba(255,108,26,.1);font-size:14px;color:var(--orange);transition:transform 0.3s ease,background .25s ease;flex-shrink:0;font-weight:800}
+.faq-item.open .faq-arrow{transform:rotate(180deg);background:var(--orange);color:#fff}
+.faq-a{display:grid;grid-template-rows:0fr;padding:0 20px;font-size:14px;line-height:1.8;color:var(--muted);transition:grid-template-rows .28s ease,padding .28s ease}
+.faq-a>p{overflow:hidden;margin-bottom:0}
+.faq-item.open .faq-a{grid-template-rows:1fr;padding:0 20px 18px}
+.faq-item.open .faq-a p{margin-bottom:10px}
+.faq-item.open .faq-a p:last-child{margin-bottom:0}
+
+/* PRO TIP */
+.pro-tip{background:linear-gradient(135deg,rgba(255,108,26,0.06),rgba(255,77,13,0.1));border:1px solid rgba(255,108,26,0.2);border-radius:var(--radius-lg);padding:28px;margin:32px 0;display:flex;gap:20px;align-items:flex-start}
+.pt-icon{width:48px;height:48px;background:linear-gradient(135deg,var(--orange),var(--orange-dark));border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;color:#fff}
+.pt-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--orange);margin-bottom:6px}
+.pt-text{font-size:15px;color:var(--font-default);line-height:1.8}
+.pt-text strong{color:var(--navy)}
+
+/* RELATED ARTICLES */
+.related-section{padding:80px;background:var(--light-bg);border-top:1px solid var(--border)}
+.related-section h2{font-size:28px;font-weight:700;color:var(--navy);margin-bottom:8px;text-align:center}
+.related-subtitle{text-align:center;color:var(--muted);font-size:15px;margin-bottom:40px}
+.related-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.related-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all 0.3s ease;text-decoration:none;color:inherit;display:block}
+.related-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+.rc-img{height:160px;background:linear-gradient(135deg,var(--navy),#1e3a5f);display:flex;align-items:center;justify-content:center;font-size:36px}
+.rc-content{padding:20px}
+.rc-cat{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:var(--orange);margin-bottom:8px}
+.rc-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px;line-height:1.4}
+.rc-excerpt{font-size:13px;color:var(--muted);line-height:1.6}
+.rc-read{margin-top:14px;font-size:13px;font-weight:600;color:var(--orange);display:flex;align-items:center;gap:4px}
+
+/* FOOTER CTA */
+.footer-cta{background:linear-gradient(135deg,var(--navy),#0f2236);padding:80px;text-align:center}
+.footer-cta h2{font-size:40px;font-weight:700;color:#fff;margin-bottom:16px;letter-spacing:-0.5px;max-width:640px;margin-left:auto;margin-right:auto}
+.footer-cta p{font-size:16px;color:rgba(255,255,255,0.65);margin-bottom:36px;max-width:500px;margin-left:auto;margin-right:auto}
+.cta-group{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+.cta-primary{background:linear-gradient(135deg,var(--orange),var(--orange-dark));color:#fff;padding:16px 36px;border-radius:var(--radius-md);font-weight:700;font-size:16px;text-decoration:none;transition:all 0.3s ease;border:none;cursor:pointer;font-family:'Montserrat',sans-serif}
+.cta-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(255,108,26,0.4)}
+.cta-secondary{background:transparent;color:#fff;padding:16px 36px;border-radius:var(--radius-md);font-weight:700;font-size:16px;text-decoration:none;border:1px solid rgba(255,255,255,0.3);transition:all 0.3s ease}
+.cta-secondary:hover{background:rgba(255,255,255,0.1)}
+
+/* MOBILE TOGGLE TOC */
+.toc-mobile{display:none}
+
+/* ANIMATIONS */
+@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+@keyframes countUp{from{opacity:0}to{opacity:1}}
+.animate-in{animation:fadeUp 0.6s ease forwards}
+.hero h1{animation:fadeUp 0.7s ease forwards}
+.hero-intro{animation:fadeUp 0.7s ease 0.1s both}
+.author-block{animation:fadeUp 0.7s ease 0.2s both}
+.hero-image-wrap{animation:fadeUp 0.7s ease 0.15s both}
+
+/* RESPONSIVE */
+@media(max-width:1200px){
+  .hero{padding:60px 40px}
+  .blog-layout{padding:0 40px 80px;gap:40px}
+  .navbar-inner{padding:0 40px}
+  .agent-type-cards{grid-template-columns:repeat(3,1fr)}
+  .atc:nth-child(4){border-right:1px solid var(--border)}
+  .approach-metrics{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .blog-layout{grid-template-columns:1fr}
+  .toc-sidebar{display:none}
+  .toc-mobile{display:block;margin-bottom:24px}
+  .blog-hero .cost-journey-video{aspect-ratio:auto;min-height:560px}
+  .reference-author-card{grid-template-columns:auto 1fr;align-items:start}
+  .reference-author-date{grid-column:2;white-space:normal}
+  .toc-mobile-btn{width:100%;padding:14px 20px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-md);font-size:14px;font-weight:600;cursor:pointer;text-align:left;display:flex;justify-content:space-between;align-items:center;font-family:'Montserrat',sans-serif}
+  .toc-mobile-dropdown{display:none;border:1px solid var(--border);border-top:none;border-radius:0 0 var(--radius-md) var(--radius-md);overflow:hidden}
+  .toc-mobile-dropdown.open{display:block}
+  .factors-grid,.func-grid,.app-grid,.savings-grid,.roi-examples,.roi-inputs{grid-template-columns:1fr}
+  .approach-metrics{grid-template-columns:repeat(2,1fr)}
+  .cost-tiers,.breakeven-cards{grid-template-columns:1fr}
+  .related-grid{grid-template-columns:1fr}
+  .hero{padding:40px 20px}
+  .blog-hero{padding-top:40px}
+  .blog-layout{padding:0 20px 60px}
+  .navbar-inner{padding:0 20px}
+  .related-section,.footer-cta{padding:60px 20px}
+  .cta-block{flex-direction:column;text-align:center;padding:32px}
+  .hidden-costs-grid,.sparkout-features{grid-template-columns:1fr}
+  .roi-calc-result{grid-template-columns:1fr}
+  .agent-type-cards{grid-template-columns:repeat(2,1fr)}
+  .cost-estimator{grid-template-columns:1fr}
+  .estimator-panel{position:relative;top:auto;max-height:300px}
+  .estimate-summary{position:relative;top:auto}
+  .estimator-options,.estimator-form-grid,.estimator-addon-list{grid-template-columns:1fr}
+  .ci-header{padding:24px;flex-direction:column}
+  .ci-body{padding:24px}
+  .ci-row{grid-template-columns:1fr;gap:8px}
+  .ci-price{text-align:left}
+  .ci-drivers{grid-template-columns:1fr}
+  .maturity-ladder{padding:18px}
+  .maturity-ladder::before,.maturity-ladder::after{display:none}
+  .maturity-cards{grid-template-columns:1fr}
+  .maturity-card{padding:14px}
+  .maturity-card::before{margin-bottom:10px}
+  .agentic-compare-visual{padding:18px}
+  .agentic-compare-visual::after{display:none}
+  .agentic-compare-cards{grid-template-columns:1fr}
+  .agentic-compare-card{min-height:auto}
+  .phase-roadmap{padding:18px;grid-template-columns:1fr;gap:14px}
+  .mvp-cost-visual{padding:18px}
+  .mvp-cost-visual::after{display:none}
+  .mvp-cost-cards{grid-template-columns:1fr}
+  .mvp-cost-card{min-height:auto}
+  .phase-tabs{grid-template-columns:1fr}
+  .phase-tabs::before,.phase-tabs::after{display:none}
+  .phase-tab{padding:13px 14px 13px 44px;min-height:auto}
+  .phase-dot::after{height:34px}
+  .phase-detail{padding:20px;min-height:auto}
+  .phase-detail-title{font-size:18px}
+  .animated-info-grid{grid-template-columns:1fr!important}
+  .info-card{padding:16px}
+  .decision-board{grid-template-columns:1fr}
+  .decision-top{min-height:150px}
+  .path-tabs{grid-template-columns:1fr}
+  .path-tab{border-right:none;border-bottom:1px solid var(--border);padding:15px 18px}
+  .path-tab:last-child{border-bottom:none}
+  .path-panel{padding:20px}
+  .path-panel-top{display:block}
+  .path-panel-title{font-size:19px;margin-bottom:10px}
+  .path-grid{grid-template-columns:1fr}
+  .factor-tabs,.industry-tabs{grid-template-columns:1fr}
+  .factor-tab,.industry-tab{border-right:none;border-bottom:1px solid var(--border);padding:13px 14px}
+  .factor-tab:last-child,.industry-tab:last-child{border-bottom:none}
+  .factor-panel,.industry-panel,.hitl-box{padding:16px}
+  .hitl-list{grid-template-columns:1fr}
+  .capability-stack{grid-template-columns:1fr;padding:16px}
+  .capability-invest{position:relative;top:auto}
+  .capability-grid,.ops-tab-list,.ops-metrics,.hidden-cost-grid,.roi-card-grid{grid-template-columns:1fr}
+  .spend-row{grid-template-columns:1fr;gap:8px}
+  .spend-track{height:auto;min-height:54px}
+  .spend-text{position:relative;display:block;left:auto;top:auto;transform:none;padding:10px 12px;color:#fff}
+  .pricing-strip{grid-template-columns:1fr}
+  .pricing-tab{border-right:none;border-bottom:1px solid var(--border);padding:14px 16px}
+  .pricing-tab:last-child{border-bottom:none}
+  .pricing-panel{grid-template-columns:1fr;padding:18px}
+  .pricing-badge{min-height:auto}
+  .platform-cards{grid-template-columns:1fr}
+  .platform-card{border-right:none;border-bottom:1px solid var(--border)}
+  .platform-card:last-child{border-bottom:none}
+  .platform-panel{grid-template-columns:1fr;padding:18px}
+  .rate-tabs{grid-template-columns:1fr}
+  .rate-tab{border-right:none;border-bottom:1px solid var(--border)}
+  .rate-tab:last-child{border-bottom:none}
+  .role-rate-grid,.saving-grid,.question-grid,.redflag-grid,.spark-grid,.spark-service-grid,.avoid-grid{grid-template-columns:1fr}
+  .cost-journey-video{aspect-ratio:auto;min-height:620px}
+  .journey-title{font-size:14px}
+  .journey-orbit{top:15%;width:76px;height:76px}
+  .journey-chip{width:48px;height:48px}
+  .journey-icons{top:25%;display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .journey-icon{width:100%;height:34px;border-radius:12px;font-size:11px}
+  .journey-timeline{display:none}
+  .journey-cards{left:18px;right:18px;bottom:18px;grid-template-columns:1fr;gap:8px}
+  .journey-card{min-height:auto;padding:11px}
+  .comp-table-wrap{overflow-x:auto}
+  .timeline-table-wrap{overflow-x:auto}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+  <div class="navbar-inner">
+    <a href="https://www.sparkouttech.com" class="logo">Sparkout<span>Tech</span></a>
+    <ul class="nav-links">
+      <li><a href="https://www.sparkouttech.com/ai-agent-development/">AI Agents</a></li>
+      <li><a href="https://www.sparkouttech.com/ai-chatbot-development/">AI Chatbots</a></li>
+      <li><a href="https://www.sparkouttech.com/ai-development-company/">AI Development</a></li>
+      <li><a href="https://www.sparkouttech.com/ai-agent-development-companies/">Blog</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Get a Free Quote</a>
+  </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero blog-hero">
+  <div class="blog-meta-row">
+    <span class="cat-badge">AI Agent Development</span>
+    <span class="meta-dot"></span>
+    <span class="meta-text">Feb 05, 2026</span>
+    <span class="meta-dot"></span>
+    <span class="meta-text">10 Mins</span>
+  </div>
+  <h1>AI Agent Development Cost in 2026 - A Complete Breakdown for Businesses</h1>
+  <div class="hero-feature-wrap">
+
+      <div class="cost-journey-video" role="img" aria-label="Animated AI Agent Cost Journey infographic showing Prototype, MVP, Business Process Agent, and Agentic Enterprise System pricing stages">
+        <div class="journey-title">AI Agent Cost Journey<span class="journey-subtitle">Simple validation to enterprise-scale agentic systems</span></div>
+        <div class="journey-orbit"><div class="journey-chip"><span>AI</span></div></div>
+        <div class="journey-icons" aria-hidden="true">
+          <div class="journey-icon" style="--journey-delay:.1s">API<span class="journey-icon-label">API</span></div>
+          <div class="journey-icon" style="--journey-delay:.3s">DB<span class="journey-icon-label">Database</span></div>
+          <div class="journey-icon" style="--journey-delay:.5s">RAG<span class="journey-icon-label">RAG memory</span></div>
+          <div class="journey-icon" style="--journey-delay:.7s">CLD<span class="journey-icon-label">Cloud infrastructure</span></div>
+          <div class="journey-icon" style="--journey-delay:.9s">BI<span class="journey-icon-label">Dashboard</span></div>
+          <div class="journey-icon" style="--journey-delay:1.1s">SEC<span class="journey-icon-label">Security shield</span></div>
+          <div class="journey-icon" style="--journey-delay:1.3s">MA<span class="journey-icon-label">Multi-agent orchestration</span></div>
+        </div>
+        <div class="journey-timeline"></div>
+        <div class="journey-cards">
+          <div class="journey-card" style="--journey-delay:.2s">
+            <div class="journey-stage">Stage 01</div>
+            <div class="journey-name">Prototype / PoC</div>
+            <div class="journey-price"><span class="journey-cost-num" data-min="15" data-max="35">$15k-$35k</span></div>
+            <div class="journey-time">4-6 weeks</div>
+          </div>
+          <div class="journey-card" style="--journey-delay:.7s">
+            <div class="journey-stage">Stage 02</div>
+            <div class="journey-name">MVP Agent</div>
+            <div class="journey-price"><span class="journey-cost-num" data-min="25" data-max="60">$25k-$60k</span></div>
+            <div class="journey-time">6-10 weeks</div>
+          </div>
+          <div class="journey-card" style="--journey-delay:1.2s">
+            <div class="journey-stage">Stage 03</div>
+            <div class="journey-name">Business Process Agent</div>
+            <div class="journey-price"><span class="journey-cost-num" data-min="60" data-max="150">$60k-$150k</span></div>
+            <div class="journey-time">3-6 months</div>
+          </div>
+          <div class="journey-card" style="--journey-delay:1.7s">
+            <div class="journey-stage">Stage 04</div>
+            <div class="journey-name">Agentic Enterprise System</div>
+            <div class="journey-price"><span class="journey-cost-num" data-min="100" data-max="300" data-plus="true">$100k-$300k+</span></div>
+            <div class="journey-time">6-9 months</div>
+          </div>
+        </div>
+        <div class="journey-fallback">Prototype / PoC - $15k-$35k - 4-6 weeks | MVP Agent - $25k-$60k - 6-10 weeks | Business Process Agent - $60k-$150k - 3-6 months | Agentic Enterprise System - $100k-$300k+ - 6-9 months</div>
+      </div>
+  </div>
+  <div class="reference-author-card">
+    <div class="author-avatar">YS</div>
+    <div class="reference-author-copy">
+      <a href="#" class="reference-author-name">Yokesh Sankar</a>
+      <p>Yokesh Sankar, the Co - Founder and COO of Sparkout Tech, is a seasoned tech consultant Specializing in blockchain, fintech, and supply chain development.</p>
+    </div>
+    <div class="reference-author-date">Feb 05, 2026 | 10 Mins</div>
+  </div>
+</section>
+
+<!-- CONTENT LAYOUT -->
+<div class="blog-layout">
+  <aside class="toc-sidebar">
+    <div class="toc-title">Table of Contents</div>
+    <ul class="toc-list">
+      <li><a href="#intro" class="toc-link">Introduction</a></li>
+      <li><a href="#calculate-your-ai-agent-development-cost-for-yourself" class="toc-link">Calculate Your AI Agent Development Cost for Yourself</a></li>
+      <li><a href="#how-much-does-it-cost-to-build-an-ai-agent" class="toc-link">How Much Does It Cost to Build an AI Agent</a></li>
+      <li><a href="#ai-agent-vs-chatbot-vs-agentic-workflow" class="toc-link">AI Agent vs Chatbot vs Agentic Workflow</a></li>
+      <li><a href="#how-much-does-a-custom-ai-agent-mvp-development-cost" class="toc-link">How Much Does a Custom AI Agent MVP Development Cost</a></li>
+      <li><a href="#build-vs-buy-ai-agent-cost-comparison" class="toc-link">Build vs Buy - AI Agent Cost Comparison</a></li>
+      <li><a href="#in-house-vs-outsourcing-ai-agent-development-cost-comparison" class="toc-link">In-House vs Outsourcing - AI Agent Development Cost Comparison</a></li>
+      <li><a href="#factors-that-drive-the-ai-agent-development-cost" class="toc-link">Factors That Drive the AI Agent Development Cost</a></li>
+      <li><a href="#agentic-ai-cost-tool-using-autonomous-systems" class="toc-link">Agentic AI Cost - Tool-Using Autonomous Systems</a></li>
+      <li><a href="#ongoing-monthly-and-annual-operating-costs-for-ai-agents" class="toc-link">Ongoing Monthly &amp; Annual Operating Costs for AI Agents</a></li>
+      <li><a href="#hidden-ai-agent-costs-to-watch-before-you-budget" class="toc-link">Hidden AI Agent Costs to Watch Before You Budget</a></li>
+      <li><a href="#pricing-models-for-ai-agent-development-in-2026" class="toc-link">Pricing Models for AI Agent Development in 2026</a></li>
+      <li><a href="#how-ai-agents-deliver-roi" class="toc-link">How AI Agents Deliver ROI</a></li>
+      <li><a href="#ai-agent-tech-stack-cost-comparison" class="toc-link">AI Agent Tech Stack Cost Comparison</a></li>
+      <li><a href="#hourly-rates-for-ai-agent-development-by-region" class="toc-link">Hourly Rates for AI Agent Development by Region</a></li>
+      <li><a href="#sneak-peek-at-what-the-world-s-leading-ai-agents-actually-costs" class="toc-link">Sneak Peek at What the World’s Leading AI Agents Actually Costs</a></li>
+      <li><a href="#how-to-reduce-ai-agent-development-cost-without-compromising-quality" class="toc-link">How to Reduce AI Agent Development Cost Without Compromising Quality</a></li>
+      <li><a href="#how-to-choose-the-right-ai-agent-development-company" class="toc-link">How to Choose the Right AI Agent Development Company</a></li>
+      <li><a href="#why-enterprises-choose-sparkout-tech-for-ai-agent-development" class="toc-link">Why Enterprises Choose Sparkout Tech for AI Agent Development</a></li>
+      <li><a href="#final-thoughts" class="toc-link">Final Thoughts</a></li>
+      <li><a href="#frequently-asked-questions" class="toc-link">Frequently Asked Questions</a></li>
+    </ul>
+    <div class="toc-progress">
+      <div class="progress-label">Reading Progress</div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+  </aside>
+
+  <article class="article-body">
+    <div class="toc-mobile">
+      <button class="toc-mobile-btn" onclick="toggleMobileToc(this)">Table of Contents <span>v</span></button>
+      <div class="toc-mobile-dropdown" id="mobileTocDropdown">
+        <ul class="toc-list" style="padding:12px">
+          <li><a href="#intro" class="toc-link" onclick="closeMobileToc()">Introduction</a></li>
+          <li><a href="#calculate-your-ai-agent-development-cost-for-yourself" class="toc-link" onclick="closeMobileToc()">Calculate Your AI Agent Development Cost for Yourself</a></li>
+          <li><a href="#how-much-does-it-cost-to-build-an-ai-agent" class="toc-link" onclick="closeMobileToc()">How Much Does It Cost to Build an AI Agent</a></li>
+          <li><a href="#ai-agent-vs-chatbot-vs-agentic-workflow" class="toc-link" onclick="closeMobileToc()">AI Agent vs Chatbot vs Agentic Workflow</a></li>
+          <li><a href="#how-much-does-a-custom-ai-agent-mvp-development-cost" class="toc-link" onclick="closeMobileToc()">How Much Does a Custom AI Agent MVP Development Cost</a></li>
+          <li><a href="#build-vs-buy-ai-agent-cost-comparison" class="toc-link" onclick="closeMobileToc()">Build vs Buy - AI Agent Cost Comparison</a></li>
+          <li><a href="#in-house-vs-outsourcing-ai-agent-development-cost-comparison" class="toc-link" onclick="closeMobileToc()">In-House vs Outsourcing - AI Agent Development Cost Comparison</a></li>
+          <li><a href="#factors-that-drive-the-ai-agent-development-cost" class="toc-link" onclick="closeMobileToc()">Factors That Drive the AI Agent Development Cost</a></li>
+          <li><a href="#agentic-ai-cost-tool-using-autonomous-systems" class="toc-link" onclick="closeMobileToc()">Agentic AI Cost - Tool-Using Autonomous Systems</a></li>
+          <li><a href="#ongoing-monthly-and-annual-operating-costs-for-ai-agents" class="toc-link" onclick="closeMobileToc()">Ongoing Monthly &amp; Annual Operating Costs for AI Agents</a></li>
+          <li><a href="#hidden-ai-agent-costs-to-watch-before-you-budget" class="toc-link" onclick="closeMobileToc()">Hidden AI Agent Costs to Watch Before You Budget</a></li>
+          <li><a href="#pricing-models-for-ai-agent-development-in-2026" class="toc-link" onclick="closeMobileToc()">Pricing Models for AI Agent Development in 2026</a></li>
+          <li><a href="#how-ai-agents-deliver-roi" class="toc-link" onclick="closeMobileToc()">How AI Agents Deliver ROI</a></li>
+          <li><a href="#ai-agent-tech-stack-cost-comparison" class="toc-link" onclick="closeMobileToc()">AI Agent Tech Stack Cost Comparison</a></li>
+          <li><a href="#hourly-rates-for-ai-agent-development-by-region" class="toc-link" onclick="closeMobileToc()">Hourly Rates for AI Agent Development by Region</a></li>
+          <li><a href="#sneak-peek-at-what-the-world-s-leading-ai-agents-actually-costs" class="toc-link" onclick="closeMobileToc()">Sneak Peek at What the World’s Leading AI Agents Actually Costs</a></li>
+          <li><a href="#how-to-reduce-ai-agent-development-cost-without-compromising-quality" class="toc-link" onclick="closeMobileToc()">How to Reduce AI Agent Development Cost Without Compromising Quality</a></li>
+          <li><a href="#how-to-choose-the-right-ai-agent-development-company" class="toc-link" onclick="closeMobileToc()">How to Choose the Right AI Agent Development Company</a></li>
+          <li><a href="#why-enterprises-choose-sparkout-tech-for-ai-agent-development" class="toc-link" onclick="closeMobileToc()">Why Enterprises Choose Sparkout Tech for AI Agent Development</a></li>
+          <li><a href="#final-thoughts" class="toc-link" onclick="closeMobileToc()">Final Thoughts</a></li>
+          <li><a href="#frequently-asked-questions" class="toc-link" onclick="closeMobileToc()">Frequently Asked Questions</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <section class="intro-section" id="intro">
+      <p>Meanwhile, as technology advances, the development cost of AI agent also changes. In 2026, building these advanced systems typically costs anywhere between $25,000 for a structured MVP and $30,000 for a full enterprise-grade deployment.</p>
+      <p>This guide breaks down the latest AI agent pricing, infrastructure choices, and hidden costs to help you make a budget list that delivers real ROI.</p>
+      <p>Key Takeaways:</p>
+      <p>Cost Range: $25,000 (MVP) to $300,000+ (Enterprise). Most projects land between $60,000 – $150,000.</p>
+      <p>The Main Cost: 40-60% of the budget goes to the integrations and compliance, not the AI model.</p>
+      <p>Run Rate: Ongoing monthly costs range from $1,000 to $10,000 (for tokens, cloud hosting, and maintenance).</p>
+      <p>Best Strategy: Start small. Build a PoC ($15k-$35k) or MVP ($25k-$60k) before investing fully.</p>
+      <p>—---------------------------------------------------------------------------------------------------------------------------</p>
+      <p>⚠️ Cost Disclaimer! The pricing figures of the 2026 market estimates are only based on typical project scopes. The actual costs vary dynamically depending on your unique integrations, data complexity, and security requirements.</p>
+      <p>—---------------------------------------------------------------------------------------------------------------------------</p>
+    </section>
+
+    <section class="section-block" id="calculate-your-ai-agent-development-cost-for-yourself">
+      <h2>Calculate Your AI Agent Development Cost for Yourself</h2>
+      <p>Need to calculate the AI agent development cost for yourself? Just select the project parameters below to get an approximate budget estimate before consulting with your partner.</p>
+      <div class="cost-estimator reveal-on-scroll">
+        <div class="estimator-panel">
+          <div class="estimator-form-grid">
+            <div class="estimator-group" data-estimator-group="AI Agent Type">
+              <label class="estimator-field-label" for="agentTypeSelect">AI Agent Type</label>
+              <select class="estimator-select" id="agentTypeSelect" data-group="agentType">
+                <option data-label="Rule-Based Agent $5k-$20k" data-min="5" data-max="20">Rule-Based Agent $5k-$20k</option>
+                <option data-label="Model-Based Agent $25k-$75k" data-min="25" data-max="75">Model-Based Agent $25k-$75k</option>
+                <option data-label="Learning Agent $50k-$150k" data-min="50" data-max="150">Learning Agent $50k-$150k</option>
+                <option data-label="Agentic AI System $80k-$300k+" data-min="80" data-max="300">Agentic AI System $80k-$300k+</option>
+              </select>
+            </div>
+            <div class="estimator-group" data-estimator-group="Autonomy level">
+              <label class="estimator-field-label" for="autonomySelect">Autonomy level</label>
+              <select class="estimator-select" id="autonomySelect" data-group="autonomy">
+                <option data-label="Reactive $5k&ndash;$20k" data-min="5" data-max="20">Reactive $5k&ndash;$20k</option>
+                <option data-label="Contextual $30k&ndash;$100k" data-min="30" data-max="100">Contextual $30k&ndash;$100k</option>
+                <option data-label="Autonomous $75k&ndash;$250k" data-min="75" data-max="250">Autonomous $75k&ndash;$250k</option>
+              </select>
+            </div>
+            <div class="estimator-group" data-estimator-group="Industry">
+              <label class="estimator-field-label" for="industrySelect">Industry</label>
+              <select class="estimator-select" id="industrySelect" data-group="industry">
+                <option data-label="Healthcare &amp; Life Sciences $80k-$250k" data-min="80" data-max="250">Healthcare &amp; Life Sciences $80k-$250k</option>
+                <option data-label="Financial Services &amp; FinTech $100k-$300k" data-min="100" data-max="300">Financial Services &amp; FinTech $100k-$300k</option>
+                <option data-label="Enterprise SaaS &amp; Technology $40k-$120k" data-min="40" data-max="120">Enterprise SaaS &amp; Technology $40k-$120k</option>
+                <option data-label="Retail &amp; E-commerce $30k-$100k" data-min="30" data-max="100">Retail &amp; E-commerce $30k-$100k</option>
+              </select>
+            </div>
+            <div class="estimator-group" data-estimator-group="Build Approach">
+              <label class="estimator-field-label" for="approachSelect">Build Approach</label>
+              <select class="estimator-select" id="approachSelect" data-group="approach">
+                <option data-label="No-Code Platforms $5k&ndash;$20k" data-min="5" data-max="20">No-Code Platforms $5k&ndash;$20k</option>
+                <option data-label="Low-Code Frameworks $20k&ndash;$50k" data-min="20" data-max="50">Low-Code Frameworks $20k&ndash;$50k</option>
+                <option data-label="Custom Development $60k&ndash;$250k+" data-min="60" data-max="250">Custom Development $60k&ndash;$250k+</option>
+              </select>
+            </div>
+            <div class="estimator-group estimator-group-wide" data-estimator-group="Team">
+              <label class="estimator-field-label" for="teamSelect">Team</label>
+              <select class="estimator-select" id="teamSelect" data-group="team">
+                <option data-label="In-House Team $150k+/year" data-min="150" data-max="150">In-House Team $150k+/year</option>
+                <option data-label="Outsourcing Partner $25k&ndash;$200k/ project" data-min="25" data-max="200">Outsourcing Partner $25k&ndash;$200k/ project</option>
+                <option data-label="Self-Build Tools $5k&ndash;$40k" data-min="5" data-max="40">Self-Build Tools $5k&ndash;$40k</option>
+              </select>
+            </div>
+            <details class="estimator-addon-dropdown">
+              <summary>Add-ons (Select all that apply for your project)</summary>
+              <div class="estimator-addon-list" data-estimator-group="Add-ons (Select all that apply for your project)">
+                <label class="estimator-addon-item"><input type="checkbox" class="estimator-addon-check" data-group="addon" data-label="RAG/Memory (+$15k&ndash;$40k)" data-min="15" data-max="40">RAG/Memory (+$15k&ndash;$40k)</label>
+                <label class="estimator-addon-item"><input type="checkbox" class="estimator-addon-check" data-group="addon" data-label="Human-in-the-loop (+15&ndash;20%)" data-min="15" data-max="20" data-percent="true">Human-in-the-loop (+15&ndash;20%)</label>
+                <label class="estimator-addon-item"><input type="checkbox" class="estimator-addon-check" data-group="addon" data-label="Multi-agent system (+$20k&ndash;$60k)" data-min="20" data-max="60">Multi-agent system (+$20k&ndash;$60k)</label>
+                <label class="estimator-addon-item"><input type="checkbox" class="estimator-addon-check" data-group="addon" data-label="Voice / multimodal (+$15k&ndash;$50k)" data-min="15" data-max="50">Voice / multimodal (+$15k&ndash;$50k)</label>
+                <label class="estimator-addon-item"><input type="checkbox" class="estimator-addon-check" data-group="addon" data-label="Compliance layer (+$25k&ndash;$75k)" data-min="25" data-max="75">Compliance layer (+$25k&ndash;$75k)</label>
+              </div>
+            </details>
+          </div>
+        </div>
+        <aside class="estimate-summary" aria-label="AI agent development cost estimate">
+          <div class="estimate-range" id="estimateRange">$150k - $250k</div>
+          <div class="estimate-selected" id="estimateSelected"></div>
+          <div class="estimate-actions">
+            <a href="#contact" class="estimate-primary">Get Estimate &#9472;&#9658;</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-block" id="how-much-does-it-cost-to-build-an-ai-agent">
+      <h2>How Much Does It Cost to Build an AI Agent</h2>
+      <p>AI agent development costs vary based on complexity, system integrations, autonomy level, and enterprise requirements. Below is a practical breakdown to help you estimate investment and timeline expectations.</p>
+      <p>Development Costs Based on the Types of AI Agents</p>
+      <p>The cost of building an AI agent depends largely on the different types of AI agent architecture it is designed to deliver. As agents move from rule-based logic to autonomous, tool-using systems, complexity as well as investment increase.</p>
+      <div class="comp-table-wrap reveal-on-scroll"><table class="comp-table"><thead><tr><th>Agent Type</th><th>Development Cost</th><th>Used For</th><th>Capability</th></tr></thead><tbody><tr><td class="row-label">Rule-Based Agent</td><td>$5k-$20k</td><td>FAQ handling, scripted workflows</td><td>Fixed rules and decision trees</td></tr><tr><td class="row-label">Model-Based Agent</td><td>$25k-$75k</td><td>Context-aware customer support</td><td>Context-aware reasoning</td></tr><tr><td class="row-label">Learning Agent</td><td>$50k-$150k</td><td>Personalization, adaptive recommendations</td><td>Learns from feedback</td></tr><tr><td class="row-label">Agentic AI System</td><td>$80k-$300k+</td><td>Multi-system, tool-using automation</td><td>Autonomous tool orchestration</td></tr></tbody></table></div>
+      <p>As the AI agent becomes more intelligent, development costs increase. This is because advanced agents require deeper integrations, training data pipelines, stronger safety layers, and ongoing monitoring infrastructure.</p>
+      <p>AI Agent Development Cost by Project Tier</p>
+      <p>For most businesses, the final or overall investment depends less on AI itself and more on integration depth, security requirements, memory architecture, and autonomy level.</p>
+      <div class="comp-table-wrap reveal-on-scroll"><table class="comp-table"><thead><tr><th>Tier</th><th>Cost Range</th><th>Timeline</th><th>Best For</th></tr></thead><tbody><tr><td class="row-label">Prototype / PoC</td><td>$15k-$35k</td><td>4-6 weeks</td><td>Testing one focused use case</td></tr><tr><td class="row-label">MVP Agent</td><td>$25k-$60k</td><td>6-10 weeks</td><td>Early-stage production deployment</td></tr><tr><td class="row-label">Business Process Agent</td><td>$60k-$150k</td><td>3-6 months</td><td>CRM, ERP, or workflow automation</td></tr><tr><td class="row-label">Agentic Enterprise System</td><td>$100k-$300k+</td><td>6-9 months</td><td>Multi-agent, cross-system automation</td></tr></tbody></table></div>
+      <p>AI Agent Development Cost by Autonomy Level</p>
+      <p>The more independently an AI agent can operate, the more engineering, safeguards, and governance it requires. As the system turns into fully autonomous AI agents, architecture complexity increases along with testing scope and long-term monitoring costs.</p>
+      <div class="comp-table-wrap reveal-on-scroll"><table class="comp-table"><thead><tr><th>Autonomy Level</th><th>Human Intervention</th><th>Typical Cost</th><th>Example</th><th>Capability</th></tr></thead><tbody><tr><td class="row-label">Reactive</td><td>High</td><td>$5k–$20k</td><td>FAQ chatbot with predefined flows</td><td>Prompt-based responses</td></tr><tr><td class="row-label">Contextual</td><td>Medium</td><td>$30k–$100k</td><td>CRM-integrated support agent with memory</td><td>Uses memory &amp; APIs</td></tr><tr><td class="row-label">Autonomous</td><td>Low</td><td>$75k–$250k+</td><td>Multi-system workflow automation agent</td><td>Plans and executes tasks independently</td></tr></tbody></table></div>
+      <p>Common reasons for higher autonomy to increase cost:</p>
+      <p>As autonomy increases, the requirements increase for the following reasons:</p>
+      <p>Extensive edge-case testing.</p>
+      <p>Human-in-the-loop review dashboards.</p>
+      <p>Guardrails and safety constraints.</p>
+      <p>Real-time monitoring and logging systems.</p>
+      <p>Compliance and risk management controls.</p>
+      <p>These additional layers typically increase total development and deployment costs by about 15-25%. But they are critical for ensuring reliability, security, and enterprise-grade performance.</p>
+      <p>AI Agent Development Cost by Build Approach</p>
+      <p>The way you choose to build your AI agent directly impacts cost, flexibility, scalability, and long-term control. Here is how the main approaches differ:</p>
+      <div class="comp-table-wrap reveal-on-scroll"><table class="comp-table"><thead><tr><th>Approach</th><th>Cost Range</th><th>Advantages</th><th>Best For</th></tr></thead><tbody><tr><td class="row-label">No-Code Platforms</td><td>$5k–$20k</td><td>Fast deployment, lower upfront cost</td><td>MVPs, internal tools, simple automation</td></tr><tr><td class="row-label">Low-Code Frameworks</td><td>$20k–$50k</td><td>Balanced speed and customization</td><td>Startups, growing teams</td></tr><tr><td class="row-label">Custom Development</td><td>$60k–$250k+</td><td>Full architectural control, deep integrations, enterprise security</td><td>Enterprises, complex workflows</td></tr></tbody></table></div>
+      <p>Whenever business complexity increases, custom architecture often becomes essential for long-term scalability and competitive advantage.</p>
+      <p>AI Agent Cost Breakdown by Development Phase</p>
+      <p>AI agent budgets are typically distributed across multiple engineering and governance stages. By understanding where the investment goes, it is possible to set realistic expectations and avoid underfunding critical phases.</p>
+      <p>A well-balanced budget ensures the AI agent is not only intelligent, but also secure, reliable, and production-ready.</p>
+      <div class="comp-table-wrap reveal-on-scroll"><table class="comp-table"><thead><tr><th>Phase</th><th>% of Total Budget</th><th>Approx. Cost</th></tr></thead><tbody><tr><td class="row-label">Discovery &amp; Planning</td><td>10–15%</td><td>$10k–$15k</td></tr><tr><td class="row-label">Data Collection &amp; Preparation</td><td>10–20%</td><td>$10k–$20k</td></tr><tr><td class="row-label">Model Development &amp; Prompt Engineering</td><td>20–30%</td><td>$20k–$30k</td></tr><tr><td class="row-label">Tool Integrations &amp; APIs</td><td>15–25%</td><td>$15k–$25k</td></tr><tr><td class="row-label">UI / Admin Dashboard Development</td><td>10–15%</td><td>$10k–$15k</td></tr><tr><td class="row-label">QA, Testing &amp; Red Teaming</td><td>10–15%</td><td>$10k–$15k</td></tr><tr><td class="row-label">Deployment &amp; Infrastructure Setup</td><td>5–10%</td><td>$5k–$15k</td></tr></tbody></table></div>
+      <p>Expert Insight:</p>
+      <p>Where Most AI Agent Budgets Go Wrong:</p>
+      <p>In many enterprise deployments, about 40-60% of the total AI agent cost is allocated to system integrations and compliance layers instead of the AI model itself. AI agents’ budgets go wrong when organizations often underestimate monitoring, token usage, and governance infrastructure.</p>
+    </section>
+
+    <section class="section-block" id="ai-agent-vs-chatbot-vs-agentic-workflow">
+      <h2>AI Agent vs Chatbot vs Agentic Workflow</h2>
+      <div class="agentic-compare-visual reveal-on-scroll" role="img" aria-label="AI Agent vs Chatbot vs Agentic Workflow animated comparison infographic">
+        <div class="agentic-compare-cards">
+          <div class="agentic-compare-card" style="--agentic-delay:0s">
+            <div class="agentic-compare-title">Chatbot</div>
+            <div class="agentic-compare-cost">$5k-$25k</div>
+            <div class="agentic-compare-features">
+              <div class="agentic-feature"><span>Multi-step reasoning</span><strong>&#10006;</strong></div>
+              <div class="agentic-feature"><span>Tool usage</span><strong>Limited</strong></div>
+              <div class="agentic-feature"><span>Memory (RAG)</span><strong>Rare</strong></div>
+              <div class="agentic-feature"><span>Autonomy</span><strong>Low</strong></div>
+              <div class="agentic-feature"><span>Typical Cost</span><strong>$5k-$25k</strong></div>
+            </div>
+          </div>
+          <div class="agentic-compare-card" style="--agentic-delay:.2s">
+            <div class="agentic-compare-title">AI Agent</div>
+            <div class="agentic-compare-cost">$25k-$150k</div>
+            <div class="agentic-compare-features">
+              <div class="agentic-feature"><span>Multi-step reasoning</span><strong>&#10004;</strong></div>
+              <div class="agentic-feature"><span>Tool usage</span><strong>Yes</strong></div>
+              <div class="agentic-feature"><span>Memory (RAG)</span><strong>Yes</strong></div>
+              <div class="agentic-feature"><span>Autonomy</span><strong>Medium&ndash;High</strong></div>
+              <div class="agentic-feature"><span>Typical Cost</span><strong>$25k-$150k</strong></div>
+            </div>
+          </div>
+          <div class="agentic-compare-card" style="--agentic-delay:.4s">
+            <div class="agentic-compare-title">Agentic Workflow</div>
+            <div class="agentic-compare-cost">$80k-$300k+</div>
+            <div class="agentic-compare-features">
+              <div class="agentic-feature"><span>Multi-step reasoning</span><strong>&#10004;</strong></div>
+              <div class="agentic-feature"><span>Tool usage</span><strong>Advanced</strong></div>
+              <div class="agentic-feature"><span>Memory (RAG)</span><strong>Yes</strong></div>
+              <div class="agentic-feature"><span>Autonomy</span><strong>High</strong></div>
+              <div class="agentic-feature"><span>Typical Cost</span><strong>$80k-$300k+</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>While these terms are often used interchangeably, they represent very different levels of intelligence, autonomy, and business value. Take a look at the table below for a clear understanding.</p>
+      <div class="comp-table-wrap reveal-on-scroll"><table class="comp-table"><thead><tr><th>Feature</th><th>Chatbot</th><th>AI Agent</th><th>Agentic Workflow</th></tr></thead><tbody><tr><td class="row-label">Multi-step reasoning</td><td>✖</td><td>✔</td><td>✔</td></tr><tr><td class="row-label">Tool usage</td><td>Limited</td><td>Yes</td><td>Advanced</td></tr><tr><td class="row-label">Memory (RAG)</td><td>Rare</td><td>Yes</td><td>Yes</td></tr><tr><td class="row-label">Autonomy</td><td>Low</td><td>Medium–High</td><td>High</td></tr><tr><td class="row-label">Typical Cost</td><td>$5k-$25k</td><td>$25k-$150k</td><td>$80k-$300k+</td></tr></tbody></table></div>
+      <p>Traditional Chatbot - It primarily answers questions based on predefined rules or simple AI prompts and is often delivered through AI chatbot development frameworks.</p>
+      <p>AI Agent - It can reason through tasks, access tools (CRM, APIs, databases), and retain contextual memory to complete multi-step workflows.</p>
+      <p>Agentic Workflow - It operates at the highest level by coordinating with multiple agents and systems to autonomously execute complex business processes.</p>
+      <p>A common question in 2026 is agentic AI vs AI agents &amp; what&#x27;s the difference? While all agentic systems are AI agents, not all AI agents are fully agentic.  Agentic AI refers to autonomous, tool-using systems that are capable of multi-step planning and execution with minimal human intervention.</p>
+    </section>
+
+    <section class="section-block" id="how-much-does-a-custom-ai-agent-mvp-development-cost">
+      <h2>How Much Does a Custom AI Agent MVP Development Cost</h2>
+      <div class="mvp-cost-visual reveal-on-scroll" role="img" aria-label="Animated phased roadmap for custom AI agent MVP development cost">
+        <div class="mvp-cost-cards">
+          <div class="mvp-cost-card" style="--mvp-delay:0s">
+            <div class="mvp-cost-stage">1</div>
+            <div class="mvp-cost-title">PoC (Proof of Concept)</div>
+            <div class="mvp-cost-price">Costs $15k&ndash;$35k</div>
+            <div class="mvp-cost-points">
+              <div class="mvp-cost-point">PoC is built to validate a single, high-impact use case.</div>
+              <div class="mvp-cost-point">It comes with limited integrations, controlled datasets, and basic workflows.</div>
+              <div class="mvp-cost-point">PoC is best for testing feasibility, stakeholder buy-in, and projected ROI.</div>
+            </div>
+          </div>
+          <div class="mvp-cost-card" style="--mvp-delay:.2s">
+            <div class="mvp-cost-stage">2</div>
+            <div class="mvp-cost-title">MVP (Minimal Viable Product)</div>
+            <div class="mvp-cost-price">Costs $25k-$60k</div>
+            <div class="mvp-cost-points">
+              <div class="mvp-cost-point">It is a production-ready agent that features real tool integrations, defined workflows, and structured memory (RAG).</div>
+              <div class="mvp-cost-point">Often deployed in a live environment but with limited scalability and autonomy.</div>
+              <div class="mvp-cost-point">MVP is ideal for early-stage adoption and operational validation.</div>
+            </div>
+          </div>
+          <div class="mvp-cost-card" style="--mvp-delay:.4s">
+            <div class="mvp-cost-stage">3</div>
+            <div class="mvp-cost-title">Full Product Deployment</div>
+            <div class="mvp-cost-price">Costs $60k-$150k</div>
+            <div class="mvp-cost-points">
+              <div class="mvp-cost-point">These are built with strong security, monitoring dashboards, logging systems, reliability engineering, and compliance controls to ensure stable performance.</div>
+              <div class="mvp-cost-point">Designed for scale, cross-system automation, and mission-critical processes.</div>
+              <div class="mvp-cost-point">The tiered model helps early-stage buyers launch quickly without committing to a large investment upfront.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>Not all organizations need to build AI into a fully autonomous, enterprise-scale AI agent from day one. A phased approach will help validate the ROI, reduce risk, and scale investment based on the measurable outcomes.</p>
+      <p>1. PoC (Proof of Concept) - Costs $15k–$35k</p>
+      <p>PoC is built to validate a single, high-impact use case. It comes with limited integrations, controlled datasets, and basic workflows.</p>
+      <p>PoC is best for testing feasibility, stakeholder buy-in, and projected ROI.</p>
+      <p>2. MVP (Minimal Viable Product) - Costs $25k-$60k</p>
+      <p>It is a production-ready agent that features real tool integrations, defined workflows, and structured memory (RAG). Often deployed in a live environment but with limited scalability and autonomy.</p>
+      <p>MVP is ideal for early-stage adoption and operational validation.</p>
+      <p>3. Full Product Deployment - Costs $60k-$150k</p>
+      <p>These are built with strong security, monitoring dashboards, logging systems, reliability engineering, and compliance controls to ensure stable performance.</p>
+      <p>Designed for scale, cross-system automation, and mission-critical processes.</p>
+      <p>The tiered model helps early-stage buyers launch quickly without committing to a large investment upfront.</p>
+    </section>
+
+    <section class="section-block" id="build-vs-buy-ai-agent-cost-comparison">
+      <h2>Build vs Buy - AI Agent Cost Comparison</h2>
+      <p>Thinking about AI agents, most of the businesspeople have the same thought in their minds, it’s whether to buy a ready-made solution or start building one for themselves. Here’s the solution to it.</p>
+      <div class="comp-table-wrap reveal-on-scroll"><table class="comp-table"><thead><tr><th>Criteria</th><th>Buy (SaaS)</th><th>Low-Code Build</th><th>Custom Development</th></tr></thead><tbody><tr><td class="row-label">Financial Profile</td><td>Predictable subscription fee</td><td>Moderate upfront setup &amp; ongoing platform licenses</td><td>Development cost + ongoing maintenance</td></tr><tr><td class="row-label">Estimates Cost</td><td>$500–$5k/month</td><td>$20k–$50k/month</td><td>$60k–$300k/month</td></tr><tr><td class="row-label">Time-to-Market</td><td>Days to weeks</td><td>Weeks to months</td><td>6 to 12+ months</td></tr><tr><td class="row-label">Resource Demand</td><td>Low</td><td>Moderate</td><td>Very high</td></tr><tr><td class="row-label">Customization</td><td>Low</td><td>Moderate to high</td><td>Anytime</td></tr><tr><td class="row-label">Maintenance &amp; Scale</td><td>Vendor responsibility</td><td>Shared responsibility</td><td>100% internal</td></tr></tbody></table></div>
+    </section>
+
+    <section class="section-block" id="in-house-vs-outsourcing-ai-agent-development-cost-comparison">
+      <h2>In-House vs Outsourcing - AI Agent Development Cost Comparison</h2>
+      <p>Choosing the right delivery model affects not only cost, but also speed, risk exposure, and long-term control. Often, many enterprises checking out the cost factors also consider whether to hire AI agent developer talent internally or partner with a specialized AI development firm to reduce ramp-up time and architectural risk.</p>
+      <div class="comp-table-wrap reveal-on-scroll"><table class="comp-table"><thead><tr><th>Model</th><th>Cost</th><th>Risk Level</th><th>Control</th></tr></thead><tbody><tr><td class="row-label">In-House Team</td><td>$150k+/year</td><td>High (hiring, retention, ramp-up time)</td><td>Full ownership</td></tr><tr><td class="row-label">Outsourcing Partner</td><td>$25k–$200k/ project</td><td>Medium (vendor dependency)</td><td>Shared governance</td></tr><tr><td class="row-label">Self-Build Tools</td><td>$5k–$40k</td><td>Skill-dependent</td><td>Limited flexibility</td></tr></tbody></table></div>
+      <p>When to Choose What:</p>
+      <p>1. In-House Development - Offers maximum control but requires significant investment in talent, infrastructure, and ongoing management.</p>
+      <p>2. Outsourcing - Reduces hiring risk and speeds up delivery, especially for specialized AI agent builds.</p>
+      <p>3. Self-Build Platforms - They are cost-effective for experimentation but depend heavily on internal technical capability and may limit scalability.</p>
+    </section>
+
+    <section class="section-block" id="factors-that-drive-the-ai-agent-development-cost">
+      <h2>Factors That Drive the AI Agent Development Cost</h2>
+      <p>AI agent pricing in 2026 is determined more based on the architectural complexity, usage scale, and governance demands. Cost structures are redefined based on several shifts and are as follows:</p>
+      <p>1. Multi-Agent System (MAS)</p>
+      <p>Organizations deploy coordinated agents instead of single-agent models. This increases orchestration and monitoring needs.</p>
+      <p>Cost Impact: Adds nearly $20,000–$60,000 to the core development budget due to the need for a supervisor framework.</p>
+      <p>2. Agentic RAG Adoption</p>
+      <p>Persistent memory architecture (RAG+vector databases) has become standard. This adds infrastructure and optimization costs.</p>
+      <p>Cost Impact: It adds $15,000–$40,000 to the initial setup, and additionally, a $500–$3,000/month fee for managed vector database storage and pipelines.</p>
+      <p>3. Higher LLM Token Consumption</p>
+      <p>Advanced reasoning, planning loops, and tool usage will often increase the token usage across the workflows.</p>
+      <p>Cost Impact: It spikes the recurring operational budget by $2,000–$8,000/month owing to token-heavy autonomous self-correction loops.</p>
+      <p>4. Enterprise Compliance &amp; Security Pressure</p>
+      <p>Strict data privacy, auditability, and AI governance standards need additional validation layers and monitoring systems.</p>
+      <p>Cost Impact: Adds $25,000–$75,000 to the development phase to build real-time PII redacting and secure execution sandboxes.</p>
+      <p>5. Voice &amp; Multi-Model Expansion</p>
+      <p>Integration of voice, vision, and document processing adds new infrastructure and processing expenses.</p>
+      <p>Cost Impact: Might add $15,000–$5000 to the baseline engineering cost, plus variable API fees for multimodal data parsing.</p>
+      <p>In 2026, usage-based LLM costs like tokens, API calls, and model processing take up the largest part of the budget. At times, they may even take more than the allocated initial build cost.</p>
+      <p>This means that current AI agent pricing is not about development. It is all about the long-term infrastructure, monitoring, and how efficiently the system is used and optimized. Here are the other major things that affect the development cost.</p>
+      <p>How Industry Requirements Influence AI Agent Development Cost</p>
+      <p>AI agent costs vary significantly by industry due to differences in compliance requirements, system integrations, data sensitivity, and operational complexity.</p>
+      <p>Highly regulated industries need additional architectural safety, audit mechanisms, and data protection layers. All these eventually increase the overall project investment.</p>
+      <p>Cost Impact by Industry Type:</p>
+      <p>1. Healthcare &amp; Life Sciences</p>
+      <p>These industries require HIPAA/GDPR compliance, encrypted storage, audit trails, and validation testing.</p>
+      <p>→ Typically increases cost by 25–40%. Cost range is $80k-$250k.</p>
+      <p>2. Financial Services &amp; FinTech</p>
+      <p>These sectors demand transaction logging, explainability, fraud detection safeguards, and regulatory reporting.</p>
+      <p>→ Adds 20–35% to base cost. Typical cost range is $100k-$300k.</p>
+      <p>3. Enterprise SaaS &amp; Technology</p>
+      <p>These industries focus on scalability and integrations rather than heavy compliance.</p>
+      <p>→ Moderate cost impact and ranges from $40k-$120k.</p>
+      <p>4. Retail &amp; E-commerce</p>
+      <p>These sectors are primarily integration-focused. This includes CRM, inventory, and support systems.</p>
+      <p>→ Lower regulatory overhead, moderate integration cost. Typically ranges from $30k-$100k.</p>
+      <p>It is to note that, in any regulated industry, governance and compliance layers often cost more than the AI model itself.</p>
+      <p>EU AI Act &amp; Compliance Cost Impact</p>
+      <p>For businesses that are operating in or selling their AI agent to the European Union, the EU AI Act (fully enforced 2026), introduces direct cost implications. The cost is estimated based on the agent&#x27;s risk tier.</p>
+      <div class="comp-table-wrap reveal-on-scroll"><table class="comp-table"><thead><tr><th>Risk Level</th><th>Examples</th><th>Compliance Cost Estimate</th></tr></thead><tbody><tr><td class="row-label">Minimal risk</td><td>Customer FAQ bots</td><td>$0–$5k</td></tr><tr><td class="row-label">Limited risk</td><td>AI assistants with user interaction</td><td>$5k–$20k</td></tr><tr><td class="row-label">High risk</td><td>HR automation, credit scoring, and healthcare agents</td><td>$30k-$100k+</td></tr><tr><td class="row-label">Unacceptable risk</td><td>Social scoring, prohibited manipulation</td><td>Not permitted</td></tr></tbody></table></div>
+      <p>⚠️ In any regulated industry, the governance and compliance layers often cost more than the AI model itself. Tackling compliance later can cause 2x more than building the agent from day one.</p>
+      <p>How Human-in-the-Loop Impacts AI Agent Development Cost</p>
+      <p>The addition of Human-in-the-Loop (HITL) workflows means that the AI agents will not work fully independently. Instead, high-risk or sensitive decisions require human review and approval just before execution.</p>
+      <p>Cost Impact: Implementing HITL increases the development cost by 15-20%. It is because it requires building admin dashboards and approval interfaces. This even adds logging, audit trails, and role-based access controls.</p>
+      <p>Why It Matters: While HITL increases upfront investment, it significantly:</p>
+      <p>Reduces compliance and regulatory risk</p>
+      <p>Prevents high-impact automation errors</p>
+      <p>Improves accountability and audit readiness</p>
+      <p>HITL is especially vital in industries like BFSI (Banking, Financial Services &amp; Insurance) and Healthcare, where decisions must meet strict regulatory, security, and governance standards.</p>
+      <p>In simple terms, HITL trades a modest cost increase for greater control, trust, and enterprise-grade safety.</p>
+    </section>
+
+    <section class="section-block" id="agentic-ai-cost-tool-using-autonomous-systems">
+      <h2>Agentic AI Cost - Tool-Using Autonomous Systems</h2>
+      <p>Agentic AI represents the most advanced tier of AI implementation. These are systems that not only generate responses but also plan tasks, use tools, make decisions, and execute multi-step workflows across enterprise environments with built-in governance layers and human-supervised controls.</p>
+      <p>Typical Investment for Agentic AI: $80,000–$300,000+</p>
+      <p>Agentic AI Typically Includes the Following:</p>
+      <p>API orchestration across CRM, ERP, finance, HR, &amp; internal systems</p>
+      <p>Goal-based planning engines that break objectives into executable steps</p>
+      <p>Persistent memory architecture (RAG + vector databases) for contextual continuity</p>
+      <p>Failure handling &amp; retry logic for resilient multi-step execution</p>
+      <p>Sandboxed execution layers to isolate &amp; secure actions</p>
+      <p>Human-in-the-loop governance for approvals, compliance, &amp; risk control</p>
+      <p>The cost premium is justified by complex multi-system integrations, security hardening, structured failure detection, fallback mechanisms, and audit trails.</p>
+      <p>With all these, you are not just building an AI model; rather, you are building a secure, autonomous digital operator capable of executing business-critical processes.</p>
+    </section>
+
+    <section class="section-block" id="ongoing-monthly-and-annual-operating-costs-for-ai-agents">
+      <h2>Ongoing Monthly &amp; Annual Operating Costs for AI Agents</h2>
+      <p>Beyond development, AI agents bring in recurring operational expenses based on usage volume, integrations, and infrastructure demands.</p>
+      <div class="comp-table-wrap reveal-on-scroll"><table class="comp-table"><thead><tr><th>Usage Level</th><th>Estimated Monthly Cost</th><th>Estimated Annual Cost</th></tr></thead><tbody><tr><td class="row-label">Small (≈5,000 conversations)</td><td>$1,000–$3,000</td><td>$12,000–$36,000</td></tr><tr><td class="row-label">Medium (≈50,000 conversations)</td><td>$3,000–$10,000</td><td>$36,000–$120,000</td></tr><tr><td class="row-label">Enterprise Scale</td><td>$10,000+</td><td>$120,000+</td></tr></tbody></table></div>
+      <p>These costs typically include LLM token usage, API calls, cloud hosting, vector database storage, monitoring systems, and maintenance.</p>
+      <p>However, the cost can increase due to using:</p>
+      <p>Voice channels - speech-to-text, text-to-speech processing</p>
+      <p>Additional system integrations - CRM, ERP, payment APIs</p>
+      <p>Higher traffic volumes and complex multi-step workflows</p>
+      <p>Multi-language support, which increases token usage and processing overhead</p>
+      <p>When the adoption grows, operational optimization becomes essential to control recurring costs.</p>
+    </section>
+
+    <section class="section-block" id="hidden-ai-agent-costs-to-watch-before-you-budget">
+      <h2>Hidden AI Agent Costs to Watch Before You Budget</h2>
+      <p>Several overlooked expenses exist beyond initial development and deployment that can impact your total investment.</p>
+      <p>1. Data labelling &amp; Preparation</p>
+      <p>This involves cleaning, structuring, &amp; annotating data for accuracy and performance improvement. Depending on the domain complexity, this typically runs between $10k–$100k.</p>
+      <p>2. Model Retraining &amp; Updates</p>
+      <p>Covers ongoing optimization when business workflows evolve, or new data is introduced. Budget for roughly 15-20% of your initial build cost annually to keep the model stable.</p>
+      <p>3. Token Overuse</p>
+      <p>Using inefficient prompts and long reasoning chains can inflate the LLM usage costs. Hidden charges can quietly add 20– 40% on top of your raw API fees.</p>
+      <p>4. API Licensing Fees</p>
+      <p>Third-party integrations like CRM, payments, &amp; analytics vary based on user request, and so does the cost. For a mid-sized business, it typically ranges from $5k-$30k/month across integrated platforms.</p>
+      <p>5. Monitoring &amp; Observability Tools</p>
+      <p>Logging, performance tracking, and error detection systems also add recurring costs. Here, most production-grade platforms are priced between $500-$2,500/month, depending on features.</p>
+      <p>6. Security Audits &amp; Compliance Reviews</p>
+      <p>Required for regulated industries or enterprise deployments. Per audit cycle, this can range from $50k–$500k+.</p>
+      <p>Many AI agent projects exceed budget not only because of build costs, but also due to underestimated operational and optimization expenses. This can be fixed with proper planning.</p>
+    </section>
+
+    <section class="section-block" id="pricing-models-for-ai-agent-development-in-2026">
+      <h2>Pricing Models for AI Agent Development in 2026</h2>
+      <p>As said earlier, there’s no single pricing standard for AI agent projects. The right model depends on how clearly you define the scope and how you actually plan to run the system long-term.</p>
+      <p>Here’s the breakdown for the five common approaches:</p>
+      <p>1. Fixed Price ($5k–$80k)</p>
+      <p>A single agreed cost that covers the full delivery. Scope, timeline, and deliverables are locked upfront.</p>
+      <p>2. Time &amp; Materials ($80–$250/hr)</p>
+      <p>You’re billed for only the actual hours worked, usually at an hourly rate, which is well-suited for evolving requirements.</p>
+      <p>3. Dedicated Team ($15k–$60k/month)</p>
+      <p>With a monthly plan, you’ll get a dedicated team of engineers, AI specialists, and testers to support your product.</p>
+      <p>4. Usage Based (––)</p>
+      <p>No fixed cost or monthly overhead. You’ll pay for what you use, based on the exact number of tasks.</p>
+      <p>5. Hybrid Model (Build + $2k–$15k/month ops)</p>
+      <p>You’ll pay a single upfront fee to build the software, followed by a flat monthly fee that covers all mandatory things.</p>
+    </section>
+
+    <section class="section-block" id="how-ai-agents-deliver-roi">
+      <h2>How AI Agents Deliver ROI</h2>
+      <p>The core thing that every business has in mind is whether it pays off and how fast it can. Here are some of the real-world profiles across three high-impact use cases based on industry benchmarks.</p>
+      <p>(Follow card style)</p>
+      <p>Support Agent</p>
+      <p>Build Cost          $60k</p>
+      <p>Monthly Ops      $3k</p>
+      <p>Annual Savings ~$120k</p>
+      <p>Break-Even       ~8 months</p>
+      <p>Impact: 40% ticket deflection | 24/7 coverage</p>
+      <p>Sales AI Agent</p>
+      <p>Build Cost       $80k</p>
+      <p>Monthly Ops   $5k</p>
+      <p>Revenue Lift   +15% conversion rate</p>
+      <p>Break-Even    10-14 months</p>
+      <p>Impact: 25% faster qualification | 15% higher conversion</p>
+      <p>HR Automation Agent</p>
+      <p>Build Cost             $100k</p>
+      <p>Monthly Ops         $4k</p>
+      <p>Annual Savings    $150k</p>
+      <p>Break-Even         ~9 months</p>
+      <p>Impact: 60% less manual work | Instant policy answers</p>
+      <p>Most support agents break even within 6-18 months. The enterprise automation typically sees ROI in 12-24 months.</p>
+      <p>—---------------------------------------------------------------------------------------------------------------</p>
+      <p>Global IT Markets: The Major Shift in AI Spending</p>
+      <p>Ever wonder where all the money’s going? Here’s exactly how global businesses are dividing their AI budgets:</p>
+      <p>AI Software Apps ($270B)        ──► Moving away from basic chat to smart AI assistance</p>
+      <p>AI Background Tools ($230B)  ──► Paying for AI memory and databases</p>
+      <p>Cloud &amp; Processing ($330B)    ──► Renting powerful internet servers to run heavy AI tasks</p>
+      <p>Setup &amp; Testing ($325B)           ──► Hooking up a new AI tool to old company software</p>
+      <p>Smart Tech Devices ($393B)    ──► Purchasing phones and PCs that can run AI smoothly.</p>
+      <p>—---------------------------------------------------------------------------------------------------------------</p>
+    </section>
+
+    <section class="section-block" id="ai-agent-tech-stack-cost-comparison">
+      <h2>AI Agent Tech Stack Cost Comparison</h2>
+      <p>The technology stack you choose for the AI agent development directly impacts the infrastructure spending, operational costs, scalability, and compliance flexibility.</p>
+      <p>When comparing top AI agent platforms, organizations should look at hosting options, token costs, security features, and long-term scalability before finalizing architecture decisions.</p>
+      <div class="comp-table-wrap reveal-on-scroll"><table class="comp-table"><thead><tr><th>Stack</th><th>Infrastructure Cost</th><th>Token/Usage Cost</th><th>Estimated Monthly Infra</th><th>Best For</th></tr></thead><tbody><tr><td class="row-label">OpenAI API</td><td>Low infrastructure setup</td><td>Usage-based pricing</td><td>$500–$5k</td><td>Fast builds, rapid prototyping</td></tr><tr><td class="row-label">Google Gemini</td><td>Moderate infrastructure</td><td>Usage-based pricing</td><td>$800–$6K</td><td>Enterprise deployments</td></tr><tr><td class="row-label">Self-Hosted LLaMA</td><td>High GPU &amp; DevOps cost</td><td>No external token fees</td><td>$3k-$15K</td><td>Privacy-first environments</td></tr><tr><td class="row-label">AWS Bedrock</td><td>Managed cloud infrastructure</td><td>Usage-based pricing</td><td>$1k-$8k</td><td>Scalable enterprise systems</td></tr></tbody></table></div>
+      <p>Cost Trade-Off to Consider:</p>
+      <p>Self-hosted LLMs don’t come with recurring token fees but require significant GPU infrastructure, DevOps management, and scaling capacity. This often increases the infrastructure costs by 30-50% when compared to API-based models.</p>
+      <p>So, the right choice depends on what you prioritize between speed, compliance, scalability, cost predictability, or data sovereignty.</p>
+    </section>
+
+    <section class="section-block" id="hourly-rates-for-ai-agent-development-by-region">
+      <h2>Hourly Rates for AI Agent Development by Region</h2>
+      <p>Here’s the practical breakdown of the average hourly rate of AI/ML development talents in 2026.</p>
+      <div class="comp-table-wrap reveal-on-scroll"><table class="comp-table"><thead><tr><th>Region</th><th>Hourly Rate (Avg)</th></tr></thead><tbody><tr><td class="row-label">United states</td><td>$120–$200/hr</td></tr><tr><td class="row-label">United Kingdom</td><td>$100–$170/hr</td></tr><tr><td class="row-label">Canada</td><td>$90–$160/hr</td></tr><tr><td class="row-label">India</td><td>$25–$60/hr</td></tr><tr><td class="row-label">Eastern Europe</td><td>$50–$100/hr</td></tr></tbody></table></div>
+      <p>Additionally, here are the role-based hourly rates (took India and the US as a base reference).</p>
+      <div class="comp-table-wrap reveal-on-scroll"><table class="comp-table"><thead><tr><th>Role</th><th>Hourly Rate (India)</th><th>Hourly Rate (US)</th></tr></thead><tbody><tr><td class="row-label">Project Manager</td><td>$30–$50/hr</td><td>$120–$160/hr</td></tr><tr><td class="row-label">ML/AI engineer</td><td>$40–$60/hr</td><td>$150–$200/hr</td></tr><tr><td class="row-label">Backend Developer</td><td>$25–$45/hr</td><td>$100–$150/hr</td></tr><tr><td class="row-label">DevOps Engineer</td><td>$30–$50/hr</td><td>$120–$160/hr</td></tr><tr><td class="row-label">QA Engineer</td><td>$20–$35/hr</td><td>$80–$120/hr</td></tr></tbody></table></div>
+      <p>As you can clearly see in the above table, outsourcing to regions like India can cut the development cost by 60-70% compared to a US-based team. By partnering up with companies in those regions, you’ll get the work done without compromising the quality at a minimal cost.</p>
+      <p>—------------------------------------------------------------------------------------------------------</p>
+      <p>CTA - Need a Transparent Phase-by-Phase Breakdown?</p>
+      <p>Based on your project’s scope, get a no-obligation architecture consultation.</p>
+      <p>Request Estimate</p>
+      <p>—---------------------------------------------------------------------------------------------------------</p>
+    </section>
+
+    <section class="section-block" id="sneak-peek-at-what-the-world-s-leading-ai-agents-actually-costs">
+      <h2>Sneak Peek at What the World’s Leading AI Agents Actually Costs</h2>
+      <p>The brief pricing of the major AI platforms tells only half the story. The real costs come later, when you have to pay to hook it up to your systems.</p>
+      <p>ChatGPT (OpenAI)</p>
+      <p>We’re all familiar with ChatGPT. It handles texts, images, and tools right out of the box. However, the standard “Enterprise” needs 150-seat minimum to get an invoice.</p>
+      <p>Enterprise: $30–$60/user/month</p>
+      <p>Custom Integrations: Priced separately</p>
+      <p>Claude (Anthropic)</p>
+      <p>Claude recently gained more popularity among developers, as it has great security and can read massive documents all at once. The affordability is just for the basic AI, whereas adding data can increase the cost.</p>
+      <p>API Access: Usage-based</p>
+      <p>Enterprise Setup: Custom</p>
+      <p>Copilot (Microsoft)</p>
+      <p>Comparatively, Copilot looks like the easiest and safest bet at $30/month/user. But things go off if you don’t have a qualifying Microsoft 365 business license.</p>
+      <p>Microsoft Copilot: $30/user/month</p>
+      <p>Enterprise Custom Agents: $50k–$200k+</p>
+    </section>
+
+    <section class="section-block" id="how-to-reduce-ai-agent-development-cost-without-compromising-quality">
+      <h2>How to Reduce AI Agent Development Cost Without Compromising Quality</h2>
+      <p>AI agent development doesn&#x27;t have to mean exceeding the budget. With the right architectural and strategic planning, it is possible to lower upfront and long-term costs. This can be achieved by:</p>
+      <p>1. Using Open-Source Frameworks</p>
+      <p>[Free to use]</p>
+      <p>Involves using proven libraries and orchestration tools instead of building core components from scratch.</p>
+      <p>2. Start With an MVP</p>
+      <p>[Only $20k– $60k]</p>
+      <p>Validate one high-impact use case before scaling to multi-agent or enterprise-wide automation.</p>
+      <p>3. Optimize Model Size</p>
+      <p>[Saves 40-60% on interface costs]</p>
+      <p>Use a smaller, task-specific model where possible instead of defaulting to the most expensive LLM.</p>
+      <p>4. Monitor &amp; Control Token Usage</p>
+      <p>[Cuts API costs by 20– 40%]</p>
+      <p>It is possible to avoid inflated API costs by improving prompt efficiency, reducing unnecessary reasoning loops, and implementing caching.</p>
+      <p>5. Adopt a Modular Architecture</p>
+      <p>[Reduce future build costs by 30–50%]</p>
+      <p>By building reusable components, future expansions don&#x27;t require a complete system redesign.</p>
+      <p>6. Outsource to AI Specialists</p>
+      <p>[Typically 30–50% cheaper than in-house]</p>
+      <p>Experienced teams help reduce experimentation time, avoid costly architectural mistakes, and accelerate time-to-value.</p>
+      <p>When Not to Invest in an AI Agent:</p>
+      <p>AI Agent Development may not be the right investment if:</p>
+      <p>Automation is rule-based and static</p>
+      <p>Integration depth is minimal</p>
+      <p>Data quality is poor</p>
+      <p>ROI horizon exceeds 36 months</p>
+    </section>
+
+    <section class="section-block" id="how-to-choose-the-right-ai-agent-development-company">
+      <h2>How to Choose the Right AI Agent Development Company</h2>
+      <p>Before choosing an AI agent development company, enterprise teams should check more than just the technical capability. The right partner offers clarity on the architecture, testing, monitoring, and long-term scalability.</p>
+      <p>It is vital to ask the following questions:</p>
+      <p>Do they include structured evaluation frameworks to measure agent performance?</p>
+      <p>How do they test autonomy and multi-step task execution?</p>
+      <p>Is ongoing monitoring and analytics included post-launch?</p>
+      <p>Who owns the intellectual property and trained models?</p>
+      <p>How are LLM API and infrastructure costs handled?</p>
+      <p>Do they provide structured post-launch support and retraining plans?</p>
+      <p>Red Flags to Watch For:</p>
+      <p>Not all vendors follow enterprise-grade delivery standards. Thus, the warning signs to watch for while choosing an AI development company include:</p>
+      <p>🚩No documented QA or red-teaming process</p>
+      <p>🚩Vague or unrealistic timelines</p>
+      <p>🚩Lack of cost transparency, especially for LLM usage</p>
+      <p>🚩No monitoring or observability strategy</p>
+      <p>🚩No clear ownership structure for data and models</p>
+    </section>
+
+    <section class="section-block" id="why-enterprises-choose-sparkout-tech-for-ai-agent-development">
+      <h2>Why Enterprises Choose Sparkout Tech for AI Agent Development</h2>
+      <p>At Sparkout Tech, we approach AI agent development as operational infrastructure and not as experimental automation. We build:</p>
+      <p>Production-ready AI agents designed for real-world execution.</p>
+      <p>Secure &amp; compliant systems that align with enterprise standards.</p>
+      <p>Tool-integrated automation agents that connect with CRM, ERP, HRIS, and financial systems.</p>
+      <p>Enterprise-grade agentic workflows with governance layers.</p>
+      <p>Our Core Expertise Includes:</p>
+      <p>Custom AI Agent Development</p>
+      <p>Multi-agent systems and Agentic RAG architectures</p>
+      <p>AI automation for enterprise operations</p>
+      <p>ROI-focused AI deployments with measurable outcomes</p>
+      <p>From discovery and architecture design to testing, deployment, and post-launch optimization, we at Sparkout ensure your AI agent is built to scale, governed responsibly, and aligned with business impact.</p>
+      <p>Need a Cost Estimate for Your AI Agent?</p>
+      <p>If you are planning an AI agent initiative, Sparkout provides:</p>
+      <p>Free cost feasibility analysis</p>
+      <p>Architecture-level consultation</p>
+      <p>Budget roadmap (PoC → Enterprise scale)</p>
+      <p>AI strategy consulting</p>
+      <p>Book a structured discovery session.</p>
+    </section>
+
+    <section class="section-block" id="final-thoughts">
+      <h2>Final Thoughts</h2>
+      <p>Overall, the AI agent development cost in 2026 is influenced less by the AI model itself and more by the overall system architecture and operational scope. The key cost drivers include the level of autonomy required, the depth of tool and API usage, the number and complexity of integrations, compliance and security requirements, deployment model, ongoing token and infrastructure usage.</p>
+      <p>Organizations that provide a clear use case, start with a measurable goal, and scale strategically will see ROI within 6-24 months, depending on the complexity. Thus, AI agent investment is an operational strategy. Choosing the right AI development partner directly impacts speed, scalability, and long-term cost efficiency.</p>
+    </section>
+
+    <section class="section-block" id="frequently-asked-questions">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list faq-interactive reveal-on-scroll">
+        <div class="faq-item open">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)"><span>1. What does an AI agent cost in 2026?</span><span class="faq-arrow">v</span></button>
+          <div class="faq-a">
+            <p>The typical range of AI agent development cost is $25,000 to $250,000+ and varies based on complexity.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)"><span>2. What is the cheapest way to build an AI agent?</span><span class="faq-arrow">v</span></button>
+          <div class="faq-a">
+            <p>Choosing a no-code or MVP approach that costs $5k–$25k is the cheapest way to build an AI agent.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)"><span>3. How much do AI development companies charge for building an AI agent?</span><span class="faq-arrow">v</span></button>
+          <div class="faq-a">
+            <p>AI development firms usually charge based on project scope. Basic chatbot builds cost $5k–$20k, integrated AI agents cost $30k–$100k, and enterprise automation systems costs $80k–$250k+. Often, pricing varies by region, complexity, and required integrations.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)"><span>4. Which platforms offer affordable AI agent development services?</span><span class="faq-arrow">v</span></button>
+          <div class="faq-a">
+            <p>Platforms that offer affordable AI agent development services include No-code platforms, low-code AI frameworks, and</p>
+            <p>Specialized AI agencies.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)"><span>5. Can I get a cost estimate from top AI service providers?</span><span class="faq-arrow">v</span></button>
+          <div class="faq-a">
+            <p>Yes. Most reputable AI firms provide free initial consultations, Rough Order of Magnitude (ROM) estimates, and Phased cost breakdown (PoC → MVP → Production). Accurate estimates need a clearly defined scope, expected integrations, and usage projections.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)"><span>6. What are the typical pricing models for AI agent development services?</span><span class="faq-arrow">v</span></button>
+          <div class="faq-a">
+            <p>Common pricing models include fixed project pricing, Time &amp; materials, Dedicated team model, and Usage-based pricing. Enterprise vendors often combine the build cost + recurring operational cost.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)"><span>7. What is the cost-benefit analysis of AI agents?</span><span class="faq-arrow">v</span></button>
+          <div class="faq-a">
+            <p>The ROI depends on labor cost reduction, productivity gains, revenue uplift, and error reduction. Most support agents break even in 6–18 months. Enterprise automation may take 12–24+ months.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)"><span>8. What is the cost of deploying an AI sales assistant for a mid-sized team?</span><span class="faq-arrow">v</span></button>
+          <div class="faq-a">
+            <p>Typical cost to build costs around $40k–$120k with monthly operations ranging between $2k–$8k. ROI often comes from improved lead qualification and faster follow-ups.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-q" type="button" onclick="toggleFaq(this)"><span>9. What pricing should I expect for an AI workforce running 10 automations?</span><span class="faq-arrow">v</span></button>
+          <div class="faq-a">
+            <p>For ~10 structured sales/ops automations, you can expect $80k–$200k+ as build cost and  $5k–$15k monthly operations. Multi-agent orchestration increases governance and monitoring costs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</div>
+<!-- RELATED ARTICLES -->
+<section class="related-section">
+  <h2>Related Articles</h2>
+  <p class="related-subtitle">Explore more insights on AI development and automation</p>
+  <div class="related-grid">
+    <a href="https://www.sparkouttech.com/ai-agent-development/" class="related-card">
+      <div class="rc-img">🤖</div>
+      <div class="rc-content">
+        <div class="rc-cat">AI Development</div>
+        <div class="rc-title">AI Agent Development: A Complete Guide for Businesses</div>
+        <div class="rc-excerpt">Everything you need to know about building powerful AI agents for your business — from architecture to deployment.</div>
+        <div class="rc-read">Read More →</div>
+      </div>
+    </a>
+    <a href="https://www.sparkouttech.com/ai-chatbot-development/" class="related-card">
+      <div class="rc-img">💬</div>
+      <div class="rc-content">
+        <div class="rc-cat">AI Chatbots</div>
+        <div class="rc-title">AI Chatbot Development: Cost, Types &amp; Implementation</div>
+        <div class="rc-excerpt">A comprehensive breakdown of AI chatbot development costs, types, and how to implement them effectively.</div>
+        <div class="rc-read">Read More →</div>
+      </div>
+    </a>
+    <a href="https://www.sparkouttech.com/how-build-ai-agent/" class="related-card">
+      <div class="rc-img">⚙️</div>
+      <div class="rc-content">
+        <div class="rc-cat">Technical Guide</div>
+        <div class="rc-title">How to Build an AI Agent: Step-by-Step Technical Guide</div>
+        <div class="rc-excerpt">A technical walkthrough of building AI agents from scratch — covering tools, frameworks, and best practices.</div>
+        <div class="rc-read">Read More →</div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="footer-cta" id="contact">
+  <h2>Know What It Really Takes to Build an AI Agent</h2>
+  <p>Discover cost factors, smart trade-offs, and how to maximize value while aligning with your business goals.</p>
+  <div class="cta-group">
+    <a href="https://www.sparkouttech.com/ai-agent-development/" class="cta-primary">Let's Talk</a>
+    <a href="https://www.sparkouttech.com/ai-development-company/" class="cta-secondary">Learn More</a>
+  </div>
+</section>
+
+<script>
+// NAVBAR SCROLL
+window.addEventListener('scroll',function(){
+  var nb=document.getElementById('navbar');
+  if(window.scrollY>20)nb.classList.add('scrolled');
+  else nb.classList.remove('scrolled');
+  updateProgress();
+  updateToc();
+  triggerReveal();
+  triggerCounters();
+});
+
+// PROGRESS BAR
+function updateProgress(){
+  var h=document.documentElement.scrollHeight-window.innerHeight;
+  var p=h>0?Math.round((window.scrollY/h)*100):0;
+  var el=document.getElementById('progressFill');
+  if(el)el.style.width=p+'%';
+}
+
+// ACTIVE TOC
+function updateToc(){
+  var sections=["intro","calculate-your-ai-agent-development-cost-for-yourself","how-much-does-it-cost-to-build-an-ai-agent","ai-agent-vs-chatbot-vs-agentic-workflow","how-much-does-a-custom-ai-agent-mvp-development-cost","build-vs-buy-ai-agent-cost-comparison","in-house-vs-outsourcing-ai-agent-development-cost-comparison","factors-that-drive-the-ai-agent-development-cost","agentic-ai-cost-tool-using-autonomous-systems","ongoing-monthly-and-annual-operating-costs-for-ai-agents","hidden-ai-agent-costs-to-watch-before-you-budget","pricing-models-for-ai-agent-development-in-2026","how-ai-agents-deliver-roi","ai-agent-tech-stack-cost-comparison","hourly-rates-for-ai-agent-development-by-region","sneak-peek-at-what-the-world-s-leading-ai-agents-actually-costs","how-to-reduce-ai-agent-development-cost-without-compromising-quality","how-to-choose-the-right-ai-agent-development-company","why-enterprises-choose-sparkout-tech-for-ai-agent-development","final-thoughts","frequently-asked-questions"];
+  var active=null;
+  sections.forEach(function(id){
+    var el=document.getElementById(id);
+    if(el){var r=el.getBoundingClientRect();if(r.top<=150)active=id;}
+  });
+  document.querySelectorAll('.toc-link').forEach(function(a){
+    a.classList.remove('active');
+    if(active&&a.getAttribute('href')==='#'+active)a.classList.add('active');
+  });
+}
+
+// SCROLL REVEAL
+function triggerReveal(){
+  document.querySelectorAll('.reveal-on-scroll').forEach(function(el){
+    var r=el.getBoundingClientRect();
+    if(r.top<window.innerHeight-60){
+      el.style.opacity='1';el.style.transform='translateY(0)';el.style.transition='opacity 0.6s ease, transform 0.6s ease';
+    }
+  });
+  var cards=document.querySelectorAll('.factor-card:not(.revealed)');
+  cards.forEach(function(c,i){
+    var r=c.getBoundingClientRect();
+    if(r.top<window.innerHeight-40){
+      setTimeout(function(){c.classList.add('revealed');c.style.transition='opacity 0.5s ease '+(i*0.06)+'s, transform 0.5s ease '+(i*0.06)+'s';},0);
+    }
+  });
+}
+
+// COUNTER ANIMATIONS
+var countersTriggered=false;
+function triggerCounters(){
+  if(countersTriggered)return;
+  document.querySelectorAll('.stat-num').forEach(function(el){
+    var r=el.getBoundingClientRect();
+    if(r.top<window.innerHeight-40){
+      countersTriggered=true;
+      document.querySelectorAll('.stat-num').forEach(function(counter){
+        var target=parseInt(counter.getAttribute('data-target'));
+        var current=0;
+        var step=Math.ceil(target/40);
+        var interval=setInterval(function(){
+          current+=step;
+          if(current>=target){current=target;clearInterval(interval);}
+          counter.textContent=current;
+        },35);
+      });
+    }
+  });
+}
+
+// HERO COST JOURNEY COUNT-UP
+function animateCostJourneyNumbers(){
+  var nums=document.querySelectorAll('.journey-cost-num');
+  if(!nums.length)return;
+  nums.forEach(function(el){
+    var min=parseInt(el.getAttribute('data-min'),10)||0;
+    var max=parseInt(el.getAttribute('data-max'),10)||0;
+    var plus=el.getAttribute('data-plus')==='true'?'+':'';
+    var frame=0;
+    var frames=38;
+    var timer=setInterval(function(){
+      frame++;
+      var eased=1-Math.pow(1-(frame/frames),3);
+      var currentMin=Math.round(min*eased);
+      var currentMax=Math.round(max*eased);
+      el.textContent='$'+currentMin+'k-$'+currentMax+'k'+plus;
+      if(frame>=frames){
+        el.textContent='$'+min+'k-$'+max+'k'+plus;
+        clearInterval(timer);
+      }
+    },28);
+  });
+}
+animateCostJourneyNumbers();
+setInterval(animateCostJourneyNumbers,12000);
+
+// INIT REVEAL STATES
+document.querySelectorAll('.reveal-on-scroll').forEach(function(el){
+  el.style.opacity='0';el.style.transform='translateY(30px)';
+});
+
+// ROI CALCULATOR
+function calcRoi(){
+  if(!document.getElementById('roiInvestment'))return;
+  var inv=parseFloat(document.getElementById('roiInvestment').value)||0;
+  var sav=parseFloat(document.getElementById('roiSavings').value)||0;
+  var rev=parseFloat(document.getElementById('roiRevenue').value)||0;
+  var ong=parseFloat(document.getElementById('roiOngoing').value)||0;
+  if(inv<=0){
+    document.getElementById('roiPct').textContent='–';
+    document.getElementById('roiBreakeven').textContent='–';
+    document.getElementById('roiNet').textContent='–';
+    return;
+  }
+  var net=sav+rev-inv-ong;
+  var roi=((sav+rev-inv)/inv)*100;
+  var monthly=(sav+rev)/12;
+  var breakeven=monthly>0?Math.ceil(inv/monthly):999;
+  document.getElementById('roiPct').textContent=roi.toFixed(1)+'%';
+  document.getElementById('roiBreakeven').textContent=breakeven>120?'120+ mo':breakeven+' mo';
+  document.getElementById('roiNet').textContent='$'+Math.abs(Math.round(net)).toLocaleString();
+}
+calcRoi();
+
+// STAGE TOGGLE
+function toggleStage(el){
+  var isOpen=el.classList.contains('expanded');
+  document.querySelectorAll('.stage-item.expanded').forEach(function(s){s.classList.remove('expanded');});
+  if(!isOpen)el.classList.add('expanded');
+}
+
+// APPROACH TABS
+function switchTab(btn,id){
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  btn.classList.add('active');
+  document.querySelectorAll('.tab-pane').forEach(function(p){p.classList.remove('active');});
+  var el=document.getElementById('tab-'+id);
+  if(el){el.classList.add('active');el.style.animation='fadeUp 0.4s ease';}
+}
+
+// TIPS ACCORDION
+function toggleTip(toggle){
+  var item=toggle.parentElement;
+  var isOpen=item.classList.contains('open');
+  if(isOpen){item.classList.remove('open');}
+  else{item.classList.add('open');}
+}
+
+// AI AGENT COST ESTIMATOR
+function formatEstimateValue(value){
+  if(value>=300)return '$300k+';
+  return '$'+Math.round(value)+'k';
+}
+function updateAIAgentEstimate(){
+  var range=document.getElementById('estimateRange');
+  var selected=document.getElementById('estimateSelected');
+  if(!range||!selected)return;
+  var baseMin=0;
+  var baseMax=0;
+  var addonMin=0;
+  var addonMax=0;
+  var percentMin=0;
+  var percentMax=0;
+  var rows=[];
+  document.querySelectorAll('.estimator-select').forEach(function(select){
+    var option=select.options[select.selectedIndex];
+    if(!option)return;
+    var min=parseFloat(option.getAttribute('data-min'))||0;
+    var max=parseFloat(option.getAttribute('data-max'))||0;
+    var label=option.getAttribute('data-label')||option.textContent.trim();
+    baseMin=Math.max(baseMin,min);
+    baseMax=Math.max(baseMax,max);
+    rows.push({name:select.closest('.estimator-group').getAttribute('data-estimator-group'),value:label});
+  });
+  document.querySelectorAll('.estimator-addon-check:checked,.estimator-option.addon.active').forEach(function(control){
+    var min=parseFloat(control.getAttribute('data-min'))||0;
+    var max=parseFloat(control.getAttribute('data-max'))||0;
+    var label=control.getAttribute('data-label')||control.textContent.trim();
+    if(control.getAttribute('data-percent')==='true'){
+      percentMin+=min;
+      percentMax+=max;
+    }else{
+      addonMin+=min;
+      addonMax+=max;
+    }
+  });
+  if(!document.querySelector('.estimator-select')){
+    document.querySelectorAll('.estimator-option.active').forEach(function(btn){
+      var min=parseFloat(btn.getAttribute('data-min'))||0;
+      var max=parseFloat(btn.getAttribute('data-max'))||0;
+      var label=btn.getAttribute('data-label')||btn.textContent.trim();
+      var group=btn.getAttribute('data-group')||'';
+    if(group==='addon'){
+      if(btn.getAttribute('data-percent')==='true'){
+        percentMin+=min;
+        percentMax+=max;
+      }else{
+        addonMin+=min;
+        addonMax+=max;
+      }
+    }else{
+      baseMin=Math.max(baseMin,min);
+      baseMax=Math.max(baseMax,max);
+      rows.push({name:btn.closest('.estimator-group').getAttribute('data-estimator-group'),value:label});
+    }
+    });
+  }
+  var totalMin=baseMin+addonMin;
+  var totalMax=baseMax+addonMax;
+  if(percentMin||percentMax){
+    totalMin=totalMin*(1+(percentMin/100));
+    totalMax=totalMax*(1+(percentMax/100));
+  }
+  range.textContent=formatEstimateValue(totalMin)+' - '+formatEstimateValue(totalMax);
+  var addonLabels=Array.from(document.querySelectorAll('.estimator-addon-check:checked,.estimator-option.addon.active')).map(function(control){
+    return control.getAttribute('data-label')||control.textContent.trim();
+  });
+  if(addonLabels.length){
+    rows.push({name:'Add-ons',value:addonLabels.join(', ')});
+  }
+  selected.innerHTML=rows.map(function(row){
+    return '<div class="estimate-chip"><span>'+row.name+'</span><span>'+row.value+'</span></div>';
+  }).join('');
+}
+document.querySelectorAll('.estimator-select,.estimator-addon-check').forEach(function(control){
+  control.addEventListener('change',updateAIAgentEstimate);
+});
+document.querySelectorAll('.estimator-option').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var group=btn.getAttribute('data-group');
+    if(group==='addon'){
+      btn.classList.toggle('active');
+    }else{
+      document.querySelectorAll('.estimator-option[data-group="'+group+'"]').forEach(function(item){
+        item.classList.remove('active');
+      });
+      btn.classList.add('active');
+    }
+    updateAIAgentEstimate();
+  });
+});
+updateAIAgentEstimate();
+
+// MVP PHASED ROADMAP
+function updatePhaseRoadmap(btn){
+  var detail=document.getElementById('phaseDetail');
+  var tabs=document.getElementById('phaseTabs');
+  if(!detail||!tabs)return;
+  document.querySelectorAll('.phase-tab').forEach(function(tab){tab.classList.remove('active');});
+  btn.classList.add('active');
+  var phase=parseInt(btn.getAttribute('data-phase'),10)||0;
+  var progress=phase===0?'0%':phase===1?'50%':'100%';
+  tabs.style.setProperty('--phase-progress',progress);
+  detail.style.animation='none';
+  detail.offsetHeight;
+  detail.style.animation='phaseFade 0.3s ease';
+  detail.innerHTML='<div class="phase-detail-title">'+btn.getAttribute('data-title')+'</div>'+
+    '<div class="phase-detail-cost">'+btn.getAttribute('data-cost')+'</div>'+
+    '<p>'+btn.getAttribute('data-copy-one')+'</p>'+
+    '<p>'+btn.getAttribute('data-copy-two')+'</p>';
+}
+document.querySelectorAll('.phase-tab').forEach(function(btn){
+  btn.addEventListener('click',function(){updatePhaseRoadmap(btn);});
+});
+
+// ANIMATED INFOGRAPHIC DROPDOWN CARDS
+document.querySelectorAll('.info-card').forEach(function(card){
+  card.setAttribute('tabindex','0');
+  card.addEventListener('click',function(){
+    card.classList.toggle('open');
+  });
+  card.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();
+      card.classList.toggle('open');
+    }
+  });
+});
+
+// BUILD VS BUY DECISION BOARD
+document.querySelectorAll('.decision-card').forEach(function(card){
+  card.setAttribute('tabindex','0');
+  card.addEventListener('click',function(){
+    card.classList.toggle('open');
+  });
+  card.addEventListener('keydown',function(e){
+    if(e.key==='Enter'||e.key===' '){
+      e.preventDefault();
+      card.classList.toggle('open');
+    }
+  });
+});
+
+// COMPACT BUILD VS BUY PATH SELECTOR
+function updatePathPanel(btn){
+  var panel=document.getElementById('pathPanel');
+  if(!panel)return;
+  document.querySelectorAll('.path-tab').forEach(function(tab){tab.classList.remove('active');});
+  btn.classList.add('active');
+  panel.style.setProperty('--path-width',btn.getAttribute('data-path-width')||'52%');
+  panel.style.animation='none';
+  panel.offsetHeight;
+  panel.style.animation='phaseFade 0.3s ease';
+  panel.innerHTML='<div class="path-panel-top">'+
+    '<div class="path-panel-title">'+btn.getAttribute('data-path-title')+'</div>'+
+    '<div class="path-panel-cost">'+btn.getAttribute('data-path-cost')+'</div>'+
+    '</div>'+
+    '<div class="path-bar-track"><div class="path-bar"></div></div>'+
+    '<div class="path-grid">'+
+    '<div class="path-item"><div class="path-label">Financial Profile</div><div class="path-value">'+btn.getAttribute('data-financial')+'</div></div>'+
+    '<div class="path-item"><div class="path-label">Estimates Cost</div><div class="path-value">'+btn.getAttribute('data-estimate')+'</div></div>'+
+    '<div class="path-item"><div class="path-label">Time-to-Market</div><div class="path-value">'+btn.getAttribute('data-time')+'</div></div>'+
+    '<div class="path-item"><div class="path-label">Resource Demand</div><div class="path-value">'+btn.getAttribute('data-resource')+'</div></div>'+
+    '<div class="path-item"><div class="path-label">Customization</div><div class="path-value">'+btn.getAttribute('data-customization')+'</div></div>'+
+    '<div class="path-item"><div class="path-label">Maintenance &amp; Scale</div><div class="path-value">'+btn.getAttribute('data-maintenance')+'</div></div>'+
+    '</div>';
+}
+document.querySelectorAll('.path-tab').forEach(function(btn){
+  btn.addEventListener('click',function(){updatePathPanel(btn);});
+});
+
+// FACTORS SECTION TAB PANELS
+function updateFactorPanel(btn){
+  var panel=document.getElementById('factorPanel');
+  if(!panel)return;
+  document.querySelectorAll('.factor-tab').forEach(function(tab){tab.classList.remove('active');});
+  btn.classList.add('active');
+  panel.style.animation='none';
+  panel.offsetHeight;
+  panel.style.animation='phaseFade 0.3s ease';
+  var impact=btn.getAttribute('data-factor-impact')||'';
+  panel.innerHTML='<div class="factor-panel-title">'+btn.getAttribute('data-factor-title')+'</div>'+
+    '<div class="factor-panel-text">'+btn.getAttribute('data-factor-text')+'</div>'+
+    '<div class="factor-panel-impact"><strong>Cost Impact:</strong> '+impact.replace(/^Cost Impact:\\s*/,'')+'</div>';
+}
+document.querySelectorAll('.factor-tab').forEach(function(btn){
+  btn.addEventListener('click',function(){updateFactorPanel(btn);});
+});
+function updateIndustryPanel(btn){
+  var panel=document.getElementById('industryPanel');
+  if(!panel)return;
+  document.querySelectorAll('.industry-tab').forEach(function(tab){tab.classList.remove('active');});
+  btn.classList.add('active');
+  panel.style.animation='none';
+  panel.offsetHeight;
+  panel.style.animation='phaseFade 0.3s ease';
+  panel.innerHTML='<div class="industry-panel-title">'+btn.getAttribute('data-industry-title')+'</div>'+
+    '<div class="industry-panel-text">'+btn.getAttribute('data-industry-text')+'</div>'+
+    '<div class="industry-panel-impact">'+btn.getAttribute('data-industry-impact')+'</div>';
+}
+document.querySelectorAll('.industry-tab').forEach(function(btn){
+  btn.addEventListener('click',function(){updateIndustryPanel(btn);});
+});
+
+// ONGOING OPERATING COST TABS
+function updateOpsPanel(btn){
+  var panel=document.getElementById('opsPanel');
+  if(!panel)return;
+  document.querySelectorAll('.ops-tab').forEach(function(tab){tab.classList.remove('active');});
+  btn.classList.add('active');
+  panel.style.animation='none';
+  panel.offsetHeight;
+  panel.style.animation='phaseFade 0.3s ease';
+  panel.innerHTML='<h3>'+btn.getAttribute('data-usage')+'</h3>'+
+    '<div class="ops-metrics">'+
+    '<div class="ops-metric"><div class="ops-label">Estimated Monthly Cost</div><div class="ops-value">'+btn.getAttribute('data-monthly')+'</div></div>'+
+    '<div class="ops-metric"><div class="ops-label">Estimated Annual Cost</div><div class="ops-value">'+btn.getAttribute('data-annual')+'</div></div>'+
+    '</div>';
+}
+document.querySelectorAll('.ops-tab').forEach(function(btn){
+  btn.addEventListener('click',function(){updateOpsPanel(btn);});
+});
+
+// PRICING MODEL SELECTOR
+function updatePricingPanel(btn){
+  var panel=document.getElementById('pricingPanel');
+  if(!panel)return;
+  document.querySelectorAll('.pricing-tab').forEach(function(tab){tab.classList.remove('active');});
+  btn.classList.add('active');
+  panel.style.setProperty('--pricing-width',btn.getAttribute('data-pricing-width')||'50%');
+  panel.style.animation='none';
+  panel.offsetHeight;
+  panel.style.animation='phaseFade 0.3s ease';
+  panel.innerHTML='<div class="pricing-badge">'+
+    '<div class="pricing-badge-label">Price Model</div>'+
+    '<div class="pricing-badge-value">'+btn.getAttribute('data-pricing-price')+'</div>'+
+    '</div>'+
+    '<div class="pricing-detail">'+
+    '<div class="pricing-detail-title">'+btn.getAttribute('data-pricing-title')+'</div>'+
+    '<div class="pricing-detail-text">'+btn.getAttribute('data-pricing-text')+'</div>'+
+    '<div class="pricing-meter"><div class="pricing-meter-fill"></div></div>'+
+    '</div>';
+}
+document.querySelectorAll('.pricing-tab').forEach(function(btn){
+  btn.addEventListener('click',function(){updatePricingPanel(btn);});
+});
+
+// LEADING AI PLATFORM PRICE SHOWCASE
+function updatePlatformPanel(btn){
+  var panel=document.getElementById('platformPanel');
+  if(!panel)return;
+  document.querySelectorAll('.platform-card').forEach(function(card){card.classList.remove('active');});
+  btn.classList.add('active');
+  panel.style.setProperty('--platform-width',btn.getAttribute('data-platform-width')||'55%');
+  panel.style.animation='none';
+  panel.offsetHeight;
+  panel.style.animation='phaseFade 0.3s ease';
+  panel.innerHTML='<div>'+
+    '<div class="platform-panel-title">'+btn.getAttribute('data-platform-title')+'</div>'+
+    '<div class="platform-panel-text">'+btn.getAttribute('data-platform-text')+'</div>'+
+    '</div>'+
+    '<div class="platform-price-box">'+
+    '<div class="platform-price-row"><div class="platform-price-label">'+btn.getAttribute('data-platform-label-one')+'</div><div class="platform-price-value"><strong>'+btn.getAttribute('data-platform-value-one')+'</strong></div></div>'+
+    '<div class="platform-price-row"><div class="platform-price-label">'+btn.getAttribute('data-platform-label-two')+'</div><div class="platform-price-value">'+btn.getAttribute('data-platform-value-two')+'</div></div>'+
+    '<div class="platform-meter"><div class="platform-meter-fill"></div></div>'+
+    '</div>';
+}
+document.querySelectorAll('.platform-card').forEach(function(btn){
+  btn.addEventListener('click',function(){updatePlatformPanel(btn);});
+});
+
+// REGION HOURLY RATE SELECTOR
+function updateRatePanel(btn){
+  var panel=document.getElementById('ratePanel');
+  if(!panel)return;
+  document.querySelectorAll('.rate-tab').forEach(function(tab){tab.classList.remove('active');});
+  btn.classList.add('active');
+  panel.style.setProperty('--rate-width',btn.getAttribute('data-rate-width')||'50%');
+  panel.style.animation='none';
+  panel.offsetHeight;
+  panel.style.animation='phaseFade 0.3s ease';
+  panel.innerHTML='<div class="rate-detail-title">'+btn.getAttribute('data-rate-name')+'</div>'+
+    '<div class="rate-detail-value">'+btn.getAttribute('data-rate-value')+'</div>'+
+    '<div class="rate-track"><div class="rate-fill"></div></div>';
+}
+document.querySelectorAll('.rate-tab').forEach(function(btn){
+  btn.addEventListener('click',function(){updateRatePanel(btn);});
+});
+
+// FAQ TOGGLE
+function toggleFaq(qEl){
+  var item=qEl.parentElement;
+  var isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(f){f.classList.remove('open');});
+  if(!isOpen)item.classList.add('open');
+}
+
+// MOBILE TOC
+function toggleMobileToc(btn){
+  var dd=document.getElementById('mobileTocDropdown');
+  var isOpen=dd.classList.contains('open');
+  if(isOpen){dd.classList.remove('open');btn.querySelector('span').textContent='v';}
+  else{dd.classList.add('open');btn.querySelector('span').textContent='^';}
+}
+function closeMobileToc(){
+  var dd=document.getElementById('mobileTocDropdown');
+  dd.classList.remove('open');
+}
+
+// INITIAL TRIGGER
+triggerReveal();
+setTimeout(triggerReveal,300);
+</script>
+</body>
+</html>

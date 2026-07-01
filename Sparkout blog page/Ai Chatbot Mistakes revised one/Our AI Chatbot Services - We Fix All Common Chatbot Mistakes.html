@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our AI Chatbot Services - We Fix All Common Chatbot Mistakes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --frame-width: 855px;
+      --frame-height: 610px;
+      --white: #ffffff;
+      --page-bg: #f8fafc;
+      --navy: #172640;
+      --muted: #5f6f87;
+      --border: #e4e8ef;
+      --orange: #ff6c1a;
+      --blue: #2178d4;
+      --green: #15905e;
+      --purple: #6d3dd2;
+      --teal: #0f9aa5;
+      --red: #e8504f;
+      --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.08);
+      --shadow-card: 0 12px 26px rgba(15, 23, 42, 0.08);
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 32px 16px;
+      background: var(--page-bg);
+      color: var(--navy);
+      font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .blog-frame {
+      width: var(--frame-width);
+      height: var(--frame-height);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 9% 8%, rgba(255, 108, 26, 0.045), transparent 28%),
+        linear-gradient(135deg, rgba(255, 243, 236, 0.34), rgba(255, 255, 255, 0) 42%),
+        var(--white);
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+
+    .blog-frame::after {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(229, 231, 235, 0.96);
+      border-radius: 16px;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .canvas {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 22px;
+      padding: 42px 42px 44px;
+    }
+
+    .page-title {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--navy);
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.14;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .services-grid {
+      min-height: 0;
+      width: 100%;
+      max-width: 770px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .service-card {
+      position: relative;
+      min-width: 0;
+      min-height: 0;
+      display: grid;
+      grid-template-rows: auto auto 1fr;
+      gap: 10px;
+      padding: 17px 16px 16px;
+      border: 1px solid color-mix(in srgb, var(--accent) 24%, var(--border));
+      border-radius: 18px;
+      background:
+        linear-gradient(145deg, color-mix(in srgb, var(--accent) 12%, #ffffff), #ffffff 48%),
+        var(--white);
+      color: var(--navy);
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.34s ease, transform 0.34s ease, border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+    }
+
+    .services-grid.is-visible .service-card {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .services-grid.is-visible .service-card:nth-child(1) { transition-delay: 0.04s; }
+    .services-grid.is-visible .service-card:nth-child(2) { transition-delay: 0.12s; }
+    .services-grid.is-visible .service-card:nth-child(3) { transition-delay: 0.20s; }
+    .services-grid.is-visible .service-card:nth-child(4) { transition-delay: 0.28s; }
+    .services-grid.is-visible .service-card:nth-child(5) { transition-delay: 0.36s; }
+    .services-grid.is-visible .service-card:nth-child(6) { transition-delay: 0.44s; }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 18% 16%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 30%),
+        linear-gradient(180deg, transparent 45%, color-mix(in srgb, var(--accent) 7%, transparent));
+      opacity: 0.88;
+      pointer-events: none;
+    }
+
+    .service-card::after {
+      content: "";
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 14px;
+      height: 4px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--accent) 28%, #e5ecf5);
+      transform: scaleX(0.38);
+      transform-origin: left;
+      transition: transform 0.22s ease, background 0.22s ease;
+      pointer-events: none;
+    }
+
+    .services-grid.is-visible .service-card:hover,
+    .services-grid.is-visible .service-card:focus-visible,
+    .services-grid.is-visible .service-card.is-active {
+      outline: none;
+      transform: translateY(-5px);
+      border-color: color-mix(in srgb, var(--accent) 58%, var(--border));
+      box-shadow: 0 18px 34px rgba(15, 23, 42, 0.14);
+      background:
+        linear-gradient(145deg, color-mix(in srgb, var(--accent) 17%, #ffffff), #ffffff 52%),
+        var(--white);
+    }
+
+    .service-card:hover::after,
+    .service-card:focus-visible::after,
+    .service-card.is-active::after {
+      transform: scaleX(1);
+      background: var(--accent);
+    }
+
+    .service-icon,
+    .service-title,
+    .service-copy {
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: var(--white);
+      background: var(--accent);
+      box-shadow: 0 12px 22px color-mix(in srgb, var(--accent) 24%, transparent);
+      transition: transform 0.22s ease;
+    }
+
+    .service-card:hover .service-icon,
+    .service-card:focus-visible .service-icon,
+    .service-card.is-active .service-icon {
+      transform: scale(1.07);
+    }
+
+    .service-icon svg {
+      width: 29px;
+      height: 29px;
+      fill: currentColor;
+      display: block;
+      margin: auto;
+    }
+
+    .service-title {
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .service-copy {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 500;
+      line-height: 1.42;
+      padding-bottom: 12px;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .service-card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .services-grid.is-visible .service-card:nth-child(n) {
+        transition-delay: 0s;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="blog-frame">
+    <div class="canvas">
+      <h1 class="page-title">Our AI Chatbot Services - We Fix All Common Chatbot Mistakes</h1>
+
+      <section class="services-grid" aria-label="AI chatbot services cards">
+        <button class="service-card is-active" type="button" aria-pressed="true" style="--accent: var(--orange);">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M7 4h10a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3h-3.7L8 21v-4H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3Zm2 5a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 9 9Zm6 0a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 15 9Zm-4 5a1 1 0 1 0 2 0h-2Z" /></svg>
+          </span>
+          <span class="service-title">1. Custom AI Chatbot Development</span>
+          <span class="service-copy">We customize chatbots that are built around your business goals, workflows, and customer needs.</span>
+        </button>
+
+        <button class="service-card" type="button" aria-pressed="false" style="--accent: var(--blue);">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3h2a2 2 0 0 1 2 2v11h-6v-4h-4v4H4Zm4-14a1 1 0 1 0 0 2h1a1 1 0 1 0 0-2H8Zm0 4a1 1 0 1 0 0 2h1a1 1 0 1 0 0-2H8Zm6 0a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2Z" /></svg>
+          </span>
+          <span class="service-title">2. Enterprise AI Chatbot Services</span>
+          <span class="service-copy">We offer scalable, secure solutions designed for large teams, complex processes, and multi-channel deployment.</span>
+        </button>
+
+        <button class="service-card" type="button" aria-pressed="false" style="--accent: var(--green);">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.95 7.95 0 0 0 12 4V2L7 6l5 4V6a6 6 0 0 1 5.18 9.02 1 1 0 0 0 1.72 1.02 7.98 7.98 0 0 0-1.25-9.69ZM6.82 8.98A1 1 0 0 0 5.1 7.96a7.98 7.98 0 0 0 1.25 9.69A7.95 7.95 0 0 0 12 20v2l5-4-5-4v4a6 6 0 0 1-5.18-9.02Z" /></svg>
+          </span>
+          <span class="service-title">3. Chatbot Migration &amp; Modernization</span>
+          <span class="service-copy">Our team handles upgrading outdated systems to advanced, high-performance AI architectures.</span>
+        </button>
+
+        <button class="service-card" type="button" aria-pressed="false" style="--accent: var(--purple);">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 3a5 5 0 0 1 5 5v1h1a3 3 0 0 1 0 6h-1v1a5 5 0 0 1-10 0v-1H6a3 3 0 0 1 0-6h1V8a5 5 0 0 1 5-5Zm-2 7a1 1 0 1 0 0 2h4a1 1 0 1 0 0-2h-4Zm0 4a1 1 0 1 0 0 2h2a1 1 0 1 0 0-2h-2Z" /></svg>
+          </span>
+          <span class="service-title">4. NLP Optimization</span>
+          <span class="service-copy">We improve intent accuracy, entity recognition, and natural language understanding.</span>
+        </button>
+
+        <button class="service-card" type="button" aria-pressed="false" style="--accent: var(--teal);">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2.15a1 1 0 0 0-.46.11l-7 3.5A1 1 0 0 0 4 6.65v5.1c0 4.9 3.01 8.2 7.6 10.17a1 1 0 0 0 .8 0c4.59-1.97 7.6-5.27 7.6-10.17v-5.1a1 1 0 0 0-.55-.9l-7-3.5a1 1 0 0 0-.45-.1Zm4.03 7.58a1 1 0 0 1 0 1.42l-4.6 4.6a1 1 0 0 1-1.42 0l-2.04-2.04a1 1 0 1 1 1.42-1.42l1.33 1.34 3.89-3.9a1 1 0 0 1 1.42 0Z" /></svg>
+          </span>
+          <span class="service-title">5. AI Safety &amp; Ethical Guardrails:</span>
+          <span class="service-copy">Sparkout ensures to protect your chatbot from harmful, biased, or non-compliant outputs.</span>
+        </button>
+
+        <button class="service-card" type="button" aria-pressed="false" style="--accent: var(--red);">
+          <span class="service-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-5v2h2a1 1 0 1 1 0 2H7a1 1 0 1 1 0-2h2v-2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v10h16V6H4Zm4 7a1 1 0 0 1-.8-1.6l2-2.67a1 1 0 0 1 1.54-.08l1.45 1.45 2.01-3.36a1 1 0 0 1 1.6-.15l2 2.2a1 1 0 0 1-1.48 1.34l-1.09-1.2-1.95 3.25a1 1 0 0 1-1.56.2l-1.59-1.59-1.33 1.78A1 1 0 0 1 8 13Z" /></svg>
+          </span>
+          <span class="service-title">6. Performance Monitoring &amp; Training:</span>
+          <span class="service-copy">We make continuous tuning to maintain accuracy, speed, &amp; reliability over time.</span>
+        </button>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const grid = document.querySelector(".services-grid");
+    const cards = document.querySelectorAll(".service-card");
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            grid.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.35 });
+
+      revealObserver.observe(grid);
+    } else {
+      grid.classList.add("is-visible");
+    }
+
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        cards.forEach((item) => {
+          item.classList.toggle("is-active", item === card);
+          item.setAttribute("aria-pressed", item === card ? "true" : "false");
+        });
+      });
+    });
+  </script>
+</body>
+</html>

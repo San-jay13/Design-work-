@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sparkout Technology Adoption Hero Animation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --white: #ffffff;
+      --page-bg: #f8fafc;
+      --font: #0b1220;
+      --navy: #192a44;
+      --muted: #6b7280;
+      --stroke: #64748b;
+      --border: #e5e7eb;
+      --orange: #ff6c1a;
+      --orange-deep: #ff4d0d;
+      --success: #14885f;
+      --amber-soft: #fff4ec;
+      --green-soft: #ecfdf5;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.08);
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --cycle: 7s;
+    }
+
+    body {
+      min-height: 100vh;
+      background: var(--page-bg);
+      color: var(--font);
+      font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .hero-visual {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 80px;
+      background:
+        linear-gradient(90deg, rgba(255, 108, 26, 0.055) 0 1px, transparent 1px 100%),
+        linear-gradient(0deg, rgba(25, 42, 68, 0.045) 0 1px, transparent 1px 100%),
+        var(--white);
+      background-size: 48px 48px;
+      overflow-x: hidden;
+    }
+
+    .visual-card {
+      width: min(100%, 1180px);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background:
+        linear-gradient(135deg, rgba(255, 244, 236, 0.82), rgba(255, 255, 255, 0.68) 42%, rgba(248, 250, 252, 0.9)),
+        var(--white);
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+
+    .visual-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(100, 116, 139, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 116, 139, 0.08) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent 88%);
+      z-index: -1;
+    }
+
+    .visual-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 26px 30px;
+      border-bottom: 1px solid rgba(229, 231, 235, 0.92);
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: blur(14px);
+    }
+
+    .visual-title strong {
+      display: block;
+      color: var(--navy);
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .visual-title span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+
+    .status-pill {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 0 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 108, 26, 0.25);
+      background: var(--amber-soft);
+      color: var(--orange-deep);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .visual-body {
+      padding: 30px;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .path-section {
+      position: relative;
+      border: 1px solid rgba(229, 231, 235, 0.95);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-md);
+    }
+
+    .path-section.before {
+      border-color: rgba(100, 116, 139, 0.28);
+      background: linear-gradient(180deg, rgba(248, 250, 252, 0.96), rgba(255, 255, 255, 0.94));
+      animation: beforeState var(--cycle) ease-in-out infinite;
+    }
+
+    .path-section.after {
+      border-color: rgba(255, 108, 26, 0.28);
+      background: linear-gradient(180deg, rgba(255, 244, 236, 0.96), rgba(255, 255, 255, 0.94));
+      animation: afterState var(--cycle) ease-in-out infinite;
+    }
+
+    .path-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .before::after {
+      border: 1px solid rgba(100, 116, 139, 0.24);
+      animation: beforeOutline var(--cycle) ease-in-out infinite;
+    }
+
+    .after::after {
+      border: 1px solid rgba(255, 108, 26, 0.34);
+      box-shadow: inset 0 0 0 1px rgba(255, 108, 26, 0.08), 0 0 0 7px rgba(255, 108, 26, 0.06);
+      animation: afterOutline var(--cycle) ease-in-out infinite;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 18px 0;
+    }
+
+    .section-label b {
+      color: var(--navy);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .section-label span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 28px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .before .section-label span {
+      background: #f8fafc;
+      color: var(--stroke);
+      border: 1px solid rgba(100, 116, 139, 0.22);
+    }
+
+    .after .section-label span {
+      background: var(--amber-soft);
+      color: var(--orange-deep);
+      border: 1px solid rgba(255, 108, 26, 0.22);
+    }
+
+    .vertical-flow {
+      display: grid;
+      gap: 22px;
+      padding: 18px 22px 22px;
+    }
+
+    .step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 14px;
+      align-items: center;
+      min-height: 70px;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      z-index: 2;
+    }
+
+    .step + .step::before {
+      content: "";
+      position: absolute;
+      left: 38px;
+      top: -23px;
+      width: 2px;
+      height: 22px;
+      background: currentColor;
+      opacity: 0.55;
+    }
+
+    .step + .step::after {
+      content: "";
+      position: absolute;
+      left: 33px;
+      top: -10px;
+      width: 11px;
+      height: 11px;
+      border-right: 2px solid currentColor;
+      border-bottom: 2px solid currentColor;
+      transform: rotate(45deg);
+      opacity: 0.7;
+    }
+
+    .before .step {
+      color: var(--stroke);
+    }
+
+    .before .step:nth-child(2) {
+      animation: resistanceShake var(--cycle) ease-in-out infinite;
+    }
+
+    .before .step:nth-child(4) {
+      animation: roiDrop var(--cycle) ease-in-out infinite;
+    }
+
+    .after .step {
+      color: var(--orange);
+      animation: afterStepReveal var(--cycle) ease-in-out infinite;
+    }
+
+    .after .step:nth-child(2) {
+      color: var(--orange);
+      border-color: rgba(255, 108, 26, 0.24);
+      background: linear-gradient(135deg, rgba(255, 244, 236, 0.96), rgba(255, 255, 255, 0.98));
+      animation-delay: 0.04s;
+    }
+
+    .after .step:nth-child(3) {
+      animation-delay: 0.12s;
+    }
+
+    .after .step:nth-child(4) {
+      animation-delay: 0.2s;
+    }
+
+    .icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-md);
+      background: #f8fafc;
+      border: 1px solid var(--border);
+    }
+
+    .before .icon {
+      color: var(--stroke);
+      background: #f8fafc;
+      border-color: rgba(100, 116, 139, 0.2);
+    }
+
+    .after .icon {
+      color: var(--orange);
+      background: var(--amber-soft);
+      border-color: rgba(255, 108, 26, 0.2);
+    }
+
+    .after .step:nth-child(2) .icon {
+      background: linear-gradient(135deg, var(--orange), var(--orange-deep));
+      border-color: transparent;
+      color: var(--white);
+      box-shadow: 0 10px 22px rgba(255, 108, 26, 0.22);
+    }
+
+    .icon svg {
+      width: 23px;
+      height: 23px;
+      stroke-width: 2;
+    }
+
+    .step b {
+      display: block;
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .step small {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .transform-divider {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 116px;
+      overflow: visible;
+    }
+
+    .transform-divider::before,
+    .transform-divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 50%;
+      height: 1px;
+      background: rgba(255, 108, 26, 0.36);
+      z-index: 0;
+    }
+
+    .transform-divider::before {
+      left: 0;
+    }
+
+    .transform-divider::after {
+      right: 0;
+    }
+
+    .transform-core {
+      position: relative;
+      width: 76px;
+      min-width: 76px;
+      min-height: 76px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 108, 26, 0.28);
+      background: linear-gradient(135deg, var(--orange), var(--orange-deep));
+      color: var(--white);
+      box-shadow: 0 16px 34px rgba(255, 108, 26, 0.24);
+      animation: transformPulse var(--cycle) ease-in-out infinite;
+      z-index: 2;
+    }
+
+    .transform-core svg {
+      width: 34px;
+      height: 34px;
+      stroke-width: 2.4;
+      animation: arrowSlide var(--cycle) ease-in-out infinite;
+    }
+
+    .transform-signal {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      background: var(--white);
+      border: 3px solid var(--orange);
+      box-shadow: 0 0 0 8px rgba(255, 108, 26, 0.16), 0 0 24px rgba(255, 108, 26, 0.32);
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      z-index: 3;
+      animation: signalTravel var(--cycle) ease-in-out infinite;
+    }
+
+    @keyframes beforeState {
+      0%, 36% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: saturate(1);
+      }
+      50%, 100% {
+        opacity: 0.68;
+        transform: translateX(-5px);
+        filter: saturate(0.72);
+      }
+    }
+
+    @keyframes afterState {
+      0%, 39% {
+        opacity: 0.64;
+        transform: translateX(5px);
+        filter: saturate(0.72);
+      }
+      52%, 100% {
+        opacity: 1;
+        transform: translateX(0);
+        filter: saturate(1);
+      }
+    }
+
+    @keyframes beforeOutline {
+      0%, 34% { opacity: 0.15; }
+      41%, 48% { opacity: 1; }
+      58%, 100% { opacity: 0.25; }
+    }
+
+    @keyframes afterOutline {
+      0%, 44% { opacity: 0; }
+      55%, 76% { opacity: 1; }
+      100% { opacity: 0.36; }
+    }
+
+    @keyframes resistanceShake {
+      0%, 28%, 100% {
+        transform: translateX(0);
+        border-color: var(--border);
+        box-shadow: var(--shadow-sm);
+      }
+      33%, 39% {
+        transform: translateX(-5px);
+        border-color: rgba(100, 116, 139, 0.34);
+        box-shadow: 0 10px 28px rgba(100, 116, 139, 0.12);
+      }
+      36%, 42% {
+        transform: translateX(5px);
+      }
+      45% {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes roiDrop {
+      0%, 30%, 100% {
+        transform: translateY(0);
+        border-color: var(--border);
+      }
+      42%, 50% {
+        transform: translateY(6px);
+        border-color: rgba(100, 116, 139, 0.36);
+        box-shadow: 0 12px 30px rgba(100, 116, 139, 0.13);
+      }
+    }
+
+    @keyframes afterStepReveal {
+      0%, 45% {
+        opacity: 0.35;
+        transform: translateY(10px);
+        box-shadow: var(--shadow-sm);
+      }
+      55%, 78% {
+        opacity: 1;
+        transform: translateY(0);
+        box-shadow: 0 14px 32px rgba(255, 108, 26, 0.13);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        box-shadow: var(--shadow-sm);
+      }
+    }
+
+    @keyframes transformPulse {
+      0%, 34%, 100% { transform: scale(1); }
+      44%, 55% { transform: scale(1.04); }
+    }
+
+    @keyframes arrowSlide {
+      0%, 34%, 100% { transform: translateX(0); }
+      44%, 55% { transform: translateX(5px); }
+    }
+
+    @keyframes signalTravel {
+      0%, 36% {
+        left: 0;
+        opacity: 0;
+      }
+      44% {
+        left: 0;
+        opacity: 1;
+      }
+      58% {
+        left: 50%;
+        opacity: 1;
+      }
+      72% {
+        left: 100%;
+        opacity: 1;
+      }
+      82%, 100% {
+        left: 100%;
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 980px) {
+      .hero-visual {
+        padding: 40px 20px;
+      }
+
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .path-section.before,
+      .path-section.after {
+        animation: none;
+      }
+
+      .transform-divider {
+        min-width: 0;
+        min-height: 92px;
+      }
+
+      .transform-divider::before,
+      .transform-divider::after {
+        left: 50%;
+        right: auto;
+        top: auto;
+        width: 1px;
+        height: 50%;
+        background: rgba(255, 108, 26, 0.36);
+      }
+
+      .transform-divider::before {
+        top: 0;
+      }
+
+      .transform-divider::after {
+        bottom: 0;
+      }
+
+      .transform-core svg {
+        transform: rotate(90deg);
+      }
+
+      .transform-signal {
+        left: 50%;
+        top: 0;
+        animation: signalTravelDown var(--cycle) ease-in-out infinite;
+      }
+
+      @keyframes arrowSlide {
+        0%, 34%, 100% { transform: rotate(90deg) translateX(0); }
+        44%, 55% { transform: rotate(90deg) translateX(5px); }
+      }
+
+      @keyframes signalTravelDown {
+        0%, 36% {
+          top: 0;
+          opacity: 0;
+        }
+        44% {
+          top: 0;
+          opacity: 1;
+        }
+        58% {
+          top: 50%;
+          opacity: 1;
+        }
+        72% {
+          top: 100%;
+          opacity: 1;
+        }
+        82%, 100% {
+          top: 100%;
+          opacity: 0;
+        }
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-visual {
+        padding: 28px 16px;
+      }
+
+      .visual-header {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 22px;
+      }
+
+      .visual-title strong {
+        font-size: 21px;
+      }
+
+      .visual-body {
+        padding: 18px;
+      }
+
+      .section-label {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .vertical-flow {
+        padding: 16px;
+      }
+
+      .step {
+        grid-template-columns: 42px 1fr;
+        padding: 12px;
+      }
+
+      .icon {
+        width: 42px;
+        height: 42px;
+      }
+
+      .step + .step::before {
+        left: 33px;
+      }
+
+      .step + .step::after {
+        left: 28px;
+      }
+
+      .step b {
+        font-size: 16px;
+      }
+
+      .transform-core {
+        width: 72px;
+        min-width: 72px;
+        min-height: 72px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+
+      .path-section.before,
+      .path-section.after {
+        opacity: 1;
+        transform: none;
+        filter: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="hero-visual" aria-label="Technology adoption transformation visual">
+    <article class="visual-card">
+      <header class="visual-header">
+        <div class="visual-title">
+          <strong>New Technology</strong>
+          <span>A transformation from resistance and low adoption into training-led business growth.</span>
+        </div>
+        <div class="status-pill">Adoption Journey</div>
+      </header>
+
+      <div class="visual-body">
+        <div class="comparison-grid">
+          <section class="path-section before" aria-label="Before transformation flow">
+            <div class="section-label">
+              <b>Before</b>
+              <span>Resistance path</span>
+            </div>
+            <div class="vertical-flow">
+              <div class="step">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="4" y="5" width="16" height="12" rx="2"/>
+                    <path d="M8 21h8M12 17v4"/>
+                  </svg>
+                </div>
+                <div>
+                  <b>New Technology</b>
+                  <small>Introduced into the business</small>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M18 6 6 18M6 6l12 12"/>
+                    <circle cx="12" cy="12" r="9"/>
+                  </svg>
+                </div>
+                <div>
+                  <b>Resistance</b>
+                  <small>Teams hesitate to change workflows</small>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M4 19V5"/>
+                    <path d="M8 17v-4M13 17V9M18 17v-2"/>
+                  </svg>
+                </div>
+                <div>
+                  <b>Low Adoption</b>
+                  <small>Usage remains inconsistent</small>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="m4 7 6 6 4-4 6 6"/>
+                    <path d="M20 10v5h-5"/>
+                  </svg>
+                </div>
+                <div>
+                  <b>Poor ROI</b>
+                  <small>Investment fails to compound</small>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="transform-divider" aria-label="Transforms into">
+            <div class="transform-core" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M5 12h14"/>
+                <path d="m12 5 7 7-7 7"/>
+              </svg>
+            </div>
+            <div class="transform-signal" aria-hidden="true"></div>
+          </div>
+
+          <section class="path-section after" aria-label="After transformation flow">
+            <div class="section-label">
+              <b>After</b>
+              <span>Growth path</span>
+            </div>
+            <div class="vertical-flow">
+              <div class="step">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <rect x="4" y="5" width="16" height="12" rx="2"/>
+                    <path d="M8 21h8M12 17v4"/>
+                  </svg>
+                </div>
+                <div>
+                  <b>New Technology</b>
+                  <small>Same platform, better enablement</small>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M4 19.5V5a2 2 0 0 1 2-2h11"/>
+                    <path d="M8 7h8M8 11h6"/>
+                    <path d="m16 17 2 2 4-4"/>
+                  </svg>
+                </div>
+                <div>
+                  <b>Training</b>
+                  <small>Teams learn the value and workflow</small>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M20 6 9 17l-5-5"/>
+                  </svg>
+                </div>
+                <div>
+                  <b>Adoption</b>
+                  <small>Usage becomes consistent</small>
+                </div>
+              </div>
+
+              <div class="step">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M4 19V5"/>
+                    <path d="m6 17 5-5 4 4 5-8"/>
+                    <path d="M17 8h3v3"/>
+                  </svg>
+                </div>
+                <div>
+                  <b>Business Growth</b>
+                  <small>ROI improves with adoption</small>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

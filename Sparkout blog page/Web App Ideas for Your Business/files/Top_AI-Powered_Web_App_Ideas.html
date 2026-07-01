@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top AI-Powered Web App Ideas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --page-bg: #f8fafc;
+      --navy: #172640;
+      --muted: #5f6f87;
+      --border: #e4e8ef;
+      --shadow-lg: 0 20px 50px rgba(15,23,42,0.08);
+      --shadow-card: 0 6px 20px rgba(15,23,42,0.09);
+      /* 5 accent groups × 2 nodes each */
+      --ca: #e8460e;
+      --cb: #2178d4;
+      --cc: #15905e;
+      --cd: #6d3dd2;
+      --ce: #0f9aa5;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 32px 16px;
+      background: var(--page-bg);
+      font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Frame ── */
+    .frame {
+      width: 855px;
+      height: 610px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 8%  7%,  rgba(33,120,212,0.05),  transparent 30%),
+        radial-gradient(circle at 93% 93%, rgba(109,61,210,0.05),  transparent 30%),
+        radial-gradient(circle at 50% 50%, rgba(15,154,165,0.03),  transparent 55%),
+        var(--white);
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+
+    .frame::after {
+      content: "";
+      position: absolute;
+      inset: 16px;
+      border: 1px solid rgba(229,231,235,0.85);
+      border-radius: 16px;
+      pointer-events: none;
+      z-index: 30;
+    }
+
+    /* ── Title ── */
+    .page-title {
+      position: absolute;
+      top: 28px;
+      left: 0; right: 0;
+      text-align: center;
+      z-index: 10;
+      color: var(--navy);
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.3px;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+    }
+    .page-title em {
+      font-style: normal;
+      color: #172640;
+      -webkit-text-fill-color: #172640;
+    }
+    .frame.go .page-title { opacity: 1; transform: translateY(0); }
+
+    /* ── SVG canvas for connector lines ── */
+    .lines-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+      overflow: visible;
+    }
+
+    .conn-line {
+      fill: none;
+      stroke: var(--lc, #e4e8ef);
+      stroke-width: 1.5;
+      stroke-dasharray: 220;
+      stroke-dashoffset: 220;
+      opacity: 0.55;
+      transition: stroke-dashoffset 0.55s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* ── Central AI Hub ── */
+    .hub {
+      position: absolute;
+      width: 92px;
+      height: 92px;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%) scale(0.5);
+      z-index: 10;
+      opacity: 0;
+      transition: opacity 0.5s ease 0.3s, transform 0.55s cubic-bezier(0.34,1.56,0.64,1) 0.3s;
+    }
+    .frame.go .hub { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+
+    .hub-outer {
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #1a2f50, #2178d4);
+      box-shadow:
+        0 0 0 8px rgba(33,120,212,0.12),
+        0 0 0 16px rgba(33,120,212,0.06),
+        0 12px 36px rgba(33,120,212,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    /* rotating ring */
+    .hub-outer::before {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      border-radius: 50%;
+      border: 1.5px dashed rgba(33,120,212,0.3);
+      animation: spin 14s linear infinite;
+    }
+    .hub-outer::after {
+      content: "";
+      position: absolute;
+      inset: -20px;
+      border-radius: 50%;
+      border: 1px dashed rgba(33,120,212,0.15);
+      animation: spin 22s linear infinite reverse;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .hub-inner {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+    }
+    .hub-inner svg { width: 34px; height: 34px; fill: #fff; display: block; }
+    .hub-label {
+      font-size: 6.5px;
+      font-weight: 800;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+    }
+
+    /* soft pulse glow */
+    .hub-glow {
+      position: absolute;
+      inset: -18px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(33,120,212,0.18), transparent 70%);
+      animation: glowPulse 3s ease-in-out infinite;
+    }
+    @keyframes glowPulse {
+      0%, 100% { transform: scale(0.9); opacity: 0.6; }
+      50%       { transform: scale(1.1); opacity: 1;   }
+    }
+
+    /* ── Node cards ── */
+    .node {
+      position: absolute;
+      width: 130px;
+      z-index: 5;
+      opacity: 0;
+      transform: scale(0.8);
+      transition: opacity 0.38s ease, transform 0.38s cubic-bezier(0.34,1.3,0.64,1);
+    }
+    .frame.go .node { opacity: 1; transform: scale(1); }
+
+    .node-card {
+      background: linear-gradient(145deg, color-mix(in srgb, var(--ac) 10%, #fff), #fff 55%);
+      border: 1.5px solid color-mix(in srgb, var(--ac) 22%, var(--border));
+      border-radius: 14px;
+      padding: 8px 8px 9px;
+      box-shadow: 0 4px 16px rgba(15,23,42,0.08);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      text-align: center;
+      cursor: default;
+      transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .node-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--ac);
+      border-radius: 14px 14px 0 0;
+    }
+    .node-card:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 10px 28px rgba(15,23,42,0.13);
+      border-color: color-mix(in srgb, var(--ac) 50%, var(--border));
+    }
+
+    .node-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: var(--ac);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px color-mix(in srgb, var(--ac) 32%, transparent);
+      flex-shrink: 0;
+      transition: transform 0.22s ease;
+    }
+    .node-card:hover .node-icon { transform: scale(1.1); }
+    .node-icon svg { width: 15px; height: 15px; fill: #fff; display: block; }
+
+    .node-heading {
+      color: var(--navy);
+      font-size: 9.5px;
+      font-weight: 700;
+      line-height: 1.28;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page-title, .hub, .node { transition: none; opacity: 1; transform: none; }
+      .hub-outer::before, .hub-outer::after { animation: none; }
+      .hub-glow { animation: none; }
+      .conn-line { stroke-dashoffset: 0; }
+    }
+  </style>
+</head>
+<body>
+<main class="frame" id="frame">
+
+  <h1 class="page-title">Top <em>AI-Powered</em> Web App Ideas</h1>
+
+  <!-- SVG connector lines -->
+  <svg class="lines-svg" id="linesSvg" viewBox="0 0 855 610" preserveAspectRatio="none"></svg>
+
+  <!-- Central hub -->
+  <div class="hub" id="hub">
+    <div class="hub-glow"></div>
+    <div class="hub-outer">
+      <div class="hub-inner">
+        <svg viewBox="0 0 24 24"><path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h1a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1a7 7 0 0 1-7 7H9a7 7 0 0 1-7-7H1a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h1a7 7 0 0 1 7-7h1V5.73A2 2 0 0 1 10 4a2 2 0 0 1 2-2zm-3 9a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm6 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-3 4a2 2 0 0 0-1.89 1.34.5.5 0 0 0 .94.32A1 1 0 0 1 12 16a1 1 0 0 1 .95.66.5.5 0 0 0 .94-.32A2 2 0 0 0 12 15z"/></svg>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- 10 node cards — positioned via JS -->
+  <div class="node" id="n0" style="--ac:#e8460e">
+    <div class="node-card">
+      <div class="node-icon"><svg viewBox="0 0 24 24"><path d="M3 5h18v2H3zm0 4h18v2H3zm0 4h12v2H3zm0 4h9v2H3z"/></svg></div>
+      <h3 class="node-heading">AI Content Creation Tool</h3>
+    </div>
+  </div>
+
+  <div class="node" id="n1" style="--ac:#2178d4">
+    <div class="node-card">
+      <div class="node-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></div>
+      <h3 class="node-heading">Smart Email Assistant</h3>
+    </div>
+  </div>
+
+  <div class="node" id="n2" style="--ac:#15905e">
+    <div class="node-card">
+      <div class="node-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zM8 13h8v2H8zm0 4h5v2H8z"/></svg></div>
+      <h3 class="node-heading">AI-Powered Resume Builder</h3>
+    </div>
+  </div>
+
+  <div class="node" id="n3" style="--ac:#c026d3">
+    <div class="node-card">
+      <div class="node-icon"><svg viewBox="0 0 24 24"><path d="M7 4h10a3 3 0 0 1 3 3v7a3 3 0 0 1-3 3h-3.7L8 21v-4H7a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3zm2 5a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 9 9zm6 0a1.25 1.25 0 1 0 0 2.5A1.25 1.25 0 0 0 15 9zm-4 5a1 1 0 1 0 2 0h-2z"/></svg></div>
+      <h3 class="node-heading">Customer Support Chatbot</h3>
+    </div>
+  </div>
+
+  <div class="node" id="n4" style="--ac:#0f9aa5">
+    <div class="node-card">
+      <div class="node-icon"><svg viewBox="0 0 24 24"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></div>
+      <h3 class="node-heading">Meeting Notes Generator</h3>
+    </div>
+  </div>
+
+  <div class="node" id="n5" style="--ac:#d97706">
+    <div class="node-card">
+      <div class="node-icon"><svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2zm0 12c5.33 0 8 2.67 8 4v2H4v-2c0-1.33 2.67-4 8-4z"/></svg></div>
+      <h3 class="node-heading">AI Fitness Coach</h3>
+    </div>
+  </div>
+
+  <div class="node" id="n6" style="--ac:#dc2626">
+    <div class="node-card">
+      <div class="node-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1zm1 2v14h16V5H4zm2 8h2v4H6v-4zm4-5h2v9h-2V8zm4 2h2v7h-2v-7z"/></svg></div>
+      <h3 class="node-heading">Business Analytics Dashboard</h3>
+    </div>
+  </div>
+
+  <div class="node" id="n7" style="--ac:#7c3aed">
+    <div class="node-card">
+      <div class="node-icon"><svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg></div>
+      <h3 class="node-heading">AI Assistant for Students</h3>
+    </div>
+  </div>
+
+  <div class="node" id="n8" style="--ac:#0369a1">
+    <div class="node-card">
+      <div class="node-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 7V3.5L18.5 9H13zm-5 4h8v2H8zm0 4h5v2H8z"/></svg></div>
+      <h3 class="node-heading">AI Contract Review Assistant</h3>
+    </div>
+  </div>
+
+  <div class="node" id="n9" style="--ac:#f59e0b">
+    <div class="node-card">
+      <div class="node-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2zm1 17.93V18a1 1 0 0 0-2 0v1.93A8 8 0 0 1 4.07 13H6a1 1 0 0 0 0-2H4.07A8 8 0 0 1 11 4.07V6a1 1 0 0 0 2 0V4.07A8 8 0 0 1 19.93 11H18a1 1 0 0 0 0 2h1.93A8 8 0 0 1 13 19.93zM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg></div>
+      <h3 class="node-heading">AI Knowledge Base Assistant</h3>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  const frame   = document.getElementById('frame');
+  const svg     = document.getElementById('linesSvg');
+  const FW = 855, FH = 610;
+  const CX = FW / 2, CY = FH / 2 + 22;
+
+  // Accent colors matching CSS vars
+  const accents = ['#e8460e','#2178d4','#15905e','#c026d3','#0f9aa5','#d97706','#dc2626','#7c3aed','#0369a1','#f59e0b'];
+
+  // 10 node positions (cx, cy of card center) arranged in an ellipse
+  const nodeW = 118, nodeH = 82;
+  const rx = 255, ry = 188; // ellipse radii
+
+  // Evenly space 10 nodes around ellipse, offset so top slot is ~-72deg
+  const angleOffset = -90; // start from top
+  const positions = Array.from({length: 10}, (_, i) => {
+    const deg = angleOffset + (i * 360 / 10);
+    const rad = deg * Math.PI / 180;
+    return {
+      cx: CX + rx * Math.cos(rad),
+      cy: CY + ry * Math.sin(rad)
+    };
+  });
+
+  // Apply positions
+  const nodes = document.querySelectorAll('.node');
+  nodes.forEach((node, i) => {
+    const { cx, cy } = positions[i];
+    node.style.left = (cx - nodeW / 2) + 'px';
+    node.style.top  = (cy - nodeH / 2) + 'px';
+    node.style.width = nodeW + 'px';
+    // stagger delay
+    node.style.transitionDelay = (0.5 + i * 0.1) + 's';
+  });
+
+  // Draw connector lines
+  positions.forEach(({ cx, cy }, i) => {
+    // control point for slight curve
+    const mx = (CX + cx) / 2 + (cy - CY) * 0.08;
+    const my = (CY + cy) / 2 - (cx - CX) * 0.08;
+    const d  = `M ${CX} ${CY} Q ${mx} ${my} ${cx} ${cy}`;
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('d', d);
+    path.setAttribute('class', 'conn-line');
+    path.style.setProperty('--lc', accents[i]);
+    path.style.stroke = accents[i];
+    // stagger line draw
+    path.style.transitionDelay = (0.45 + i * 0.1) + 's';
+    svg.appendChild(path);
+  });
+
+  // Kick animation
+  function kick() {
+    frame.classList.add('go');
+    document.querySelectorAll('.conn-line').forEach(l => {
+      l.style.strokeDashoffset = '0';
+    });
+  }
+
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(e => {
+      if (e[0].isIntersecting) { kick(); obs.disconnect(); }
+    }, { threshold: 0.2 });
+    obs.observe(frame);
+  } else { kick(); }
+</script>
+</body>
+</html>

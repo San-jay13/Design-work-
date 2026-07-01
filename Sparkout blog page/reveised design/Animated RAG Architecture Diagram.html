@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated RAG Architecture Diagram</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --content-width: 915px;
+      --white: #ffffff;
+      --page-bg: #f8fafc;
+      --font: #0b1220;
+      --navy: #192a44;
+      --muted: #6b7280;
+      --stroke: #64748b;
+      --border: #e5e7eb;
+      --orange: #ff6c1a;
+      --orange-deep: #ff4d0d;
+      --soft-orange: #fff4ec;
+      --soft-green: #ecfdf5;
+      --green: #14885f;
+      --soft-blue: #eff6ff;
+      --blue: #2563eb;
+      --soft-purple: #f5f3ff;
+      --purple: #6d3dd2;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.08);
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --cycle: 8s;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 16px;
+      background:
+        linear-gradient(90deg, rgba(255, 108, 26, 0.045) 0 1px, transparent 1px 100%),
+        linear-gradient(0deg, rgba(25, 42, 68, 0.04) 0 1px, transparent 1px 100%),
+        var(--page-bg);
+      background-size: 42px 42px;
+      color: var(--font);
+      font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .rag-section {
+      width: min(100%, var(--content-width));
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(255, 108, 26, 0.09), transparent 26%),
+        linear-gradient(135deg, rgba(255, 244, 236, 0.7), rgba(255, 255, 255, 0.9) 46%, rgba(248, 250, 252, 0.94)),
+        var(--white);
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+
+    .rag-section::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(229, 231, 235, 0.92);
+      border-radius: 16px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .rag-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(100, 116, 139, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 116, 139, 0.07) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.52), transparent 82%);
+      z-index: -1;
+    }
+
+    .rag-canvas {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(330px, 0.95fr);
+      gap: 28px;
+      align-items: center;
+      min-height: 640px;
+      padding: 58px;
+    }
+
+    .architecture-panel,
+    .context-panel {
+      min-width: 0;
+      overflow: hidden;
+      border: 1px solid rgba(229, 231, 235, 0.98);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .architecture-panel {
+      display: flex;
+      flex-direction: column;
+      align-self: stretch;
+      border-radius: var(--radius-lg);
+    }
+
+    .panel-header {
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(14px);
+    }
+
+    .panel-header strong {
+      display: block;
+      color: var(--navy);
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .panel-header span {
+      display: block;
+      margin-top: 6px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .flow-stack {
+      position: relative;
+      flex: 1;
+      display: grid;
+      align-content: stretch;
+      gap: 18px;
+      padding: 24px;
+      border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+      background:
+        linear-gradient(180deg, rgba(248, 250, 252, 0.72), rgba(255, 255, 255, 0.96)),
+        var(--white);
+    }
+
+    .flow-node {
+      position: relative;
+      min-height: 92px;
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 16px;
+      border: 1px solid color-mix(in srgb, var(--node-color) 18%, var(--border));
+      border-radius: var(--radius-lg);
+      background: color-mix(in srgb, var(--node-color) 7%, var(--white));
+      box-shadow: var(--shadow-md);
+      animation: nodeFocus var(--cycle) ease-in-out infinite;
+      animation-delay: var(--delay);
+    }
+
+    .flow-node + .flow-node::before {
+      content: "";
+      position: absolute;
+      left: 39px;
+      top: -17px;
+      width: 2px;
+      height: 17px;
+      background: var(--orange);
+      opacity: 0.48;
+    }
+
+    .flow-node + .flow-node::after {
+      content: "";
+      position: absolute;
+      left: 34px;
+      top: -10px;
+      width: 12px;
+      height: 12px;
+      border-right: 2px solid var(--orange);
+      border-bottom: 2px solid var(--orange);
+      transform: rotate(45deg);
+      opacity: 0.78;
+    }
+
+    .node-icon {
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--radius-md);
+      color: var(--node-color);
+      background: color-mix(in srgb, var(--node-color) 10%, var(--white));
+      border: 1px solid color-mix(in srgb, var(--node-color) 22%, var(--border));
+      line-height: 0;
+    }
+
+    .node-icon svg {
+      width: 23px;
+      height: 23px;
+      display: block;
+      stroke-width: 2.2;
+    }
+
+    .node-copy b {
+      display: block;
+      color: var(--node-color);
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .node-copy strong {
+      display: block;
+      margin-top: 5px;
+      color: var(--navy);
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .data-pulse {
+      position: absolute;
+      left: 47px;
+      top: 66px;
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      background: var(--orange);
+      box-shadow: 0 0 0 7px rgba(255, 108, 26, 0.13), 0 0 24px rgba(255, 108, 26, 0.28);
+      animation: pulseTravel var(--cycle) linear infinite;
+      z-index: 4;
+    }
+
+    .context-panel {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      min-height: 0;
+    }
+
+    .context-body {
+      flex: initial;
+      display: grid;
+      align-content: center;
+      gap: 14px;
+      padding: 22px;
+    }
+
+    .process-list {
+      display: grid;
+      gap: 7px;
+      list-style: none;
+    }
+
+    .process-list li {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 10px;
+      border: 1px solid rgba(255, 108, 26, 0.14);
+      border-radius: 10px;
+      background: rgba(255, 244, 236, 0.44);
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .process-list b {
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
+      color: var(--white);
+      background: var(--orange);
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .outcome-note {
+      padding: 12px 14px;
+      border: 1px solid rgba(20, 136, 95, 0.18);
+      border-radius: var(--radius-md);
+      background: var(--soft-green);
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    .outcome-note strong {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .mistake-list {
+      display: grid;
+      gap: 7px;
+      list-style: none;
+    }
+
+    .mistake-list li {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 600;
+      line-height: 1.45;
+    }
+
+    .mistake-list li::before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, var(--orange), var(--orange-deep));
+      box-shadow: inset 0 0 0 7px var(--soft-orange);
+    }
+
+    .mistake-list strong {
+      color: var(--navy);
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    @keyframes nodeFocus {
+      0%, 16%, 100% {
+        transform: translateY(0);
+        box-shadow: var(--shadow-md);
+      }
+      7% {
+        transform: translateY(-3px);
+        box-shadow: 0 16px 32px color-mix(in srgb, var(--node-color) 18%, transparent);
+      }
+    }
+
+    @keyframes pulseTravel {
+      0% {
+        top: 70px;
+        opacity: 0;
+      }
+      7%, 18% {
+        opacity: 1;
+      }
+      25% {
+        top: 180px;
+      }
+      50% {
+        top: 290px;
+      }
+      75% {
+        top: 400px;
+      }
+      94% {
+        top: 510px;
+        opacity: 1;
+      }
+      100% {
+        top: 510px;
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 820px) {
+      body {
+        padding: 26px 14px;
+      }
+
+      .rag-canvas {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        padding: 38px 30px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .rag-section::before {
+        inset: 14px;
+      }
+
+      .rag-canvas {
+        gap: 22px;
+        padding: 28px 20px;
+      }
+
+      .flow-node {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-node + .flow-node::before,
+      .flow-node + .flow-node::after,
+      .data-pulse {
+        display: none;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="rag-section" aria-label="Animated RAG architecture diagram">
+    <div class="rag-canvas">
+      <section class="architecture-panel" aria-label="RAG architecture flow">
+        <header class="panel-header">
+          <strong>How RAG Works</strong>
+        </header>
+
+        <div class="flow-stack">
+          <div class="data-pulse" aria-hidden="true"></div>
+
+          <article class="flow-node" style="--node-color: var(--orange); --delay: 0s;">
+            <div class="node-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
+                <path d="M9 9h6M9 13h4" />
+              </svg>
+            </div>
+            <div class="node-copy">
+              <b>Step 1</b>
+              <strong>User Question</strong>
+            </div>
+          </article>
+
+          <article class="flow-node" style="--node-color: var(--blue); --delay: 1.6s;">
+            <div class="node-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="11" cy="11" r="7" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+            </div>
+            <div class="node-copy">
+              <b>Step 2</b>
+              <strong>Retriever</strong>
+            </div>
+          </article>
+
+          <article class="flow-node" style="--node-color: var(--purple); --delay: 3.2s;">
+            <div class="node-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z" />
+                <path d="M8 7h8M8 11h8" />
+              </svg>
+            </div>
+            <div class="node-copy">
+              <b>Step 3</b>
+              <strong>Knowledge Base</strong>
+            </div>
+          </article>
+
+          <article class="flow-node" style="--node-color: var(--orange); --delay: 4.8s;">
+            <div class="node-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <rect width="16" height="12" x="4" y="8" rx="3" />
+                <path d="M12 8V4H8" />
+                <path d="M9 13h.01M15 13h.01M10 18h4" />
+              </svg>
+            </div>
+            <div class="node-copy">
+              <b>Step 4</b>
+              <strong>LLM</strong>
+            </div>
+          </article>
+
+          <article class="flow-node" style="--node-color: var(--green); --delay: 6.4s;">
+            <div class="node-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <path d="M20 6 9 17l-5-5" />
+                <circle cx="12" cy="12" r="10" />
+              </svg>
+            </div>
+            <div class="node-copy">
+              <b>Step 5</b>
+              <strong>Final Answer</strong>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="context-panel" aria-label="RAG explanation and mistakes prevented">
+        <div class="context-body">
+          <ul class="process-list" aria-label="How RAG works">
+            <li><b>1</b><span>A user submits a question.</span></li>
+            <li><b>2</b><span>The chatbot retrieves relevant information from approved knowledge sources.</span></li>
+            <li><b>3</b><span>The AI model uses that information to generate a response.</span></li>
+            <li><b>4</b><span>The user receives a more accurate and context-aware answer.</span></li>
+          </ul>
+
+          <p class="outcome-note">
+            <strong>RAG outcome</strong>
+            With RAG, a chatbot can deliver more accurate and consistent responses while reducing the risk of giving misinformation.
+          </p>
+
+          <div class="section-title">Common AI Chatbot Mistakes RAG Helps Prevent</div>
+
+          <ul class="mistake-list" aria-label="Common AI chatbot mistakes RAG helps prevent">
+            <li><strong>Offering inaccurate or outdated information</strong></li>
+            <li><strong>Generating AI hallucinations</strong></li>
+            <li><strong>Delivering inconsistent responses</strong></li>
+            <li><strong>Using disconnected knowledge sources</strong></li>
+            <li><strong>Reducing customer trust through incorrect answers</strong></li>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

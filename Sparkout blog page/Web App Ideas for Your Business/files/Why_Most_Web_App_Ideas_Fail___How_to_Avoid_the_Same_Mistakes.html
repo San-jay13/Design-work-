@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Why Most Web App Ideas Fail</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --page-bg: #f8fafc;
+      --navy: #172640;
+      --muted: #5f6f87;
+      --border: #e4e8ef;
+      --shadow-lg: 0 20px 50px rgba(15,23,42,0.08);
+      --fail: #e8460e;
+      --fix:  #2178d4;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 32px 16px;
+      background: var(--page-bg);
+      font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Frame ── */
+    .frame {
+      width: 855px;
+      height: 410px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 4% 6%,  rgba(232,70,14,0.05), transparent 26%),
+        radial-gradient(circle at 96% 94%, rgba(33,120,212,0.05), transparent 26%),
+        var(--white);
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+    .frame::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(228,232,239,0.85);
+      border-radius: 16px;
+      pointer-events: none;
+      z-index: 30;
+    }
+
+    /* ── Canvas ── */
+    .canvas {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 40px 40px 26px;
+      gap: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Title ── */
+    .page-title {
+      text-align: center;
+      color: var(--navy);
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.22;
+      letter-spacing: -0.2px;
+      flex-shrink: 0;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+    }
+    .frame.go .page-title { opacity: 1; transform: translateY(0); }
+    .page-title .amp { color: var(--fail); }
+
+    /* ── Step dots nav ── */
+    .step-nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      margin-bottom: 40px;
+      flex-shrink: 0;
+      opacity: 0;
+      transition: opacity 0.4s ease 0.3s;
+    }
+    .frame.go .step-nav { opacity: 1; }
+
+    .step-dot {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #eef2f7;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 800;
+      color: #a0aec0;
+      cursor: pointer;
+      transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.22s ease;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 2;
+    }
+    .step-dot:hover { transform: scale(1.1); }
+    .step-dot.active {
+      background: var(--fail);
+      border-color: var(--fail);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(232,70,14,0.35);
+    }
+    .step-dot.done {
+      background: var(--fix);
+      border-color: var(--fix);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(33,120,212,0.25);
+    }
+
+    .step-connector {
+      height: 2px;
+      width: 64px;
+      background: var(--border);
+      position: relative;
+      flex-shrink: 0;
+    }
+    .step-connector-fill {
+      position: absolute;
+      top: 0; left: 0;
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, var(--fail), var(--fix));
+      border-radius: 2px;
+      transition: width 0.4s ease;
+    }
+
+    /* ── Step content area ── */
+    .step-content {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+      max-height: 110px;
+    }
+
+    .step-slide {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      grid-template-columns: 1fr 60px 1fr;
+      gap: 0;
+      align-items: stretch;
+      opacity: 0;
+      transform: translateX(40px);
+      transition: opacity 0.38s ease, transform 0.38s ease;
+      pointer-events: none;
+    }
+    .step-slide.active {
+      opacity: 1;
+      transform: translateX(0);
+      pointer-events: auto;
+    }
+    .step-slide.exit-left {
+      opacity: 0;
+      transform: translateX(-40px);
+    }
+
+    /* ── Fail panel ── */
+    .panel-fail {
+      background: linear-gradient(145deg, rgba(232,70,14,0.08), rgba(232,70,14,0.03) 65%, #fff);
+      border: 1.5px solid rgba(232,70,14,0.2);
+      border-radius: 16px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .panel-fail::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #e8460e, #f97316);
+      border-radius: 16px 0 0 16px;
+    }
+
+    /* ── Fix panel ── */
+    .panel-fix {
+      background: linear-gradient(145deg, rgba(33,120,212,0.08), rgba(15,154,165,0.04) 65%, #fff);
+      border: 1.5px solid rgba(33,120,212,0.2);
+      border-radius: 16px;
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      position: relative;
+      overflow: hidden;
+    }
+    .panel-fix::before {
+      content: "";
+      position: absolute;
+      top: 0; right: 0; bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, #2178d4, #0f9aa5);
+      border-radius: 0 16px 16px 0;
+    }
+
+    /* panel icon */
+    .panel-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .panel-fail .panel-icon {
+      background: linear-gradient(135deg, #e8460e, #f97316);
+      box-shadow: 0 6px 16px rgba(232,70,14,0.3);
+    }
+    .panel-fix .panel-icon {
+      background: linear-gradient(135deg, #2178d4, #0f9aa5);
+      box-shadow: 0 6px 16px rgba(33,120,212,0.3);
+    }
+    .panel-icon svg { width: 18px; height: 18px; fill: #fff; display: block; }
+
+    .panel-tag {
+      font-size: 8px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+    .panel-fail .panel-tag { color: rgba(232,70,14,0.7); }
+    .panel-fix  .panel-tag { color: rgba(33,120,212,0.7); }
+
+    .panel-heading {
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.26;
+    }
+
+    /* ── Center arrow ── */
+    .panel-mid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .mid-vs {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 800;
+      color: var(--muted);
+      box-shadow: 0 2px 8px rgba(15,23,42,0.07);
+    }
+    .mid-arrow svg { width: 18px; height: 18px; }
+
+    /* ── Navigation buttons ── */
+    .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 14px;
+      flex-shrink: 0;
+      opacity: 0;
+      transition: opacity 0.4s ease 0.35s;
+    }
+    .frame.go .nav-bar { opacity: 1; }
+
+    .nav-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 18px;
+      border-radius: 20px;
+      border: none;
+      font-family: inherit;
+      font-size: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease, opacity 0.22s ease;
+    }
+    .nav-btn:hover { transform: translateY(-2px); }
+    .nav-btn:disabled { opacity: 0.3; cursor: default; transform: none; }
+
+    .btn-prev {
+      background: #eef2f7;
+      color: var(--navy);
+    }
+    .btn-prev:hover:not(:disabled) { background: #dde3ed; }
+
+    .btn-next {
+      background: linear-gradient(135deg, var(--fail), #f97316);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(232,70,14,0.3);
+    }
+    .btn-next.done-state {
+      background: linear-gradient(135deg, var(--fix), #0f9aa5);
+      box-shadow: 0 4px 12px rgba(33,120,212,0.3);
+    }
+    .btn-next:hover:not(:disabled) { box-shadow: 0 6px 18px rgba(232,70,14,0.38); }
+
+    .nav-btn svg { width: 13px; height: 13px; fill: currentColor; }
+
+    .step-counter {
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--muted);
+      letter-spacing: 0.3px;
+    }
+    .step-counter span { color: var(--navy); font-weight: 800; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page-title, .step-nav, .nav-bar { transition: none; opacity: 1; transform: none; }
+      .step-slide { transition: none; }
+      .step-connector-fill { transition: none; }
+    }
+  </style>
+</head>
+<body>
+<main class="frame" id="frame">
+  <div class="canvas">
+
+    <h1 class="page-title">
+      Why Most Web App Ideas Fail <span class="amp">&</span><br>How to Avoid the Same Mistakes
+    </h1>
+
+    <!-- Step dots -->
+    <div class="step-nav" id="stepNav">
+      <div class="step-dot active" data-step="0">1</div>
+      <div class="step-connector"><div class="step-connector-fill" id="fill0"></div></div>
+      <div class="step-dot" data-step="1">2</div>
+      <div class="step-connector"><div class="step-connector-fill" id="fill1"></div></div>
+      <div class="step-dot" data-step="2">3</div>
+      <div class="step-connector"><div class="step-connector-fill" id="fill2"></div></div>
+      <div class="step-dot" data-step="3">4</div>
+      <div class="step-connector"><div class="step-connector-fill" id="fill3"></div></div>
+      <div class="step-dot" data-step="4">5</div>
+      <div class="step-connector"><div class="step-connector-fill" id="fill4"></div></div>
+      <div class="step-dot" data-step="5">6</div>
+    </div>
+
+    <!-- Step slides -->
+    <div class="step-content" id="stepContent">
+
+      <!-- Step 1 -->
+      <div class="step-slide active" data-index="0">
+        <div class="panel-fail">
+          <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg></div>
+          <h3 class="panel-heading">No Real Audience</h3>
+        </div>
+        <div class="panel-mid">
+          <div class="mid-vs">VS</div>
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="#e4e8ef"/></svg>
+        </div>
+        <div class="panel-fix">
+          <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.47 6.47 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg></div>
+          <h3 class="panel-heading">Discovery & Idea Validation</h3>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="step-slide" data-index="1">
+        <div class="panel-fail">
+          <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M11 15h2v2h-2zm0-8h2v6h-2zm.99-5C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/></svg></div>
+          <h3 class="panel-heading">The Problem Wasn't Important Enough</h3>
+        </div>
+        <div class="panel-mid">
+          <div class="mid-vs">VS</div>
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="#e4e8ef"/></svg>
+        </div>
+        <div class="panel-fix">
+          <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 14H7v-2h5v2zm5-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+          <h3 class="panel-heading">MVP Planning & Feature Prioritization</h3>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="step-slide" data-index="2">
+        <div class="panel-fail">
+          <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/></svg></div>
+          <h3 class="panel-heading">Too Many Features Too Soon</h3>
+        </div>
+        <div class="panel-mid">
+          <div class="mid-vs">VS</div>
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="#e4e8ef"/></svg>
+        </div>
+        <div class="panel-fix">
+          <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg></div>
+          <h3 class="panel-heading">User Journey & Experience Mapping</h3>
+        </div>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="step-slide" data-index="3">
+        <div class="panel-fail">
+          <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg></div>
+          <h3 class="panel-heading">No Clear Revenue Strategy</h3>
+        </div>
+        <div class="panel-mid">
+          <div class="mid-vs">VS</div>
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="#e4e8ef"/></svg>
+        </div>
+        <div class="panel-fix">
+          <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M9.4 16.6 4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0 4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg></div>
+          <h3 class="panel-heading">Prototype & User Testing</h3>
+        </div>
+      </div>
+
+      <!-- Step 5 -->
+      <div class="step-slide" data-index="4">
+        <div class="panel-fail">
+          <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1c-1.3 0-2.4.84-2.82 2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm-7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm2 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg></div>
+          <h3 class="panel-heading">Poor Planning and Budget Management</h3>
+        </div>
+        <div class="panel-mid">
+          <div class="mid-vs">VS</div>
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="#e4e8ef"/></svg>
+        </div>
+        <div class="panel-fix">
+          <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.95 7.95 0 0 0 12 4V2L7 6l5 4V6a6 6 0 0 1 5.18 9.02 1 1 0 0 0 1.72 1.02 7.98 7.98 0 0 0-1.25-9.69zM6.82 8.98A1 1 0 0 0 5.1 7.96a7.98 7.98 0 0 0 1.25 9.69A7.95 7.95 0 0 0 12 20v2l5-4-5-4v4a6 6 0 0 1-5.18-9.02z"/></svg></div>
+          <h3 class="panel-heading">Agile Development</h3>
+        </div>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="step-slide" data-index="5">
+        <div class="panel-fail">
+          <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M20 2H4a2 2 0 0 0-2 2v18l4-4h14a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/></svg></div>
+          <h3 class="panel-heading">No User Feedback</h3>
+        </div>
+        <div class="panel-mid">
+          <div class="mid-vs">VS</div>
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="#e4e8ef"/></svg>
+        </div>
+        <div class="panel-fix">
+          <div class="panel-icon"><svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg></div>
+          <h3 class="panel-heading">Launch, Measure & Improve</h3>
+        </div>
+      </div>
+
+    </div><!-- /step-content -->
+
+    <!-- Nav bar -->
+    <div class="nav-bar">
+      <button class="nav-btn btn-prev" id="btnPrev" disabled>
+        <svg viewBox="0 0 24 24"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
+        Previous
+      </button>
+      <span class="step-counter">Step <span id="curStep">1</span> of 6</span>
+      <button class="nav-btn btn-next" id="btnNext">
+        Next
+        <svg viewBox="0 0 24 24"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
+      </button>
+    </div>
+
+  </div>
+</main>
+
+<script>
+  const frame    = document.getElementById('frame');
+  const slides   = document.querySelectorAll('.step-slide');
+  const dots     = document.querySelectorAll('.step-dot');
+  const fills    = document.querySelectorAll('.step-connector-fill');
+  const btnPrev  = document.getElementById('btnPrev');
+  const btnNext  = document.getElementById('btnNext');
+  const curStepEl = document.getElementById('curStep');
+
+  let current = 0;
+  const total = slides.length;
+
+  function goTo(idx, dir = 1) {
+    // exit current
+    slides[current].classList.remove('active');
+    slides[current].classList.add(dir > 0 ? 'exit-left' : 'exit-right');
+    setTimeout(() => slides[current].classList.remove('exit-left', 'exit-right'), 400);
+
+    current = idx;
+
+    // enter new
+    slides[current].style.transform = dir > 0 ? 'translateX(40px)' : 'translateX(-40px)';
+    slides[current].classList.add('active');
+    setTimeout(() => slides[current].style.transform = '', 20);
+
+    updateUI();
+  }
+
+  function updateUI() {
+    curStepEl.textContent = current + 1;
+
+    // dots
+    dots.forEach((d, i) => {
+      d.classList.remove('active', 'done');
+      if (i === current) d.classList.add('active');
+      else if (i < current) d.classList.add('done');
+    });
+
+    // connector fills
+    fills.forEach((f, i) => {
+      f.style.width = i < current ? '100%' : '0%';
+    });
+
+    // buttons
+    btnPrev.disabled = current === 0;
+    btnNext.textContent = current === total - 1 ? 'Start Over' : 'Next  ›';
+    btnNext.classList.toggle('done-state', current === total - 1);
+  }
+
+  btnNext.addEventListener('click', () => {
+    if (current < total - 1) goTo(current + 1, 1);
+    else goTo(0, 1);
+  });
+
+  btnPrev.addEventListener('click', () => {
+    if (current > 0) goTo(current - 1, -1);
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const idx = parseInt(dot.dataset.step);
+      if (idx !== current) goTo(idx, idx > current ? 1 : -1);
+    });
+  });
+
+  function kick() { frame.classList.add('go'); }
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(e => {
+      if (e[0].isIntersecting) { kick(); obs.disconnect(); }
+    }, { threshold: 0.2 });
+    obs.observe(frame);
+  } else { kick(); }
+</script>
+</body>
+</html>

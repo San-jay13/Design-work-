@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Measure Technology Adoption - 8 KPIs Every Leader Needs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --content-width: 915px;
+      --white: #ffffff;
+      --page-bg: #f8fafc;
+      --font: #0b1220;
+      --navy: #192a44;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --orange: #ff6c1a;
+      --orange-deep: #ff4d0d;
+      --soft-orange: #fff4ec;
+      --soft-green: #ecfdf5;
+      --green: #14885f;
+      --soft-blue: #eff6ff;
+      --blue: #2563eb;
+      --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.08);
+      --radius-md: 12px;
+      --radius-lg: 20px;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 40px 16px;
+      background:
+        linear-gradient(90deg, rgba(255, 108, 26, 0.045) 0 1px, transparent 1px 100%),
+        linear-gradient(0deg, rgba(25, 42, 68, 0.04) 0 1px, transparent 1px 100%),
+        var(--page-bg);
+      background-size: 42px 42px;
+      color: var(--font);
+      font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .kpi-section {
+      width: min(100%, var(--content-width));
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      background:
+        radial-gradient(circle at 10% 8%, rgba(255, 108, 26, 0.09), transparent 26%),
+        linear-gradient(135deg, rgba(255, 244, 236, 0.68), rgba(255, 255, 255, 0.9) 46%, rgba(248, 250, 252, 0.94)),
+        var(--white);
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+
+    .kpi-section::before {
+      content: "";
+      position: absolute;
+      inset: 24px;
+      border: 1px solid rgba(229, 231, 235, 0.92);
+      border-radius: 16px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .kpi-section::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(100, 116, 139, 0.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(100, 116, 139, 0.07) 1px, transparent 1px);
+      background-size: 34px 34px;
+      mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 82%);
+      z-index: -1;
+    }
+
+    .kpi-canvas {
+      position: relative;
+      z-index: 2;
+      padding: 52px;
+    }
+
+    .title {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--navy);
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1.22;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: 310px minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 26px;
+      align-items: stretch;
+    }
+
+    .metric-list,
+    .metric-detail {
+      overflow: hidden;
+      border: 1px solid rgba(229, 231, 235, 0.98);
+      border-radius: var(--radius-lg);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .metric-list {
+      display: grid;
+      gap: 8px;
+      padding: 14px;
+      align-content: start;
+    }
+
+    .metric-button {
+      min-height: 54px;
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 9px 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      color: var(--navy);
+      font: inherit;
+      text-align: left;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .metric-button:hover,
+    .metric-button:focus-visible {
+      outline: none;
+      transform: translateX(3px);
+      border-color: rgba(255, 108, 26, 0.32);
+    }
+
+    .metric-button.is-active {
+      border-color: rgba(255, 108, 26, 0.32);
+      background: var(--soft-orange);
+      box-shadow: 0 12px 24px rgba(255, 108, 26, 0.12);
+    }
+
+    .metric-index {
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      color: var(--orange);
+      background: var(--soft-orange);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .metric-button.is-active .metric-index {
+      color: var(--white);
+      background: linear-gradient(135deg, var(--orange), var(--orange-deep));
+    }
+
+    .metric-button span:last-child {
+      min-width: 0;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .detail-header {
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 22px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(14px);
+    }
+
+    .detail-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-md);
+      color: var(--white);
+      background: linear-gradient(135deg, var(--orange), var(--orange-deep));
+      box-shadow: 0 14px 28px rgba(255, 108, 26, 0.22);
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .detail-header strong {
+      display: block;
+      color: var(--navy);
+      font-size: 23px;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .detail-body {
+      display: grid;
+      gap: 12px;
+      padding: 22px;
+      background:
+        linear-gradient(180deg, rgba(248, 250, 252, 0.72), rgba(255, 255, 255, 0.96)),
+        var(--white);
+    }
+
+    .info-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+      align-items: center;
+      min-height: 84px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      opacity: 0;
+      transform: translateY(12px);
+      animation: reveal 0.42s ease forwards;
+    }
+
+    .info-card:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .info-card:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    .info-card:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    .info-copy b {
+      display: block;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.25;
+      text-transform: uppercase;
+      letter-spacing: 0;
+    }
+
+    .info-copy span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.55;
+    }
+
+    .impact-card {
+      border-color: rgba(255, 108, 26, 0.22);
+      background:
+        linear-gradient(135deg, var(--soft-orange), var(--white));
+    }
+
+    @keyframes reveal {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 820px) {
+      body {
+        padding: 26px 14px;
+      }
+
+      .kpi-canvas {
+        padding: 38px 30px;
+      }
+
+      .dashboard {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .kpi-section::before {
+        inset: 14px;
+      }
+
+      .kpi-canvas {
+        padding: 28px 20px;
+      }
+
+      .title {
+        font-size: 24px;
+      }
+
+      .detail-header,
+      .info-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="kpi-section" aria-label="Technology adoption KPI dashboard">
+    <div class="kpi-canvas">
+      <h1 class="title">How to Measure Technology Adoption - 8 KPIs Every Leader Needs</h1>
+
+      <section class="dashboard">
+        <div class="metric-list" id="metricList" aria-label="KPI metrics"></div>
+        <article class="metric-detail" id="metricDetail" aria-live="polite"></article>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const metrics = [
+      {
+        metric: "Adoption Rate",
+        definition: "% of target users who log in & complete at least one key action",
+        signal: ">70% by day 30",
+        review: "Weekly",
+        impact: "Faster ROI and reduced resistance"
+      },
+      {
+        metric: "Weekly Active Users (WAU)",
+        definition: "Users completing meaningful tasks (not just logins) each week",
+        signal: "Steady growth (weeks 1–6), plateau by week 8",
+        review: "Weekly",
+        impact: "Higher engagement and productivity"
+      },
+      {
+        metric: "Feature Adoption Rate",
+        definition: "% of users using core vs. advanced features",
+        signal: "Core >80% (month 2), Advanced >40% (month 3)",
+        review: "Monthly",
+        impact: "Better utilization of technology investments"
+      },
+      {
+        metric: "Time-to-First -Value (TTV)",
+        definition: "Time taken to complete the first meaningful task independently",
+        signal: "Below the defined threshold",
+        review: "Weekly (first 6 weeks)",
+        impact: "Faster user confidence and adoption"
+      },
+      {
+        metric: "Retention (30/60/90 days)",
+        definition: "% of users staying active over time",
+        signal: "<20% drop from day 7 → day 30",
+        review: "Monthly",
+        impact: "Sustainable long-term adoption"
+      },
+      {
+        metric: "Task Completion Rate",
+        definition: "% of users completing key workflows without errors",
+        signal: ">85% for core workflows",
+        review: "Bi-weekly",
+        impact: "Improved efficiency and reduced rework"
+      },
+      {
+        metric: "Support Ticket Volume",
+        definition: "Adoption-related tickets (training, navigation, errors)",
+        signal: "Should decrease week-over-week",
+        review: "Weekly",
+        impact: "Lower support costs and IT workload"
+      },
+      {
+        metric: "Employee NPS / Pulse Score",
+        definition: "Ease-of-use & recommendation score (1–10)",
+        signal: "Positive trend; flag <6/10",
+        review: "Week 2, Week 6, Monthly",
+        impact: "Improved employee experience and change readiness"
+      }
+    ];
+
+    const metricList = document.getElementById("metricList");
+    const metricDetail = document.getElementById("metricDetail");
+
+    function renderDetail(index) {
+      const item = metrics[index];
+
+      metricDetail.innerHTML = `
+        <header class="detail-header">
+          <div class="detail-icon">${index + 1}</div>
+          <strong>${item.metric}</strong>
+        </header>
+        <div class="detail-body">
+          <div class="info-card">
+            <div class="info-copy">
+              <b>Definition</b>
+              <span>${item.definition}</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-copy">
+              <b>Target Signal</b>
+              <span>${item.signal}</span>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="info-copy">
+              <b>Review Time</b>
+              <span>${item.review}</span>
+            </div>
+          </div>
+          <div class="info-card impact-card">
+            <div class="info-copy">
+              <b>Estimated Business Impact</b>
+              <span>${item.impact}</span>
+            </div>
+          </div>
+        </div>
+      `;
+
+      Array.from(metricList.children).forEach((button, buttonIndex) => {
+        const active = buttonIndex === index;
+        button.classList.toggle("is-active", active);
+        button.setAttribute("aria-pressed", active ? "true" : "false");
+      });
+    }
+
+    metrics.forEach((item, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "metric-button";
+      button.setAttribute("aria-pressed", "false");
+      button.innerHTML = `<span class="metric-index">${index + 1}</span><span>${item.metric}</span>`;
+      button.addEventListener("click", () => renderDetail(index));
+      metricList.appendChild(button);
+    });
+
+    renderDetail(0);
+  </script>
+</body>
+</html>

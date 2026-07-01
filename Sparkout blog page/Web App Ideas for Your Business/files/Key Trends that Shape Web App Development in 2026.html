@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Key Trends that Shape Web App Development in 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --page-bg: #f8fafc;
+      --navy: #172640;
+      --muted: #5f6f87;
+      --border: #e4e8ef;
+      --shadow-lg: 0 20px 50px rgba(15,23,42,0.08);
+      --c1: #2178d4;
+      --c2: #6d3dd2;
+      --c3: #15905e;
+      --c4: #e8460e;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 32px 16px;
+      background: var(--page-bg);
+      font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Frame ── */
+    .frame {
+      width: 855px;
+      height: 455px;
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 6% 7%,  rgba(33,120,212,0.05), transparent 28%),
+        radial-gradient(circle at 94% 94%, rgba(109,61,210,0.05), transparent 28%),
+        var(--white);
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+    .frame::after {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(228,232,239,0.8);
+      border-radius: 16px;
+      pointer-events: none;
+      z-index: 30;
+    }
+
+    /* dot bg */
+    .dot-grid {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.22;
+      background-image: radial-gradient(circle, #c8d6e8 1px, transparent 1px);
+      background-size: 24px 24px;
+      mask-image: radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.3), transparent 70%);
+    }
+
+    /* ── Canvas ── */
+    .canvas {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 44px 42px;
+      gap: 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Title ── */
+    .page-title {
+      text-align: center;
+      color: var(--navy);
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.22;
+      letter-spacing: 0;
+      flex-shrink: 0;
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+    }
+    .frame.go .page-title { opacity: 1; transform: translateY(0); }
+    .title-year {
+      color: #000000;
+    }
+
+    /* ── Cards strip ── */
+    .cards-strip {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 48px 96px;
+      flex: 1;
+      min-height: 0;
+      align-items: stretch;
+    }
+
+    .cards-strip::before,
+    .cards-strip::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 0;
+      pointer-events: none;
+      background: linear-gradient(90deg, transparent, rgba(95, 111, 135, 0.34), transparent);
+      transform: translate(-50%, -50%);
+    }
+
+    .cards-strip::before {
+      width: 68%;
+      height: 1px;
+    }
+
+    .cards-strip::after {
+      width: 1px;
+      height: 70%;
+      background: linear-gradient(180deg, transparent, rgba(95, 111, 135, 0.34), transparent);
+    }
+
+    .trend-hub {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 5;
+      width: 88px;
+      height: 88px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(23, 38, 64, 0.12);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.92);
+      color: #000000;
+      font-size: 22px;
+      font-weight: 800;
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+      transform: translate(-50%, -50%) scale(0.92);
+      opacity: 0;
+      transition: opacity 0.45s ease 0.2s, transform 0.45s ease 0.2s;
+    }
+
+    .trend-hub::before {
+      content: "";
+      position: absolute;
+      inset: 8px;
+      border: 1px solid rgba(33, 120, 212, 0.18);
+      border-radius: 18px;
+    }
+
+    .frame.go .trend-hub {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* ── Card ── */
+    .trend-card {
+      position: relative;
+      border-radius: 16px;
+      border: 1.5px solid color-mix(in srgb, var(--ac) 20%, var(--border));
+      background: linear-gradient(160deg, color-mix(in srgb, var(--ac) 10%, #fff), #fff 55%);
+      padding: 16px 18px 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+      min-height: 124px;
+      cursor: pointer;
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+      box-shadow: 0 4px 16px rgba(15,23,42,0.07);
+      z-index: 2;
+    }
+
+    .frame.go .trend-card { opacity: 1; transform: translateY(0); }
+    .frame.go .trend-card:nth-child(2) { transition-delay: 0.30s; }
+    .frame.go .trend-card:nth-child(3) { transition-delay: 0.42s; }
+    .frame.go .trend-card:nth-child(4) { transition-delay: 0.54s; }
+    .frame.go .trend-card:nth-child(5) { transition-delay: 0.66s; }
+
+    /* top accent */
+    .trend-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: var(--ac);
+      border-radius: 16px 16px 0 0;
+    }
+
+    /* radial glow */
+    .trend-card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 20%, color-mix(in srgb, var(--ac) 15%, transparent), transparent 60%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .trend-card:hover,
+    .trend-card.active {
+      border-color: color-mix(in srgb, var(--ac) 50%, var(--border));
+      box-shadow: 0 12px 32px rgba(15,23,42,0.13), 0 0 0 3px color-mix(in srgb, var(--ac) 14%, transparent);
+      background: linear-gradient(160deg, color-mix(in srgb, var(--ac) 16%, #fff), #fff 58%);
+      transform: translateY(-5px);
+    }
+    .trend-card:hover::after,
+    .trend-card.active::after { opacity: 1; }
+
+    /* active bottom bar */
+    .trend-card .bottom-bar {
+      position: absolute;
+      bottom: 0; left: 14px; right: 14px;
+      height: 3px;
+      border-radius: 999px 999px 0 0;
+      background: var(--ac);
+      transform: scaleX(0);
+      transition: transform 0.28s ease;
+    }
+    .trend-card:hover .bottom-bar,
+    .trend-card.active .bottom-bar { transform: scaleX(1); }
+
+    /* ── Card top ── */
+    .card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      background: var(--ac);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 16px color-mix(in srgb, var(--ac) 34%, transparent);
+      flex-shrink: 0;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .trend-card:hover .card-icon,
+    .trend-card.active .card-icon {
+      transform: scale(1.1) rotate(-5deg);
+      box-shadow: 0 10px 22px color-mix(in srgb, var(--ac) 42%, transparent);
+    }
+    .card-icon svg { width: 19px; height: 19px; fill: #fff; display: block; }
+
+    .card-num {
+      font-size: 12px;
+      font-weight: 800;
+      color: color-mix(in srgb, var(--ac) 45%, #c8d6e8);
+      letter-spacing: 0.5px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── Card bottom ── */
+    .card-bottom { position: relative; z-index: 1; }
+
+    .card-heading {
+      color: var(--navy);
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.22;
+      letter-spacing: 0;
+      margin-bottom: 10px;
+      transition: color 0.22s ease;
+    }
+    .trend-card:hover .card-heading,
+    .trend-card.active .card-heading {
+      color: color-mix(in srgb, var(--ac) 80%, var(--navy));
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .page-title, .trend-card { transition: none; opacity: 1; transform: none; }
+      .trend-card::after, .bottom-bar { transition: none; }
+    }
+  </style>
+</head>
+<body>
+<main class="frame" id="frame">
+  <div class="dot-grid"></div>
+  <div class="canvas">
+
+    <h1 class="page-title">Key Trends that Shape Web App Development in <span class="title-year">2026</span></h1>
+
+    <div class="cards-strip">
+      <div class="trend-hub" aria-hidden="true">2026</div>
+
+      <!-- Card 1 -->
+      <div class="trend-card" style="--ac:var(--c1);">
+        <div class="bottom-bar"></div>
+        <div class="card-top">
+          <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-7.07 17.07C6.04 15.56 8.82 13 12 13s5.96 2.56 7.07 6.07A10 10 0 0 0 12 2zm0 9a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg></div>
+          <span class="card-num">01</span>
+        </div>
+        <div class="card-bottom">
+          <h3 class="card-heading">Context-Aware Web Apps</h3>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="trend-card" style="--ac:var(--c2);">
+        <div class="bottom-bar"></div>
+        <div class="card-top">
+          <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg></div>
+          <span class="card-num">02</span>
+        </div>
+        <div class="card-bottom">
+          <h3 class="card-heading">Invisible User Interfaces</h3>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="trend-card" style="--ac:var(--c3);">
+        <div class="bottom-bar"></div>
+        <div class="card-top">
+          <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 19.82A1 1 0 0 0 5.5 21C7 17 9 13 17 12v3l4-4-4-4v3z"/></svg></div>
+          <span class="card-num">03</span>
+        </div>
+        <div class="card-bottom">
+          <h3 class="card-heading">Sustainable Green Coding</h3>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="trend-card" style="--ac:var(--c4);">
+        <div class="bottom-bar"></div>
+        <div class="card-top">
+          <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M4 8h4V4H4v4zm6 12h4v-4h-4v4zm-6 0h4v-4H4v4zm0-6h4v-4H4v4zm6 0h4v-4h-4v4zm6-10v4h4V4h-4zm-6 4h4V4h-4v4zm6 6h4v-4h-4v4zm0 6h4v-4h-4v4z"/></svg></div>
+          <span class="card-num">04</span>
+        </div>
+        <div class="card-bottom">
+          <h3 class="card-heading">Micro-Feature Web Products</h3>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<script>
+  const frame = document.getElementById('frame');
+  const cards = document.querySelectorAll('.trend-card');
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => {
+      const isActive = card.classList.contains('active');
+      cards.forEach(c => c.classList.remove('active'));
+      if (!isActive) card.classList.add('active');
+    });
+  });
+
+  function kick() { frame.classList.add('go'); }
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver(e => {
+      if (e[0].isIntersecting) { kick(); obs.disconnect(); }
+    }, { threshold: 0.2 });
+    obs.observe(frame);
+  } else { kick(); }
+</script>
+</body>
+</html>

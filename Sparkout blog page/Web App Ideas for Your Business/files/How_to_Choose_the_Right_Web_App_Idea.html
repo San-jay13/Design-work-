@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Choose the Right Web App Idea</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --frame-width: 855px;
+      --frame-height: 460px;
+      --white: #ffffff;
+      --page-bg: #f8fafc;
+      --navy: #172640;
+      --muted: #5f6f87;
+      --border: #e4e8ef;
+      --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.08);
+      --shadow-card: 0 12px 26px rgba(15, 23, 42, 0.08);
+
+      --c1: #e8460e;
+      --c2: #2178d4;
+      --c3: #15905e;
+      --c4: #6d3dd2;
+      --c5: #0f9aa5;
+      --c6: #c0560f;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 32px 16px;
+      background: var(--page-bg);
+      color: var(--navy);
+      font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .blog-frame {
+      width: var(--frame-width);
+      height: var(--frame-height);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 9% 8%, rgba(99, 74, 212, 0.04), transparent 28%),
+        linear-gradient(135deg, rgba(236, 242, 255, 0.34), rgba(255,255,255,0) 42%),
+        var(--white);
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+
+    .blog-frame::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      border-radius: 16px;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .canvas {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 32px 42px 30px;
+    }
+
+    .page-title {
+      max-width: 760px;
+      margin: 0 auto 0;
+      color: var(--navy);
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.3px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .steps-grid {
+      min-height: 0;
+      width: 100%;
+      max-width: 771px;
+      margin: 24px auto 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, auto);
+      align-content: start;
+      gap: 10px;
+    }
+
+    .step-card {
+      position: relative;
+      min-width: 0;
+      height: 74px;
+      appearance: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 14px;
+      border: 1px solid color-mix(in srgb, var(--accent) 22%, var(--border));
+      border-radius: 16px;
+      background:
+        linear-gradient(148deg, color-mix(in srgb, var(--accent) 11%, #ffffff), #ffffff 50%),
+        var(--white);
+      overflow: hidden;
+      box-shadow: var(--shadow-card);
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 0.34s ease, transform 0.34s ease, border-color 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
+    }
+
+    .steps-grid.is-visible .step-card { opacity: 1; transform: translateY(0); }
+    .steps-grid.is-visible .step-card:nth-child(1) { transition-delay: 0.04s; }
+    .steps-grid.is-visible .step-card:nth-child(2) { transition-delay: 0.12s; }
+    .steps-grid.is-visible .step-card:nth-child(3) { transition-delay: 0.20s; }
+    .steps-grid.is-visible .step-card:nth-child(4) { transition-delay: 0.28s; }
+    .steps-grid.is-visible .step-card:nth-child(5) { transition-delay: 0.36s; }
+    .steps-grid.is-visible .step-card:nth-child(6) { transition-delay: 0.44s; }
+
+    .step-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 14% 14%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 32%);
+      pointer-events: none;
+    }
+
+    .step-card::after {
+      content: "";
+      position: absolute;
+      left: 16px;
+      right: 16px;
+      bottom: 13px;
+      height: 3px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--accent) 24%, #e5ecf5);
+      transform: scaleX(0.36);
+      transform-origin: left;
+      transition: transform 0.24s ease, background 0.22s ease;
+      pointer-events: none;
+    }
+
+    .step-card:hover {
+      transform: translateY(-5px) !important;
+      border-color: color-mix(in srgb, var(--accent) 54%, var(--border));
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.13);
+      background:
+        linear-gradient(148deg, color-mix(in srgb, var(--accent) 17%, #ffffff), #ffffff 54%),
+        var(--white);
+    }
+
+    .step-card:hover::after { transform: scaleX(1); background: var(--accent); }
+
+    .step-card.is-active {
+      transform: translateY(-5px) !important;
+      border-color: color-mix(in srgb, var(--accent) 60%, var(--border));
+      box-shadow: 0 18px 36px rgba(15, 23, 42, 0.14);
+      background:
+        linear-gradient(148deg, color-mix(in srgb, var(--accent) 19%, #ffffff), #ffffff 56%),
+        var(--white);
+    }
+
+    .step-card.is-active::after {
+      transform: scaleX(1);
+      background: var(--accent);
+    }
+
+    .step-icon {
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-icon {
+      width: 34px;
+      height: 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 11px;
+      color: var(--white);
+      background: var(--accent);
+      box-shadow: 0 8px 16px color-mix(in srgb, var(--accent) 28%, transparent);
+      flex-shrink: 0;
+      transition: transform 0.22s ease;
+    }
+
+    .step-card:hover .step-icon { transform: scale(1.07); }
+    .step-card.is-active .step-icon { transform: scale(1.07); }
+
+    .step-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      display: block;
+    }
+
+    .detail-panel {
+      width: 100%;
+      max-width: 771px;
+      min-height: 82px;
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      align-items: center;
+      gap: 16px;
+      margin: 16px auto 0;
+      padding: 16px 18px;
+      border: 1px solid color-mix(in srgb, var(--panel-accent, var(--c1)) 26%, var(--border));
+      border-radius: 16px;
+      background:
+        linear-gradient(145deg, color-mix(in srgb, var(--panel-accent, var(--c1)) 10%, #ffffff), #ffffff 64%),
+        var(--white);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.34s ease 0.5s, transform 0.34s ease 0.5s, border-color 0.22s ease, background 0.22s ease;
+    }
+
+    .steps-grid.is-visible + .detail-panel {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .detail-label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: var(--panel-accent, var(--c1));
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.75px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .detail-copy {
+      min-width: 0;
+    }
+
+    .detail-heading {
+      color: var(--navy);
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 5px;
+    }
+
+    .detail-text {
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.38;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .step-card, .detail-panel { opacity: 1; transform: none; transition: none; }
+      .steps-grid.is-visible .step-card:nth-child(n) { transition-delay: 0s; }
+    }
+  </style>
+</head>
+<body>
+  <main class="blog-frame">
+    <div class="canvas">
+      <h1 class="page-title">How to Choose the Right Web App Idea</h1>
+
+      <section class="steps-grid" aria-label="Step-by-step process cards">
+
+        <!-- Step 1 -->
+        <button class="step-card is-active" type="button" style="--accent: var(--c1);" data-label="Step 01" data-heading="What Problem Does It Solve?" data-detail="Focus on a real challenge users face. The more time, effort, or cost your app saves, the greater its value." aria-expanded="true">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M11 4a1 1 0 0 1 2 0v1.07A7.002 7.002 0 0 1 19 12a7 7 0 0 1-14 0 7.002 7.002 0 0 1 6-6.93V4Zm1 3a5 5 0 1 0 0 10A5 5 0 0 0 12 7Zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6Zm0 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg>
+          </div>
+        </button>
+
+        <!-- Step 2 -->
+        <button class="step-card" type="button" style="--accent: var(--c2);" data-label="Step 02" data-heading="Who Will Use It?" data-detail="Define your target users early. Getting to know their needs helps you build the right features from the start." aria-expanded="false">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 1 1 0 10A5 5 0 0 1 12 2Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6ZM4 20a8 8 0 0 1 16 0 1 1 0 0 1-2 0 6 6 0 0 0-12 0 1 1 0 0 1-2 0Z"/></svg>
+          </div>
+        </button>
+
+        <!-- Step 3 -->
+        <button class="step-card" type="button" style="--accent: var(--c3);" data-label="Step 03" data-heading="Is There Demand for It?" data-detail="Research competitors, search trends, and online discussions. Existing demand is a strong sign your idea has potential." aria-expanded="false">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M3 3h18a1 1 0 0 1 1 1v16a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1Zm1 2v14h16V5H4Zm2 10h2v2H6v-2Zm0-4h2v3H6v-3Zm4 1h2v3h-2v-3Zm0-3h2v2h-2v-2Zm4 5h2v1h-2v-1Zm0-5h2v4h-2V9Z"/></svg>
+          </div>
+        </button>
+
+        <!-- Step 4 -->
+        <button class="step-card" type="button" style="--accent: var(--c4);" data-label="Step 04" data-heading="Can You Build It Within Your Budget?" data-detail="Start with an MVP if possible. Choose an idea that fits your budget while leaving room for future improvements." aria-expanded="false">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1 0 20A10 10 0 0 1 12 2Zm0 2a8 8 0 1 0 0 16A8 8 0 0 0 12 4Zm0 2a1 1 0 0 1 1 1v.27A3.001 3.001 0 0 1 12 13a1 1 0 0 0 0 2 1 1 0 1 1 0 2 3 3 0 0 1-3-3 1 1 0 0 0 0-2 3 3 0 1 1 2-5.83V7a1 1 0 0 1 1-1Zm0 4a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg>
+          </div>
+        </button>
+
+        <!-- Step 5 -->
+        <button class="step-card" type="button" style="--accent: var(--c5);" data-label="Step 05" data-heading="How Will the App Make Money?" data-detail="Plan a revenue model early, such as subscriptions, premium features, ads, or transaction fees." aria-expanded="false">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1 0 20A10 10 0 0 1 12 2Zm0 2a8 8 0 1 0 0 16A8 8 0 0 0 12 4Zm1 3v1.07a3 3 0 0 1 0 5.86V15a1 1 0 0 1-2 0v-1.07a3 3 0 0 1 0-5.86V7a1 1 0 0 1 2 0Zm-1 3a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"/></svg>
+          </div>
+        </button>
+
+        <!-- Step 6 -->
+        <button class="step-card" type="button" style="--accent: var(--c6);" data-label="Step 06" data-heading="Can It Grow Over Time?" data-detail="Build with scalability in mind. Your app should support more users, features, &amp; business growth without major rebuilds." aria-expanded="false">
+          <div class="step-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.95 7.95 0 0 0 12 4V2L7 6l5 4V6a6 6 0 0 1 5.18 9.02 1 1 0 0 0 1.72 1.02 7.98 7.98 0 0 0-1.25-9.69ZM6.82 8.98A1 1 0 0 0 5.1 7.96a7.98 7.98 0 0 0 1.25 9.69A7.95 7.95 0 0 0 12 20v2l5-4-5-4v4a6 6 0 0 1-5.18-9.02Z"/></svg>
+          </div>
+        </button>
+
+      </section>
+
+      <section class="detail-panel" id="detail-panel" style="--panel-accent: var(--c1);" aria-live="polite">
+        <span class="detail-label" id="detail-label">Step 01</span>
+        <div class="detail-copy">
+          <h2 class="detail-heading" id="detail-heading">What Problem Does It Solve?</h2>
+          <p class="detail-text" id="detail-text">Focus on a real challenge users face. The more time, effort, or cost your app saves, the greater its value.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const grid = document.querySelector(".steps-grid");
+    const cards = document.querySelectorAll(".step-card");
+    const detailPanel = document.getElementById("detail-panel");
+    const detailLabel = document.getElementById("detail-label");
+    const detailHeading = document.getElementById("detail-heading");
+    const detailText = document.getElementById("detail-text");
+
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        cards.forEach((item) => {
+          item.classList.remove("is-active");
+          item.setAttribute("aria-expanded", "false");
+        });
+
+        card.classList.add("is-active");
+        card.setAttribute("aria-expanded", "true");
+        detailLabel.textContent = card.dataset.label;
+        detailHeading.textContent = card.dataset.heading;
+        detailText.textContent = card.dataset.detail;
+        detailPanel.style.setProperty("--panel-accent", getComputedStyle(card).getPropertyValue("--accent").trim());
+      });
+    });
+
+    if ("IntersectionObserver" in window) {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) { grid.classList.add("is-visible"); obs.unobserve(e.target); }
+        });
+      }, { threshold: 0.3 });
+      obs.observe(grid);
+    } else {
+      grid.classList.add("is-visible");
+    }
+  </script>
+</body>
+</html>

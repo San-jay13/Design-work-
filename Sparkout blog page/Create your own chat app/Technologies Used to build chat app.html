@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technologies Used to Build a Chat App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --frame-width: 900px;
+      --frame-height: 640px;
+      --white: #ffffff;
+      --page-bg: #f7f9fc;
+      --navy: #172640;
+      --muted: #617089;
+      --border: #dce5f0;
+      --blue: #1678d2;
+      --green: #138c62;
+      --orange: #ff681f;
+      --violet: #6848bd;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: start center;
+      padding: 28px 16px;
+      background: var(--page-bg);
+      color: var(--navy);
+      font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .blog-frame {
+      width: min(100%, var(--frame-width));
+      height: var(--frame-height);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 8% 11%, rgba(255, 104, 31, 0.05), transparent 28%),
+        radial-gradient(circle at 90% 86%, rgba(22, 120, 210, 0.055), transparent 31%),
+        linear-gradient(135deg, rgba(250, 252, 255, 0.95), #fff 48%, rgba(248, 251, 255, 0.93));
+      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.08);
+    }
+
+    .blog-frame::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(220, 229, 240, 0.96);
+      border-radius: 17px;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .canvas {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 20px;
+      padding: 46px 62px 50px;
+    }
+
+    .page-title {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--navy);
+      font-size: 31px;
+      font-weight: 800;
+      line-height: 1.16;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .stack-layers {
+      display: grid;
+      gap: 12px;
+      align-content: stretch;
+      min-height: 0;
+    }
+
+    .layer {
+      --accent: var(--blue);
+      position: relative;
+      display: grid;
+      grid-template-columns: 74px 190px minmax(0, 1fr);
+      align-items: center;
+      gap: 16px;
+      min-height: 96px;
+      padding: 14px 18px 14px 18px;
+      overflow: hidden;
+      border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+      border-radius: 18px;
+      background: color-mix(in srgb, var(--accent) 5%, #fff);
+      box-shadow: 0 11px 22px rgba(15, 23, 42, 0.06);
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+    }
+
+    .layer::before {
+      content: "";
+      position: absolute;
+      inset: 0 auto 0 0;
+      width: 7px;
+      background: var(--accent);
+      transform: scaleY(0.42);
+      transform-origin: center;
+      border-radius: 999px;
+      transition: transform 0.24s ease;
+    }
+
+    .layer:hover,
+    .layer:focus-within {
+      transform: translateX(6px);
+      border-color: color-mix(in srgb, var(--accent) 58%, var(--border));
+      background: color-mix(in srgb, var(--accent) 9%, #fff);
+      box-shadow: 0 18px 32px rgba(15, 23, 42, 0.11);
+    }
+
+    .layer:hover::before,
+    .layer:focus-within::before { transform: scaleY(1); }
+
+    .layer:nth-child(1) { --accent: var(--blue); }
+    .layer:nth-child(2) { --accent: var(--green); }
+    .layer:nth-child(3) { --accent: var(--orange); }
+    .layer:nth-child(4) { --accent: var(--violet); }
+
+    .layer-icon {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      justify-self: center;
+      border-radius: 17px;
+      color: var(--accent);
+      background: #fff;
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 20%, var(--border)), 0 10px 18px rgba(15, 23, 42, 0.07);
+      transition: color 0.24s ease, background 0.24s ease, transform 0.24s ease;
+    }
+
+    .layer:hover .layer-icon,
+    .layer:focus-within .layer-icon {
+      color: #fff;
+      background: var(--accent);
+      transform: scale(1.06);
+    }
+
+    .layer-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.25;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .layer-title {
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1.22;
+      letter-spacing: 0;
+    }
+
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 25px;
+      padding: 5px 9px;
+      border-radius: 999px;
+      color: var(--navy);
+      background: #fff;
+      border: 1px solid color-mix(in srgb, var(--accent) 18%, var(--border));
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1;
+      white-space: nowrap;
+      transition: color 0.24s ease, border-color 0.24s ease, transform 0.24s ease;
+    }
+
+    .layer:hover .chip,
+    .layer:focus-within .chip {
+      border-color: color-mix(in srgb, var(--accent) 36%, var(--border));
+      transform: translateY(-1px);
+    }
+
+    @media (max-width: 760px) {
+      .blog-frame { height: auto; min-height: 760px; }
+      .canvas { padding: 32px 24px; }
+      .page-title { font-size: 24px; }
+      .layer { grid-template-columns: 56px minmax(0, 1fr); gap: 12px; min-height: 132px; padding: 15px 16px; }
+      .layer-icon { width: 52px; height: 52px; }
+      .layer-title { font-size: 16px; }
+      .chips { grid-column: 1 / -1; }
+      .chip { font-size: 10px; min-height: 25px; padding: 6px 9px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="blog-frame">
+    <section class="canvas" aria-label="Technologies Used to Build a Chat App">
+      <h1 class="page-title">Technologies Used to<br>Build a Chat App</h1>
+
+      <div class="stack-layers">
+        <article class="layer" tabindex="0">
+          <span class="layer-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 5h16v12H4z" /><path d="M8 21h8M12 17v4M8 9h8M8 13h5" /></svg>
+          </span>
+          <h2 class="layer-title">Frontend:</h2>
+          <div class="chips">
+            <span class="chip">Swift</span><span class="chip">Kotlin</span><span class="chip">React Native</span><span class="chip">Flutter</span><span class="chip">React</span><span class="chip">Tailwind CSS</span>
+          </div>
+        </article>
+
+        <article class="layer" tabindex="0">
+          <span class="layer-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m8 9-4 3 4 3M16 9l4 3-4 3M14 5l-4 14" /></svg>
+          </span>
+          <h2 class="layer-title">Backend:</h2>
+          <div class="chips">
+            <span class="chip">Node.js</span><span class="chip">Python</span><span class="chip">Go</span><span class="chip">Socket.io</span><span class="chip">SignalIR</span><span class="chip">Phoenix (Elixir)</span>
+          </div>
+        </article>
+
+        <article class="layer" tabindex="0">
+          <span class="layer-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M17 18a5 5 0 0 0 0-10 7 7 0 0 0-13 3 4 4 0 0 0 1 7h12Z" /><path d="M8 18v3M12 18v3M16 18v3" /></svg>
+          </span>
+          <h2 class="layer-title">Cloud &amp; Infrastructure:</h2>
+          <div class="chips">
+            <span class="chip">AWS</span><span class="chip">Google Cloud</span><span class="chip">Heroku</span><span class="chip">Web Socket</span><span class="chip">WebRTC</span><span class="chip">XMPP</span>
+          </div>
+        </article>
+
+        <article class="layer" tabindex="0">
+          <span class="layer-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M8 8V5h8v3M7 11h10M6 15h12" /><path d="M5 11a7 7 0 0 0 14 0v-1H5v1Z" /><path d="M9 19l-2 2M15 19l2 2M4 13H2M22 13h-2" /></svg>
+          </span>
+          <h2 class="layer-title">Testing Tools:</h2>
+          <div class="chips">
+            <span class="chip">Jest/Mocha</span><span class="chip">Pytest</span><span class="chip">Selenium</span><span class="chip">JMeter</span>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

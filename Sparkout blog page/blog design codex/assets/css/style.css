@@ -1,0 +1,280 @@
+:root {
+  --hero-bg: #192a44;
+  --hero-text: #ffffff;
+  --font-primary: "Montserrat", Arial, Helvetica, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--hero-bg);
+  color: var(--hero-text);
+  font-family: var(--font-primary);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.site-header,
+.site-footer {
+  display: none;
+}
+
+.hero-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: min(100%, 1440px);
+  min-height: 605px;
+  margin-right: auto;
+  margin-left: auto;
+  overflow: hidden;
+  background: var(--hero-bg);
+}
+
+.design-frame-1440 {
+  max-width: 1440px;
+}
+
+.hero-container,
+.design-container-1134 {
+  width: 100%;
+  max-width: 1134px;
+  min-height: 605px;
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.hero-row {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  --bs-gutter-x: 12px;
+  --bs-gutter-y: 0;
+  column-gap: var(--bs-gutter-x);
+  row-gap: var(--bs-gutter-y);
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.hero-row > * {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.hero-copy {
+  flex: 0 0 702px;
+  width: 702px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-title {
+  width: 100%;
+  color: var(--hero-text);
+  font-size: 64px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+  opacity: 0;
+  transform: translateY(24px);
+  animation: title-rise 10s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-media {
+  position: relative;
+  flex: 0 0 420px;
+  width: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+}
+
+.hero-media::before {
+  content: "";
+  position: absolute;
+  inset: 11%;
+  z-index: 0;
+  border-radius: 50%;
+  background: rgba(255, 108, 26, 0.16);
+  filter: blur(26px);
+  opacity: 0;
+  transform: scale(0.92);
+  animation: glow-pulse 8s ease-in-out 2.6s infinite;
+}
+
+.hero-image {
+  position: relative;
+  z-index: 1;
+  width: 420px;
+  height: 420px;
+  object-fit: cover;
+  opacity: 0;
+  transform: translateY(18px) scale(0.96);
+  animation:
+    image-in 2.2s cubic-bezier(0.16, 1, 0.3, 1) 0.7s forwards,
+    image-float 8.5s ease-in-out 3s infinite;
+}
+
+@keyframes title-rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes image-in {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes image-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-10px) scale(1);
+  }
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.94);
+  }
+
+  50% {
+    opacity: 0.86;
+    transform: scale(1.08);
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .hero-section {
+    min-height: 560px;
+    padding: 72px 40px;
+  }
+
+  .hero-container {
+    max-width: 960px;
+    min-height: auto;
+  }
+
+  .hero-copy {
+    flex: 1 1 0;
+    width: auto;
+    max-width: 610px;
+  }
+
+  .hero-title {
+    font-size: clamp(48px, 5.1vw, 58px);
+  }
+
+  .hero-media {
+    flex: 0 0 340px;
+    width: 340px;
+  }
+
+  .hero-image {
+    width: 340px;
+    height: 340px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .hero-section {
+    min-height: 100vh;
+    padding: 72px 32px;
+    text-align: center;
+  }
+
+  .hero-container {
+    max-width: 720px;
+  }
+
+  .hero-row {
+    --bs-gutter-x: 0;
+    --bs-gutter-y: 34px;
+    flex-wrap: wrap;
+  }
+
+  .hero-copy,
+  .hero-media {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .hero-copy {
+    max-width: 720px;
+  }
+
+  .hero-title {
+    max-width: 720px;
+    margin-inline: auto;
+    font-size: clamp(40px, 6.5vw, 56px);
+    line-height: 1.13;
+  }
+
+  .hero-image {
+    width: min(360px, 78vw);
+    height: auto;
+    aspect-ratio: 1;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section {
+    padding: 52px 22px;
+  }
+
+  .hero-row {
+    --bs-gutter-y: 28px;
+  }
+
+  .hero-title {
+    font-size: clamp(34px, 10.2vw, 44px);
+    line-height: 1.16;
+  }
+
+  .hero-image {
+    width: min(310px, 86vw);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-title,
+  .hero-image,
+  .hero-media::before {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

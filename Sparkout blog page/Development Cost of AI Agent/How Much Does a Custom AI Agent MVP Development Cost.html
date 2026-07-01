@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How Much Does a Custom AI Agent MVP Development Cost</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --frame-width: 855px;
+      --frame-height: 551px;
+      --white: #ffffff;
+      --page-bg: #f8fafc;
+      --navy: #192a44;
+      --text: #0b1220;
+      --muted: #64748b;
+      --border: #e5e7eb;
+      --orange: #ff6c1a;
+      --orange-end: #ff4d0d;
+      --soft-orange: #fff3ec;
+      --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.07);
+      --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.09);
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 32px 16px;
+      background: var(--page-bg);
+      color: var(--text);
+      font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .blog-frame {
+      width: var(--frame-width);
+      height: var(--frame-height);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, rgba(255, 243, 236, 0.82), rgba(255, 255, 255, 0) 36%),
+        var(--white);
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+
+    .blog-frame::after {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      border-radius: 16px;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .canvas {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 34px 50px;
+    }
+
+    .header {
+      max-width: 760px;
+      margin: 0 auto 18px;
+      text-align: center;
+    }
+
+    .page-title {
+      color: var(--navy);
+      font-size: 27px;
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .explorer {
+      display: grid;
+      grid-template-columns: 292px 1fr;
+      gap: 16px;
+      height: 382px;
+      max-width: 724px;
+      margin: 0 auto;
+      align-items: stretch;
+      width: 100%;
+    }
+
+    .stage-list {
+      display: grid;
+      grid-template-rows: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      height: 100%;
+      align-content: stretch;
+    }
+
+    .stage-card {
+      width: 100%;
+      min-height: 0;
+      height: 100%;
+      position: relative;
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 13px;
+      align-items: center;
+      padding: 15px 15px 15px 17px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--navy);
+      text-align: left;
+      font: inherit;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+      transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease, background 0.24s ease;
+    }
+
+    .stage-card:hover,
+    .stage-card:focus-visible,
+    .stage-card.is-active {
+      border-color: rgba(255, 108, 26, 0.48);
+      background: linear-gradient(180deg, #ffffff 0%, #fff8f4 100%);
+      box-shadow: 0 14px 32px rgba(255, 108, 26, 0.14);
+      outline: none;
+      transform: translateY(-2px);
+    }
+
+    .stage-card.is-active::before {
+      content: "";
+      position: absolute;
+      inset: 14px auto 14px 0;
+      width: 5px;
+      border-radius: 0 999px 999px 0;
+      background: linear-gradient(180deg, var(--orange), var(--orange-end));
+    }
+
+    .point-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--soft-orange);
+      color: var(--orange);
+      transition: background 0.24s ease, color 0.24s ease, transform 0.24s ease;
+    }
+
+    .stage-card.is-active .point-icon {
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      color: var(--white);
+      transform: scale(1.05);
+    }
+
+    .point-icon svg {
+      width: 22px;
+      height: 22px;
+      display: block;
+      fill: currentColor;
+    }
+
+    .stage-copy {
+      display: grid;
+      gap: 7px;
+      min-width: 0;
+    }
+
+    .stage-name {
+      color: var(--navy);
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.28;
+      letter-spacing: 0;
+    }
+
+    .stage-cost {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      min-height: 28px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--soft-orange);
+      color: var(--orange);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .stage-card.is-active .stage-name {
+      color: var(--orange);
+    }
+
+    .stage-card.is-active .stage-cost {
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      color: var(--white);
+      box-shadow: 0 8px 18px rgba(255, 108, 26, 0.2);
+    }
+
+    .detail-panel {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid rgba(229, 231, 235, 0.95);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      margin-right: 2px;
+    }
+
+    .detail-top {
+      padding: 25px 28px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .detail-heading-row {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 15px;
+      align-items: start;
+    }
+
+    .detail-icon {
+      width: 50px;
+      height: 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      color: var(--white);
+      box-shadow: 0 12px 28px rgba(255, 108, 26, 0.2);
+    }
+
+    .detail-icon svg {
+      width: 25px;
+      height: 25px;
+      fill: currentColor;
+    }
+
+    .detail-title-block {
+      display: grid;
+      gap: 9px;
+      min-width: 0;
+    }
+
+    .detail-name {
+      color: var(--navy);
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.24;
+      letter-spacing: 0;
+    }
+
+    .detail-cost {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 800;
+      line-height: 1;
+      white-space: nowrap;
+      box-shadow: 0 10px 22px rgba(255, 108, 26, 0.2);
+    }
+
+    .meter {
+      margin-top: 22px;
+      height: 9px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #edf2f7;
+    }
+
+    .meter-fill {
+      display: block;
+      width: 33.33%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--orange), var(--orange-end));
+      transition: width 0.28s ease;
+    }
+
+    .detail-body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 24px 28px 30px;
+    }
+
+    .detail-copy {
+      color: #334155;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.72;
+    }
+  </style>
+</head>
+<body>
+  <main class="blog-frame">
+    <div class="canvas">
+      <header class="header">
+        <h1 class="page-title">How Much Does a Custom AI Agent MVP Development Cost</h1>
+      </header>
+
+      <section class="explorer">
+        <div class="stage-list">
+          <button class="stage-card is-active" type="button" aria-pressed="true" data-stage="poc" aria-label="1. PoC (Proof of Concept) - Costs $15k–$35k">
+            <span class="point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 2h6a1 1 0 0 1 0 2h-1v4.42l4.92 7.88A3.7 3.7 0 0 1 15.78 22H8.22a3.7 3.7 0 0 1-3.14-5.7L10 8.42V4H9a1 1 0 0 1 0-2Zm1.67 9-3.9 6.24A1.7 1.7 0 0 0 8.22 20h7.56a1.7 1.7 0 0 0 1.45-2.76L13.33 11h-2.66Z" />
+              </svg>
+            </span>
+            <span class="stage-copy">
+              <span class="stage-name">1. PoC (Proof of Concept)</span>
+              <span class="stage-cost">Costs $15k–$35k</span>
+            </span>
+          </button>
+
+          <button class="stage-card" type="button" aria-pressed="false" data-stage="mvp" aria-label="2. MVP (Minimal Viable Product) - Costs $25k-$60k">
+            <span class="point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12.8 2.14a1 1 0 0 0-1.6 0L8.68 5.5 4.5 6.72a1 1 0 0 0-.55 1.55l2.56 3.58-.12 4.4a1 1 0 0 0 1.3.98L12 15.72l4.31 1.51a1 1 0 0 0 1.3-.98l-.12-4.4 2.56-3.58a1 1 0 0 0-.55-1.55L15.32 5.5 12.8 2.14ZM8 19a1 1 0 0 0-1.72-.7l-2 2a1 1 0 1 0 1.42 1.4l2-2A1 1 0 0 0 8 19Zm8.7-.7a1 1 0 0 0-1.4 1.42l2 2a1 1 0 0 0 1.4-1.42l-2-2Z" />
+              </svg>
+            </span>
+            <span class="stage-copy">
+              <span class="stage-name">2. MVP (Minimal Viable Product)</span>
+              <span class="stage-cost">Costs $25k-$60k</span>
+            </span>
+          </button>
+
+          <button class="stage-card" type="button" aria-pressed="false" data-stage="full" aria-label="3. Full Product Deployment - Costs $60k-$150k">
+            <span class="point-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2.15a1 1 0 0 0-.46.11l-7 3.5A1 1 0 0 0 4 6.65v5.1c0 4.9 3.01 8.2 7.6 10.17a1 1 0 0 0 .8 0c4.59-1.97 7.6-5.27 7.6-10.17v-5.1a1 1 0 0 0-.55-.9l-7-3.5a1 1 0 0 0-.45-.1Zm4.03 7.58a1 1 0 0 1 0 1.42l-4.6 4.6a1 1 0 0 1-1.42 0l-2.04-2.04a1 1 0 1 1 1.42-1.42l1.33 1.34 3.89-3.9a1 1 0 0 1 1.42 0Z" />
+              </svg>
+            </span>
+            <span class="stage-copy">
+              <span class="stage-name">3. Full Product Deployment</span>
+              <span class="stage-cost">Costs $60k-$150k</span>
+            </span>
+          </button>
+        </div>
+
+        <article class="detail-panel" aria-live="polite">
+          <div class="detail-top">
+            <div class="detail-heading-row">
+              <span class="detail-icon" id="detail-icon" aria-hidden="true"></span>
+              <div class="detail-title-block">
+                <h2 class="detail-name" id="detail-name">1. PoC (Proof of Concept)</h2>
+                <p class="detail-cost" id="detail-cost">Costs $15k–$35k</p>
+              </div>
+            </div>
+            <div class="meter" aria-hidden="true"><span class="meter-fill" id="meter-fill"></span></div>
+          </div>
+
+          <div class="detail-body">
+            <p class="detail-copy" id="detail-copy">PoC is built to validate a single, high-impact use case. It comes with limited integrations, controlled datasets, and basic workflows.</p>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const stageData = {
+      poc: {
+        name: "1. PoC (Proof of Concept)",
+        cost: "Costs $15k–$35k",
+        copy: "PoC is built to validate a single, high-impact use case. It comes with limited integrations, controlled datasets, and basic workflows.",
+        meter: "33.33%",
+        icon: '<svg viewBox="0 0 24 24"><path d="M9 2h6a1 1 0 0 1 0 2h-1v4.42l4.92 7.88A3.7 3.7 0 0 1 15.78 22H8.22a3.7 3.7 0 0 1-3.14-5.7L10 8.42V4H9a1 1 0 0 1 0-2Zm1.67 9-3.9 6.24A1.7 1.7 0 0 0 8.22 20h7.56a1.7 1.7 0 0 0 1.45-2.76L13.33 11h-2.66Z" /></svg>'
+      },
+      mvp: {
+        name: "2. MVP (Minimal Viable Product)",
+        cost: "Costs $25k-$60k",
+        copy: "It is a production-ready agent that features real tool integrations, defined workflows, and structured memory (RAG). Often deployed in a live environment but with limited scalability and autonomy.",
+        meter: "66.66%",
+        icon: '<svg viewBox="0 0 24 24"><path d="M12.8 2.14a1 1 0 0 0-1.6 0L8.68 5.5 4.5 6.72a1 1 0 0 0-.55 1.55l2.56 3.58-.12 4.4a1 1 0 0 0 1.3.98L12 15.72l4.31 1.51a1 1 0 0 0 1.3-.98l-.12-4.4 2.56-3.58a1 1 0 0 0-.55-1.55L15.32 5.5 12.8 2.14ZM8 19a1 1 0 0 0-1.72-.7l-2 2a1 1 0 1 0 1.42 1.4l2-2A1 1 0 0 0 8 19Zm8.7-.7a1 1 0 0 0-1.4 1.42l2 2a1 1 0 0 0 1.4-1.42l-2-2Z" /></svg>'
+      },
+      full: {
+        name: "3. Full Product Deployment",
+        cost: "Costs $60k-$150k",
+        copy: "These are built with strong security, monitoring dashboards, logging systems, reliability engineering, and compliance controls to ensure stable performance.",
+        meter: "100%",
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 2.15a1 1 0 0 0-.46.11l-7 3.5A1 1 0 0 0 4 6.65v5.1c0 4.9 3.01 8.2 7.6 10.17a1 1 0 0 0 .8 0c4.59-1.97 7.6-5.27 7.6-10.17v-5.1a1 1 0 0 0-.55-.9l-7-3.5a1 1 0 0 0-.45-.1Zm4.03 7.58a1 1 0 0 1 0 1.42l-4.6 4.6a1 1 0 0 1-1.42 0l-2.04-2.04a1 1 0 1 1 1.42-1.42l1.33 1.34 3.89-3.9a1 1 0 0 1 1.42 0Z" /></svg>'
+      }
+    };
+
+    const cards = document.querySelectorAll(".stage-card");
+    const detailName = document.getElementById("detail-name");
+    const detailCost = document.getElementById("detail-cost");
+    const icon = document.getElementById("detail-icon");
+    const copy = document.getElementById("detail-copy");
+    const meter = document.getElementById("meter-fill");
+
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        const data = stageData[card.dataset.stage];
+        cards.forEach((item) => {
+          item.classList.toggle("is-active", item === card);
+          item.setAttribute("aria-pressed", item === card ? "true" : "false");
+        });
+        detailName.textContent = data.name;
+        detailCost.textContent = data.cost;
+        icon.innerHTML = data.icon;
+        copy.textContent = data.copy;
+        meter.style.width = data.meter;
+      });
+    });
+
+    icon.innerHTML = stageData.poc.icon;
+  </script>
+</body>
+</html>

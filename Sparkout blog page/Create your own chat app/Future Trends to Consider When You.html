@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Future Trends to Consider When You Make Your Own Messaging App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --frame-width: 900px;
+      --frame-height: 610px;
+      --white: #ffffff;
+      --page-bg: #f7f9fc;
+      --navy: #172640;
+      --border: #dce5f0;
+      --blue: #1678d2;
+      --green: #138c62;
+      --orange: #ff681f;
+      --violet: #6848bd;
+      --red: #d83b3b;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: start center;
+      padding: 28px 16px;
+      background: var(--page-bg);
+      color: var(--navy);
+      font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .blog-frame {
+      width: min(100%, var(--frame-width));
+      height: var(--frame-height);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 8% 11%, rgba(255, 104, 31, 0.045), transparent 28%),
+        radial-gradient(circle at 91% 86%, rgba(22, 120, 210, 0.055), transparent 30%),
+        linear-gradient(135deg, rgba(250, 252, 255, 0.96), #fff 48%, rgba(248, 251, 255, 0.93));
+      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.08);
+    }
+
+    .blog-frame::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(220, 229, 240, 0.96);
+      border-radius: 17px;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .canvas {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 26px;
+      padding: 42px 52px 46px;
+    }
+
+    .page-title {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--navy);
+      font-size: 29px;
+      font-weight: 800;
+      line-height: 1.16;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .trend-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      min-height: 0;
+    }
+
+    .trend-card {
+      --accent: var(--blue);
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      grid-template-rows: 70px minmax(0, auto);
+      align-content: center;
+      justify-items: center;
+      gap: 16px;
+      min-height: 180px;
+      padding: 24px 18px;
+      overflow: hidden;
+      border: 1px solid color-mix(in srgb, var(--accent) 25%, var(--border));
+      border-radius: 18px;
+      background: color-mix(in srgb, var(--accent) 5%, #fff);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.065);
+      text-align: center;
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+    }
+
+    .trend-card::before {
+      content: "";
+      position: absolute;
+      inset: auto 18px 15px 18px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--accent);
+      transform: scaleX(0.32);
+      transform-origin: center;
+      transition: transform 0.24s ease;
+      z-index: -1;
+    }
+
+    .trend-card:hover,
+    .trend-card:focus-within {
+      transform: translateY(-6px);
+      border-color: color-mix(in srgb, var(--accent) 58%, var(--border));
+      background: color-mix(in srgb, var(--accent) 9%, #fff);
+      box-shadow: 0 20px 34px rgba(15, 23, 42, 0.12);
+    }
+
+    .trend-card:hover::before,
+    .trend-card:focus-within::before { transform: scaleX(1); }
+
+    .trend-card:nth-child(1) { --accent: var(--blue); grid-column: span 2; }
+    .trend-card:nth-child(2) { --accent: var(--green); grid-column: span 2; }
+    .trend-card:nth-child(3) { --accent: var(--orange); grid-column: span 2; }
+    .trend-card:nth-child(4) { --accent: var(--violet); grid-column: 2 / span 2; }
+    .trend-card:nth-child(5) { --accent: var(--red); grid-column: 4 / span 2; }
+
+    .trend-icon {
+      width: 70px;
+      height: 70px;
+      display: grid;
+      place-items: center;
+      border-radius: 20px;
+      color: var(--accent);
+      background: #fff;
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 20%, var(--border)), 0 10px 18px rgba(15, 23, 42, 0.07);
+      transition: color 0.24s ease, background 0.24s ease, transform 0.24s ease;
+    }
+
+    .trend-card:hover .trend-icon,
+    .trend-card:focus-within .trend-icon {
+      color: #fff;
+      background: var(--accent);
+      transform: scale(1.06);
+    }
+
+    .trend-icon svg {
+      width: 36px;
+      height: 36px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.25;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .trend-title {
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    @media (max-width: 760px) {
+      .blog-frame { height: auto; min-height: 760px; }
+      .canvas { padding: 32px 24px; }
+      .page-title { font-size: 23px; }
+      .trend-grid { grid-template-columns: 1fr; grid-template-rows: none; gap: 12px; }
+      .trend-card,
+      .trend-card:nth-child(1),
+      .trend-card:nth-child(2),
+      .trend-card:nth-child(3),
+      .trend-card:nth-child(4),
+      .trend-card:nth-child(5) {
+        grid-column: auto;
+        min-height: 92px;
+        grid-template-columns: 58px minmax(0, 1fr);
+        grid-template-rows: 1fr;
+        justify-items: start;
+        text-align: left;
+        padding: 15px 17px;
+      }
+      .trend-card::before { inset: 14px 12px 14px auto; width: 5px; height: auto; transform: scaleY(0.35); }
+      .trend-card:hover::before, .trend-card:focus-within::before { transform: scaleY(1); }
+      .trend-icon { width: 58px; height: 58px; border-radius: 17px; }
+      .trend-icon svg { width: 30px; height: 30px; }
+      .trend-title { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="blog-frame">
+    <section class="canvas" aria-label="Future Trends to Consider When You Make Your Own Messaging App">
+      <h1 class="page-title">Future Trends to Consider When You<br>Make Your Own Messaging App</h1>
+
+      <div class="trend-grid">
+        <article class="trend-card" tabindex="0">
+          <span class="trend-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 1 4 4v1h1a4 4 0 0 1 0 8h-1v1a4 4 0 0 1-8 0v-1H7a4 4 0 0 1 0-8h1V7a4 4 0 0 1 4-4Z" /><path d="M9 12h6M12 9v6" /></svg></span>
+          <h2 class="trend-title">AI &amp; Machine Learning</h2>
+        </article>
+
+        <article class="trend-card" tabindex="0">
+          <span class="trend-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v10l8 4 8-4V7l-8-4Z" /><path d="M4 7l8 4 8-4M12 11v10" /></svg></span>
+          <h2 class="trend-title">Web3 &amp; Blockchain</h2>
+        </article>
+
+        <article class="trend-card" tabindex="0">
+          <span class="trend-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 7h14v10H5z" /><path d="M8 7V5h8v2M8 17v2h8v-2" /><path d="M9 12h6M12 9v6" /></svg></span>
+          <h2 class="trend-title">Augmented Reality (AR)</h2>
+        </article>
+
+        <article class="trend-card" tabindex="0">
+          <span class="trend-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 18h16M7 15a5 5 0 0 1 10 0M9 12a3 3 0 0 1 6 0M12 9v9" /><path d="M6 6h12" /></svg></span>
+          <h2 class="trend-title">5G and Edge Computing</h2>
+        </article>
+
+        <article class="trend-card" tabindex="0">
+          <span class="trend-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h7v7H4zM13 5h7v7h-7zM4 14h7v5H4zM13 14h7v5h-7z" /></svg></span>
+          <h2 class="trend-title">Super Apps</h2>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

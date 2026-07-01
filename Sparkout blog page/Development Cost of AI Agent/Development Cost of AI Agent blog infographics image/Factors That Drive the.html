@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Factors That Drive the AI Agent Development Cost</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --frame-width: 855px;
+      --frame-height: 551px;
+      --white: #ffffff;
+      --page-bg: #f8fafc;
+      --navy: #192a44;
+      --text: #0b1220;
+      --muted: #64748b;
+      --border: #e5e7eb;
+      --orange: #ff6c1a;
+      --orange-end: #ff4d0d;
+      --soft-orange: #fff3ec;
+      --shadow-md: 0 10px 30px rgba(15, 23, 42, 0.07);
+      --shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.09);
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 32px 16px;
+      background: var(--page-bg);
+      color: var(--text);
+      font-family: "Montserrat", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .blog-frame {
+      width: var(--frame-width);
+      height: var(--frame-height);
+      position: relative;
+      overflow: hidden;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, rgba(255, 243, 236, 0.82), rgba(255, 255, 255, 0) 36%),
+        var(--white);
+      box-shadow: var(--shadow-lg);
+      isolation: isolate;
+    }
+
+    .blog-frame::after {
+      content: "";
+      position: absolute;
+      inset: 22px;
+      border: 1px solid rgba(229, 231, 235, 0.9);
+      border-radius: 16px;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .canvas {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 34px 50px;
+    }
+
+    .header {
+      max-width: 760px;
+      margin: 0 auto 18px;
+      text-align: center;
+    }
+
+    .page-title {
+      color: var(--navy);
+      font-size: 27px;
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+
+    .dial-layout {
+      width: 100%;
+      max-width: 724px;
+      height: 382px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .dial-card,
+    .detail-card {
+      border: 1px solid rgba(229, 231, 235, 0.95);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .dial-card {
+      position: relative;
+      padding: 16px 18px 18px;
+    }
+
+    .dial-arc {
+      position: relative;
+      width: 100%;
+      height: 214px;
+      margin: 0 auto;
+    }
+
+    .dial-arc::before {
+      content: "";
+      position: absolute;
+      left: 31px;
+      right: 31px;
+      bottom: 12px;
+      height: 140px;
+      border: 12px solid #eef2f7;
+      border-bottom: 0;
+      border-radius: 180px 180px 0 0;
+    }
+
+    .dial-arc::after {
+      content: "";
+      position: absolute;
+      left: 31px;
+      right: 31px;
+      bottom: 12px;
+      height: 140px;
+      border: 12px solid transparent;
+      border-top-color: var(--orange);
+      border-left-color: rgba(255, 108, 26, 0.32);
+      border-right-color: rgba(255, 108, 26, 0.32);
+      border-radius: 180px 180px 0 0;
+      opacity: 0.24;
+    }
+
+    .dial-center {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 104px;
+      height: 104px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      color: var(--white);
+      box-shadow: 0 16px 34px rgba(255, 108, 26, 0.22);
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+
+    .dial-center svg {
+      width: 44px;
+      height: 44px;
+      fill: currentColor;
+    }
+
+    .dial-marker {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: var(--white);
+      color: var(--orange);
+      font: inherit;
+      cursor: pointer;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+      transition: transform 0.22s ease, background 0.22s ease, color 0.22s ease, border-color 0.22s ease;
+      z-index: 3;
+    }
+
+    .dial-marker svg {
+      width: 23px;
+      height: 23px;
+      fill: currentColor;
+    }
+
+    .dial-marker:hover,
+    .dial-marker:focus-visible,
+    .dial-marker.is-active {
+      border-color: rgba(255, 108, 26, 0.48);
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      color: var(--white);
+      outline: none;
+      transform: translate(-50%, -50%) scale(1.06);
+    }
+
+    .dial-marker[data-layer="mas"] { left: 13%; top: 76%; transform: translate(-50%, -50%); }
+    .dial-marker[data-layer="rag"] { left: 22%; top: 35%; transform: translate(-50%, -50%); }
+    .dial-marker[data-layer="token"] { left: 50%; top: 15%; transform: translate(-50%, -50%); }
+    .dial-marker[data-layer="compliance"] { left: 78%; top: 35%; transform: translate(-50%, -50%); }
+    .dial-marker[data-layer="voice"] { left: 87%; top: 76%; transform: translate(-50%, -50%); }
+
+    .dial-marker[data-layer="mas"]:hover,
+    .dial-marker[data-layer="mas"]:focus-visible,
+    .dial-marker[data-layer="mas"].is-active,
+    .dial-marker[data-layer="rag"]:hover,
+    .dial-marker[data-layer="rag"]:focus-visible,
+    .dial-marker[data-layer="rag"].is-active,
+    .dial-marker[data-layer="token"]:hover,
+    .dial-marker[data-layer="token"]:focus-visible,
+    .dial-marker[data-layer="token"].is-active,
+    .dial-marker[data-layer="compliance"]:hover,
+    .dial-marker[data-layer="compliance"]:focus-visible,
+    .dial-marker[data-layer="compliance"].is-active,
+    .dial-marker[data-layer="voice"]:hover,
+    .dial-marker[data-layer="voice"]:focus-visible,
+    .dial-marker[data-layer="voice"].is-active {
+      transform: translate(-50%, -50%) scale(1.06);
+    }
+
+    .factor-list {
+      display: grid;
+      gap: 5px;
+      margin-top: 4px;
+    }
+
+    .factor-item {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 8px;
+      align-items: center;
+      min-height: 22px;
+      color: var(--navy);
+      font-size: 10.5px;
+      font-weight: 800;
+      line-height: 1.25;
+    }
+
+    .factor-item span:first-child {
+      display: grid;
+      place-items: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 8px;
+      background: var(--soft-orange);
+      color: var(--orange);
+    }
+
+    .factor-item span:first-child svg {
+      width: 13px;
+      height: 13px;
+      fill: currentColor;
+    }
+
+    .factor-item.is-active {
+      color: var(--orange);
+    }
+
+    .detail-card {
+      display: flex;
+      flex-direction: column;
+      margin-right: 2px;
+    }
+
+    .detail-top {
+      padding: 28px 30px 22px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .detail-title-row {
+      display: grid;
+      grid-template-columns: 48px 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .detail-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      color: var(--white);
+      box-shadow: 0 12px 26px rgba(255, 108, 26, 0.2);
+    }
+
+    .detail-icon svg {
+      width: 25px;
+      height: 25px;
+      fill: currentColor;
+    }
+
+    .detail-title {
+      color: var(--navy);
+      font-size: 22px;
+      font-weight: 800;
+      line-height: 1.28;
+      letter-spacing: 0;
+    }
+
+    .dial-meter {
+      margin-top: 22px;
+      height: 9px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #edf2f7;
+    }
+
+    .dial-meter span {
+      display: block;
+      width: 20%;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--orange), var(--orange-end));
+      transition: width 0.28s ease;
+    }
+
+    .detail-body {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      padding: 26px 30px 30px;
+    }
+
+    .detail-copy {
+      color: #334155;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.72;
+    }
+  </style>
+</head>
+<body>
+  <main class="blog-frame">
+    <div class="canvas">
+      <header class="header">
+        <h1 class="page-title">Factors That Drive the<br>AI Agent Development Cost</h1>
+      </header>
+
+      <section class="dial-layout">
+        <div class="dial-card">
+          <div class="dial-arc" id="dial-arc">
+            <button class="dial-marker is-active" type="button" aria-pressed="true" data-layer="mas" aria-label="1. Multi-Agent System (MAS)"></button>
+            <button class="dial-marker" type="button" aria-pressed="false" data-layer="rag" aria-label="2. Agentic RAG Adoption"></button>
+            <button class="dial-marker" type="button" aria-pressed="false" data-layer="token" aria-label="3. Higher LLM Token Consumption"></button>
+            <button class="dial-marker" type="button" aria-pressed="false" data-layer="compliance" aria-label="4. Enterprise Compliance & Security Pressure"></button>
+            <button class="dial-marker" type="button" aria-pressed="false" data-layer="voice" aria-label="5. Voice & Multi-Model Expansion"></button>
+            <div class="dial-center" id="dial-center" aria-hidden="true"></div>
+          </div>
+
+          <div class="factor-list">
+            <div class="factor-item is-active" data-factor="mas"><span class="mini-icon" aria-hidden="true"></span><p>1. Multi-Agent System (MAS)</p></div>
+            <div class="factor-item" data-factor="rag"><span class="mini-icon" aria-hidden="true"></span><p>2. Agentic RAG Adoption</p></div>
+            <div class="factor-item" data-factor="token"><span class="mini-icon" aria-hidden="true"></span><p>3. Higher LLM Token Consumption</p></div>
+            <div class="factor-item" data-factor="compliance"><span class="mini-icon" aria-hidden="true"></span><p>4. Enterprise Compliance &amp; Security Pressure</p></div>
+            <div class="factor-item" data-factor="voice"><span class="mini-icon" aria-hidden="true"></span><p>5. Voice &amp; Multi-Model Expansion</p></div>
+          </div>
+        </div>
+
+        <article class="detail-card" aria-live="polite">
+          <div class="detail-top">
+            <div class="detail-title-row">
+              <span class="detail-icon" id="detail-icon" aria-hidden="true"></span>
+              <h2 class="detail-title" id="detail-title">1. Multi-Agent System (MAS)</h2>
+            </div>
+            <div class="dial-meter" aria-hidden="true"><span id="meter-fill"></span></div>
+          </div>
+
+          <div class="detail-body">
+            <p class="detail-copy" id="detail-copy">Adds nearly $20,000–$60,000 to the core development budget due to the need for a supervisor framework.</p>
+          </div>
+        </article>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    const layerData = {
+      mas: {
+        number: "1",
+        title: "1. Multi-Agent System (MAS)",
+        copy: "Adds nearly $20,000–$60,000 to the core development budget due to the need for a supervisor framework.",
+        meter: "20%",
+        icon: '<svg viewBox="0 0 24 24"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2h1A2.5 2.5 0 0 1 11 4.5v1A2.5 2.5 0 0 1 8.5 8h-1A2.5 2.5 0 0 1 5 5.5v-1Zm8 0A2.5 2.5 0 0 1 15.5 2h1A2.5 2.5 0 0 1 19 4.5v1A2.5 2.5 0 0 1 16.5 8h-1A2.5 2.5 0 0 1 13 5.5v-1ZM5 16.5A2.5 2.5 0 0 1 7.5 14h1a2.5 2.5 0 0 1 0 5h-1A2.5 2.5 0 0 1 5 16.5Zm8 0a2.5 2.5 0 0 1 2.5-2.5h1a2.5 2.5 0 0 1 0 5h-1a2.5 2.5 0 0 1-2.5-2.5ZM10.8 7.5a1 1 0 0 1 1.4 0l1.55 1.55a1 1 0 0 1 0 1.4L12.2 12a1 1 0 0 1-1.4 0l-1.55-1.55a1 1 0 0 1 0-1.4L10.8 7.5Z" /></svg>'
+      },
+      rag: {
+        number: "2",
+        title: "2. Agentic RAG Adoption",
+        copy: "It adds $15,000–$40,000 to the initial setup, and additionally, a $500–$3,000/month fee for managed vector database storage and pipelines.",
+        meter: "40%",
+        icon: '<svg viewBox="0 0 24 24"><path d="M5 3a3 3 0 0 0-3 3v11a2 2 0 0 0 2 2h5.2a3 3 0 0 1 2.1.88l.7.7.7-.7a3 3 0 0 1 2.1-.88H20a2 2 0 0 0 2-2V6a3 3 0 0 0-3-3h-4.2a4 4 0 0 0-2.8 1.17A4 4 0 0 0 9.2 3H5Zm1 4h4a1 1 0 1 1 0 2H6a1 1 0 0 1 0-2Zm0 4h5a1 1 0 1 1 0 2H6a1 1 0 1 1 0-2Zm9-4h3a1 1 0 1 1 0 2h-3a1 1 0 1 1 0-2Zm0 4h2a1 1 0 1 1 0 2h-2a1 1 0 1 1 0-2Z" /></svg>'
+      },
+      token: {
+        number: "3",
+        title: "3. Higher LLM Token Consumption",
+        copy: "It spikes the recurring operational budget by $2,000–$8,000/month owing to token-heavy autonomous self-correction loops.",
+        meter: "60%",
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10.02 10.02 0 0 0 12 2Zm1 5v4.6l3.25 3.25a1 1 0 1 1-1.42 1.42l-3.54-3.54A1 1 0 0 1 11 12V7a1 1 0 1 1 2 0Z" /></svg>'
+      },
+      compliance: {
+        number: "4",
+        title: "4. Enterprise Compliance & Security Pressure",
+        copy: "Adds $25,000–$75,000 to the development phase to build real-time PII redacting and secure execution sandboxes.",
+        meter: "80%",
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 2.15a1 1 0 0 0-.46.11l-7 3.5A1 1 0 0 0 4 6.65v5.1c0 4.9 3.01 8.2 7.6 10.17a1 1 0 0 0 .8 0c4.59-1.97 7.6-5.27 7.6-10.17v-5.1a1 1 0 0 0-.55-.9l-7-3.5a1 1 0 0 0-.45-.1Zm4.03 7.58a1 1 0 0 1 0 1.42l-4.6 4.6a1 1 0 0 1-1.42 0l-2.04-2.04a1 1 0 1 1 1.42-1.42l1.33 1.34 3.89-3.9a1 1 0 0 1 1.42 0Z" /></svg>'
+      },
+      voice: {
+        number: "5",
+        title: "5. Voice & Multi-Model Expansion",
+        copy: "Might add $15,000–$5000 to the baseline engineering cost, plus variable API fees for multimodal data parsing.",
+        meter: "100%",
+        icon: '<svg viewBox="0 0 24 24"><path d="M12 3a4 4 0 0 0-4 4v4a4 4 0 1 0 8 0V7a4 4 0 0 0-4-4Zm7 7a1 1 0 0 0-1 1 6 6 0 0 1-12 0 1 1 0 1 0-2 0 8 8 0 0 0 7 7.94V22a1 1 0 1 0 2 0v-2.06A8 8 0 0 0 20 11a1 1 0 0 0-1-1Z" /></svg>'
+      }
+    };
+
+    const markers = document.querySelectorAll(".dial-marker");
+    const factors = document.querySelectorAll(".factor-item");
+    const dialCenter = document.getElementById("dial-center");
+    const detailIcon = document.getElementById("detail-icon");
+    const detailTitle = document.getElementById("detail-title");
+    const detailCopy = document.getElementById("detail-copy");
+    const meter = document.getElementById("meter-fill");
+
+    markers.forEach((marker) => {
+      marker.addEventListener("click", () => {
+        const data = layerData[marker.dataset.layer];
+        markers.forEach((item) => {
+          item.classList.toggle("is-active", item === marker);
+          item.setAttribute("aria-pressed", item === marker ? "true" : "false");
+        });
+        factors.forEach((item) => item.classList.toggle("is-active", item.dataset.factor === marker.dataset.layer));
+        dialCenter.innerHTML = data.icon;
+        detailIcon.innerHTML = data.icon;
+        detailTitle.textContent = data.title;
+        detailCopy.textContent = data.copy;
+        meter.style.width = data.meter;
+      });
+    });
+
+    markers.forEach((marker) => {
+      marker.innerHTML = layerData[marker.dataset.layer].icon;
+    });
+
+    factors.forEach((factor) => {
+      factor.querySelector(".mini-icon").innerHTML = layerData[factor.dataset.factor].icon;
+    });
+
+    dialCenter.innerHTML = layerData.mas.icon;
+    detailIcon.innerHTML = layerData.mas.icon;
+  </script>
+</body>
+</html>

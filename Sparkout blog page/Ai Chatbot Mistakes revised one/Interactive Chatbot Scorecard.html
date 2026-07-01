@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Chatbot Health Scorecard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --white: #ffffff;
+      --page-bg: #f8fafc;
+      --navy: #172640;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --orange: #ff6c1a;
+      --red: #dc3a3a;
+      --amber: #ca8a16;
+      --green: #16855a;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: start center;
+      padding: 32px 16px;
+      background: var(--page-bg);
+      color: var(--navy);
+      font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .scorecard-section {
+      width: min(100%, 915px);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background:
+        radial-gradient(circle at 8% 10%, rgba(255, 108, 26, 0.045), transparent 26%),
+        linear-gradient(135deg, rgba(255, 245, 239, 0.45), rgba(255, 255, 255, 0) 42%),
+        var(--white);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    }
+
+    .scorecard-section::after {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(226, 232, 240, 0.92);
+      border-radius: 16px;
+      pointer-events: none;
+    }
+
+    .scorecard-canvas {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 265px;
+      gap: 25px;
+      padding: 44px;
+    }
+
+    .checklist-heading {
+      margin-bottom: 7px;
+      color: var(--navy);
+      font-size: 21px;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0;
+    }
+
+    .checklist-intro {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.5;
+    }
+
+    .checklist { display: grid; gap: 10px; }
+
+    .check-item {
+      display: grid;
+      grid-template-columns: 25px minmax(0, 1fr);
+      align-items: center;
+      gap: 12px;
+      min-height: 59px;
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.78);
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
+      cursor: pointer;
+      transition: border-color 0.22s ease, background 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+    }
+
+    .check-item:hover,
+    .check-item:focus-within { transform: translateY(-2px); border-color: rgba(255, 108, 26, 0.52); box-shadow: 0 9px 18px rgba(15, 23, 42, 0.07); }
+    .check-item.is-checked { border-color: rgba(22, 133, 90, 0.42); background: #f0fdf7; }
+
+    .check-item input {
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      margin: 0;
+      border: 2px solid #b8c5d3;
+      border-radius: 6px;
+      background: var(--white);
+      cursor: pointer;
+      transition: background 0.2s ease, border-color 0.2s ease;
+    }
+
+    .check-item input:checked { border-color: var(--green); background: var(--green); }
+    .check-item input:checked::after { content: ""; display: block; width: 9px; height: 5px; margin: 5px 0 0 4px; border-left: 2px solid var(--white); border-bottom: 2px solid var(--white); transform: rotate(-45deg); }
+
+    .score-panel {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: var(--white);
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.06);
+      text-align: center;
+    }
+
+    .score-label { color: var(--muted); font-size: 12px; font-weight: 700; line-height: 1.25; }
+
+    .score-ring {
+      --score-percent: 0;
+      --active-color: var(--red);
+      position: relative;
+      width: 138px;
+      height: 138px;
+      display: grid;
+      place-items: center;
+      margin: 15px 0;
+      border-radius: 50%;
+      background: conic-gradient(var(--active-color) calc(var(--score-percent) * 1%), #edf2f7 0);
+      transition: background 0.38s ease;
+    }
+
+    .score-ring::before { content: ""; position: absolute; inset: 12px; border-radius: inherit; background: var(--white); }
+    .score-value { position: relative; z-index: 1; }
+    .score-value strong { display: block; font-size: 43px; font-weight: 700; line-height: 1; }
+
+    .result-title { color: var(--navy); font-size: 15px; font-weight: 700; line-height: 1.28; }
+    .result-copy { margin-top: 8px; color: var(--muted); font-size: 11px; font-weight: 500; line-height: 1.55; }
+
+    .note-card {
+      grid-column: 1 / -1;
+      padding: 14px 16px;
+      border: 1px solid rgba(255, 108, 26, 0.22);
+      border-radius: 12px;
+      background: #fff6f0;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 600;
+      line-height: 1.6;
+    }
+
+    .scorecard-section[data-risk="high"] .score-ring { --active-color: var(--red); }
+    .scorecard-section[data-risk="moderate"] .score-ring { --active-color: var(--amber); }
+    .scorecard-section[data-risk="strong"] .score-ring { --active-color: var(--green); }
+
+    @media (max-width: 700px) {
+      .scorecard-canvas { grid-template-columns: 1fr; padding: 38px 30px; }
+      .score-panel { min-height: 290px; }
+    }
+
+    @media (max-width: 480px) {
+      body { padding: 18px 12px; }
+      .scorecard-canvas { padding: 30px 20px; }
+      .checklist-heading { font-size: 18px; }
+      .check-item { font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="scorecard-section" data-risk="high" aria-label="Interactive Chatbot Scorecard">
+    <div class="scorecard-canvas">
+      <section aria-label="Chatbot self-assessment">
+        <h1 class="checklist-heading">AI Chatbot Health Scorecard</h1>
+        <p class="checklist-intro">Give yourself 1 point for each statement that applies to your chatbot.</p>
+
+        <div class="checklist">
+          <label class="check-item"><input type="checkbox" /><span>Our training data is reviewed and updated regularly.</span></label>
+          <label class="check-item"><input type="checkbox" /><span>Customers can easily escalate to a human agent when needed.</span></label>
+          <label class="check-item"><input type="checkbox" /><span>We actively monitor chatbot performance and user feedback.</span></label>
+          <label class="check-item"><input type="checkbox" /><span>Our chatbot uses trusted knowledge sources or RAG to improve accuracy.</span></label>
+          <label class="check-item"><input type="checkbox" /><span>The chatbot delivers a consistent experience across multiple channels.</span></label>
+        </div>
+      </section>
+
+      <aside class="score-panel" aria-live="polite">
+        <p class="score-label">Your Score</p>
+        <div class="score-ring" id="scoreRing" aria-hidden="true">
+          <div class="score-value"><strong id="scoreValue">0</strong></div>
+        </div>
+        <h2 class="result-title" id="resultTitle">0–2 Points: High Risk</h2>
+        <p class="result-copy" id="resultText">Your chatbot may be vulnerable to common AI chatbot mistakes &amp; customer frustration.</p>
+      </aside>
+
+      <p class="note-card">The lower your score, the more likely your chatbot is to experience common AI chatbot mistakes that affect customer trust, support efficiency, and overall business results</p>
+    </div>
+  </main>
+
+  <script>
+    const scorecard = document.querySelector('.scorecard-section');
+    const checks = [...document.querySelectorAll('.check-item input')];
+    const scoreRing = document.getElementById('scoreRing');
+    const scoreValue = document.getElementById('scoreValue');
+    const resultTitle = document.getElementById('resultTitle');
+    const resultText = document.getElementById('resultText');
+
+    const results = {
+      high: ['0–2 Points: High Risk', 'Your chatbot may be vulnerable to common AI chatbot mistakes & customer frustration.'],
+      moderate: ['3–4 Points: Moderate Risk', 'Your chatbot is performing reasonably well but still has room for improvement.'],
+      strong: ['5 Points: Strong Foundation', 'Your chatbot follows key best practices and is well-positioned for long-term success.']
+    };
+
+    function updateScore() {
+      const score = checks.filter((check) => check.checked).length;
+      const risk = score <= 2 ? 'high' : score <= 4 ? 'moderate' : 'strong';
+      const [title, text] = results[risk];
+
+      scorecard.dataset.risk = risk;
+      scoreRing.style.setProperty('--score-percent', score * 20);
+      scoreValue.textContent = score;
+      resultTitle.textContent = title;
+      resultText.textContent = text;
+      checks.forEach((check) => check.closest('.check-item').classList.toggle('is-checked', check.checked));
+    }
+
+    checks.forEach((check) => check.addEventListener('change', updateScore));
+  </script>
+</body>
+</html>

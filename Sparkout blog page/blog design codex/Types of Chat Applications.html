@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Types of Chat Applications To Build on Your Own</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --frame-width: 860px;
+      --frame-height: 560px;
+      --white: #ffffff;
+      --page-bg: #f7f9fc;
+      --navy: #172640;
+      --border: #dde5ef;
+      --blue: #1478d4;
+      --green: #12835b;
+      --orange: #ff681f;
+      --violet: #6846bc;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: start center;
+      padding: 28px 16px;
+      background: var(--page-bg);
+      color: var(--navy);
+      font-family: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .blog-frame {
+      width: min(100%, var(--frame-width));
+      height: var(--frame-height);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(255, 104, 31, 0.055), transparent 28%),
+        radial-gradient(circle at 88% 86%, rgba(20, 120, 212, 0.06), transparent 30%),
+        linear-gradient(135deg, rgba(250, 252, 255, 0.92), #fff 48%, rgba(248, 251, 255, 0.9));
+      box-shadow: 0 22px 48px rgba(15, 23, 42, 0.08);
+    }
+
+    .blog-frame::after {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(221, 229, 239, 0.95);
+      border-radius: 17px;
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .canvas {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: grid;
+      grid-template-rows: auto 1fr;
+      gap: 24px;
+      padding: 42px 54px 44px;
+    }
+
+    .page-title {
+      max-width: 690px;
+      margin: 0 auto;
+      color: var(--navy);
+      font-size: 30px;
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: 0;
+      text-align: center;
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      min-height: 0;
+    }
+
+    .app-card {
+      --accent: var(--blue);
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      grid-template-columns: 86px minmax(0, 1fr);
+      align-items: center;
+      gap: 18px;
+      min-height: 150px;
+      padding: 24px 26px;
+      overflow: hidden;
+      border: 1px solid color-mix(in srgb, var(--accent) 26%, var(--border));
+      border-radius: 18px;
+      background: color-mix(in srgb, var(--accent) 5%, var(--white));
+      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.065);
+      transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease, background 0.24s ease;
+    }
+
+    .app-card::before {
+      content: "";
+      position: absolute;
+      inset: auto 18px 16px 18px;
+      height: 5px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--accent) 82%, #ffffff);
+      transform: scaleX(0.32);
+      transform-origin: left;
+      transition: transform 0.24s ease;
+      z-index: -1;
+    }
+
+    .app-card:hover,
+    .app-card:focus-within {
+      transform: translateY(-5px);
+      border-color: color-mix(in srgb, var(--accent) 54%, var(--border));
+      background: color-mix(in srgb, var(--accent) 9%, var(--white));
+      box-shadow: 0 20px 34px rgba(15, 23, 42, 0.12);
+    }
+
+    .app-card:hover::before,
+    .app-card:focus-within::before { transform: scaleX(1); }
+
+    .app-card:nth-child(1) { --accent: var(--blue); }
+    .app-card:nth-child(2) { --accent: var(--green); }
+    .app-card:nth-child(3) { --accent: var(--orange); }
+    .app-card:nth-child(4) { --accent: var(--violet); }
+
+    .icon-box {
+      width: 86px;
+      height: 86px;
+      display: grid;
+      place-items: center;
+      border-radius: 24px;
+      color: var(--accent);
+      background: var(--white);
+      box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 18%, var(--border)), 0 12px 22px rgba(15, 23, 42, 0.08);
+      transition: color 0.24s ease, background 0.24s ease, transform 0.24s ease;
+    }
+
+    .app-card:hover .icon-box,
+    .app-card:focus-within .icon-box {
+      color: #fff;
+      background: var(--accent);
+      transform: scale(1.05);
+    }
+
+    .icon-box svg {
+      width: 42px;
+      height: 42px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .card-title {
+      color: var(--navy);
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0;
+    }
+
+    @media (max-width: 760px) {
+      .blog-frame { height: auto; min-height: 720px; }
+      .canvas { padding: 34px 24px; }
+      .page-title { font-size: 24px; }
+      .app-grid { grid-template-columns: 1fr; }
+      .app-card { min-height: 118px; grid-template-columns: 70px minmax(0, 1fr); padding: 18px; }
+      .icon-box { width: 70px; height: 70px; border-radius: 20px; }
+      .icon-box svg { width: 34px; height: 34px; }
+      .card-title { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="blog-frame">
+    <section class="canvas" aria-label="Types of Chat Applications To Build on Your Own">
+      <h1 class="page-title">Types of Chat Applications<br>To Build on Your Own</h1>
+
+      <div class="app-grid">
+        <article class="app-card" tabindex="0">
+          <span class="icon-box" aria-hidden="true">
+            <svg viewBox="0 0 48 48">
+              <path d="M16 31H9l-5 5V10a5 5 0 0 1 5-5h23a5 5 0 0 1 5 5v7" />
+              <path d="M19 19h20a5 5 0 0 1 5 5v16l-5-5H19a5 5 0 0 1-5-5v-6a5 5 0 0 1 5-5Z" />
+              <path d="M22 27h12" />
+            </svg>
+          </span>
+          <h2 class="card-title">One-to-One Messaging Apps</h2>
+        </article>
+
+        <article class="app-card" tabindex="0">
+          <span class="icon-box" aria-hidden="true">
+            <svg viewBox="0 0 48 48">
+              <path d="M18 23a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z" />
+              <path d="M6 41a12 12 0 0 1 24 0" />
+              <path d="M34 24a6 6 0 1 0 0-12" />
+              <path d="M32 32a10 10 0 0 1 10 9" />
+            </svg>
+          </span>
+          <h2 class="card-title">Group Chat Applications</h2>
+        </article>
+
+        <article class="app-card" tabindex="0">
+          <span class="icon-box" aria-hidden="true">
+            <svg viewBox="0 0 48 48">
+              <path d="M8 42V10a4 4 0 0 1 4-4h18a4 4 0 0 1 4 4v32" />
+              <path d="M34 20h5a3 3 0 0 1 3 3v19" />
+              <path d="M16 16h4M16 24h4M16 32h4M28 16h.1M28 24h.1M28 32h.1" />
+            </svg>
+          </span>
+          <h2 class="card-title">Enterprise Messaging Platforms</h2>
+        </article>
+
+        <article class="app-card" tabindex="0">
+          <span class="icon-box" aria-hidden="true">
+            <svg viewBox="0 0 48 48">
+              <path d="M8 11h32a4 4 0 0 1 4 4v16a4 4 0 0 1-4 4H21l-9 7v-7H8a4 4 0 0 1-4-4V15a4 4 0 0 1 4-4Z" />
+              <path d="M14 22h20M14 29h12" />
+            </svg>
+          </span>
+          <h2 class="card-title">Community &amp; Chat Room Platforms</h2>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
