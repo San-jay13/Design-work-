@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Power Apps Development Services | 70% Faster App Delivery</title>
+  <meta name="description" content="Looking to build apps faster? Sparkout's Power Apps development services offer secure low-code apps, automate workflows & integrate enterprise systems smoothly." />
+  <link rel="alternate" href="https://www.sparkouttech.com/power-apps-development-services/" hreflang="x-default"/>
+  <link rel="alternate" href="https://www.sparkouttech.com/power-apps-development-services/" hreflang="en-US"/>
+  <link rel="alternate" href="https://www.sparkouttech.com/power-apps-development-services/" hreflang="de-DE"/>
+  <link rel="alternate" href="https://www.sparkouttech.com/power-apps-development-services/" hreflang="ru-RU"/>
+  <link rel="alternate" href="https://www.sparkouttech.com/power-apps-development-services/" hreflang="pt-BR"/>
+  <link rel="alternate" href="https://www.sparkouttech.com/power-apps-development-services/" hreflang="vi-VN"/>
+  <!-- Bootstrap 5 CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+
+  <style>
+    /* ===========================
+       DESIGN SYSTEM TOKENS
+    =========================== */
+    :root {
+      --orange: #FF6C1A;
+      --orange-end: #FF4D0D;
+      --navy: #192A44;
+      --white: #FFFFFF;
+      --font-default: #0B1220;
+      --border: #E5E7EB;
+      --stroke: #64748B;
+      --light-bg: #F8FAFC;
+      --muted: #6B7280;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 10px 30px rgba(0,0,0,0.06);
+      --shadow-lg: 0 20px 50px rgba(0,0,0,0.08);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--font-default);
+      background: var(--white);
+      overflow-x: hidden;
+    }
+
+    /* ===========================
+       TYPOGRAPHY
+    =========================== */
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 120%;
+      letter-spacing: -1px;
+    }
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 130%;
+      letter-spacing: -0.5px;
+    }
+    h3 { font-size: 24px; font-weight: 600; }
+    h4 { font-size: 20px; font-weight: 600; }
+    p {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 170%;
+      color: var(--muted);
+    }
+    .body-large { font-size: 18px; }
+    .small-text { font-size: 14px; }
+    .caption { font-size: 12px; font-weight: 500; }
+
+    /* ===========================
+       SECTION SPACING
+    =========================== */
+    .section-pad {
+      padding: 100px 80px;
+    }
+    @media (max-width: 991px) {
+      .section-pad { padding: 70px 40px; }
+      h1 { font-size: 36px; }
+      h2 { font-size: 26px; }
+    }
+    @media (max-width: 575px) {
+      .section-pad { padding: 60px 20px; }
+      h1 { font-size: 28px; }
+      h2 { font-size: 22px; }
+    }
+
+    /* ===========================
+       CONTAINER
+    =========================== */
+    .container-xl {
+      max-width: 1280px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* ===========================
+       BUTTONS
+    =========================== */
+    .btn-primary-orange {
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      color: #fff;
+      border-radius: var(--radius-md);
+      padding: 14px 28px;
+      font-weight: 600;
+      font-size: 15px;
+      border: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .btn-primary-orange:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255,108,26,0.35);
+      color: #fff;
+    }
+    .btn-outline-navy {
+      background: transparent;
+      border: 1.5px solid var(--navy);
+      color: var(--navy);
+      border-radius: var(--radius-md);
+      padding: 13px 28px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .btn-outline-navy:hover {
+      background: var(--navy);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+    .btn-outline-white {
+      background: transparent;
+      border: 1.5px solid #fff;
+      color: #fff;
+      border-radius: var(--radius-md);
+      padding: 13px 28px;
+      font-weight: 600;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .btn-outline-white:hover {
+      background: #fff;
+      color: var(--navy);
+      transform: translateY(-2px);
+    }
+
+    /* ===========================
+       BADGES / LABELS
+    =========================== */
+    .section-label {
+      display: inline-block;
+      background: rgba(255,108,26,0.1);
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 16px;
+    }
+
+    /* ===========================
+       NAVBAR
+    =========================== */
+    .navbar-sparkout {
+      height: 88px;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: box-shadow 0.3s ease;
+      padding: 0 80px;
+    }
+    .navbar-sparkout.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+    .navbar-brand-logo {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .navbar-brand-logo span { color: var(--orange); }
+    .nav-link-item {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--font-default) !important;
+      text-decoration: none;
+      padding: 0 18px;
+      transition: color 0.3s;
+    }
+    .nav-link-item:hover { color: var(--orange) !important; }
+    @media (max-width: 991px) {
+      .navbar-sparkout { padding: 0 20px; }
+    }
+
+    /* ===========================
+       HERO SECTION
+    =========================== */
+    .hero-section {
+      background: #fff;
+      padding: 100px 80px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -120px; right: -120px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(255,108,26,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, rgba(255,108,26,0.1), rgba(255,77,13,0.06));
+      border: 1px solid rgba(255,108,26,0.2);
+      border-radius: var(--radius-pill);
+      padding: 8px 18px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--orange);
+      margin-bottom: 24px;
+    }
+    .hero-section h1 { color: var(--font-default); margin-bottom: 24px; }
+    .hero-section h1 .highlight { color: var(--orange); }
+    .hero-trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+    .trust-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--font-default);
+    }
+    .trust-chip i { color: var(--orange); }
+    .hero-img-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      height: 440px;
+      object-fit: cover;
+      display: block;
+    }
+    .hero-stat-card {
+      position: absolute;
+      background: #fff;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-md);
+      padding: 14px 20px;
+      border-left: 3px solid var(--orange);
+    }
+    .hero-stat-card.bottom-left { bottom: -20px; left: -20px; }
+    .hero-stat-card.top-right { top: -20px; right: -20px; }
+    .hero-stat-card .stat-num {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .hero-stat-card .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+    @media (max-width: 991px) {
+      .hero-section { padding: 70px 40px; }
+      .hero-stat-card.bottom-left, .hero-stat-card.top-right { display: none; }
+    }
+    @media (max-width: 575px) {
+      .hero-section { padding: 60px 20px; }
+    }
+
+    /* ===========================
+       WHAT IS POWER APPS SECTION
+    =========================== */
+    .what-is-section {
+      background: var(--light-bg);
+    }
+    .feature-pill {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      margin-bottom: 12px;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .feature-pill:hover {
+      border-color: var(--orange);
+      transform: translateX(4px);
+      box-shadow: var(--shadow-md);
+    }
+    .feature-pill .pill-dot {
+      width: 10px; height: 10px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .feature-pill span { font-size: 14px; font-weight: 600; color: var(--font-default); }
+    .feature-pill small { font-size: 12px; color: var(--muted); }
+    .arch-visual {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .arch-visual::before {
+      content: '';
+      position: absolute; top: 0; right: 0;
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(255,108,26,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .arch-visual img {
+      width: 100%; border-radius: var(--radius-md);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    }
+
+    /* ===========================
+       WHY BUSINESSES NEED
+    =========================== */
+    .why-section { background: #fff; }
+    .challenge-solution-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 767px) { .challenge-solution-grid { grid-template-columns: 1fr; } }
+    .cs-card {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      transition: all 0.3s ease;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .cs-card:hover { border-color: var(--orange); box-shadow: var(--shadow-md); }
+    .cs-arrow {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 700;
+    }
+    .cs-arrow .from { color: var(--muted); text-decoration: line-through; }
+    .cs-arrow .to { color: var(--orange); }
+    .cs-card .cs-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 18px;
+    }
+
+    /* ===========================
+       SERVICES SECTION
+    =========================== */
+    .services-section { background: var(--light-bg); }
+    .service-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      height: 100%;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 3px;
+      background: linear-gradient(90deg, var(--orange), var(--orange-end));
+      transition: width 0.3s ease;
+    }
+    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .service-card:hover::after { width: 100%; }
+    .service-num {
+      font-size: 42px;
+      font-weight: 800;
+      color: rgba(255,108,26,0.12);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .service-card h4 { color: var(--navy); margin-bottom: 10px; }
+
+    /* ===========================
+       PROCESS SECTION
+    =========================== */
+    .process-section { background: var(--navy); color: #fff; }
+    .process-section h2 { color: #fff; }
+    .process-section p { color: rgba(255,255,255,0.7); }
+    .phase-badge {
+      display: inline-block;
+      background: rgba(255,108,26,0.2);
+      color: var(--orange);
+      border: 1px solid rgba(255,108,26,0.3);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 20px;
+    }
+    .process-step {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      position: relative;
+      transition: all 0.3s ease;
+      height: 100%;
+    }
+    .process-step:hover {
+      background: rgba(255,108,26,0.1);
+      border-color: rgba(255,108,26,0.3);
+      transform: translateY(-4px);
+    }
+    .step-number {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; font-weight: 800;
+      color: #fff; margin-bottom: 16px;
+    }
+    .process-step h4 { color: #fff; margin-bottom: 8px; }
+    .process-metric {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,108,26,0.15);
+      border-radius: var(--radius-sm);
+      padding: 6px 12px;
+      font-size: 12px; font-weight: 600;
+      color: var(--orange);
+      margin-bottom: 10px;
+    }
+
+    /* ===========================
+       INDUSTRIES SECTION
+    =========================== */
+    .industries-section { background: #fff; }
+    .industry-card {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+    .industry-card:hover {
+      background: #fff;
+      border-color: var(--orange);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .industry-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; color: #fff;
+      margin-bottom: 16px;
+    }
+    .industry-card h4 { color: var(--navy); margin-bottom: 10px; font-size: 17px; }
+    .industry-stat {
+      font-size: 12px; font-weight: 600;
+      color: var(--orange); margin-bottom: 4px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .industry-stat i { font-size: 11px; }
+    .industries-cta {
+      background: linear-gradient(135deg, var(--navy), #0f1e35);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+      color: #fff;
+    }
+    .industries-cta h3 { color: #fff; margin-bottom: 10px; }
+    .industries-cta p { color: rgba(255,255,255,0.75); }
+
+    /* ===========================
+       BENEFITS SECTION
+    =========================== */
+    .benefits-section { background: var(--light-bg); }
+    .benefit-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      height: 100%;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .benefit-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--orange); }
+    .benefit-number {
+      font-size: 40px;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1; margin-bottom: 8px;
+    }
+    .benefit-card h4 { color: var(--navy); margin-bottom: 10px; }
+    .benefit-cta-strip {
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      text-align: center;
+      color: #fff;
+      margin-top: 48px;
+    }
+    .benefit-cta-strip h3 { color: #fff; }
+    .benefit-cta-strip p { color: rgba(255,255,255,0.85); }
+
+    /* ===========================
+       TECH STACK SECTION
+    =========================== */
+    .tech-section { background: #fff; }
+    .tech-category {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      height: 100%;
+      transition: all 0.3s ease;
+    }
+    .tech-category:hover { border-color: var(--orange); box-shadow: var(--shadow-md); }
+    .tech-category-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--orange);
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .tech-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--font-default);
+      border-bottom: 1px solid var(--border);
+    }
+    .tech-item:last-child { border-bottom: none; }
+    .tech-item i { color: var(--orange); font-size: 12px; flex-shrink: 0; }
+
+    /* ===========================
+       USE CASES SECTION
+    =========================== */
+    .usecases-section { background: var(--light-bg); }
+    .usecase-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 991px) { .usecase-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 575px) { .usecase-grid { grid-template-columns: 1fr; } }
+    .usecase-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 22px;
+      text-align: center;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+    }
+    .usecase-card:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .usecase-icon {
+      width: 56px; height: 56px;
+      background: linear-gradient(135deg, rgba(255,108,26,0.1), rgba(255,77,13,0.06));
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; color: var(--orange);
+      margin: 0 auto 16px;
+      border: 1px solid rgba(255,108,26,0.15);
+    }
+    .usecase-card h4 { font-size: 15px; color: var(--navy); }
+
+    /* ===========================
+       HIRING MODELS SECTION
+    =========================== */
+    .hiring-section { background: #fff; }
+    .cost-factors {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+    }
+    .cost-factor-item {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px; font-weight: 500;
+      color: var(--font-default);
+    }
+    .cost-factor-item:last-child { border-bottom: none; }
+    .cost-factor-item i { color: var(--orange); }
+    .hiring-model-card {
+      background: var(--navy);
+      color: #fff;
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+    .hiring-model-card::before {
+      content: '';
+      position: absolute; top: 0; right: 0;
+      width: 200px; height: 200px;
+      background: radial-gradient(circle, rgba(255,108,26,0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hiring-model-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .hiring-model-card h4 { color: #fff; margin-bottom: 12px; }
+    .hiring-model-card p { color: rgba(255,255,255,0.75); }
+    .hiring-model-icon {
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; color: #fff;
+      margin-bottom: 20px;
+    }
+    .hiring-cta {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    /* ===========================
+       WHY CHOOSE SPARKOUT
+    =========================== */
+    .why-sparkout-section { background: var(--light-bg); }
+    .trust-banner {
+      background: linear-gradient(135deg, var(--orange), var(--orange-end));
+      border-radius: var(--radius-lg);
+      padding: 24px 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+      color: #fff;
+    }
+    .trust-metric { text-align: center; }
+    .trust-metric .val { font-size: 28px; font-weight: 800; line-height: 1; }
+    .trust-metric .lbl { font-size: 13px; opacity: 0.85; }
+    .trust-divider { width: 1px; height: 40px; background: rgba(255,255,255,0.3); }
+    @media (max-width: 575px) { .trust-divider { display: none; } }
+    .why-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      height: 100%;
+      transition: all 0.3s ease;
+      box-shadow: var(--shadow-sm);
+      display: flex; gap: 16px;
+    }
+    .why-card:hover { border-color: var(--orange); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .why-num {
+      font-size: 32px; font-weight: 800;
+      color: rgba(255,108,26,0.15);
+      line-height: 1; flex-shrink: 0;
+      min-width: 40px;
+    }
+    .why-card h4 { color: var(--navy); margin-bottom: 8px; font-size: 17px; }
+
+    /* ===========================
+       FAQ SECTION
+    =========================== */
+    .faq-section { background: #fff; }
+    .faq-header-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .faq-header-img img { width: 100%; height: 400px; object-fit: cover; }
+    .accordion-sparkout .accordion-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md) !important;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .accordion-sparkout .accordion-button {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--font-default);
+      background: #fff;
+      padding: 18px 24px;
+    }
+    .accordion-sparkout .accordion-button:not(.collapsed) {
+      color: var(--orange);
+      background: rgba(255,108,26,0.04);
+      box-shadow: none;
+    }
+    .accordion-sparkout .accordion-button::after {
+      filter: none;
+    }
+    .accordion-sparkout .accordion-button:not(.collapsed)::after {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23FF6C1A'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    }
+    .accordion-sparkout .accordion-body {
+      font-size: 15px;
+      line-height: 170%;
+      color: var(--muted);
+      padding: 0 24px 20px;
+    }
+
+    /* ===========================
+       FINAL CTA BANNER
+    =========================== */
+    .final-cta-section {
+      background: linear-gradient(135deg, var(--navy) 0%, #0f1e35 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta-section::before {
+      content: '';
+      position: absolute; top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(255,108,26,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .final-cta-section::after {
+      content: '';
+      position: absolute; bottom: -100px; left: -100px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(255,77,13,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .final-cta-section h2 { color: #fff; }
+    .final-cta-section p { color: rgba(255,255,255,0.75); }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    .footer-sparkout {
+      background: var(--navy);
+      color: rgba(255,255,255,0.6);
+      padding: 40px 80px;
+    }
+    .footer-sparkout a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-sparkout a:hover { color: var(--orange); }
+    @media (max-width: 767px) { .footer-sparkout { padding: 40px 20px; } }
+
+    /* ===========================
+       UTILITIES
+    =========================== */
+    .text-orange { color: var(--orange); }
+    .text-navy { color: var(--navy); }
+    .bg-navy { background: var(--navy); }
+    .orange-line {
+      display: block;
+      width: 48px; height: 4px;
+      background: linear-gradient(90deg, var(--orange), var(--orange-end));
+      border-radius: 2px;
+      margin: 16px 0;
+    }
+    .img-placeholder {
+      width: 100%;
+      background: linear-gradient(135deg, #e8edf3, #d4dbe6);
+      border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      color: #94a3b8; font-size: 14px; font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===========================
+     NAVBAR
+=========================== -->
+<nav class="navbar-sparkout d-flex align-items-center justify-content-between" id="mainNav">
+  <a href="#" class="navbar-brand-logo">Sparkout<span>.</span></a>
+  <div class="d-none d-lg-flex align-items-center gap-1">
+    <a href="#" class="nav-link-item">Services</a>
+    <a href="#" class="nav-link-item">Industries</a>
+    <a href="#" class="nav-link-item">Technologies</a>
+    <a href="#" class="nav-link-item">Case Studies</a>
+    <a href="#" class="nav-link-item">About</a>
+  </div>
+  <a href="#" class="btn-primary-orange d-none d-lg-inline-block" style="padding: 12px 24px; font-size: 14px;">Get a Free Consultation</a>
+</nav>
+
+<!-- ===========================
+     HERO SECTION
+=========================== -->
+<section class="hero-section">
+  <div class="container-xl">
+    <div class="row align-items-center g-5">
+      <!-- Left Content -->
+      <div class="col-lg-6">
+        <div class="hero-badge">
+          <i class="bi bi-lightning-fill"></i>
+          Microsoft Power Platform Experts
+        </div>
+        <h1>Custom Power Apps Development Services for <span class="highlight">Faster Enterprise Automation</span></h1>
+        <p class="body-large mt-3" style="color: var(--muted);">Are manual processes, outdated systems, and workflow inefficiencies slowing your business growth? Our Power Apps development services help enterprises build scalable Microsoft Power Platform solutions that can reduce app development time by up to 70% through low-code automation and streamlined workflows.</p>
+        <!-- CTAs -->
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="#" class="btn-primary-orange">Get a Free Consultation</a>
+          <a href="#" class="btn-outline-navy">Talk to Our Power Platform Experts</a>
+        </div>
+        <!-- Trust Highlights -->
+        <div class="hero-trust-row">
+          <div class="trust-chip"><i class="bi bi-rocket-takeoff-fill"></i> Faster App Deployment</div>
+          <div class="trust-chip"><i class="bi bi-gear-wide-connected"></i> Enterprise Workflow Automation</div>
+          <div class="trust-chip"><i class="bi bi-shield-fill-check"></i> Secure Microsoft Integrations</div>
+          <div class="trust-chip"><i class="bi bi-layers-fill"></i> Scalable Low-Code Apps</div>
+        </div>
+      </div>
+      <!-- Right Visual -->
+      <div class="col-lg-6 position-relative">
+        <div class="hero-img-wrap">
+          <img src="assets/images/power-apps-hero-dashboard.png" alt="Power Apps enterprise dashboard showcasing workflow automation and business process management" />
+        </div>
+        <div class="hero-stat-card bottom-left">
+          <div class="stat-num">70%</div>
+          <div class="stat-label">Faster App Delivery</div>
+        </div>
+        <div class="hero-stat-card top-right">
+          <div class="stat-num">60%</div>
+          <div class="stat-label">Cost Reduction</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     WHAT ARE MICROSOFT POWER APPS
+=========================== -->
+<section class="what-is-section section-pad">
+  <div class="container-xl">
+    <div class="row align-items-center g-5">
+      <!-- Arch Visual -->
+      <div class="col-lg-5 order-lg-2">
+        <div class="arch-visual">
+          <img src="assets/images/enterprise-app-architecture.png" alt="Microsoft Power Platform architecture diagram showing Power Apps, Power Automate, Power BI and Dataverse integration" />
+        </div>
+      </div>
+      <!-- Content -->
+      <div class="col-lg-7 order-lg-1">
+        <div class="section-label">Power Platform Overview</div>
+        <h2 class="text-navy mb-3">What Are Microsoft Power Apps and How Do They Transform Enterprise Operations?</h2>
+        <p>Microsoft Power Apps is a low-code platform that helps businesses build custom apps, automate workflows, and manage business operations more easily. As part of Microsoft Power Platform services, it allows companies to create secure business apps without complex traditional development.</p>
+        <p>Businesses use Microsoft Power Apps development to connect tools like Microsoft 365, Dynamics 365, SharePoint, Azure, and business databases into one connected system. These enterprise low-code applications help teams simplify daily operations through modern low-code no-code development services.</p>
+        <span class="orange-line"></span>
+        <p class="fw-700 text-navy mb-3" style="font-weight: 700; font-size: 15px; color: var(--navy);">Core Power Platform Features:</p>
+        <div class="row g-2">
+          <div class="col-md-6">
+            <div class="feature-pill">
+              <div class="pill-dot"></div>
+              <div>
+                <span>Canvas Apps</span><br>
+                <small>Custom mobile and web apps</small>
+              </div>
+            </div>
+            <div class="feature-pill">
+              <div class="pill-dot"></div>
+              <div>
+                <span>Model-Driven Apps</span><br>
+                <small>Structured business processes</small>
+              </div>
+            </div>
+            <div class="feature-pill">
+              <div class="pill-dot"></div>
+              <div>
+                <span>Dataverse</span><br>
+                <small>Centralized business data</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="feature-pill">
+              <div class="pill-dot"></div>
+              <div>
+                <span>Power Automate</span><br>
+                <small>Workflow automation</small>
+              </div>
+            </div>
+            <div class="feature-pill">
+              <div class="pill-dot"></div>
+              <div>
+                <span>Power BI</span><br>
+                <small>Reporting and dashboards</small>
+              </div>
+            </div>
+            <div class="feature-pill">
+              <div class="pill-dot"></div>
+              <div>
+                <span>Microsoft 365 Integration</span><br>
+                <small>Connected workplace tools</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     WHY BUSINESSES NEED POWER APPS
+=========================== -->
+<section class="why-section section-pad">
+  <div class="container-xl">
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5">
+        <div class="section-label">Business Challenges</div>
+        <h2 class="text-navy mb-4">Why Businesses Need Power Apps Development Services?</h2>
+        <p>Modern enterprises require faster and more adaptable ways to manage operations, workflows, and business data. As organizations scale, traditional systems often create operational bottlenecks that affect productivity, collaboration, and decision-making.</p>
+        <p>Our Power Apps development services help businesses build connected, scalable, &amp; process-focused applications with the help of Microsoft Power Platform services without the complexity of traditional development approaches.</p>
+        <div class="mt-4">
+          <img src="assets/images/power-apps-workflow.png" alt="Power Apps workflow automation visual showing connected business processes" class="img-fluid rounded-3 shadow" style="border-radius: var(--radius-lg) !important;" />
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <p class="fw-700 mb-3" style="font-weight: 700; font-size: 15px; color: var(--navy);">Common Enterprise Operational Challenges Solved by Power App Development Services:</p>
+        <div class="challenge-solution-grid">
+          <div class="cs-card">
+            <div class="cs-icon"><i class="bi bi-arrow-repeat"></i></div>
+            <div>
+              <div class="cs-arrow">
+                <span class="from">Manual workflows</span>
+                <i class="bi bi-arrow-right text-orange"></i>
+                <span class="to">Automate business processes</span>
+              </div>
+              <p class="mb-0 mt-1" style="font-size: 13px;">Automate business process workflows</p>
+            </div>
+          </div>
+          <div class="cs-card">
+            <div class="cs-icon"><i class="bi bi-plug-fill"></i></div>
+            <div>
+              <div class="cs-arrow">
+                <span class="from">Disconnected apps</span>
+                <i class="bi bi-arrow-right text-orange"></i>
+                <span class="to">Connected systems</span>
+              </div>
+              <p class="mb-0 mt-1" style="font-size: 13px;">Connect Microsoft and third-party systems</p>
+            </div>
+          </div>
+          <div class="cs-card">
+            <div class="cs-icon"><i class="bi bi-hourglass-split"></i></div>
+            <div>
+              <div class="cs-arrow">
+                <span class="from">Slow approvals</span>
+                <i class="bi bi-arrow-right text-orange"></i>
+                <span class="to">Simplified reporting</span>
+              </div>
+              <p class="mb-0 mt-1" style="font-size: 13px;">Simplify data management and reporting</p>
+            </div>
+          </div>
+          <div class="cs-card">
+            <div class="cs-icon"><i class="bi bi-file-earmark-spreadsheet-fill"></i></div>
+            <div>
+              <div class="cs-arrow">
+                <span class="from">Spreadsheet ops</span>
+                <i class="bi bi-arrow-right text-orange"></i>
+                <span class="to">Enterprise apps faster</span>
+              </div>
+              <p class="mb-0 mt-1" style="font-size: 13px;">Build enterprise low-code applications faster</p>
+            </div>
+          </div>
+          <div class="cs-card">
+            <div class="cs-icon"><i class="bi bi-eye-slash-fill"></i></div>
+            <div>
+              <div class="cs-arrow">
+                <span class="from">Limited visibility</span>
+                <i class="bi bi-arrow-right text-orange"></i>
+                <span class="to">Improved mobility</span>
+              </div>
+              <p class="mb-0 mt-1" style="font-size: 13px;">Improve mobility across teams and departments</p>
+            </div>
+          </div>
+          <div class="cs-card">
+            <div class="cs-icon"><i class="bi bi-building-x"></i></div>
+            <div>
+              <div class="cs-arrow">
+                <span class="from">Legacy systems</span>
+                <i class="bi bi-arrow-right text-orange"></i>
+                <span class="to">Modernization</span>
+              </div>
+              <p class="mb-0 mt-1" style="font-size: 13px;">Accelerate operational modernization</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     SERVICES SECTION
+=========================== -->
+<section class="services-section section-pad">
+  <div class="container-xl">
+    <div class="row mb-5">
+      <div class="col-lg-8">
+        <div class="section-label">Our Services</div>
+        <h2 class="text-navy mb-3">Enterprise-Ready Power Apps Development Services Sparkout Delivers</h2>
+        <p>Our Microsoft Power Apps development services help businesses automate workflows, modernize operations, and build scalable enterprise applications on the Microsoft ecosystem. As a trusted Power Apps development company, the Sparkout team ensures delivering secure, process-focused, and scalable Power Platform development services customized for modern enterprises.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-num">01</div>
+          <h4>Custom Power Apps Development</h4>
+          <p>We build custom Power Apps solutions that match your enterprise workflows, business data, &amp; operational goals using scalable low-code architecture.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-num">02</div>
+          <h4>Power Apps Consulting Services</h4>
+          <p>Our Power Apps consulting services help businesses define automation strategies, app architecture, &amp; scalable Microsoft Power Platform roadmaps.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-num">03</div>
+          <h4>Power Apps Customization Services</h4>
+          <p>At Sparkout, we improve existing applications with workflow refinements, UI upgrades, advanced features, &amp; performance-focused optimizations.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-num">04</div>
+          <h4>Power Platform Integration Services</h4>
+          <p>We integrate Power Apps with Power Automate, Power BI, SharePoint, Dynamics 365, Microsoft 365, &amp; third-party enterprise systems.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-num">05</div>
+          <h4>Enterprise Workflow Automation</h4>
+          <p>Our Microsoft Power Platform experts automate approvals, reporting, notifications, &amp; business process automation solutions to reduce manual work.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-num">06</div>
+          <h4>Power BI Integration &amp; Reporting</h4>
+          <p>We connect Power Apps with Power BI dashboards to enhance operational visibility, analytics, &amp; enterprise decision-making in real time.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-num">07</div>
+          <h4>SharePoint &amp; Dynamics 365 Integration</h4>
+          <p>We develop connected enterprise low-code applications that unify CRM, document management, collaboration, &amp; operational workflows.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-num">08</div>
+          <h4>Cross-Platform Business Applications</h4>
+          <p>As a low-code app development company, we deliver hybrid mobile app development across desktop, tablet, &amp; mobile environments for distributed teams.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-num">09</div>
+          <h4>Support, Governance &amp; Optimization</h4>
+          <p>Sparkout offers continuous support, security governance, performance monitoring, and optimization to keep Power Apps scalable &amp; enterprise-ready.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     PROCESS SECTION
+=========================== -->
+<section class="process-section section-pad">
+  <div class="container-xl">
+    <div class="row mb-5 justify-content-between align-items-end">
+      <div class="col-lg-7">
+        <div class="section-label" style="background: rgba(255,108,26,0.2); color: var(--orange);">Development Process</div>
+        <h2 class="mt-2">Our Proven Power Apps Development Process for Enterprise Automation</h2>
+        <p>Our proven Power Apps development process helps enterprises streamline workflows, accelerate application deployment, and build scalable business solutions with Microsoft Power Platform services. With low-code development, businesses can eventually reduce app delivery time by up to 70%.</p>
+      </div>
+      <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+        <div class="d-inline-flex align-items-center gap-3 bg-white bg-opacity-10 rounded-3 px-4 py-3">
+          <div class="text-center">
+            <div style="font-size: 32px; font-weight: 800; color: var(--orange);">7 Wks</div>
+            <div style="font-size: 13px; color: rgba(255,255,255,0.7);">Average Delivery</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 1: Week 1-2 -->
+    <div class="mb-3"><div class="phase-badge">Week 1–2 &nbsp;·&nbsp; Discovery &amp; Planning</div></div>
+    <div class="row g-4 mb-5">
+      <div class="col-md-4">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <div class="process-metric"><i class="bi bi-check-circle-fill"></i> Identifies process inefficiencies early</div>
+          <h4>Workflow Discovery</h4>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px;">We assess workflows, reporting gaps, and operational bottlenecks to define the right Power Apps strategy.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <div class="process-metric"><i class="bi bi-check-circle-fill"></i> Reduces manual workflow dependency</div>
+          <h4>Solution Planning</h4>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px;">Our Microsoft Power Platform experts map workflows, integrations, &amp; automation requirements for scalable app development.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <div class="process-metric"><i class="bi bi-check-circle-fill"></i> Mobile-ready apps for distributed teams</div>
+          <h4>UI/UX &amp; App Architecture</h4>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px;">We design secure, user-friendly business applications with optimized UI UX design for web &amp; mobile devices.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 2: Week 3-5 -->
+    <div class="mb-3"><div class="phase-badge">Week 3–5 &nbsp;·&nbsp; Development &amp; Integration</div></div>
+    <div class="row g-4 mb-5">
+      <div class="col-md-6">
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <div class="process-metric"><i class="bi bi-check-circle-fill"></i> Low-code apps can reduce development time by up to 70%</div>
+          <h4>Power Apps Development</h4>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px;">We build custom Power Apps solutions with connected workflows, automation, &amp; enterprise data management.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="process-step">
+          <div class="step-number">5</div>
+          <div class="process-metric"><i class="bi bi-check-circle-fill"></i> Improves operational visibility across platforms</div>
+          <h4>Microsoft Ecosystem Integration</h4>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px;">We integrate Power Apps with Power BI, SharePoint, Dynamics 365, Microsoft 365, &amp; third-party systems.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phase 3: Week 6-7 -->
+    <div class="mb-3"><div class="phase-badge">Week 6–7 &nbsp;·&nbsp; Testing &amp; Deployment</div></div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="process-step">
+          <div class="step-number">6</div>
+          <div class="process-metric"><i class="bi bi-check-circle-fill"></i> Helps minimize post-deployment workflow issues</div>
+          <h4>Testing &amp; Security Validation</h4>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px;">Our team validates workflows, scalability, performance, &amp; enterprise security before deployment.</p>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="process-step">
+          <div class="step-number">7</div>
+          <div class="process-metric"><i class="bi bi-check-circle-fill"></i> Continuous optimization supports long-term scalability</div>
+          <h4>Deployment &amp; Optimization</h4>
+          <p style="color: rgba(255,255,255,0.7); font-size: 14px;">We deploy, monitor, optimize, &amp; support scalable low-code apps as business operations evolve.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     INDUSTRIES SECTION
+=========================== -->
+<section class="industries-section section-pad">
+  <div class="container-xl">
+    <div class="row mb-5 justify-content-center text-center">
+      <div class="col-lg-8">
+        <div class="section-label">Industries We Serve</div>
+        <h2 class="text-navy mb-3">Industries We Transform With Enterprise Power Apps Development Services</h2>
+        <p>Our Power Apps development services help businesses across 10+ industries modernize workflows, automate operations, and improve enterprise efficiency by up to 60% with scalable Microsoft Power Platform solutions. From field operations to internal approvals, we build secure low-code applications customized for industry-specific processes, compliance needs, and operational goals.</p>
+      </div>
+    </div>
+
+    <div class="row g-4 mb-5">
+      <!-- Healthcare -->
+      <div class="col-md-6 col-lg-3">
+        <div class="industry-card">
+          <div class="industry-icon"><i class="bi bi-heart-pulse-fill"></i></div>
+          <h4>Healthcare &amp; Life Sciences</h4>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> HIPAA-compliant workflow environments</div>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> 50% faster patient data accessibility</div>
+          <p style="font-size: 13px; margin-top: 10px;">We develop secure Power Apps solutions for patient workflows, appointment coordination, medical inventory tracking. Our team also helps healthcare providers simplify approvals and manage operations with enterprise-grade security standards.</p>
+        </div>
+      </div>
+      <!-- Manufacturing -->
+      <div class="col-md-6 col-lg-3">
+        <div class="industry-card">
+          <div class="industry-icon"><i class="bi bi-gear-wide-connected"></i></div>
+          <h4>Manufacturing &amp; Production</h4>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> Real-time production visibility across facilities</div>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> 40% reduction in manual tracking efforts</div>
+          <p style="font-size: 13px; margin-top: 10px;">Our Microsoft Power Apps development services help manufacturers simplify production monitoring, quality inspections, and maintenance workflows. We also improve inventory management and operational reporting across operations.</p>
+        </div>
+      </div>
+      <!-- Logistics -->
+      <div class="col-md-6 col-lg-3">
+        <div class="industry-card">
+          <div class="industry-icon"><i class="bi bi-truck-front-fill"></i></div>
+          <h4>Logistics &amp; Supply Chain</h4>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> Mobile-ready logistics operations</div>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> 65% faster warehouse processing</div>
+          <p style="font-size: 13px; margin-top: 10px;">We build enterprise workflow automation solutions for fleet tracking, warehouse management, delivery operations, &amp; inventory approvals. Our solutions help logistics teams improve real-time coordination, even in low-connectivity environments.</p>
+        </div>
+      </div>
+      <!-- Retail -->
+      <div class="col-md-6 col-lg-3">
+        <div class="industry-card">
+          <div class="industry-icon"><i class="bi bi-bag-fill"></i></div>
+          <h4>Retail &amp; E-commerce</h4>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> 90% inventory accuracy improvement</div>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> Centralized multi-location operations</div>
+          <p style="font-size: 13px; margin-top: 10px;">As a Power Apps development company, we build connected retail applications for inventory management, order tracking, employee scheduling, &amp; customer workflows. We also help retailers improve reporting and optimize operations across locations.</p>
+        </div>
+      </div>
+      <!-- Finance -->
+      <div class="col-md-6 col-lg-3">
+        <div class="industry-card">
+          <div class="industry-icon"><i class="bi bi-bank2"></i></div>
+          <h4>Finance &amp; Insurance</h4>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> Enterprise-grade data security &amp; compliance</div>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> 55% faster approval workflows</div>
+          <p style="font-size: 13px; margin-top: 10px;">Our Power Platform development services help financial organizations automate claims processing, compliance tracking, audit workflows, reporting systems, and internal operational management with bank-level security.</p>
+        </div>
+      </div>
+      <!-- Construction -->
+      <div class="col-md-6 col-lg-3">
+        <div class="industry-card">
+          <div class="industry-icon"><i class="bi bi-building-fill-gear"></i></div>
+          <h4>Construction &amp; Real Estate</h4>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> Field-ready mobile app development</div>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> 60% improvement in project visibility</div>
+          <p style="font-size: 13px; margin-top: 10px;">We develop scalable low-code applications for site inspections, project tracking, contractor coordination, approval workflows, document management, and operational reporting accessible from any job site.</p>
+        </div>
+      </div>
+      <!-- HR -->
+      <div class="col-md-6 col-lg-3">
+        <div class="industry-card">
+          <div class="industry-icon"><i class="bi bi-people-fill"></i></div>
+          <h4>Human Resources &amp; Employee Management</h4>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> Streamlined employee workflows</div>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> 3-day onboarding reduced to 3 hours</div>
+          <p style="font-size: 13px; margin-top: 10px;">Our custom Power Apps solutions help HR teams automate employee onboarding, leave approvals, recruitment coordination, and document workflows. We also simplify policy management, and internal process automation.</p>
+        </div>
+      </div>
+      <!-- IT Operations -->
+      <div class="col-md-6 col-lg-3">
+        <div class="industry-card">
+          <div class="industry-icon"><i class="bi bi-cpu-fill"></i></div>
+          <h4>Enterprise IT Operations</h4>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> Connected enterprise IT workflows</div>
+          <div class="industry-stat"><i class="bi bi-check-circle-fill"></i> 50% faster ticket resolution times</div>
+          <p style="font-size: 13px; margin-top: 10px;">We develop business process automation solutions for IT service management, asset tracking, internal approvals, and compliance management. Our solutions also help enterprises operational workflows across departments.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Industry CTA -->
+    <div class="industries-cta">
+      <h3>Your Industry. Your Challenges. Our Power Apps Expertise.</h3>
+      <p>See how we've helped businesses like yours save time and money.</p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center mt-4">
+        <a href="#" class="btn-primary-orange">Talk to Our Power Platform Experts</a>
+        <a href="#" class="btn-outline-white">Request a Custom Demo</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     BENEFITS SECTION
+=========================== -->
+<section class="benefits-section section-pad">
+  <div class="container-xl">
+    <div class="row mb-5 align-items-end justify-content-between">
+      <div class="col-lg-7">
+        <div class="section-label">Key Benefits</div>
+        <h2 class="text-navy mb-3">Key Benefits of Custom Power Apps Development Services for Enterprises</h2>
+        <p>Our Power Apps development services help businesses build secure low-code applications, automate workflows, and modernize operations using Microsoft Power Platform services.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="benefit-card">
+          <div class="benefit-number">70%</div>
+          <h4>Faster Application Development</h4>
+          <p>Build &amp; deploy custom Power apps solutions faster with our low-code development without compromising enterprise quality.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="benefit-card">
+          <div class="benefit-number">60%</div>
+          <h4>Reduce Development Costs</h4>
+          <p>Power Apps development needs fewer resources and delivers faster ROI compared to traditional software development.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="benefit-card">
+          <div class="benefit-number"><i class="bi bi-link-45deg" style="font-size: 36px;"></i></div>
+          <h4>Connected Business Systems</h4>
+          <p>Connect Microsoft 365, Dynamics 365, SharePoint, Power BI, &amp; enterprise systems into one connected workflow ecosystem.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="benefit-card">
+          <div class="benefit-number"><i class="bi bi-phone-fill" style="font-size: 36px;"></i></div>
+          <h4>Mobile-Ready Business Applications</h4>
+          <p>Enable secure access to workflows, business data, and operations across desktop, tablet, and mobile devices.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="benefit-card">
+          <div class="benefit-number"><i class="bi bi-shield-fill-check" style="font-size: 36px;"></i></div>
+          <h4>Enterprise-Grade Security Built-In</h4>
+          <p>Use Microsoft security infrastructure with role-based access, data encryption, compliance support, &amp; audit visibility.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="benefit-card">
+          <div class="benefit-number"><i class="bi bi-bar-chart-line-fill" style="font-size: 36px;"></i></div>
+          <h4>Real-Time Business Intelligence</h4>
+          <p>Use Power BI integration services to track workflows, monitor operations, &amp; improve business decisions.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Benefits CTA -->
+    <div class="benefit-cta-strip">
+      <h3 class="mb-2">Want to See These Benefits in Action</h3>
+      <p>Discover how Power Apps can transform your business operations.</p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center mt-3">
+        <a href="#" class="btn-outline-white" style="border-color: rgba(255,255,255,0.5);">Get Your Free ROI Assessment</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     TECH STACK SECTION
+=========================== -->
+<section class="tech-section section-pad">
+  <div class="container-xl">
+    <div class="row mb-5">
+      <div class="col-lg-8">
+        <div class="section-label">Technology Ecosystem</div>
+        <h2 class="text-navy mb-3">Microsoft Technologies &amp; Power Platform Ecosystem We Work With</h2>
+        <p>At Sparkout, we build comprehensive enterprise solutions by leveraging the full Microsoft Power Platform ecosystem and connected cloud services. Our team uses entire Microsoft technology stack to deliver integrated, scalable business applications.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <!-- Core Power Platform -->
+      <div class="col-md-6 col-lg-4">
+        <div class="tech-category">
+          <div class="tech-category-title"><i class="bi bi-grid-3x3-gap-fill me-2"></i>Core Power Platform Components</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Power Apps (Canvas Apps, Model-Driven Apps)</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Power Automate (Cloud Flows, Desktop Flows, RPA)</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Power BI (Dashboards, Reports, Embedded Analytics)</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Power Pages (External Portals &amp; Websites)</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Microsoft Copilot Studio (AI Agents &amp; Conversational AI)</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Dataverse (Enterprise Data Platform)</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> AI Builder (Document Processing, Predictive Models)</div>
+        </div>
+      </div>
+      <!-- Microsoft 365 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="tech-category">
+          <div class="tech-category-title"><i class="bi bi-microsoft me-2"></i>Microsoft 365 &amp; Productivity Suite</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> SharePoint Online</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Microsoft Teams</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Outlook &amp; Exchange</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> OneDrive for Business</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Microsoft 365 (Office Suite Integration)</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Planner &amp; To Do</div>
+        </div>
+      </div>
+      <!-- Enterprise Business Applications -->
+      <div class="col-md-6 col-lg-4">
+        <div class="tech-category">
+          <div class="tech-category-title"><i class="bi bi-building me-2"></i>Enterprise Business Applications</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Dynamics 365 Sales</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Dynamics 365 Customer Service</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Dynamics 365 Field Service</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Dynamics 365 Finance &amp; Operations</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Dynamics 365 Supply Chain Management</div>
+        </div>
+      </div>
+      <!-- Cloud Infrastructure -->
+      <div class="col-md-6 col-lg-4">
+        <div class="tech-category">
+          <div class="tech-category-title"><i class="bi bi-cloud-fill me-2"></i>Cloud Infrastructure &amp; Data Services</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Microsoft Azure (Functions, Logic Apps, API Management)</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Azure Active Directory (Identity &amp; Access Management)</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> SQL Server &amp; Azure SQL Database</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Azure Data Lake</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Azure Blob Storage</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Cosmos DB</div>
+        </div>
+      </div>
+      <!-- Integration & Connectivity -->
+      <div class="col-md-6 col-lg-4">
+        <div class="tech-category">
+          <div class="tech-category-title"><i class="bi bi-share-fill me-2"></i>Integration &amp; Connectivity</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Power Platform Connectors (600+ Pre-built)</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Custom Connectors &amp; APIs</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> On-Premises Data Gateway</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Azure Service Bus</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> REST &amp; SOAP API Integration</div>
+        </div>
+      </div>
+      <!-- Security & Compliance -->
+      <div class="col-md-6 col-lg-4">
+        <div class="tech-category">
+          <div class="tech-category-title"><i class="bi bi-shield-fill-check me-2"></i>Security &amp; Compliance</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Microsoft Purview</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Data Loss Prevention (DLP)</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Power Platform Admin Center</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Azure Security Center</div>
+          <div class="tech-item"><i class="bi bi-dot"></i> Microsoft Defender</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     USE CASES SECTION
+=========================== -->
+<section class="usecases-section section-pad">
+  <div class="container-xl">
+    <div class="row mb-5 align-items-center justify-content-between">
+      <div class="col-lg-7">
+        <div class="section-label">Use Cases</div>
+        <h2 class="text-navy mb-3">Power Apps Use Cases — Custom Applications We Build</h2>
+        <p>From digital forms to customer portals, we build real-world applications that our clients use every day to automate workflows and solve operational challenges.</p>
+      </div>
+      <div class="col-lg-4">
+        <img src="assets/images/low-code-app-development.png" alt="Low-code Power Apps use case showcasing different application types" class="img-fluid rounded-3 shadow-sm" />
+      </div>
+    </div>
+    <div class="usecase-grid">
+      <div class="usecase-card">
+        <div class="usecase-icon"><i class="bi bi-file-earmark-text-fill"></i></div>
+        <h4>Digital Forms &amp; Data Collection</h4>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon"><i class="bi bi-check2-all"></i></div>
+        <h4>Approval &amp; Request Workflows</h4>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon"><i class="bi bi-boxes"></i></div>
+        <h4>Asset &amp; Inventory Tracking</h4>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon"><i class="bi bi-tools"></i></div>
+        <h4>Work Order &amp; Maintenance</h4>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon"><i class="bi bi-person-badge-fill"></i></div>
+        <h4>Employee Self-Service Apps</h4>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon"><i class="bi bi-globe2"></i></div>
+        <h4>Customer &amp; Partner Portals</h4>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon"><i class="bi bi-file-earmark-fill"></i></div>
+        <h4>Document &amp; Contract Management</h4>
+      </div>
+      <div class="usecase-card">
+        <div class="usecase-icon"><i class="bi bi-clipboard2-check-fill"></i></div>
+        <h4>Inspection &amp; Compliance Apps</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     HIRING MODELS SECTION
+=========================== -->
+<section class="hiring-section section-pad">
+  <div class="container-xl">
+    <div class="row mb-5">
+      <div class="col-lg-8">
+        <div class="section-label">Engagement Models</div>
+        <h2 class="text-navy mb-3">Flexible Power Apps Hiring Models for Every Business Need</h2>
+        <p>We deliver Power Apps development services for businesses of all sizes, from departmental workflow applications to enterprise-wide automation platforms. The right engagement model depends on your workflows, integrations, customization needs, user volume, and operational goals.</p>
+      </div>
+    </div>
+    <div class="row g-5 align-items-start">
+      <div class="col-lg-5">
+        <div class="cost-factors">
+          <h4 class="text-navy mb-4">Factors Affecting Development Cost</h4>
+          <div class="cost-factor-item"><i class="bi bi-layers-fill"></i> Application complexity</div>
+          <div class="cost-factor-item"><i class="bi bi-arrow-repeat"></i> Workflow automation requirements</div>
+          <div class="cost-factor-item"><i class="bi bi-plug-fill"></i> Microsoft ecosystem integrations</div>
+          <div class="cost-factor-item"><i class="bi bi-sliders2"></i> Customization scope</div>
+          <div class="cost-factor-item"><i class="bi bi-people-fill"></i> User volume &amp; scalability needs</div>
+        </div>
+        <div class="mt-4">
+          <img src="assets/images/business-automation-dashboard.png" alt="Business automation dashboard for Power Apps development cost estimation" class="img-fluid rounded-3" style="border-radius: var(--radius-lg) !important; box-shadow: var(--shadow-md);" />
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <p class="fw-700 mb-3" style="font-weight: 700; font-size: 15px; color: var(--navy);">Our Flexible Hiring Models:</p>
+        <div class="row g-4">
+          <div class="col-12">
+            <div class="hiring-model-card">
+              <div class="hiring-model-icon"><i class="bi bi-person-fill-gear"></i></div>
+              <h4>Dedicated Power Apps Developers</h4>
+              <p>Hire dedicated Microsoft Power Platform experts for long-term development, workflow automation, and continuous optimization.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="hiring-model-card">
+              <div class="hiring-model-icon"><i class="bi bi-kanban-fill"></i></div>
+              <h4>Project-Based Development Teams</h4>
+              <p>Build custom Power Apps solutions by hiring development team matching your project scope, workflows, and delivery timelines.</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="hiring-model-card">
+              <div class="hiring-model-icon"><i class="bi bi-lightbulb-fill"></i></div>
+              <h4>Power Platform Consulting Support</h4>
+              <p>Hire Power app developers from Sparkout for architecture planning, integrations, governance, &amp; workflow automation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Hiring CTA -->
+    <div class="hiring-cta">
+      <h3 class="text-navy mb-2">Ready to Build Scalable Power Apps Solutions?</h3>
+      <p>Let's discuss how we can support your digital transformation goals.</p>
+      <div class="d-flex flex-wrap gap-3 justify-content-center mt-3">
+        <a href="#" class="btn-primary-orange">Schedule Free Consultation</a>
+        <a href="#" class="btn-outline-navy">Get Project Estimate</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     WHY CHOOSE SPARKOUT
+=========================== -->
+<section class="why-sparkout-section section-pad">
+  <div class="container-xl">
+    <div class="row mb-4 justify-content-center text-center">
+      <div class="col-lg-7">
+        <div class="section-label">Why Sparkout</div>
+        <h2 class="text-navy mb-3">Why Choose Sparkout as Your Power Apps Development Partner</h2>
+        <p>At Sparkout, we help businesses build reliable Power Apps solutions with structured delivery, transparent collaboration, and long-term technology support customized to evolving operational needs.</p>
+      </div>
+    </div>
+    <!-- Trust Banner -->
+    <div class="trust-banner mb-5">
+      <div class="trust-metric"><div class="val">500+</div><div class="lbl">Enterprises Trusted</div></div>
+      <div class="trust-divider"></div>
+      <div class="trust-metric"><div class="val">Microsoft</div><div class="lbl">Certified Team</div></div>
+      <div class="trust-divider"></div>
+      <div class="trust-metric"><div class="val">98%</div><div class="lbl">Client Retention</div></div>
+      <div class="trust-divider"></div>
+      <div class="trust-metric"><div class="val">70%</div><div class="lbl">Faster App Delivery</div></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="why-card">
+          <div class="why-num">01</div>
+          <div>
+            <h4>Microsoft-Certified Power Platform Experts</h4>
+            <p>Our team brings hands-on expertise in Power Apps, Power Automate, Dataverse, &amp; Microsoft 365 integration.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="why-card">
+          <div class="why-num">02</div>
+          <div>
+            <h4>Business-Focused Development Approach</h4>
+            <p>We build applications aligned with real business workflows, user adoption needs, and operational efficiency.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="why-card">
+          <div class="why-num">03</div>
+          <div>
+            <h4>Transparent Project Collaboration</h4>
+            <p>From planning to deployment, Sparkout ensures clear communication, milestone tracking, &amp; structured project delivery.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="why-card">
+          <div class="why-num">04</div>
+          <div>
+            <h4>Flexible Engagement Models</h4>
+            <p>Hire dedicated developers, project-based teams, or hire mobile app developer based on your project scope and needs.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="why-card">
+          <div class="why-num">05</div>
+          <div>
+            <h4>Long-Term Platform Support</h4>
+            <p>We help businesses optimize application performance, manage platform updates, and support evolving workflow requirements.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     FAQ SECTION
+=========================== -->
+<section class="faq-section section-pad">
+  <div class="container-xl">
+    <div class="row g-5 align-items-start">
+      <!-- Left: Header + Image -->
+      <div class="col-lg-4">
+        <div class="section-label">FAQ</div>
+        <h2 class="text-navy mb-3">Frequently Asked Questions</h2>
+        <p>Everything you need to know about Power Apps development services and how Sparkout can help your enterprise.</p>
+        <div class="faq-header-img mt-4">
+          <img src="assets/images/power-apps-hero-dashboard.png" alt="Power Apps FAQ - enterprise solutions knowledge base" />
+        </div>
+      </div>
+      <!-- Right: Accordion -->
+      <div class="col-lg-8">
+        <div class="accordion accordion-sparkout" id="faqAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                1. Is Power Apps suitable for large enterprises?
+              </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes. Power Apps is designed primarily for enterprise use. Hence, they support role-based access, governance controls, and scalability across departments and large user bases.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                2. Can Power Apps work with existing legacy systems?
+              </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Power Apps can be connected with legacy systems through connectors, APIs, and Dataverse. This helps enterprises modernize workflows without replacing core systems.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                3. How customizable are Power Apps solutions?
+              </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Power Apps offers deep customization for UI, business logic, data models, and integrations. Hence, our solutions align closely with specific enterprise workflows.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                4. What type of applications can be built using Power Apps?
+              </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Power Apps can be used to build internal tools, approval systems, dashboards, data entry apps, and customer-facing applications based on business needs.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                5. Is Power Apps a replacement for traditional development?
+              </button>
+            </h2>
+            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Power Apps can be used instead of the traditional development approach. It is ideal for rapid application delivery and automation. However, for complex systems, a custom development approach is preferable.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                6. How long does it take to build a Power Apps solution?
+              </button>
+            </h2>
+            <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">The timelines to build a Power Apps solution vary by complexity, integrations, and approvals. As one of the top enterprise Power Apps solutions provides, we at Sparkout deliver apps faster than traditional development projects.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                7. Can Power Apps be accessed on mobile devices?
+              </button>
+            </h2>
+            <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes. Power Apps applications are responsive and can be accessed on mobiles, tablets, and desktop devices without separate builds.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                8. What happens after the app is deployed?
+              </button>
+            </h2>
+            <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Post-deployment, Power Apps can be enhanced, scaled, and optimized if business needs evolve. Thus, they ensure long-term value and adaptability.</div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+                9. Can Power Apps help replace manual workflows?
+              </button>
+            </h2>
+            <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">Yes. Power Apps and Power Automate help businesses reduce repetitive tasks by automating approvals, reporting, notifications, and operational workflows.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     FINAL CTA BANNER
+=========================== -->
+<section class="final-cta-section section-pad">
+  <div class="container-xl position-relative" style="z-index: 1;">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-7">
+        <div class="section-label" style="background: rgba(255,108,26,0.2); color: var(--orange);">Get Started Today</div>
+        <h2 class="mt-2">Ready to Transform Your Enterprise with Power Apps?</h2>
+        <p>Let's discuss how our Microsoft Power Platform development services can help your business automate workflows, reduce costs, and accelerate application delivery by up to 70%.</p>
+        <div class="d-flex flex-wrap gap-3 mt-4">
+          <a href="#" class="btn-primary-orange">Get a Free Consultation</a>
+          <a href="#" class="btn-outline-white">Talk to Our Power Platform Experts</a>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <img src="assets/images/cta-visual.png" alt="Start your Power Apps development journey with Sparkout" class="img-fluid rounded-3" style="border-radius: var(--radius-lg) !important; box-shadow: 0 20px 60px rgba(0,0,0,0.4);" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===========================
+     FOOTER
+=========================== -->
+<footer class="footer-sparkout">
+  <div class="container-xl">
+    <div class="row align-items-center justify-content-between">
+      <div class="col-md-6">
+        <a href="#" class="navbar-brand-logo" style="font-size: 20px;">Sparkout<span style="color: var(--orange);">.</span></a>
+        <p class="mt-2 mb-0" style="font-size: 13px;">Microsoft Power Platform | Power Apps Development Services</p>
+      </div>
+      <div class="col-md-6 text-md-end mt-3 mt-md-0">
+        <p style="font-size: 13px; margin-bottom: 0;">© 2025 Sparkout Tech Solutions. All rights reserved.</p>
+        <div class="mt-1">
+          <a href="#" style="font-size: 13px; margin-right: 16px;">Privacy Policy</a>
+          <a href="#" style="font-size: 13px; margin-right: 16px;">Terms of Service</a>
+          <a href="#" style="font-size: 13px;">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Navbar shadow on scroll
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('mainNav');
+    if (window.scrollY > 20) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+</script>
+</body>
+</html>

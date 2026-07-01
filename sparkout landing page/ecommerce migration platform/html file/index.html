@@ -1,0 +1,2168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ecommerce Platform Migration - Zero Data Loss Guaranteed</title>
+  <meta name="description" content="Get seamless ecommerce platform migration services today. We secure 100% of your products, orders, and data with zero downtime. Claim your custom estimate now.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary-orange: #FF6C1A;
+      --primary-orange-dark: #FF4D0D;
+      --secondary-navy: #192A44;
+      --font-default: #0B1220;
+      --neutral-border: #E5E7EB;
+      --stroke: #64748B;
+      --light-bg: #F8FAFC;
+      --muted-text: #6B7280;
+      --white: #FFFFFF;
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 10px 30px rgba(0,0,0,0.06);
+      --shadow-lg: 0 20px 50px rgba(0,0,0,0.08);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--font-default);
+      background: var(--white);
+      padding-bottom: 104px;
+    }
+
+    p {
+      color: var(--muted-text);
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 170%;
+      margin-bottom: 0;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 120%;
+      letter-spacing: -1px;
+      color: var(--font-default);
+    }
+
+    h2 {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 130%;
+      letter-spacing: -0.5px;
+      color: var(--font-default);
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 135%;
+      color: var(--font-default);
+    }
+
+    .page-shell {
+      max-width: 1440px;
+      margin: 0 auto;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    .spark-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0;
+      width: 100%;
+    }
+
+    .section-pad {
+      padding: 100px 80px;
+    }
+
+    .section-pad-sm {
+      padding: 72px 80px;
+    }
+
+    .navbar {
+      min-height: 88px;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(16px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar-brand {
+      color: var(--secondary-navy);
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .nav-link {
+      color: var(--secondary-navy);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .btn-primary-spark,
+    .btn-outline-spark {
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary-spark {
+      background: linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
+      color: var(--white);
+      border: 1px solid transparent;
+      box-shadow: 0 10px 24px rgba(255,108,26,0.22);
+    }
+
+    .btn-primary-spark:hover {
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(255,108,26,0.28);
+    }
+
+    .btn-outline-spark {
+      color: var(--secondary-navy);
+      border: 1px solid var(--secondary-navy);
+      background: transparent;
+    }
+
+    .btn-outline-spark:hover {
+      color: var(--white);
+      background: var(--secondary-navy);
+      transform: translateY(-2px);
+    }
+
+    .hero {
+      padding-top: 118px;
+      background:
+        radial-gradient(circle at 76% 20%, rgba(255,108,26,0.14), transparent 28%),
+        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    }
+
+    .hero-visual,
+    .image-panel {
+      position: relative;
+      border-radius: 20px;
+      border: 1px solid var(--neutral-border);
+      background: var(--white);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .hero-visual:hover,
+    .image-panel:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 60px rgba(25,42,68,0.14);
+    }
+
+    .hero-visual img,
+    .image-panel img {
+      width: 100%;
+      min-height: 420px;
+      object-fit: cover;
+      display: block;
+      background: linear-gradient(135deg, #fff3ed, #eef4ff);
+    }
+
+    .image-panel img {
+      min-height: 320px;
+      aspect-ratio: 4 / 3;
+    }
+
+    .hero-visual img {
+      min-height: 420px;
+      aspect-ratio: 1 / 1;
+    }
+
+    .cta-band .image-panel img {
+      min-height: 300px;
+    }
+
+    .platform-stats {
+      margin-bottom: 28px;
+    }
+
+    .platform-stat-card {
+      height: 100%;
+      border: 1px solid var(--neutral-border);
+      border-radius: 18px;
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .platform-stat-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,108,26,0.36);
+      box-shadow: var(--shadow-md);
+    }
+
+    .platform-stat-card strong {
+      display: block;
+      color: var(--primary-orange);
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 120%;
+      margin-bottom: 8px;
+    }
+
+    .platform-stat-card span {
+      display: block;
+      color: var(--secondary-navy);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 145%;
+    }
+
+    .platform-support-wrap {
+      margin-top: 28px;
+    }
+
+    .platform-support-table tbody td {
+      color: var(--secondary-navy);
+      font-size: 18px;
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .platform-support-table tbody th {
+      white-space: nowrap;
+    }
+
+    .support-legend {
+      margin-top: 18px;
+    }
+
+    .support-legend-card {
+      height: 100%;
+      border: 1px solid var(--neutral-border);
+      border-radius: 16px;
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      padding: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .support-symbol {
+      width: 38px;
+      height: 38px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--primary-orange);
+      background: rgba(255,108,26,0.08);
+      border: 1px solid rgba(255,108,26,0.18);
+      font-size: 18px;
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+
+    .support-legend-card span:last-child {
+      color: var(--secondary-navy);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 145%;
+    }
+
+    .hero-metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .hero-metric {
+      min-height: 104px;
+      border: 1px solid var(--neutral-border);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.92);
+      box-shadow: var(--shadow-sm);
+      padding: 18px 14px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .hero-metric:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,108,26,0.42);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-metric strong {
+      display: block;
+      color: var(--primary-orange);
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 120%;
+      margin-bottom: 8px;
+    }
+
+    .hero-metric span {
+      display: block;
+      color: var(--secondary-navy);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 145%;
+    }
+
+    .toc-wrap {
+      position: fixed;
+      left: 50%;
+      bottom: 16px;
+      z-index: 1040;
+      width: min(1280px, calc(100% - 32px));
+      transform: translateX(-50%);
+      background: transparent;
+      pointer-events: none;
+    }
+
+    .toc-inner {
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      border: 1px solid var(--neutral-border);
+      border-radius: 24px;
+      background: rgba(255,255,255,0.94);
+      box-shadow: 0 18px 50px rgba(25,42,68,0.16);
+      padding: 10px 12px;
+      backdrop-filter: blur(18px);
+      pointer-events: auto;
+    }
+
+    .toc-label {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border-radius: 999px;
+      background: rgba(25,42,68,0.08);
+      color: var(--secondary-navy);
+      padding: 10px 14px;
+    }
+
+    .toc-label:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: var(--primary-orange);
+      box-shadow: 0 0 0 5px rgba(255,108,26,0.12);
+    }
+
+    .toc-label strong {
+      font-size: 14px;
+      font-weight: 800;
+      line-height: 140%;
+    }
+
+    .toc-label small {
+      display: block;
+      color: var(--muted-text);
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 120%;
+    }
+
+    .toc-wrap .nav {
+      justify-content: center;
+      gap: 10px;
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      scrollbar-width: thin;
+      padding: 2px 2px 4px;
+    }
+
+    .toc-wrap a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+      width: 38px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid var(--neutral-border);
+      color: var(--stroke);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      background: var(--white);
+    }
+
+    .toc-wrap a span {
+      display: block;
+    }
+
+    .toc-wrap a:hover,
+    .toc-wrap a.active {
+      border-color: var(--primary-orange);
+      color: var(--white);
+      background: var(--primary-orange);
+      box-shadow: 0 8px 18px rgba(255,108,26,0.16);
+    }
+
+    .toc-select {
+      flex: 0 0 240px;
+      height: 46px;
+      border: 1px solid var(--neutral-border);
+      border-radius: 14px;
+      color: var(--secondary-navy);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 0 40px 0 14px;
+      box-shadow: none;
+      background-color: var(--white);
+    }
+
+    .toc-select:focus {
+      border-color: var(--primary-orange);
+      box-shadow: 0 0 0 4px rgba(255,108,26,0.12);
+    }
+
+    .card-spark {
+      height: 100%;
+      background: var(--white);
+      border: 1px solid var(--neutral-border);
+      border-radius: 20px;
+      padding: 32px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .section-pad .row > [class*="col-"],
+    .section-pad-sm .row > [class*="col-"] {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .section-pad .row > [class*="col-"] > .card-spark,
+    .section-pad-sm .row > [class*="col-"] > .card-spark,
+    .section-pad .row > [class*="col-"] > a,
+    .section-pad-sm .row > [class*="col-"] > a,
+    .section-pad .row > [class*="col-"] > .image-panel,
+    .section-pad-sm .row > [class*="col-"] > .image-panel {
+      flex: 1;
+    }
+
+    .section-pad .row > [class*="col-"] > a,
+    .section-pad-sm .row > [class*="col-"] > a {
+      display: flex;
+    }
+
+    .section-pad .row > [class*="col-"] > a > .card-spark,
+    .section-pad-sm .row > [class*="col-"] > a > .card-spark {
+      flex: 1;
+    }
+
+    .section-pad .row.align-items-center > [class*="col-"],
+    .section-pad-sm .row.align-items-center > [class*="col-"] {
+      justify-content: center;
+    }
+
+    .card-spark:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(255,108,26,0.38);
+    }
+
+    .card-spark h3,
+    .why-proof-card h3,
+    .result-card h3,
+    .tool-category-head h3 {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 135%;
+      letter-spacing: 0;
+      margin-bottom: 14px;
+    }
+
+    .card-head h3,
+    .tool-category-head h3,
+    .result-card-top h3 {
+      margin-bottom: 0;
+    }
+
+    .hover-reveal {
+      position: absolute;
+      inset: auto 24px 24px 24px;
+      color: var(--primary-orange);
+      font-size: 13px;
+      font-weight: 700;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+
+    .card-spark:hover .hover-reveal {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .replatform-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 254px;
+      padding-bottom: 28px;
+    }
+
+    .replatform-card p {
+      margin-bottom: 22px;
+    }
+
+    .replatform-card .hover-reveal {
+      position: static;
+      inset: auto;
+      display: inline-flex;
+      align-items: center;
+      width: fit-content;
+      margin-top: auto;
+      padding: 9px 12px;
+      border-radius: 999px;
+      background: rgba(255,108,26,0.08);
+      line-height: 1;
+      opacity: 1;
+      transform: none;
+    }
+
+    .replatform-card:hover .hover-reveal {
+      background: var(--primary-orange);
+      color: var(--white);
+      transform: translateX(4px);
+    }
+
+    .why-section {
+      background:
+        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    }
+
+    .why-section .section-intro {
+      max-width: 820px;
+    }
+
+    .why-proof-card {
+      height: 100%;
+      border: 1px solid var(--neutral-border);
+      border-radius: 16px;
+      background: var(--white);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .why-proof-card:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--primary-orange), var(--primary-orange-dark));
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .why-proof-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(255,108,26,0.36);
+      box-shadow: var(--shadow-md);
+    }
+
+    .why-proof-card:hover:before {
+      opacity: 1;
+    }
+
+    .why-card-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .why-icon {
+      flex: 0 0 auto;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: var(--primary-orange);
+      background: rgba(255,108,26,0.08);
+      border: 1px solid rgba(255,108,26,0.18);
+    }
+
+    .why-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .why-proof-card h3 {
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+
+    .why-proof-card p {
+      font-size: 14px;
+      line-height: 160%;
+      padding-left: 62px;
+    }
+
+    .why-table-wrap {
+      margin-top: 28px;
+    }
+
+    .need-section .section-copy {
+      max-width: 520px;
+    }
+
+    .need-section .section-copy p {
+      max-width: 500px;
+    }
+
+    .need-visual {
+      padding: 18px;
+      background:
+        linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(135deg, rgba(255,108,26,0.32), rgba(25,42,68,0.16)) border-box;
+      border: 1px solid transparent;
+    }
+
+    .need-visual img {
+      min-height: 340px;
+      border-radius: 14px;
+    }
+
+    .need-chip-grid {
+      margin-top: 22px;
+    }
+
+    .need-chip {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 16px;
+      border: 1px solid var(--neutral-border);
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      color: var(--secondary-navy);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 140%;
+      text-align: center;
+      padding: 16px;
+      transition: all 0.3s ease;
+    }
+
+    .need-chip:hover {
+      border-color: rgba(255,108,26,0.45);
+      color: var(--primary-orange);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .icon-dot {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--primary-orange);
+      background: rgba(255,108,26,0.09);
+      border: 1px solid rgba(255,108,26,0.16);
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .card-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .card-head h3 {
+      margin-bottom: 0;
+    }
+
+    .card-icon {
+      flex: 0 0 auto;
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: var(--primary-orange);
+      background: rgba(255,108,26,0.08);
+      border: 1px solid rgba(255,108,26,0.18);
+      transition: all 0.3s ease;
+    }
+
+    .card-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .card-spark:hover .card-icon {
+      background: var(--primary-orange);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .risk-card {
+      border-left: 4px solid rgba(255,108,26,0.32);
+    }
+
+    .service-card,
+    .sector-card,
+    .result-card {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sector-card .fw-semibold,
+    .result-card .fw-semibold:last-child {
+      margin-top: auto;
+      padding-top: 14px;
+    }
+
+    .sector-card {
+      padding: 24px;
+    }
+
+    .sector-card .card-head {
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .sector-card .card-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+    }
+
+    .sector-card .card-icon svg {
+      width: 21px;
+      height: 21px;
+    }
+
+    .sector-card h3 {
+      font-size: 18px;
+      line-height: 130%;
+      letter-spacing: 0;
+      margin-top: 0;
+    }
+
+    .sector-card p {
+      font-size: 14px;
+      line-height: 160%;
+    }
+
+    .numbers-section {
+      background:
+        radial-gradient(circle at 82% 12%, rgba(255,108,26,0.12), transparent 28%),
+        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    }
+
+    .numbers-visual {
+      max-width: 430px;
+      margin-left: auto;
+      padding: 16px;
+      border-radius: 20px;
+      border: 1px solid var(--neutral-border);
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .numbers-visual img {
+      width: 100%;
+      min-height: 230px;
+      max-height: 280px;
+      object-fit: cover;
+      border-radius: 14px;
+      display: block;
+      background: linear-gradient(135deg, #fff3ed, #eef4ff);
+    }
+
+    .numbers-visual-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      background: var(--light-bg);
+    }
+
+    .numbers-visual-caption span:first-child {
+      color: var(--secondary-navy);
+      font-size: 13px;
+      font-weight: 800;
+      line-height: 140%;
+    }
+
+    .numbers-visual-caption span:last-child {
+      color: var(--primary-orange);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .result-card {
+      border: 1px solid var(--neutral-border);
+      border-radius: 20px;
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+      padding: 0;
+      overflow: hidden;
+      transition: all 0.3s ease;
+      min-height: 100%;
+    }
+
+    .result-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(255,108,26,0.34);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .result-card-top {
+      padding: 24px;
+      background: linear-gradient(135deg, rgba(25,42,68,0.98), rgba(25,42,68,0.9));
+      min-height: 158px;
+    }
+
+    .result-card-top .card-icon {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.18);
+      color: var(--white);
+    }
+
+    .result-card-top p,
+    .result-card-top h3 {
+      color: var(--white);
+    }
+
+    .result-sector {
+      display: inline-flex;
+      width: fit-content;
+      margin-top: 12px;
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: rgba(255,255,255,0.1);
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .result-metrics {
+      padding: 20px;
+      display: grid;
+      gap: 12px;
+      flex: 1;
+      align-content: stretch;
+    }
+
+    .metric-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+      border: 1px solid var(--neutral-border);
+      border-radius: 14px;
+      background: var(--light-bg);
+      padding: 14px 16px;
+      min-height: 66px;
+    }
+
+    .metric-row span:first-child {
+      color: var(--muted-text);
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 145%;
+    }
+
+    .metric-row span:last-child {
+      color: var(--secondary-navy);
+      font-size: 16px;
+      font-weight: 800;
+      text-align: right;
+      line-height: 130%;
+    }
+
+    .metric-row.featured {
+      background: rgba(255,108,26,0.08);
+      border-color: rgba(255,108,26,0.22);
+    }
+
+    .metric-row.featured span:last-child {
+      color: var(--primary-orange);
+    }
+
+    .light-band {
+      background: var(--light-bg);
+    }
+
+    .nav-tabs {
+      border: 0;
+      gap: 10px;
+    }
+
+    .nav-tabs .nav-link {
+      border: 1px solid var(--neutral-border);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--secondary-navy);
+      padding: 10px 18px;
+    }
+
+    .nav-tabs .nav-link.active {
+      background: var(--secondary-navy);
+      color: var(--white);
+      border-color: var(--secondary-navy);
+    }
+
+    .process-section {
+      background:
+        radial-gradient(circle at 12% 12%, rgba(255,108,26,0.1), transparent 28%),
+        linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    }
+
+    .process-intro {
+      max-width: 760px;
+    }
+
+    .process-visual {
+      max-width: 420px;
+      margin-left: auto;
+      padding: 14px;
+    }
+
+    .process-visual img {
+      min-height: 240px;
+      max-height: 280px;
+      border-radius: 14px;
+    }
+
+    .process-step-card {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      align-items: flex-start;
+      height: 100%;
+      padding: 26px;
+    }
+
+    .process-step-number {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--secondary-navy);
+      color: var(--white);
+      font-weight: 800;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+
+    .process-step-card:hover .process-step-number {
+      background: var(--primary-orange);
+      transform: translateY(-2px);
+    }
+
+    .process-step-card .fw-semibold {
+      font-size: 14px;
+      line-height: 155%;
+    }
+
+    .process-step-card p:last-child {
+      font-size: 14px;
+      line-height: 165%;
+    }
+
+    .table-spark {
+      border: 1px solid var(--neutral-border);
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .table {
+      margin-bottom: 0;
+      vertical-align: middle;
+    }
+
+    .table thead th {
+      background: var(--secondary-navy);
+      color: var(--white);
+      border: 0;
+      font-size: 14px;
+      padding: 18px;
+    }
+
+    .table tbody td,
+    .table tbody th {
+      padding: 16px 18px;
+      border-color: var(--neutral-border);
+      font-size: 14px;
+      color: var(--font-default);
+    }
+
+    .migration-cost-table thead th,
+    .migration-cost-table tbody th {
+      white-space: nowrap;
+    }
+
+    .migration-cost-table tbody td {
+      color: var(--secondary-navy);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .cost-table-wrap {
+      margin-top: 40px;
+    }
+
+    .cta-band {
+      border-radius: 20px;
+      background:
+        linear-gradient(135deg, rgba(25,42,68,0.96), rgba(25,42,68,0.88)),
+        linear-gradient(135deg, var(--primary-orange), var(--primary-orange-dark));
+      color: var(--white);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .cta-band p,
+    .cta-band h2,
+    .cta-band h3 {
+      color: var(--white);
+    }
+
+    .tool-pill {
+      border-radius: 999px;
+      border: 1px solid var(--neutral-border);
+      background: var(--white);
+      padding: 10px 16px 10px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 54px;
+      transition: all 0.3s ease;
+    }
+
+    .tool-pill:hover {
+      border-color: var(--primary-orange);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tool-icon {
+      flex: 0 0 auto;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
+      color: var(--primary-orange);
+      background: rgba(255,108,26,0.08);
+      border: 1px solid rgba(255,108,26,0.16);
+      transition: all 0.3s ease;
+    }
+
+    .tool-icon svg {
+      width: 18px;
+      height: 18px;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .tool-pill:hover .tool-icon {
+      background: var(--primary-orange);
+      color: var(--white);
+    }
+
+    .tool-pill span:last-child {
+      color: var(--secondary-navy);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .tool-stack-grid {
+      align-items: stretch;
+    }
+
+    .tool-category-card {
+      height: 100%;
+      border: 1px solid var(--neutral-border);
+      border-radius: 20px;
+      background: var(--white);
+      box-shadow: var(--shadow-sm);
+      padding: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .tool-category-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(255,108,26,0.34);
+      box-shadow: var(--shadow-md);
+    }
+
+    .tool-category-head {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--neutral-border);
+    }
+
+    .tool-category-head h3 {
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .tool-category-head p {
+      font-size: 13px;
+      line-height: 150%;
+    }
+
+    .tool-chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tool-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--neutral-border);
+      border-radius: 999px;
+      padding: 9px 12px;
+      background: var(--light-bg);
+      color: var(--secondary-navy);
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .price-card input {
+      accent-color: var(--primary-orange);
+    }
+
+    .price-card label {
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 16px;
+      color: var(--secondary-navy);
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 155%;
+    }
+
+    .price-card label:last-child {
+      margin-bottom: 0;
+    }
+
+    .price-card input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      flex: 0 0 auto;
+      margin-top: 3px;
+    }
+
+    .accordion-button {
+      font-weight: 700;
+      color: var(--secondary-navy);
+      line-height: 150%;
+    }
+
+    .accordion-button:not(.collapsed) {
+      color: var(--primary-orange);
+      background: rgba(255,108,26,0.07);
+      box-shadow: none;
+    }
+
+    .accordion-item {
+      border-color: var(--neutral-border);
+      border-radius: 12px !important;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+
+    .preline {
+      white-space: pre-wrap;
+    }
+
+    @media (max-width: 991.98px) {
+      h1 {
+        font-size: 40px;
+      }
+
+      .section-pad,
+      .section-pad-sm {
+        padding: 80px 5%;
+      }
+
+      .hero-metrics {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .toc-inner {
+        align-items: stretch;
+        gap: 10px;
+      }
+
+      .toc-label {
+        display: none;
+      }
+
+      .toc-select {
+        flex-basis: 190px;
+      }
+
+      .image-panel img {
+        min-height: 300px;
+      }
+    }
+
+    @media (max-width: 575.98px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      h2 {
+        font-size: 27px;
+      }
+
+      .hero {
+        padding-top: 104px;
+      }
+
+      .toc-wrap {
+        bottom: 10px;
+        width: calc(100% - 20px);
+      }
+
+      .toc-inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        border-radius: 18px;
+        padding: 10px;
+      }
+
+      .toc-wrap a {
+        width: 32px;
+        height: 32px;
+        font-size: 11px;
+      }
+
+      .toc-wrap .nav {
+        justify-content: flex-start;
+        order: 2;
+        padding-bottom: 2px;
+      }
+
+      .toc-select {
+        width: 100%;
+        flex-basis: auto;
+        order: 1;
+      }
+
+      .why-proof-card p {
+        padding-left: 0;
+      }
+
+      .numbers-visual {
+        max-width: 100%;
+        margin-left: 0;
+      }
+
+      .section-pad,
+      .section-pad-sm {
+        padding: 64px 18px;
+      }
+
+      .card-spark {
+        padding: 24px;
+      }
+
+      .card-head,
+      .why-card-head,
+      .tool-category-head {
+        align-items: flex-start;
+      }
+
+      .sector-card .card-head {
+        align-items: center;
+      }
+
+      .card-spark h3,
+      .why-proof-card h3,
+      .result-card h3,
+      .tool-category-head h3 {
+        font-size: 17px;
+        line-height: 135%;
+      }
+
+      .hero-visual img,
+      .image-panel img {
+        min-height: 270px;
+      }
+
+      .hero-metric {
+        min-height: 96px;
+      }
+
+      .metric-row,
+      .numbers-visual-caption {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .metric-row span:last-child {
+        text-align: left;
+      }
+
+      .process-visual {
+        max-width: 100%;
+        margin-left: 0;
+      }
+
+      .process-step-card {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+
+      .btn-primary-spark,
+      .btn-outline-spark {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid px-lg-5">
+        <a class="navbar-brand" href="#hero">Sparkout</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="#need">Need</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+            <li class="nav-item"><a class="nav-link" href="#platforms">Platforms</a></li>
+            <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+            <li class="nav-item mt-3 mt-lg-0"><a class="btn btn-primary-spark" href="#cost">Estimate Your Cost</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero section-pad">
+      <div class="spark-container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <h1 class="mb-4">End-to-End Ecommerce Platform Migration Services for Every Business Size</h1>
+            <p class="mb-4">Migration might feel risky, but far better than staying on the wrong platform that drains costs. At Sparkout, we offer ecommerce platform migration services and handle every part of the move. By partnering with us, nothing gets dropped, and nothing arrives broken. </p>
+            <div class="d-flex flex-column flex-sm-row gap-3 mb-4">
+              <a href="#cost" class="btn btn-primary-spark">Start Your Migration</a>
+              <a href="#cost" class="btn btn-outline-spark">Estimate Your Cost</a>
+            </div>
+            <div class="hero-metrics" aria-label="Migration delivery metrics">
+              <div class="hero-metric">
+                <strong>250+</strong>
+                <span>Engineers on Deck</span>
+              </div>
+              <div class="hero-metric">
+                <strong>500+</strong>
+                <span>Projects Delivered</span>
+              </div>
+              <div class="hero-metric">
+                <strong>10+</strong>
+                <span>Platforms Supported</span>
+              </div>
+              <div class="hero-metric">
+                <strong>0</strong>
+                <span>Data Loss Garuntee</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-visual">
+              <img src="assets/images/ecommerce-migration-hero.png" alt="Ecommerce migration SaaS dashboard visual">
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Fixed Bottom Section Navigation -->
+    <div class="toc-wrap">
+      <div class="toc-inner">
+        <div class="toc-label">
+          <div>
+            <strong>Page navigation</strong>
+            <small>Track every section</small>
+          </div>
+        </div>
+        <div class="nav" aria-label="Landing page section navigation">
+          <a href="#need" class="active" aria-label="Need" data-bs-toggle="tooltip" data-bs-title="Need"><span>1</span></a>
+          <a href="#replatforming" aria-label="Replatforming" data-bs-toggle="tooltip" data-bs-title="Replatforming"><span>2</span></a>
+          <a href="#diy" aria-label="DIY Risks" data-bs-toggle="tooltip" data-bs-title="DIY Risks"><span>3</span></a>
+          <a href="#services" aria-label="Services" data-bs-toggle="tooltip" data-bs-title="Services"><span>4</span></a>
+          <a href="#process" aria-label="Process" data-bs-toggle="tooltip" data-bs-title="Process"><span>5</span></a>
+          <a href="#platforms" aria-label="Platforms" data-bs-toggle="tooltip" data-bs-title="Platforms"><span>6</span></a>
+          <a href="#tools" aria-label="Tools" data-bs-toggle="tooltip" data-bs-title="Tools"><span>7</span></a>
+          <a href="#sectors" aria-label="Sectors" data-bs-toggle="tooltip" data-bs-title="Sectors"><span>8</span></a>
+          <a href="#why" aria-label="Why Sparkout" data-bs-toggle="tooltip" data-bs-title="Why Sparkout"><span>9</span></a>
+          <a href="#cost" aria-label="Cost" data-bs-toggle="tooltip" data-bs-title="Cost"><span>10</span></a>
+          <a href="#numbers" aria-label="Numbers" data-bs-toggle="tooltip" data-bs-title="Numbers"><span>11</span></a>
+          <a href="#faq" aria-label="FAQ" data-bs-toggle="tooltip" data-bs-title="FAQ"><span>12</span></a>
+        </div>
+        <select class="form-select toc-select" aria-label="Jump to section">
+          <option value="#need">Jump to section</option>
+          <option value="#need">Need</option>
+          <option value="#replatforming">Replatforming</option>
+          <option value="#diy">DIY Risks</option>
+          <option value="#services">Services</option>
+          <option value="#process">Process</option>
+          <option value="#platforms">Platforms</option>
+          <option value="#tools">Tools</option>
+          <option value="#sectors">Sectors</option>
+          <option value="#why">Why Sparkout</option>
+          <option value="#cost">Cost</option>
+          <option value="#numbers">Numbers</option>
+          <option value="#faq">FAQ</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Need Section -->
+    <section id="need" class="section-pad need-section">
+      <div class="spark-container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-5">
+            <div class="section-copy">
+              <h2 class="mb-4">What’s the Need for Ecommerce Platform Migration?</h2>
+              <p>It’s exactly what it sounds like. Ecommerce platform migration is moving your online ecommerce platform from one platform to another without losing any data. In between, your products, orders, customer data, design, and everything get picked from where it is and get placed on a new platform. Think of it less like a technical revamp and more like moving offices. Same business, better place.</p>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="image-panel need-visual">
+              <img src="assets/images/platform-migration-dashboard.png" alt="Platform migration dashboard with product and order data">
+            </div>
+            <div class="row g-3 need-chip-grid">
+              <div class="col-md-3 col-6"><div class="need-chip">Data Transfer</div></div>
+              <div class="col-md-3 col-6"><div class="need-chip">Design Rebuild</div></div>
+              <div class="col-md-3 col-6"><div class="need-chip">Integration Reconnection</div></div>
+              <div class="col-md-3 col-6"><div class="need-chip">SEO Preservation</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Replatforming Section -->
+    <section id="replatforming" class="section-pad light-band">
+      <div class="spark-container">
+        <div class="row g-4 align-items-end mb-5">
+          <div class="col-lg-7">
+            <h2 class="mb-3">Why Businesses are Replatforming from Their Current Platform?</h2>
+            <p>For a business, growth exposes unexpected cracks if not maintained properly, forcing businesses to make the switch.</p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <a href="#services" class="text-decoration-none">
+              <div class="card-spark replatform-card">
+                <div class="icon-dot">01</div>
+                <h3>Platform Limitations</h3>
+                <p>Older systems can’t support modern commerce.</p>
+                <div class="hover-reveal">View service path</div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a href="#services" class="text-decoration-none">
+              <div class="card-spark replatform-card">
+                <div class="icon-dot">02</div>
+                <h3>Scalability Barriers</h3>
+                <p>Small commerce platforms break when you scale.</p>
+                <div class="hover-reveal">View service path</div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a href="#cost" class="text-decoration-none">
+              <div class="card-spark replatform-card">
+                <div class="icon-dot">03</div>
+                <h3>Rising Costs</h3>
+                <p>Patcing old techs costs more than migrating.</p>
+                <div class="hover-reveal">Estimate impact</div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a href="#tools" class="text-decoration-none">
+              <div class="card-spark replatform-card">
+                <div class="icon-dot">04</div>
+                <h3>Integration Gaps</h3>
+                <p>Legacy tools don’t connect with modern stacks.</p>
+                <div class="hover-reveal">Inspect tools</div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a href="#process" class="text-decoration-none">
+              <div class="card-spark replatform-card">
+                <div class="icon-dot">05</div>
+                <h3>Performance Issues</h3>
+                <p>Slow stores lose customers before checkout.</p>
+                <div class="hover-reveal">See process</div>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <a href="#sectors" class="text-decoration-none">
+              <div class="card-spark replatform-card">
+                <div class="icon-dot">06</div>
+                <h3>Poor UX Experience</h3>
+                <p>Flaws on mobile drives shoppers away fast.</p>
+                <div class="hover-reveal">Explore sectors</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIY Risk Section -->
+    <section id="diy" class="section-pad">
+      <div class="spark-container">
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <div class="position-sticky" style="top: 170px;">
+              <h2 class="mb-3">What Kills DIY Ecommerce Platform Migration?</h2>
+              <p>At Sparkout, we cleaned up “after failed migrations” and acted as an ecommerce project recovery service more times than we’d like to count. Here’s what actually goes out of hand when teams handle the migration by themselves or with the wrong hire.</p>
+            </div>
+          </div>
+          <div class="col-lg-8">
+            <div class="row g-4">
+              <div class="col-md-6"><div class="card-spark risk-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1"></path><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1"></path></svg></div><h3>1. Redirect</h3></div><p class="fw-semibold text-danger mb-2"> (-65% Organic Traffic)</p><p>Even a single missed 301 redirection can tank your SEO and vanish years of Google rankings overnight.</p></div></div>
+              <div class="col-md-6"><div class="card-spark risk-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 7h18"></path><path d="M5 7v12h14V7"></path><path d="M9 11h6"></path><path d="M9 15h4"></path></svg></div><h3>2. Live Store</h3></div><p class="fw-semibold text-danger mb-2">(Data Corruption)</p><p>Migrating during an active sales period totally corrupts the order data and will create a digital nightmare.</p></div></div>
+              <div class="col-md-6"><div class="card-spark risk-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"></circle><path d="M12 15h8"></path><path d="M17 15v-3"></path></svg></div><h3>3. Passwords</h3></div><p class="fw-semibold text-danger mb-2">(-43% Repeat Orders)</p><p>Forcing thousands of active customers to reset their passwords kills the repeat buys and brand loyalty.</p></div></div>
+              <div class="col-md-6"><div class="card-spark risk-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></div><h3>4. Launch Timing</h3></div><p class="fw-semibold text-danger mb-2">($240 Lost Revenue)</p><p>Launching on a random Friday without monitoring increases the risk that a broken checkout will go unnoticed.</p></div></div>
+              <div class="col-md-6"><div class="card-spark risk-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"></rect><circle cx="8" cy="10" r="2"></circle><path d="M21 16l-5-5L5 19"></path></svg></div><h3>5. Images</h3></div><p class="fw-semibold text-danger mb-2">(-38% Conversion Rate)</p><p>Non-optimized product images can literally affect your page's speed and lead to kill your conversion rates.</p></div></div>
+              <div class="col-md-6"><div class="card-spark risk-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3z"></path><path d="M9 8h6"></path><path d="M9 12h6"></path></svg></div><h3>6. Order History</h3></div><p class="fw-semibold text-danger mb-2">(Support Crisis)</p><p>Completely ditching your order history leaves the customer support completely blind when the day arrives.</p></div></div>
+              <div class="col-md-6"><div class="card-spark risk-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 14h4l2-8 4 14 2-6h4"></path></svg></div><h3>7. Load testing</h3></div><p class="fw-semibold text-danger mb-2">(Total Downtime)</p><p>Skipping performance testing will lead to your migrated website crashing under normal launch traffic.</p></div></div>
+              <div class="col-md-6"><div class="card-spark risk-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l8 4-8 4-8-4 8-4z"></path><path d="M4 11l8 4 8-4"></path><path d="M4 15l8 4 8-4"></path></svg></div><h3>8. Tax Logic</h3></div><p class="fw-semibold text-danger mb-2">(Legal Exposture)</p><p>Ignoring platform-specific tax rules will possibly result in incorrect tax collection and a serious audit in the future.</p></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section-pad light-band">
+      <div class="spark-container">
+        <div class="row g-4 mb-5">
+          <div class="col-lg-8">
+            <h2 class="mb-3">Ecommerce Platform Migration Services Offered by Sparkout</h2>
+            <p>Online store migration has a lot of moving parts, and you don’t have to manage them alone. After you partner up with Sparkout, we’ll take care of the entire process, migrating the platform to the cloud, keeping the data safe, and ensuring your business marches forward.</p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4"><div class="card-spark service-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 7h10v10H7z"></path><path d="M3 12h4"></path><path d="M17 12h4"></path><path d="M12 3v4"></path><path d="M12 17v4"></path></svg></div><h3>Platform-to-Platform Migration</h3></div><p>Sparkout handles the heavy lifting of moving your entire store’s products, orders, and customers to the new one with zero mess.</p></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card-spark service-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7c0-2 4-4 8-4s8 2 8 4-4 4-8 4-8-2-8-4z"></path><path d="M4 7v10c0 2 4 4 8 4s8-2 8-4V7"></path><path d="M4 12c0 2 4 4 8 4s8-2 8-4"></path></svg></div><h3>Data Migration & Validation</h3></div><p>We shift safely and rigorously verify every single piece of product metadata and order history so nothing gets lost or broken.</p></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card-spark service-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 6h16"></path><path d="M4 10h16"></path><path d="M6 14h5"></path><path d="M6 18h12"></path></svg></div><h3>Theme & Design Migration</h3></div><p>With the ecommerce platform rebuilding, we rebuild your current brand design and storefront layout to fit with the new platform.</p></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card-spark service-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 8h8v8H8z"></path><path d="M3 8h5"></path><path d="M16 8h5"></path><path d="M12 3v5"></path><path d="M12 16v5"></path></svg></div><h3>Third-Party Integration Migration</h3></div><p>We seamlessly reconnect your ERPs, CRMs, and payment gateways so that your day-to-day operations keep running smoothly.</p></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card-spark service-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path><path d="M8 11h6"></path></svg></div><h3>SEO Redirect Management</h3></div><p>We map and protect all the existing URLs and rankings so that you don’t lose the organic traffic you've spent years building.</p></div></div>
+          <div class="col-md-6 col-lg-4"><div class="card-spark service-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 13a8 8 0 0 1 16 0"></path><path d="M5 13v4a2 2 0 0 0 2 2h1"></path><path d="M19 13v4a2 2 0 0 1-2 2h-1"></path><path d="M9 19h6"></path></svg></div><h3>Post-Migration Support</h3></div><p>After the migration, we stick around to test the system under real traffic and fix if any unexpected bugs or crashes occurs.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Consultation Banner -->
+    <section class="section-pad-sm">
+      <div class="spark-container">
+        <div class="cta-band p-4 p-lg-5">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-8">
+              <h2 class="mb-3">Not Sure Which Service Fits Your Ecommerce Platform Migration?</h2>
+              <p>Our dedicated team of ecommerce migration experts will map the right path for your store.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="#cost" class="btn btn-primary-spark bg-white text-dark border-0">Get a Free Consultation</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Board -->
+    <section id="process" class="section-pad process-section">
+      <div class="spark-container">
+        <div class="row g-5 align-items-center mb-5">
+          <div class="col-lg-7">
+            <div class="process-intro">
+              <h2 class="mb-3">Ecommerce Migration Process We Follow on 300+ Migrations</h2>
+              <p>Done more than 300 ecommerce platform migrations with zero guessed steps. We follow a unique battle-tested style to migrate your ecommerce platform with no data loss and minimal downtime, boosting a seamless customer experience.</p>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="image-panel process-visual">
+              <img src="assets/images/ecommerce-workflow.png" alt="Ecommerce workflow process timeline">
+            </div>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-4">
+            <div class="card-spark process-step-card"><div class="process-step-number">1</div><div><h3>Step 1: The Deep Dive</h3><p class="fw-semibold text-dark mb-2">We Map Everything Before We Touch Anything</p><p>At first, we crack open your current ecommerce platform to find every hidden integration before the migration, leaving no room for surprises.</p></div></div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="card-spark process-step-card"><div class="process-step-number">2</div><div><h3>Step 2: The Blueprint</h3><p class="fw-semibold text-dark mb-2">We Design Your New Store Before a Line of Code is Written</p><p>Our team sketches out the exact data and URL structure of your new store for your sign-off before Sparkout’s devs touch a single line of code.</p></div></div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="card-spark process-step-card"><div class="process-step-number">3</div><div><h3>Step 3: The Smart Move</h3><p class="fw-semibold text-dark mb-2">Your Entire Data Universe Moves With You</p><p>Our experts securely shift the entire history of products, customer data, and orders using automated checks, ensuring nothing is left behind.</p></div></div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="card-spark process-step-card"><div class="process-step-number">4</div><div><h3>Step 4: SEO Protection</h3><p class="fw-semibold text-dark mb-2">Where Most Migration Fails, We Don’t </p><p>Build a rock-solid 301 redirect and carry over your search data so you never lose the hard-earned Google rankings, and keep the business alive.</p></div></div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="card-spark process-step-card"><div class="process-step-number">5</div><div><h3>Step 5: The Gauntlet</h3><p class="fw-semibold text-dark mb-2">Nothing Goes Live Until Every Flow is Signed Off</p><p>Shove your new site through a brutal 600-point inspection, testing every checkout flow and payment gateway to ensure a smooth, error-free launch.</p></div></div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="card-spark process-step-card"><div class="process-step-number">6</div><div><h3>Step 6: Liftoff & Beyond</h3><p class="fw-semibold text-dark mb-2">Instant Rollback if Anything Looks Wrong</p><p>Launch your new e-commerce website with a backup safety plan, stay available for a specific period, and make sure everything runs smoothly.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Comparison -->
+    <section id="platforms" class="section-pad light-band">
+      <div class="spark-container">
+        <div class="row g-4 align-items-end mb-4">
+          <div class="col-lg-8">
+            <h2 class="mb-3">Move Your Store Between Top Ecommerce Platforms</h2>
+            <p>Need to migrate from a legacy system platform or just outgrowing your current platform doesn't matter where you’re starting from. We’ve already handled the route before, and we will get you where you need to go.</p>
+          </div>
+        </div>
+        <div class="row g-3 platform-stats">
+          <div class="col-6 col-lg-3"><div class="platform-stat-card"><strong>8+</strong><span>Platforms Migrated</span></div></div>
+          <div class="col-6 col-lg-3"><div class="platform-stat-card"><strong>6</strong><span>Target Platforms Fully Supported</span></div></div>
+          <div class="col-6 col-lg-3"><div class="platform-stat-card"><strong>9+</strong><span>Years of Migration Work</span></div></div>
+          <div class="col-6 col-lg-3"><div class="platform-stat-card"><strong>240+</strong><span>Projects Delivered</span></div></div>
+        </div>
+        <div class="platform-support-wrap">
+          <div class="table-responsive table-spark">
+            <table class="table platform-support-table">
+              <thead><tr><th>From ↓ / To →</th><th>Shopify Plus</th><th>Magento 2</th><th>BigCommerce</th><th>WooCommerce</th><th>Headless</th><th>Custom</th></tr></thead>
+              <tbody>
+                <tr><th>Shopify / Shopify Plus</th><td>⇋</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><th>Magento 1/2</th><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><th>WooCommerce</th><td>✓</td><td>✓</td><td>✓</td><td>⇋</td><td>✓</td><td>✓</td></tr>
+                <tr><th>BigCommerce</th><td>✓</td><td>✓</td><td>⇋</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><th>PrestaShop</th><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                <tr><th>Volusion / 3dcart</th><td>✓</td><td>◐</td><td>✓</td><td>✓</td><td>◐</td><td>✓</td></tr>
+                <tr><th>Salesforce Commerce</th><td>✓</td><td>✓</td><td>✓</td><td>◐</td><td>✓</td><td>✓</td></tr>
+                <tr><th>OpenCart / CS-Cart</th><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="row g-3 support-legend">
+            <div class="col-md-4"><div class="support-legend-card"><span class="support-symbol">✓</span><span>Full Support</span></div></div>
+            <div class="col-md-4"><div class="support-legend-card"><span class="support-symbol">◐</span><span>Partial - Some custom handling needed</span></div></div>
+            <div class="col-md-4"><div class="support-legend-card"><span class="support-symbol">⇋</span><span>Same platform</span></div></div>
+          </div>
+        </div>
+        <ul class="nav nav-tabs mb-4 d-none" id="platformTabs" role="tablist">
+          <li class="nav-item" role="presentation"><button class="nav-link active" id="matrix-tab" data-bs-toggle="tab" data-bs-target="#matrix-pane" type="button" role="tab" aria-controls="matrix-pane" aria-selected="true">Comparison Matrix</button></li>
+          <li class="nav-item" role="presentation"><button class="nav-link" id="legend-tab" data-bs-toggle="tab" data-bs-target="#legend-pane" type="button" role="tab" aria-controls="legend-pane" aria-selected="false">Support Legend</button></li>
+        </ul>
+        <div class="tab-content d-none">
+          <div class="tab-pane fade show active" id="matrix-pane" role="tabpanel" aria-labelledby="matrix-tab" tabindex="0">
+            <div class="table-responsive table-spark">
+              <table class="table">
+                <thead><tr><th>From ↓ / To →</th><th>Shopify Plus</th><th>Magento 2</th><th>BigCommerce</th><th>WooCommerce</th><th>Headless</th><th>Custom</th></tr></thead>
+                <tbody>
+                  <tr><th>Shopify / Shopify Plus</th><td>⇋</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                  <tr><th>Magento 1/2</th><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                  <tr><th>WooCommerce</th><td>✓</td><td>✓</td><td>✓</td><td>⇋</td><td>✓</td><td>✓</td></tr>
+                  <tr><th>BigCommerce</th><td>✓</td><td>✓</td><td>⇋</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                  <tr><th>PrestaShop</th><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                  <tr><th>Volusion / 3dcart</th><td>✓</td><td>◐</td><td>✓</td><td>✓</td><td>◐</td><td>✓</td></tr>
+                  <tr><th>Salesforce Commerce</th><td>✓</td><td>✓</td><td>✓</td><td>◐</td><td>✓</td><td>✓</td></tr>
+                  <tr><th>OpenCart / CS-Cart</th><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="legend-pane" role="tabpanel" aria-labelledby="legend-tab" tabindex="0">
+            <div class="card-spark">
+              <p class="preline fw-semibold text-dark">✓ - Full Support 
+
+◐ - Partial - Some custom handling needed   
+
+⇋ - Same platform</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Platform Banner -->
+    <section class="section-pad-sm">
+      <div class="spark-container">
+        <div class="cta-band p-4 p-lg-5">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-8">
+              <h2 class="mb-3">Need to Move Your Online Store Across any Major Platforms Seamlessly?</h2>
+              <p>Whether you’re leaving Shopify, Magento, or WooCommerce, we build the perfect bridge for your new home.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="#cost" class="btn btn-primary-spark bg-white text-dark border-0">Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="section-pad">
+      <div class="spark-container">
+        <div class="row g-5 align-items-center mb-5">
+          <div class="col-lg-6">
+            <h2 class="mb-3">The Tools We Used for a Successful Ecommerce Platform Migration</h2>
+            <p>Like typical ecommerce migration agencies, we’re not glued to a single ecosystem. We handpick the right tools for your specific migration. Here’s what powers our ecommerce platform migration.</p>
+          </div>
+          <div class="col-lg-6">
+            <div class="image-panel">
+              <img src="assets/images/order-dashboard.png" alt="Order dashboard and ecommerce migration tool stack">
+            </div>
+          </div>
+        </div>
+        <div class="row g-4 tool-stack-grid">
+          <div class="col-lg-6 col-xl-4">
+            <div class="tool-category-card">
+              <div class="tool-category-head"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7h16"></path><path d="M6 7v12h12V7"></path><path d="M9 11h6"></path></svg></span><div><h3>Commerce Platforms</h3><p>Store engines we migrate from and rebuild on.</p></div></div>
+              <div class="tool-chip-list"><span class="tool-chip">Shopify Plus - Commerce</span><span class="tool-chip">Magento 2 - Commerce</span><span class="tool-chip">BigCommerce - Commerce</span></div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xl-4">
+            <div class="tool-category-card">
+              <div class="tool-category-head"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 9l-4 3 4 3"></path><path d="M16 9l4 3-4 3"></path><path d="M14 5l-4 14"></path></svg></span><div><h3>Storefront & Content</h3><p>Frontend and content systems for the new experience.</p></div></div>
+              <div class="tool-chip-list"><span class="tool-chip">Next.js - Frontend</span><span class="tool-chip">Contentful - Content</span></div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xl-4">
+            <div class="tool-category-card">
+              <div class="tool-category-head"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 7c0-2 4-4 8-4s8 2 8 4-4 4-8 4-8-2-8-4z"></path><path d="M4 7v10c0 2 4 4 8 4s8-2 8-4V7"></path></svg></span><div><h3>Data & Migration</h3><p>Data movement, validation, and transformation tooling.</p></div></div>
+              <div class="tool-chip-list"><span class="tool-chip">PostgreSQL - Database</span><span class="tool-chip">Python - Migration</span><span class="tool-chip">Pandas - Migration</span><span class="tool-chip">Fivetran - ETL</span><span class="tool-chip">Airbyte - ETL</span></div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xl-4">
+            <div class="tool-category-card">
+              <div class="tool-category-head"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 16v-5"></path><path d="M12 16V8"></path><path d="M16 16v-3"></path></svg></span><div><h3>Analytics & SEO</h3><p>Visibility, search protection, and migration reporting.</p></div></div>
+              <div class="tool-chip-list"><span class="tool-chip">Looker - Analytics</span><span class="tool-chip">Screaming Frog - SEO</span></div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xl-4">
+            <div class="tool-category-card">
+              <div class="tool-category-head"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 11l2 2 4-5"></path><path d="M4 4h16v16H4z"></path></svg></span><div><h3>Testing & Infrastructure</h3><p>Performance, deployment, and secure launch readiness.</p></div></div>
+              <div class="tool-chip-list"><span class="tool-chip">Playwright - Testing</span><span class="tool-chip">JMeter - Performance</span><span class="tool-chip">AWS/Cloudflare - Infrastructure</span><span class="tool-chip">AWS KMS - Security</span></div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xl-4">
+            <div class="tool-category-card">
+              <div class="tool-category-head"><span class="tool-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18"></path><path d="M6 21V5h12v16"></path><path d="M4 5h16v14H4z"></path></svg></span><div><h3>Marketing & Enterprise Ops</h3><p>Customer messaging and enterprise operations continuity.</p></div></div>
+              <div class="tool-chip-list"><span class="tool-chip">Klaviyo - Marketing </span><span class="tool-chip">NetSuite - Enterprise</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sectors Section -->
+    <section id="sectors" class="section-pad light-band">
+      <div class="spark-container">
+        <div class="row g-4 mb-5">
+          <div class="col-lg-8">
+            <h2 class="mb-3">Ecommerce Sectors We Serve With Our Platform Migration Services</h2>
+            <p>Every ecommerce business has different migration needs and customer expectations. We tailor each platform migration to fit your industry, operations, and growth goals.</p>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6 col-xl-3"><div class="card-spark sector-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h12l-1 6 3 3-4 8H8l-4-8 3-3-1-6z"></path><path d="M8 9h8"></path></svg></div><h3>Fashion & Apparel</h3></div><p class="mb-3">We thoroughly move your size matrices, endless variants, and seasonal catalogs so your product package looks engaging.</p><p class="fw-semibold text-dark">Shopify Plus | Magento 2 | Headless</p></div></div>
+          <div class="col-md-6 col-xl-3"><div class="card-spark sector-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><path d="M3 13h18"></path></svg></div><h3>B2B</h3></div><p class="mb-3">We help in migrating your custom pricing tiers, bulk ordering tools, and ERP integrations to handle heavy technical lifting.</p><p class="fw-semibold text-dark">Custom | BigCommerce |<br>Magento 2</p></div></div>
+          <div class="col-md-6 col-xl-3"><div class="card-spark sector-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12l9-8 9 8"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path></svg></div><h3>Home & Furniture</h3></div><p class="mb-3">We safely carry over your massive product catalogs, so the most expensive items will arrive on your new ecommerce site quickly.</p><p class="fw-semibold text-dark">Headless | Magento 2 | Shopify Plus</p></div></div>
+          <div class="col-md-6 col-xl-3"><div class="card-spark sector-card"><div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 21h18"></path><path d="M5 21V8l6-4v17"></path><path d="M11 10l8-4v15"></path><path d="M8 12h1"></path><path d="M14 12h1"></path></svg></div><h3>Industrial</h3></div><p class="mb-3">We untangle your complex vehicle search filters and massive parts data to quickly crush the hardest migration puzzle.</p><p class="fw-semibold text-dark">BigCommerce | Headless | Magento 2</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Industry Banner -->
+    <section class="section-pad-sm">
+      <div class="spark-container">
+        <div class="cta-band p-4 p-lg-5">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-8">
+              <h2 class="mb-3">We’ve Already Migrated Stores Across Every Major Industry.</h2>
+              <p>Fashion, B2B, marketplace, electronics, your sector isn’t new to us.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="#cost" class="btn btn-primary-spark bg-white text-dark border-0">Partner With Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section id="why" class="section-pad why-section">
+      <div class="spark-container">
+        <div class="section-intro mb-5">
+          <h2 class="mb-3">Why Businesses Choose Sparkout Over Other Ecommerce Platform Migration Services</h2>
+          <p>While other agencies focus solely on checking off technical boxes, our ecommerce migration company approaches your migration as a high-stakes business transition. Here’s what separates us from others.</p>
+        </div>
+        <div class="row g-3">
+          <div class="col-md-6 col-xl-4">
+            <div class="why-proof-card">
+              <div class="why-card-head">
+                <div class="why-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z"></path><path d="M9 12l2 2 4-5"></path></svg>
+                </div>
+                <h3>Specialization</h3>
+              </div>
+              <p>Unlike the traditional development shops, we have a dedicated team for platform migration to deliver an unmatched ecommerce experience.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="why-proof-card">
+              <div class="why-card-head">
+                <div class="why-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg>
+                </div>
+                <h3>Accountability</h3>
+              </div>
+              <p>We lock in a fixed price and scope from the initial stage, meaning any unexpected mid-project hurdles are entirely at our own expense.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="why-proof-card">
+              <div class="why-card-head">
+                <div class="why-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path><path d="M8 11l2 2 4-5"></path></svg>
+                </div>
+                <h3>SEO First</h3>
+              </div>
+              <p>We treat your organic traffic as a primary deliverable, running a forensic audit on every URL and redirect, so your rankings don’t tank.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="why-proof-card">
+              <div class="why-card-head">
+                <div class="why-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+                </div>
+                <h3>Transparency</h3>
+              </div>
+              <p>Sparkout Tech gives you full access to your staging environment at week three, so you can watch your ecommerce store getting relife.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="why-proof-card">
+              <div class="why-card-head">
+                <div class="why-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 16v-4"></path><path d="M12 16V8"></path><path d="M16 16v-6"></path></svg>
+                </div>
+                <h3>Track Record</h3>
+              </div>
+              <p>With over 300+ successful migrations and post-launch incidents under  0.3%. We’ve already engineered out the risks others overlook.</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-xl-4">
+            <div class="why-proof-card">
+              <div class="why-card-head">
+                <div class="why-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path><path d="M8 4v4"></path><path d="M16 10v4"></path><path d="M12 16v4"></path></svg>
+                </div>
+                <h3>How We Compare Things</h3>
+              </div>
+              <p>Here’s how you can compare us with other ecommerce platform migration agencies.</p>
+            </div>
+          </div>
+        </div>
+        <div class="table-responsive table-spark why-table-wrap">
+          <table class="table">
+            <thead><tr><th>Criteria</th><th>Typical Migration Agencies</th><th>Sparkout’s Approach</th></tr></thead>
+            <tbody>
+              <tr><th>Migration Specialization</th><td>❌General development shop</td><td>✅ Migration-focused teams</td></tr>
+              <tr><th>SEO Preservation</th><td>❌ Basic redirects</td><td>✅ Full SEO audit + mapping</td></tr>
+              <tr><th>Rollback Plan</th><td>❌ We’ll figure it out</td><td>✅ Documented & fully tested</td></tr>
+              <tr><th>Data Validation</th><td>❌ Manual spot-checks</td><td>✅ Automated script validation</td></tr>
+              <tr><th>Staging Access</th><td>❌ End-of-project demo</td><td>✅ Open from week 3 onwards</td></tr>
+              <tr><th>Post-Launch Support</th><td>❌ 7 days, paid extra</td><td>✅ 30 days, fully included</td></tr>
+              <tr><th>Fixed Price Contract</th><td>❌ T&M with frequent overruns</td><td>✅ Scope-locked fixed pricing</td></tr>
+              <tr><th>Downtime Policy</th><td>❌ Best effort</td><td>✅ 0 hours guaranteed</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cost Estimator Section -->
+    <section id="cost" class="section-pad light-band">
+      <div class="spark-container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6">
+            <h2 class="mb-3">Know the Estimates of What Your Ecommerce Platform Migration Actually Costs</h2>
+            <p class="mb-3">Just tell us about the current condition of your store and the platform you need to migrate. After a thorough analysis, we’ll give you real numbers within 48 hours.</p>
+            <p>Also, this is only the approximate cost that we calculated for the specific migration. If you need additional third-party integrations or additional services, the cost will change accordingly.</p>
+          </div>
+          <div class="col-lg-6">
+            <div class="card-spark price-card">
+              <h3 class="mb-4">Additional Services: </h3>
+              <label class="d-flex"><input type="checkbox" checked><span>Full SEO migration & redirect mapping</span></label>
+              <label class="d-flex"><input type="checkbox" checked><span>Custom theme design</span></label>
+              <label class="d-flex"><input type="checkbox" checked><span>Analytics & tracking setup (GA4, GTM)</span></label>
+              <label class="d-flex"><input type="checkbox" checked><span>Team training & documentation</span></label>
+              <label class="d-flex"><input type="checkbox" checked><span>Performance optimization post-migration</span></label>
+            </div>
+          </div>
+        </div>
+        <div class="table-responsive table-spark cost-table-wrap">
+          <table class="table migration-cost-table">
+            <thead>
+              <tr><th>Current -&gt; Target</th><th>Shopify Plus</th><th>Magento 2</th><th>BigCommerce</th><th>WooCommerce</th><th>Headless</th><th>Custom</th></tr>
+            </thead>
+            <tbody>
+              <tr><th>Magento 1</th><td>$15K - $50K</td><td>$15K - $40K</td><td>$10K - $35K</td><td>$8K - $25K</td><td>$30K - $100K</td><td>$40K - $150K</td></tr>
+              <tr><th>Magento 2</th><td>$10K - $40K</td><td>-</td><td>$8K - $30K</td><td>$5K - $20K</td><td>$25K - $80K</td><td>$35K - $120K</td></tr>
+              <tr><th>WooCommerce</th><td>$5K - $20K</td><td>$8K - $25K</td><td>$5K - $15K</td><td>-</td><td>$20K - $60K</td><td>$25K - $80K</td></tr>
+              <tr><th>Shopify</th><td>$3K - $15K</td><td>$8K - $30K</td><td>$5K - $15K</td><td>$5K - $15K</td><td>$20K - $60K</td><td>$25K - $80K</td></tr>
+              <tr><th>Shopify Plus</th><td>-</td><td>$15K - $50K</td><td>$8K - $25K</td><td>$8K - $20K</td><td>$30K - $100K</td><td>$40K - $150K</td></tr>
+              <tr><th>BigCommerce</th><td>$5K - $20K</td><td>$10K - $35K</td><td>-</td><td>$5K - $15K</td><td>$20K - $60K</td><td>$25K - $80K</td></tr>
+              <tr><th>PrestaShop</th><td>$8K - $25K</td><td>$10K - $35K</td><td>$8K - $20K</td><td>$5K - $15K</td><td>$20K - $60K</td><td>$25K - $80K</td></tr>
+              <tr><th>Volusion</th><td>$5K - $20K</td><td>$10K - $30K</td><td>$5K - $15K</td><td>$5K - $15K</td><td>$20K - $50K</td><td>$25K - $70K</td></tr>
+              <tr><th>Salesforce Commerce</th><td>$20K - $80K</td><td>$25K - $80K</td><td>$15K - $60K</td><td>$15K - $40K</td><td>$40K - $150K</td><td>$60K - $200K</td></tr>
+              <tr><th>OpenCart</th><td>$5K - $20K</td><td>$8K - $25K</td><td>$5K - $15K</td><td>$4K - $12K</td><td>$15K - $50K</td><td>$20K - $60K</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cost Banner -->
+    <section class="section-pad-sm">
+      <div class="spark-container">
+        <div class="cta-band p-4 p-lg-5">
+          <div class="row g-4 align-items-center">
+            <div class="col-lg-8">
+              <h2 class="mb-3">Curious What Your Migration is Going to Cost?</h2>
+              <p>The actual pricing is confirmed after a discovery call. No obligation, we don’t do high-pressure sales.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="#cost" class="btn btn-primary-spark bg-white text-dark border-0">Check Migration Cost</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Numbers Section -->
+    <section id="numbers" class="section-pad numbers-section">
+      <div class="spark-container">
+        <div class="row g-5 align-items-center mb-5">
+          <div class="col-lg-7">
+            <h2 class="mb-3">Numbers From Real Migrations</h2>
+            <p class="mb-3">Every ecommerce platform migration has moving parts, but it mustn’t have mysteries. While others hide behind vague estimates and ballooning scope creep, we lay everything in front of your eyes. This exact blueprint portrays what it takes to move, secure, and scale your online store.</p>
+            <p>For your understanding, here are three sample blueprints of how a typical Sparkout engagement unfolds. Approximate, not exact, but representative of the real process.</p>
+          </div>
+          <div class="col-lg-5">
+            <div class="numbers-visual">
+              <img src="assets/images/final-cta-visual.png" alt="Final ecommerce migration results dashboard visual">
+              <div class="numbers-visual-caption">
+                <span>Results snapshot</span>
+                <span>3 sample blueprints</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="result-card">
+              <div class="result-card-top">
+                <div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 19V5"></path><path d="M4 19h16"></path><path d="M8 16v-4"></path><path d="M12 16V8"></path><path d="M16 16v-6"></path></svg></div><div><p class="fw-semibold mb-2">Blueprint 1</p><h3>Magento 1 → Shopify Plus</h3></div></div>
+                <span class="result-sector">Fashion & Apparel</span>
+              </div>
+              <div class="result-metrics">
+                <div class="metric-row"><span>Page Load Time</span><span>6.8s → 1.4s</span></div>
+                <div class="metric-row featured"><span>Conversion Rate</span><span>+68% in 90 days</span></div>
+                <div class="metric-row"><span>Checkout Abandonment</span><span>74% → 41%</span></div>
+                <div class="metric-row featured"><span>Monthly Revenue</span><span>+$184k MoM</span></div>
+                <div class="metric-row"><span>Organic Traffic</span><span>0% Loss (Maintained)</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="result-card">
+              <div class="result-card-top">
+                <div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h16"></path><path d="M12 4l8 8-8 8"></path><path d="M4 6h8"></path><path d="M4 18h8"></path></svg></div><div><p class="fw-semibold mb-2">Blueprint 2</p><h3>WooCommerce → Magento 2 </h3></div></div>
+                <span class="result-sector">B2B</span>
+              </div>
+              <div class="result-metrics">
+                <div class="metric-row featured"><span>B2B Order Volume</span><span>+210% in 6 months</span></div>
+                <div class="metric-row"><span>Custom Pricing Rules</span><span>0 → 340 tiers</span></div>
+                <div class="metric-row featured"><span>ERP Errors</span><span>~40/day → 0</span></div>
+                <div class="metric-row"><span>Downtime</span><span>0 hours</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="result-card">
+              <div class="result-card-top">
+                <div class="card-head"><div class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v18"></path><path d="M5 8l7-5 7 5"></path><path d="M5 16l7 5 7-5"></path><path d="M5 8v8"></path><path d="M19 8v8"></path></svg></div><div><p class="fw-semibold mb-2">Blueprint 3</p><h3>Shopify → Headless Next.js</h3></div></div>
+                <span class="result-sector">Health & Beauty</span>
+              </div>
+              <div class="result-metrics">
+                <div class="metric-row featured"><span>Lighthouse Score</span><span>42 → 96</span></div>
+                <div class="metric-row"><span>International Markets</span><span>1 → 14</span></div>
+                <div class="metric-row"><span>Dev Deployment Time</span><span>3 Weeks → 2 Days</span></div>
+                <div class="metric-row featured"><span>Revenue 12-Month Post</span><span>+$2.1M</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section-pad light-band">
+      <div class="spark-container">
+        <div class="row g-5">
+          <div class="col-lg-4">
+            <h2 class="mb-3">Frequently Asked Questions</h2>
+          </div>
+          <div class="col-lg-8">
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">1. Our store has been running on the same platform for years; how do we know the time for switching?</button></h3>
+                <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body"><p>It’s obvious. At a certain period, you’ll realize it’s time when the current setup limits growth. Extended load times, costly workarounds, and old features are the main red flags. A proper ecommerce replatforming decision starts with understanding what the current system lags and hiring a dedicated agency to fill the gap for you.</p></div></div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">2. How long does a full migration typically take for a mid-sized ecommerce business?</button></h3>
+                <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><p>There’s no direct answer to this. However, to be approximate, mid-sized stores can take between 6 and 16 weeks end-to-end when handled by seasoned ecommerce migration experts. The timeline might stretch when you underestimate the scope.</p></div></div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">3. We’re on Magento and it’s getting expensive to maintain; is switching worth the disruption?</button></h3>
+                <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><p>Even though Magento is powerful, the endless developer fees and server overhead add headaches. Many businesses that are going through Magento migration services find that switching to a more managed platform can reduce the total cost by 40% approximately. </p></div></div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">4. How do you make sure you don’t tank our SEO rankings after launching on a new platform?</button></h3>
+                <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><p>For an ecommerce platform, SEO preservation is non-negotiable and should be a dedicated workstream in your ecommerce migration checklist. We map out precise redirects and test everything before the final launch, because skipping any step leads to losing a massive chunk of traffic overnight.</p></div></div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">5. Our international customers keep facing payment issues; is this a plugin problem or something deeper?</button></h3>
+                <div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><p>There will be a possibility that it might be deeper than just a plugin issue. Usually, many e-commerce platforms rely on patched-together multi-currency setups that break during checkout. Whether you’re looking for Shopify migration services or BigCommerce migration, ensure that the platform can handle international commerce natively from the start.</p></div></div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSix" aria-expanded="false" aria-controls="faqSix">6. Is migrating Shopify to Shopify Plus worth the investment?</button></h3>
+                <div id="faqSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body"><p>Yes, it is worth the upgrade. When time passes, and you make around two million dollars a year, the lower transaction fees literally pay for the upgrade. After that, you can finally get to customize your checkout page however you want.</p></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const tocLinks = Array.from(document.querySelectorAll('.toc-wrap a[href^="#"]'));
+    const tocSelect = document.querySelector('.toc-select');
+    const tocSections = tocLinks
+      .map((link) => document.querySelector(link.getAttribute('href')))
+      .filter(Boolean);
+
+    const setActiveTocLink = () => {
+      const current = tocSections.reduce((active, section) => {
+        const rect = section.getBoundingClientRect();
+        return rect.top <= 170 ? section : active;
+      }, tocSections[0]);
+
+      tocLinks.forEach((link) => {
+        const isActive = link.getAttribute('href') === `#${current.id}`;
+        link.classList.toggle('active', isActive);
+        if (isActive && tocSelect) {
+          tocSelect.value = `#${current.id}`;
+        }
+      });
+    };
+
+    if (tocSelect) {
+      tocSelect.addEventListener('change', (event) => {
+        const target = document.querySelector(event.target.value);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    }
+
+    document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach((trigger) => {
+      new bootstrap.Tooltip(trigger);
+    });
+
+    window.addEventListener('scroll', setActiveTocLink, { passive: true });
+    window.addEventListener('load', setActiveTocLink);
+  </script>
+</body>
+</html>

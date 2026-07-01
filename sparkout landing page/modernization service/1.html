@@ -1,0 +1,1633 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Build &amp; Scale Faster With Modern Application Development Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #111111;
+      --color-text: #1A1A1A;
+      --color-muted: #5F6368;
+      --color-light: #FFFFFF;
+      --color-surface: #F7F8FA;
+      --color-border: #E6E8EC;
+      --color-accent-green: #B7F000;
+      --space-8: 8px;
+      --space-12: 12px;
+      --space-16: 16px;
+      --space-20: 20px;
+      --space-24: 24px;
+      --space-32: 32px;
+      --space-40: 40px;
+      --space-48: 48px;
+      --space-64: 64px;
+      --space-80: 80px;
+      --space-100: 100px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Manrope", Arial, sans-serif;
+      color: var(--color-text);
+      background: var(--color-light);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-shell {
+      max-width: 1440px;
+      margin: 0 auto;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(247, 248, 250, 0.9) 0%, rgba(255, 255, 255, 0) 420px),
+        var(--color-light);
+    }
+
+    .container-xl {
+      max-width: 1280px;
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+
+    .section-space {
+      padding-top: var(--space-100);
+      padding-bottom: var(--space-100);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-8);
+      margin-bottom: var(--space-20);
+      color: var(--color-primary);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      border-radius: 99px;
+      background: var(--color-accent-green);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      color: var(--color-primary);
+      font-size: 64px;
+      line-height: 72px;
+      font-weight: 700;
+      letter-spacing: 0;
+      margin-bottom: var(--space-24);
+    }
+
+    h2 {
+      color: var(--color-primary);
+      font-size: 48px;
+      line-height: 58px;
+      font-weight: 700;
+      letter-spacing: 0;
+      margin-bottom: var(--space-24);
+    }
+
+    h3 {
+      color: var(--color-primary);
+      font-size: 28px;
+      line-height: 36px;
+      font-weight: 600;
+      letter-spacing: 0;
+      margin-bottom: var(--space-16);
+    }
+
+    h4 {
+      font-size: 22px;
+      line-height: 30px;
+      font-weight: 600;
+      margin-bottom: var(--space-12);
+    }
+
+    .lead-copy {
+      max-width: 680px;
+      color: var(--color-muted);
+      font-size: 18px;
+      line-height: 30px;
+      margin-bottom: var(--space-32);
+    }
+
+    .body-copy {
+      color: var(--color-muted);
+      font-size: 16px;
+      line-height: 26px;
+      margin-bottom: 0;
+    }
+
+    .text-title {
+      display: block;
+      color: var(--color-primary);
+      font-size: 22px;
+      line-height: 30px;
+      font-weight: 700;
+      margin-bottom: var(--space-12);
+    }
+
+    .cta-title-sm {
+      display: block;
+      color: var(--color-primary);
+      font-size: 24px;
+      line-height: 32px;
+      font-weight: 700;
+      margin-bottom: var(--space-8);
+    }
+
+    .cta-title-lg {
+      display: block;
+      color: var(--color-light);
+      font-size: 42px;
+      line-height: 52px;
+      font-weight: 700;
+      margin-bottom: var(--space-24);
+    }
+
+    .btn-spark {
+      min-height: 52px;
+      padding: 14px 24px;
+      border: 1px solid var(--color-primary);
+      border-radius: 999px;
+      background: var(--color-primary);
+      color: var(--color-light);
+      font-weight: 700;
+      transition: all 0.25s ease;
+    }
+
+    .btn-spark:hover,
+    .btn-spark:focus {
+      color: var(--color-primary);
+      background: var(--color-accent-green);
+      border-color: var(--color-accent-green);
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(17, 17, 17, 0.18);
+    }
+
+    .btn-spark-outline {
+      min-height: 52px;
+      padding: 14px 24px;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      background: var(--color-light);
+      color: var(--color-primary);
+      font-weight: 700;
+      transition: all 0.25s ease;
+    }
+
+    .btn-spark-outline:hover,
+    .btn-spark-outline:focus {
+      border-color: var(--color-primary);
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(17, 17, 17, 0.1);
+    }
+
+    .navbar {
+      min-height: 88px;
+      padding: 0 80px;
+      background: rgba(255, 255, 255, 0.88);
+      border-bottom: 1px solid rgba(230, 232, 236, 0.8);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--color-primary);
+      color: var(--color-accent-green);
+      font-weight: 800;
+    }
+
+    .nav-link {
+      color: var(--color-muted);
+      font-weight: 600;
+    }
+
+    .nav-link:hover {
+      color: var(--color-primary);
+    }
+
+    .hero-section {
+      padding-top: 112px;
+      padding-bottom: var(--space-100);
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 560px;
+      padding: var(--space-24);
+      border: 1px solid var(--color-border);
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at top right, rgba(183, 240, 0, 0.22), transparent 34%),
+        linear-gradient(145deg, #FFFFFF, #F7F8FA);
+      box-shadow: 0 28px 70px rgba(17, 17, 17, 0.12);
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid var(--color-border);
+      background: #EDF0F4;
+    }
+
+    .metric-bar {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-16);
+      margin-top: var(--space-24);
+    }
+
+    .metric-pill {
+      padding: var(--space-16);
+      border-radius: 20px;
+      background: var(--color-light);
+      border: 1px solid var(--color-border);
+      box-shadow: 0 12px 30px rgba(17, 17, 17, 0.06);
+    }
+
+    .metric-pill strong {
+      display: block;
+      color: var(--color-primary);
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    .metric-pill span {
+      color: var(--color-muted);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .marquee-strip {
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      background: var(--color-primary);
+      color: var(--color-light);
+      overflow: hidden;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      gap: var(--space-32);
+      padding: var(--space-20) 0;
+      animation: scrollTrack 28s linear infinite;
+      font-size: 14px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .marquee-track span {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-32);
+    }
+
+    .marquee-track span::after {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--color-accent-green);
+    }
+
+    @keyframes scrollTrack {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .comparison-wrap {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: var(--space-48);
+      align-items: start;
+    }
+
+    .comparison-panel {
+      position: sticky;
+      top: 112px;
+      padding: var(--space-40);
+      border-radius: 28px;
+      background: var(--color-primary);
+      color: var(--color-light);
+    }
+
+    .comparison-panel h2,
+    .comparison-panel p {
+      color: var(--color-light);
+    }
+
+    .comparison-grid {
+      display: grid;
+      gap: var(--space-16);
+    }
+
+    .comparison-item {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: var(--space-24);
+      padding: var(--space-24);
+      border: 1px solid var(--color-border);
+      border-radius: 24px;
+      background: var(--color-light);
+      transition: all 0.25s ease;
+    }
+
+    .comparison-item:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(17, 17, 17, 0.08);
+    }
+
+    .comparison-item h3 {
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 0;
+    }
+
+    .outcome-section {
+      background: var(--color-surface);
+    }
+
+    .outcome-layout {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: var(--space-64);
+      align-items: center;
+    }
+
+    .dashboard-card {
+      padding: var(--space-24);
+      border-radius: 32px;
+      background: var(--color-light);
+      border: 1px solid var(--color-border);
+      box-shadow: 0 24px 60px rgba(17, 17, 17, 0.08);
+    }
+
+    .dashboard-card img {
+      width: 100%;
+      min-height: 390px;
+      object-fit: cover;
+      border-radius: 24px;
+      background: #EDEFF4;
+    }
+
+    .proof-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-16);
+      margin-top: var(--space-32);
+    }
+
+    .proof-item {
+      padding: var(--space-20);
+      border-radius: 20px;
+      background: var(--color-light);
+      border: 1px solid var(--color-border);
+    }
+
+    .risk-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-24);
+      margin-top: var(--space-48);
+    }
+
+    .risk-card {
+      min-height: 320px;
+      padding: var(--space-32);
+      border: 1px solid var(--color-border);
+      border-radius: 24px;
+      background: linear-gradient(180deg, #FFFFFF 0%, #F7F8FA 100%);
+      transition: all 0.25s ease;
+    }
+
+    .risk-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(17, 17, 17, 0.08);
+    }
+
+    .risk-number {
+      width: 44px;
+      height: 44px;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: var(--space-24);
+      border-radius: 16px;
+      background: var(--color-primary);
+      color: var(--color-accent-green);
+      font-weight: 800;
+    }
+
+    .after-section {
+      background: var(--color-primary);
+      color: var(--color-light);
+    }
+
+    .after-section h2,
+    .after-section h3,
+    .after-section p {
+      color: var(--color-light);
+    }
+
+    .after-shell {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: var(--space-48);
+      align-items: center;
+    }
+
+    .after-stats {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: var(--space-16);
+    }
+
+    .after-card {
+      min-height: 230px;
+      padding: var(--space-24);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .after-card h3 {
+      font-size: 22px;
+      line-height: 30px;
+    }
+
+    .services-layout {
+      display: grid;
+      grid-template-columns: 0.88fr 1.12fr;
+      gap: var(--space-64);
+      align-items: start;
+    }
+
+    .services-visual {
+      padding: var(--space-24);
+      border-radius: 32px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+    }
+
+    .services-visual img {
+      width: 100%;
+      min-height: 450px;
+      object-fit: cover;
+      border-radius: 24px;
+      background: #EDEFF4;
+    }
+
+    .service-stack {
+      display: grid;
+      gap: var(--space-20);
+    }
+
+    .service-card {
+      padding: var(--space-32);
+      border: 1px solid var(--color-border);
+      border-radius: 24px;
+      background: var(--color-light);
+      transition: all 0.25s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(17, 17, 17, 0.08);
+    }
+
+    .check-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-12);
+      padding: 0;
+      margin: var(--space-24) 0 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      position: relative;
+      padding-left: 24px;
+      color: var(--color-muted);
+      font-size: 15px;
+      line-height: 24px;
+    }
+
+    .check-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--color-accent-green);
+      box-shadow: 0 0 0 4px rgba(183, 240, 0, 0.22);
+    }
+
+    .process-section {
+      background: var(--color-surface);
+    }
+
+    .process-header {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: var(--space-48);
+      align-items: end;
+      margin-bottom: var(--space-64);
+    }
+
+    .process-flow {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-24);
+    }
+
+    .process-flow::before {
+      content: "";
+      position: absolute;
+      top: 54px;
+      left: 8%;
+      right: 8%;
+      height: 2px;
+      background: var(--color-border);
+    }
+
+    .phase-card {
+      position: relative;
+      z-index: 1;
+      padding: var(--space-32);
+      border: 1px solid var(--color-border);
+      border-radius: 24px;
+      background: var(--color-light);
+      box-shadow: 0 16px 40px rgba(17, 17, 17, 0.06);
+    }
+
+    .phase-icon {
+      width: 48px;
+      height: 48px;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: var(--space-20);
+      border-radius: 16px;
+      background: var(--color-accent-green);
+      color: var(--color-primary);
+      font-weight: 800;
+    }
+
+    .phase-label {
+      display: block;
+      margin-bottom: var(--space-8);
+      color: var(--color-muted);
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .phase-card ul,
+    .cost-card ul {
+      padding-left: 18px;
+      margin: var(--space-20) 0 0;
+      color: var(--color-muted);
+    }
+
+    .phase-card li,
+    .cost-card li {
+      margin-bottom: var(--space-8);
+    }
+
+    .metrics-ribbon {
+      padding: var(--space-48);
+      border-radius: 32px;
+      background: var(--color-primary);
+      color: var(--color-light);
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: var(--space-24);
+    }
+
+    .metric-number {
+      display: block;
+      color: var(--color-accent-green);
+      font-size: 40px;
+      line-height: 48px;
+      font-weight: 800;
+      margin-bottom: var(--space-8);
+    }
+
+    .metrics-grid p {
+      color: rgba(255, 255, 255, 0.76);
+      margin-bottom: 0;
+    }
+
+    .industries-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-64);
+      align-items: center;
+    }
+
+    .industry-list {
+      display: grid;
+      gap: var(--space-16);
+    }
+
+    .industry-row {
+      display: grid;
+      grid-template-columns: 62px 1fr;
+      gap: var(--space-20);
+      align-items: center;
+      padding: var(--space-20);
+      border: 1px solid var(--color-border);
+      border-radius: 24px;
+      background: var(--color-light);
+    }
+
+    .industry-icon {
+      width: 62px;
+      height: 62px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 20px;
+      background: var(--color-surface);
+      color: var(--color-primary);
+      font-weight: 800;
+    }
+
+    .industry-preview {
+      padding: var(--space-24);
+      border-radius: 32px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+    }
+
+    .industry-preview img {
+      width: 100%;
+      min-height: 420px;
+      object-fit: cover;
+      border-radius: 24px;
+      background: #EDEFF4;
+    }
+
+    .tech-section {
+      background:
+        linear-gradient(180deg, var(--color-surface), #FFFFFF);
+    }
+
+    .tech-columns {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: var(--space-24);
+      margin-top: var(--space-48);
+    }
+
+    .tech-card {
+      padding: var(--space-32);
+      border-radius: 28px;
+      border: 1px solid var(--color-border);
+      background: var(--color-light);
+    }
+
+    .tech-group {
+      padding-top: var(--space-24);
+      margin-top: var(--space-24);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .tech-group strong {
+      display: block;
+      color: var(--color-primary);
+      margin-bottom: var(--space-8);
+    }
+
+    .tech-group span {
+      color: var(--color-muted);
+    }
+
+    .cost-layout {
+      display: grid;
+      grid-template-columns: 0.8fr repeat(3, 1fr);
+      gap: var(--space-24);
+      align-items: stretch;
+    }
+
+    .cost-intro {
+      padding: var(--space-40);
+      border-radius: 28px;
+      background: var(--color-primary);
+      color: var(--color-light);
+    }
+
+    .cost-intro h2,
+    .cost-intro p {
+      color: var(--color-light);
+    }
+
+    .cost-card {
+      padding: var(--space-32);
+      border: 1px solid var(--color-border);
+      border-radius: 28px;
+      background: var(--color-light);
+      transition: all 0.25s ease;
+    }
+
+    .cost-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(17, 17, 17, 0.08);
+    }
+
+    .cost-pill {
+      display: inline-flex;
+      margin-bottom: var(--space-20);
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(183, 240, 0, 0.22);
+      color: var(--color-primary);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    .cta-band {
+      padding: var(--space-64);
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at right center, rgba(183, 240, 0, 0.28), transparent 30%),
+        var(--color-primary);
+      color: var(--color-light);
+      overflow: hidden;
+    }
+
+    .cta-band h2,
+    .cta-band p {
+      color: var(--color-light);
+    }
+
+    .cta-band img {
+      width: 100%;
+      min-height: 320px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: #262626;
+    }
+
+    .expert-section {
+      padding-bottom: var(--space-100);
+    }
+
+    .expert-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: var(--space-64);
+      align-items: center;
+    }
+
+    .expert-points {
+      display: grid;
+      gap: var(--space-16);
+      margin-top: var(--space-32);
+    }
+
+    .expert-point {
+      display: flex;
+      gap: var(--space-16);
+      align-items: flex-start;
+      padding: var(--space-20);
+      border-radius: 20px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+    }
+
+    .expert-point span {
+      flex: 0 0 30px;
+      width: 30px;
+      height: 30px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--color-accent-green);
+      color: var(--color-primary);
+      font-weight: 800;
+    }
+
+    .expert-visual {
+      padding: var(--space-24);
+      border-radius: 32px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+    }
+
+    .expert-visual img {
+      width: 100%;
+      min-height: 420px;
+      object-fit: cover;
+      border-radius: 24px;
+      background: #EDEFF4;
+    }
+
+    .section-cta {
+      margin-top: var(--space-48);
+      padding: var(--space-40);
+      border-radius: 28px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+    }
+
+    @media (max-width: 1199.98px) {
+      .container-xl {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+
+      .navbar {
+        padding: 0 40px;
+      }
+
+      h1 {
+        font-size: 48px;
+        line-height: 58px;
+      }
+
+      h2 {
+        font-size: 38px;
+        line-height: 48px;
+      }
+
+      .comparison-wrap,
+      .outcome-layout,
+      .after-shell,
+      .services-layout,
+      .process-header,
+      .industries-layout,
+      .expert-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-panel {
+        position: static;
+      }
+
+      .risk-grid,
+      .process-flow,
+      .after-stats,
+      .tech-columns,
+      .metrics-grid,
+      .cost-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .cost-intro {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .container-xl {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .navbar {
+        min-height: 72px;
+        padding: 0 20px;
+      }
+
+      .section-space,
+      .hero-section,
+      .expert-section {
+        padding-top: 72px;
+        padding-bottom: 72px;
+      }
+
+      h1 {
+        font-size: 40px;
+        line-height: 48px;
+      }
+
+      h2 {
+        font-size: 32px;
+        line-height: 40px;
+      }
+
+      h3 {
+        font-size: 24px;
+        line-height: 32px;
+      }
+
+      .cta-title-lg {
+        font-size: 32px;
+        line-height: 40px;
+      }
+
+      .hero-visual {
+        min-height: auto;
+      }
+
+      .hero-visual img,
+      .dashboard-card img,
+      .services-visual img,
+      .industry-preview img,
+      .expert-visual img,
+      .cta-band img {
+        min-height: 260px;
+        height: 260px;
+      }
+
+      .metric-bar,
+      .proof-list,
+      .risk-grid,
+      .after-stats,
+      .check-list,
+      .process-flow,
+      .metrics-grid,
+      .tech-columns,
+      .cost-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .comparison-item {
+        grid-template-columns: 1fr;
+      }
+
+      .process-flow::before {
+        display: none;
+      }
+
+      .cta-band,
+      .metrics-ribbon {
+        padding: var(--space-32);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-shell">
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container-fluid px-0">
+        <a class="navbar-brand d-flex align-items-center gap-3 fw-bold" href="#">
+          <span class="brand-mark">S</span>
+          Sparkout
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center gap-lg-3">
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+            <li class="nav-item"><a class="nav-link" href="#industries">Industries</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cost">Cost</a></li>
+            <li class="nav-item"><a class="btn btn-spark ms-lg-3" href="#hire">Modernize Now</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="hero-section">
+      <div class="container-xl">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <span class="eyebrow">Modern Application Development</span>
+            <h1>Build &amp; Scale Faster With Modern Application Development Services</h1>
+            <p class="lead-copy">Launch secure, cloud-native web and mobile applications with architecture built for growth, automation, observability, and speed. Sparkout helps you move from fragile legacy systems to scalable products that ship faster, run cleaner, and create measurable business value.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a class="btn btn-spark" href="#hire">Talk to an Expert</a>
+              <a class="btn btn-spark-outline" href="#process">See How We Work</a>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-visual">
+              <img src="assets/images/saas-hero-dashboard.png" alt="Modern SaaS dashboard preview">
+              <div class="metric-bar" aria-label="Project delivery metrics">
+                <div class="metric-pill">
+                  <strong>97%</strong>
+                  <span>On-Time Delivery</span>
+                </div>
+                <div class="metric-pill">
+                  <strong>3x</strong>
+                  <span>Faster Dev Cycles</span>
+                </div>
+                <div class="metric-pill">
+                  <strong>240+</strong>
+                  <span>Apps Launched</span>
+                </div>
+                <div class="metric-pill">
+                  <strong>60%</strong>
+                  <span>Infra Cost Reduction</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="marquee-strip" aria-label="Service marquee">
+      <div class="marquee-track">
+        <span>Digital Transformation</span>
+        <span>App Modernization</span>
+        <span>Enterprise Application Development</span>
+        <span>Agile App Development</span>
+        <span>Modern Web &amp; Mobile Solutions</span>
+        <span>Rapid Application Development</span>
+        <span>SaaS Application Development</span>
+        <span>Hybrid Mobile Apps</span>
+        <span>Containerized App Development</span>
+        <span>Digital Transformation</span>
+        <span>App Modernization</span>
+        <span>Enterprise Application Development</span>
+        <span>Agile App Development</span>
+        <span>Modern Web &amp; Mobile Solutions</span>
+        <span>Rapid Application Development</span>
+        <span>SaaS Application Development</span>
+        <span>Hybrid Mobile Apps</span>
+        <span>Containerized App Development</span>
+      </div>
+    </section>
+
+    <section class="section-space" id="why">
+      <div class="container-xl">
+        <div class="comparison-wrap">
+          <div class="comparison-panel">
+            <span class="eyebrow">Reason to Choose Us</span>
+            <h2>Why 97% of Our Projects Ship on Time While Others Don&rsquo;t</h2>
+            <p class="body-copy">We remove the usual delivery friction with fixed sprint rituals, visible architecture decisions, senior ownership, and automation from day one.</p>
+          </div>
+          <div class="comparison-grid">
+            <article class="comparison-item">
+              <h3>Pricing &amp; Contracts</h3>
+              <p class="body-copy">Clear sprint-based pricing, transparent scope control, and predictable delivery milestones keep every investment tied to visible product progress.</p>
+            </article>
+            <article class="comparison-item">
+              <h3>Architecture</h3>
+              <p class="body-copy">We design API-first, cloud-native systems with modular services, clean data flows, and decisions documented before development scales.</p>
+            </article>
+            <article class="comparison-item">
+              <h3>Team &amp; Delivery</h3>
+              <p class="body-copy">Dedicated product engineers, solution architects, QA, and DevOps teams work in aligned sprints with one accountable delivery lead.</p>
+            </article>
+            <article class="comparison-item">
+              <h3>Visibility &amp; Updates</h3>
+              <p class="body-copy">Weekly demos, shared boards, sprint reports, and direct communication make progress visible before surprises become delays.</p>
+            </article>
+            <article class="comparison-item">
+              <h3>Testing &amp; QA</h3>
+              <p class="body-copy">Automated tests, regression checks, performance validation, and security reviews are built into delivery instead of added late.</p>
+            </article>
+            <article class="comparison-item">
+              <h3>Infrastructure &amp; DevOps</h3>
+              <p class="body-copy">CI/CD, containerization, cloud environments, monitoring, and rollback paths are configured early so launches stay controlled.</p>
+            </article>
+            <article class="comparison-item">
+              <h3>Documentation &amp; Handoff</h3>
+              <p class="body-copy">Architecture notes, API docs, deployment guides, and knowledge-transfer sessions make your internal team ready to own the product.</p>
+            </article>
+            <article class="comparison-item">
+              <h3>Success Measurement</h3>
+              <p class="body-copy">We align delivery around speed, uptime, cost, adoption, scalability, and business outcomes instead of only closing tickets.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space outcome-section">
+      <div class="container-xl">
+        <div class="outcome-layout">
+          <div>
+            <span class="eyebrow">What You&rsquo;re Actually Getting?</span>
+            <h2>Apps That Don&rsquo;t Just Sit There. It Moves the Needle</h2>
+            <p class="lead-copy">You get more than a shipped application. You get a modern product foundation with scalable architecture, reusable APIs, stable cloud infrastructure, automated delivery pipelines, and actionable observability.</p>
+            <p class="body-copy">That means faster feature releases, lower maintenance overhead, better customer experiences, stronger security posture, cleaner integrations, and a roadmap-ready platform your business can keep improving without rebuilding from scratch.</p>
+            <div class="proof-list">
+              <div class="proof-item">
+                <span class="text-title">Product Velocity</span>
+                <p class="body-copy">Launch smaller, safer releases through planned sprints and automated deployment workflows.</p>
+              </div>
+              <div class="proof-item">
+                <span class="text-title">Operational Control</span>
+                <p class="body-copy">Track performance, errors, costs, and usage across the full application lifecycle.</p>
+              </div>
+            </div>
+          </div>
+          <div class="dashboard-card">
+            <img src="assets/images/dashboard-preview.png" alt="Dashboard-style application preview">
+          </div>
+        </div>
+        <div class="section-cta">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <span class="cta-title-sm">Ready to turn your application into a growth engine?</span>
+              <p class="body-copy">Get a modernization roadmap, technical audit, and sprint plan before your next build cycle starts.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a class="btn btn-spark" href="#hire">Request a Roadmap</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space">
+      <div class="container-xl">
+        <span class="eyebrow">Tag</span>
+        <div class="row align-items-end g-4">
+          <div class="col-lg-8">
+            <h2>What Happens When You Don&rsquo;t Modernize &amp; Stuck with Legacy Application</h2>
+          </div>
+          <div class="col-lg-4">
+            <p class="body-copy">Legacy systems quietly slow delivery, increase operational risk, and make every new feature more expensive than it should be.</p>
+          </div>
+        </div>
+        <div class="risk-grid">
+          <article class="risk-card">
+            <span class="risk-number">01</span>
+            <h3>You&rsquo;re Bleeding Money Over a Dead Code</h3>
+            <p class="body-copy">Outdated stacks demand constant patching, specialist support, and manual fixes. Budgets shift from product growth to keeping fragile code alive.</p>
+          </article>
+          <article class="risk-card">
+            <span class="risk-number">02</span>
+            <h3>Features Will Take Months, Not Days</h3>
+            <p class="body-copy">Tightly coupled systems make simple changes risky. Every feature waits on old dependencies, manual testing, and unclear release paths.</p>
+          </article>
+          <article class="risk-card">
+            <span class="risk-number">03</span>
+            <h3>No Possibility for Scale, Only Crashes</h3>
+            <p class="body-copy">Traffic spikes expose weak infrastructure, slow databases, and missing observability. Growth becomes a threat instead of an opportunity.</p>
+          </article>
+          <article class="risk-card">
+            <span class="risk-number">04</span>
+            <h3>Your Competitors Will Move Faster</h3>
+            <p class="body-copy">Modern teams ship experiments, integrations, and customer features sooner. Legacy delays give competitors room to capture your market.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space after-section">
+      <div class="container-xl">
+        <div class="after-shell">
+          <div>
+            <span class="eyebrow">After Modern Application Development</span>
+            <h2>The After State</h2>
+            <p class="lead-copy">Modern development replaces brittle systems with faster delivery, resilient infrastructure, lower operating cost, and a platform that is ready for the next product stage.</p>
+          </div>
+          <div class="after-stats">
+            <article class="after-card">
+              <h3>Costs Drop 40-60%</h3>
+              <p class="body-copy">Cloud optimization and automation reduce infrastructure waste and manual maintenance.</p>
+            </article>
+            <article class="after-card">
+              <h3>Ship in 2-Week Sprints</h3>
+              <p class="body-copy">Agile delivery turns roadmap items into working releases with predictable cadence.</p>
+            </article>
+            <article class="after-card">
+              <h3>0 Downtime Deploys</h3>
+              <p class="body-copy">CI/CD, rollback plans, and blue-green release patterns keep launches stable.</p>
+            </article>
+            <article class="after-card">
+              <h3>Handle 10x Your Traffic</h3>
+              <p class="body-copy">Auto-scaling architecture absorbs growth without degrading customer experience.</p>
+            </article>
+            <article class="after-card">
+              <h3>Built Once, Run Everywhere</h3>
+              <p class="body-copy">Shared APIs and cross-platform frameworks support web, mobile, and future channels.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space" id="services">
+      <div class="container-xl">
+        <div class="services-layout">
+          <div>
+            <span class="eyebrow">Tag</span>
+            <h2>Modern Application Development Services We Offer</h2>
+            <p class="lead-copy">From cloud-native product builds to enterprise modernization, our teams design, develop, test, deploy, and scale applications with a practical architecture-first delivery model.</p>
+            <div class="services-visual">
+              <img src="assets/images/service-architecture.png" alt="Service architecture illustration">
+            </div>
+          </div>
+          <div class="service-stack">
+            <article class="service-card">
+              <h3>Cloud-Native Application Development</h3>
+              <p class="body-copy">Build resilient applications designed for elastic infrastructure, automated operations, and continuous delivery.</p>
+              <ul class="check-list">
+                <li>99.9% uptime SLA by design</li>
+                <li>Multi-Cloud &amp; hybrid cloud deployment</li>
+                <li>Automated scaling &amp; load balancing</li>
+                <li>Containerized with Docker &amp; Kubernetes</li>
+              </ul>
+            </article>
+            <article class="service-card">
+              <h3>Application Modernization Services</h3>
+              <p class="body-copy">Rebuild legacy systems into modular, maintainable platforms without losing the business workflows that matter.</p>
+              <ul class="check-list">
+                <li>Monolith to microservices migration</li>
+                <li>API wrapping for legacy integrations</li>
+                <li>Database modernization</li>
+                <li>Cloud migration</li>
+              </ul>
+            </article>
+            <article class="service-card">
+              <h3>Enterprise Application Development</h3>
+              <p class="body-copy">Create secure, workflow-heavy applications that integrate cleanly with enterprise systems and compliance needs.</p>
+              <ul class="check-list">
+                <li>Custom ERP &amp; CRM</li>
+                <li>Integrations with SAP &amp; Salesforce</li>
+                <li>Compliance ready: GDPR, HIPAA, SOC 2</li>
+                <li>Role-based access</li>
+              </ul>
+            </article>
+            <article class="service-card">
+              <h3>MVP &amp; SaaS App Development</h3>
+              <p class="body-copy">Move from idea to validated product with focused scope, scalable foundations, and launch-ready infrastructure.</p>
+              <ul class="check-list">
+                <li>Investor-ready architecture</li>
+                <li>Built to scale to V2</li>
+                <li>Feature-scoped MVP in 6-8 weeks</li>
+                <li>Zero-config deployment</li>
+              </ul>
+            </article>
+            <article class="service-card">
+              <h3>Hybrid Mobile App Development</h3>
+              <p class="body-copy">Deliver consistent mobile experiences across platforms while keeping speed, cost, and maintenance under control.</p>
+              <ul class="check-list">
+                <li>React Native &amp; Flutter development</li>
+                <li>Offline-first functionality</li>
+                <li>Push notifications</li>
+                <li>Launch support for iOS &amp; Android</li>
+              </ul>
+            </article>
+            <article class="service-card">
+              <h3>API-First &amp; Serverless Architecture</h3>
+              <p class="body-copy">Design fast, composable application backends that support integrations, automation, mobile apps, and AI-enabled workflows.</p>
+              <ul class="check-list">
+                <li>RESTful &amp; GraphQL API design</li>
+                <li>AWS Lambda &amp; GCP Cloud Run</li>
+                <li>Event-driven microservices architecture</li>
+                <li>API documentation &amp; dev portals</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+        <div class="section-cta">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <span class="cta-title-sm">Need one team for strategy, build, cloud, QA, and launch?</span>
+              <p class="body-copy">Sparkout gives you a complete modernization squad without stitching multiple vendors together.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a class="btn btn-spark" href="#hire">Build My Team</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space process-section" id="process">
+      <div class="container-xl">
+        <div class="process-header">
+          <div>
+            <span class="eyebrow">Tag</span>
+            <h2>How We Work to Modernize a Mobile App</h2>
+          </div>
+          <p class="lead-copy">Our modernization workflow keeps decisions, delivery, testing, and deployment moving together so every sprint reduces risk and increases product value.</p>
+        </div>
+        <div class="process-flow">
+          <article class="phase-card">
+            <span class="phase-icon">01</span>
+            <span class="phase-label">Phase 1</span>
+            <h3>Define Design</h3>
+            <p class="body-copy">We clarify business goals, technical constraints, and the architecture blueprint before build begins.</p>
+            <ul>
+              <li>Discovery &amp; goal mapping</li>
+              <li>Cloud-native architecture design</li>
+              <li>DevOps pipeline scaffolding</li>
+              <li>Signed-off technical blueprint</li>
+            </ul>
+          </article>
+          <article class="phase-card">
+            <span class="phase-icon">02</span>
+            <span class="phase-label">Phase 2</span>
+            <h3>Build &amp; Integrate</h3>
+            <p class="body-copy">We develop modular services, frontend experiences, mobile layers, and integration paths in sprint cycles.</p>
+            <ul>
+              <li>Microservices-based development</li>
+              <li>API-first integration layer</li>
+              <li>Full-stack &amp; mobile delivery</li>
+              <li>Bi-weekly sprint demos</li>
+            </ul>
+          </article>
+          <article class="phase-card">
+            <span class="phase-icon">03</span>
+            <span class="phase-label">Phase 3</span>
+            <h3>Test &amp; Harden</h3>
+            <p class="body-copy">We validate functionality, security, performance, and recovery paths before production release.</p>
+            <ul>
+              <li>Automated tests on every commit</li>
+              <li>Security hardening &amp; pen testing</li>
+              <li>Load &amp; performance testing</li>
+              <li>Chaos engineering &amp; failover drills</li>
+            </ul>
+          </article>
+          <article class="phase-card">
+            <span class="phase-icon">04</span>
+            <span class="phase-label">Phase 4</span>
+            <h3>Deploy &amp; Scale</h3>
+            <p class="body-copy">We launch with automation, monitoring, scaling controls, and a clean handoff to your team.</p>
+            <ul>
+              <li>Zero-downtime production deploy</li>
+              <li>Auto-scaling cloud infrastructure</li>
+              <li>Real-time observability stack</li>
+              <li>Team handoff &amp; knowledge transfer</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space pt-0">
+      <div class="container-xl">
+        <div class="metrics-ribbon">
+          <div class="metrics-grid">
+            <div>
+              <span class="metric-number">4 Phases</span>
+              <p>Define &rarr; Build &rarr; Harden &rarr; Scale</p>
+            </div>
+            <div>
+              <span class="metric-number">2 Weeks</span>
+              <p>Avg sprint, every phase</p>
+            </div>
+            <div>
+              <span class="metric-number">6-8 Weeks</span>
+              <p>MVP kickoff to launch</p>
+            </div>
+            <div>
+              <span class="metric-number">100%</span>
+              <p>projects ship with live CI/CD</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space" id="industries">
+      <div class="container-xl">
+        <div class="industries-layout">
+          <div>
+            <span class="eyebrow">Tag</span>
+            <h2>Industries We Serve With Our Mobile App Development</h2>
+            <p class="lead-copy">We build modern applications for regulated, high-volume, and workflow-heavy industries where security, reliability, integrations, and user experience all matter.</p>
+            <div class="industry-list">
+              <article class="industry-row">
+                <span class="industry-icon">FN</span>
+                <div>
+                  <h3>Fintech &amp; Banking</h3>
+                  <p class="body-copy">Secure transaction systems, customer portals, payment workflows, and compliance-ready digital finance products.</p>
+                </div>
+              </article>
+              <article class="industry-row">
+                <span class="industry-icon">HC</span>
+                <div>
+                  <h3>Healthcare</h3>
+                  <p class="body-copy">Patient apps, provider workflows, telehealth platforms, and HIPAA-ready data experiences.</p>
+                </div>
+              </article>
+              <article class="industry-row">
+                <span class="industry-icon">EC</span>
+                <div>
+                  <h3>E-commerce</h3>
+                  <p class="body-copy">Scalable storefronts, marketplace platforms, order flows, inventory systems, and conversion-focused mobile apps.</p>
+                </div>
+              </article>
+              <article class="industry-row">
+                <span class="industry-icon">LG</span>
+                <div>
+                  <h3>Logistics</h3>
+                  <p class="body-copy">Fleet dashboards, shipment tracking, route optimization, partner portals, and real-time operations tools.</p>
+                </div>
+              </article>
+              <article class="industry-row">
+                <span class="industry-icon">LM</span>
+                <div>
+                  <h3>LMS Platforms</h3>
+                  <p class="body-copy">Learning portals, assessment tools, video delivery, cohort management, and analytics-led education products.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="industry-preview">
+            <img src="assets/images/process-flow.png" alt="Industry application process flow">
+          </div>
+        </div>
+        <div class="section-cta">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <span class="cta-title-sm">Have a domain-heavy product to modernize?</span>
+              <p class="body-copy">We map workflows, compliance needs, integrations, and user journeys before recommending the build path.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a class="btn btn-spark" href="#hire">Discuss My Industry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space tech-section">
+      <div class="container-xl">
+        <div class="row justify-content-between align-items-end g-4">
+          <div class="col-lg-7">
+            <span class="eyebrow">Tag</span>
+            <h2>Tech Stack Used</h2>
+          </div>
+          <div class="col-lg-5">
+            <p class="body-copy">We choose battle-tested languages, frameworks, cloud infrastructure, and AI tooling based on product goals, scale, security, and team ownership.</p>
+          </div>
+        </div>
+        <div class="tech-columns">
+          <article class="tech-card">
+            <h3>Foundational Layer</h3>
+            <div class="tech-group">
+              <strong>Languages:</strong>
+              <span>TypeScript &bull; Go (Golang) &bull; Rust</span>
+            </div>
+            <div class="tech-group">
+              <strong>Frameworks:</strong>
+              <span>Next.js &bull; NestJS &bull; FastAPI</span>
+            </div>
+          </article>
+          <article class="tech-card">
+            <h3>The Cloud &amp; Infinite Scale</h3>
+            <div class="tech-group">
+              <strong>Infrastructure:</strong>
+              <span>AWS (Lambda/ECS) &bull; GCP (Cloud Run)</span>
+            </div>
+            <div class="tech-group">
+              <strong>Containers:</strong>
+              <span>Docker &bull; Kubernetes</span>
+            </div>
+            <div class="tech-group">
+              <strong>Data Highway:</strong>
+              <span>GraphQL &bull; gRPC &bull; Kafka</span>
+            </div>
+          </article>
+          <article class="tech-card">
+            <h3>Mobility &amp; Intelligence</h3>
+            <div class="tech-group">
+              <strong>Cross-Platform:</strong>
+              <span>Flutter &bull; React Native</span>
+            </div>
+            <div class="tech-group">
+              <strong>AI Ecosystem:</strong>
+              <span>OpenAI API &bull; LangChain &bull; Pinecone</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space" id="cost">
+      <div class="container-xl">
+        <div class="cost-layout">
+          <div class="cost-intro">
+            <span class="eyebrow">Tag</span>
+            <h2>Cost Estimation of Modern Application Development</h2>
+            <p class="body-copy">Costs depend on scope, integrations, compliance, platform complexity, infrastructure, and delivery speed. These ranges help you plan the right engagement model.</p>
+          </div>
+          <article class="cost-card">
+            <span class="cost-pill">Starter Build</span>
+            <h3>Modern MVP</h3>
+            <p class="body-copy">Best for founders and product teams validating a new SaaS, portal, or mobile workflow.</p>
+            <ul>
+              <li>Core feature set and user flows</li>
+              <li>Cloud-ready backend and database</li>
+              <li>Admin dashboard or reporting view</li>
+              <li>Launch support and basic analytics</li>
+            </ul>
+            <p class="body-copy mt-4">Typical timeline: 6-8 weeks based on approved scope.</p>
+          </article>
+          <article class="cost-card">
+            <span class="cost-pill">Growth Build</span>
+            <h3>Scalable Web or Mobile App</h3>
+            <p class="body-copy">Best for teams replacing slow systems or building a product expected to scale quickly.</p>
+            <ul>
+              <li>Multi-role web or mobile experience</li>
+              <li>API integrations and workflow automation</li>
+              <li>CI/CD, monitoring, and staging environments</li>
+              <li>Security, QA, and performance testing</li>
+            </ul>
+            <p class="body-copy mt-4">Typical timeline: 10-16 weeks depending on integrations.</p>
+          </article>
+          <article class="cost-card">
+            <span class="cost-pill">Enterprise Build</span>
+            <h3>Enterprise &amp; Modernization</h3>
+            <p class="body-copy">Best for organizations modernizing legacy applications or building mission-critical platforms.</p>
+            <ul>
+              <li>Architecture audit and migration roadmap</li>
+              <li>Microservices, data, and cloud modernization</li>
+              <li>Compliance, access control, and governance</li>
+              <li>Dedicated team, handoff, and support model</li>
+            </ul>
+            <p class="body-copy mt-4">Typical timeline: planned in phased modernization waves.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-space pt-0">
+      <div class="container-xl">
+        <div class="cta-band">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+              <span class="eyebrow">CTA</span>
+              <span class="cta-title-lg">Modernize the App Before It Slows the Business</span>
+              <p class="lead-copy">Book a technical consultation and get a practical plan for architecture, sprint delivery, cloud infrastructure, security, and launch readiness.</p>
+              <a class="btn btn-spark" href="#hire">Schedule a Consultation</a>
+            </div>
+            <div class="col-lg-5">
+              <img src="assets/images/cta-visual.png" alt="Modern application development CTA visual">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="expert-section" id="hire">
+      <div class="container-xl">
+        <div class="expert-layout">
+          <div>
+            <h2>Hire Modern Application Development Experts from Sparkout</h2>
+            <p class="lead-copy">Bring in a product engineering team that understands architecture, cloud, mobile, security, integrations, and business outcomes. Sparkout helps you move beyond short-term fixes and build software that is easier to scale, easier to maintain, and easier to improve.</p>
+            <p class="body-copy">Our experts can join you from discovery through deployment or step in to modernize a specific product layer. You get clear planning, predictable sprints, senior technical ownership, transparent communication, and a delivery model shaped around measurable product progress.</p>
+            <div class="expert-points">
+              <div class="expert-point">
+                <span>1</span>
+                <p class="body-copy">Assess your current application, identify modernization priorities, and create a roadmap that protects business continuity.</p>
+              </div>
+              <div class="expert-point">
+                <span>2</span>
+                <p class="body-copy">Design and build cloud-native features, APIs, dashboards, and mobile experiences with secure, scalable foundations.</p>
+              </div>
+              <div class="expert-point">
+                <span>3</span>
+                <p class="body-copy">Deploy with CI/CD, observability, performance validation, documentation, and handoff support for long-term ownership.</p>
+              </div>
+            </div>
+            <div class="d-flex flex-wrap gap-3 mt-5">
+              <a class="btn btn-spark" href="mailto:hello@sparkouttech.com">Start the Conversation</a>
+              <a class="btn btn-spark-outline" href="#services">Review Services</a>
+            </div>
+          </div>
+          <div class="expert-visual">
+            <img src="assets/images/dashboard-preview.png" alt="Application modernization team dashboard">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

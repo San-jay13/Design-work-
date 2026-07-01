@@ -1,0 +1,2404 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ERP Software Implementation Services | Upgrade Systems Now - 58</title>
+  <meta name="description" content="Sparkout delivers ERP software implementation services backed by 8+ years, 100+ deployments, and scalable ERP solutions for growing enterprises worldwide. - 154">
+  <link rel="alternate" href="https://www.sparkoutech.com/erp-software-implementation/" hreflang="x-default"/>
+  <link rel="alternate" href="https://www.sparkoutech.com/erp-software-implementation/" hreflang="en-US"/>
+  <link rel="alternate" href="https://www.sparkoutech.com/erp-software-implementation/" hreflang="de-DE"/>
+  <link rel="alternate" href="https://www.sparkoutech.com/erp-software-implementation/" hreflang="ru-RU"/>
+  <link rel="alternate" href="https://www.sparkoutech.com/erp-software-implementation/" hreflang="pt-BR"/>
+  <link rel="alternate" href="https://www.sparkoutech.com/erp-software-implementation/" hreflang="vi-VN"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --spark-orange: #ff6c1a;
+      --spark-orange-dark: #ff4d0d;
+      --spark-navy: #192a44;
+      --spark-text: #0b1220;
+      --spark-muted: #6b7280;
+      --spark-border: #e5e7eb;
+      --spark-stroke: #64748b;
+      --spark-bg: #f8fafc;
+      --spark-white: #ffffff;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, .04);
+      --shadow-md: 0 10px 30px rgba(0, 0, 0, .06);
+      --shadow-lg: 0 20px 50px rgba(0, 0, 0, .08);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 110px;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      color: var(--spark-text);
+      background: var(--spark-white);
+      letter-spacing: 0;
+    }
+
+    p {
+      color: var(--spark-muted);
+      font-size: 16px;
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--spark-text);
+      letter-spacing: 0;
+    }
+
+    h1 {
+      font-size: clamp(36px, 4vw, 48px);
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: clamp(28px, 3vw, 32px);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .page-section {
+      padding: 100px 0;
+    }
+
+    .spark-container {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding-left: 80px;
+      padding-right: 80px;
+    }
+
+    .btn-spark {
+      background: linear-gradient(135deg, var(--spark-orange), var(--spark-orange-dark));
+      color: var(--spark-white);
+      border: 0;
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-weight: 600;
+      box-shadow: 0 14px 28px rgba(255, 108, 26, .22);
+      transition: all .3s ease;
+    }
+
+    .btn-spark:hover {
+      color: var(--spark-white);
+      transform: translateY(-2px);
+      box-shadow: 0 18px 34px rgba(255, 108, 26, .28);
+    }
+
+    .btn-outline-spark {
+      border: 1px solid var(--spark-navy);
+      color: var(--spark-navy);
+      border-radius: 12px;
+      padding: 14px 28px;
+      font-weight: 600;
+      transition: all .3s ease;
+    }
+
+    .btn-outline-spark:hover {
+      background: var(--spark-navy);
+      color: var(--spark-white);
+      transform: translateY(-2px);
+    }
+
+    .navbar {
+      min-height: 88px;
+      background: rgba(255, 255, 255, .94);
+      backdrop-filter: blur(18px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar-brand {
+      color: var(--spark-navy);
+      font-weight: 800;
+      letter-spacing: 0;
+    }
+
+    .nav-link {
+      color: var(--spark-text);
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 128px 0 76px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(255, 108, 26, .08), rgba(25, 42, 68, .03) 34%, #fff 72%),
+        radial-gradient(circle at 90% 12%, rgba(255, 108, 26, .12), transparent 28%);
+    }
+
+    .hero-copy {
+      max-width: 610px;
+    }
+
+    .hero-copy p {
+      max-width: 600px;
+    }
+
+    .hero-actions {
+      margin-top: 28px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .trust-card,
+    .feature-card,
+    .metric-card,
+    .hire-card {
+      background: var(--spark-white);
+      border: 1px solid var(--spark-border);
+      border-radius: 20px;
+      box-shadow: var(--shadow-md);
+      transition: all .3s ease;
+    }
+
+    .trust-card {
+      padding: 14px 16px;
+      min-height: 74px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-radius: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .trust-card:hover,
+    .feature-card:hover,
+    .metric-card:hover,
+    .hire-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: rgba(255, 108, 26, .35);
+    }
+
+    .trust-card strong {
+      display: block;
+      color: var(--spark-navy);
+      font-size: 18px;
+      line-height: 1.2;
+      margin-bottom: 4px;
+      white-space: pre-line;
+    }
+
+    .trust-card span {
+      color: var(--spark-muted);
+      font-size: 11px;
+      line-height: 1.45;
+      white-space: pre-line;
+    }
+
+    .dashboard-frame {
+      position: relative;
+      border-radius: 28px;
+      padding: 14px;
+      background: var(--spark-white);
+      border: 1px solid rgba(25, 42, 68, .08);
+      box-shadow: var(--shadow-lg);
+      transform: perspective(1200px) rotateY(-5deg) rotateX(3deg);
+      transition: all .3s ease;
+    }
+
+    .dashboard-frame:hover {
+      transform: perspective(1200px) rotateY(0deg) rotateX(0deg) translateY(-6px);
+    }
+
+    .dashboard-frame img,
+    .visual-block img,
+    .cta-visual img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 20px;
+      object-fit: cover;
+      background: var(--spark-bg);
+    }
+
+    .hero .dashboard-frame img {
+      max-height: 430px;
+    }
+
+    .source-panel {
+      background: var(--spark-navy);
+      color: var(--spark-white);
+      border-radius: 20px;
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .source-panel p,
+    .source-panel code {
+      color: rgba(255, 255, 255, .82);
+      font-size: 13px;
+      line-height: 1.8;
+      word-break: break-word;
+    }
+
+    .light-band {
+      background: var(--spark-bg);
+    }
+
+    .architecture-shell {
+      border-radius: 28px;
+      background: linear-gradient(135deg, #fff, #f8fafc);
+      border: 1px solid var(--spark-border);
+      padding: 34px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .architecture-node {
+      padding: 28px;
+      border-radius: 20px;
+      background: var(--spark-white);
+      border: 1px solid var(--spark-border);
+      min-height: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .architecture-node::after {
+      content: "";
+      position: absolute;
+      right: -34px;
+      top: 50%;
+      width: 34px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--spark-orange), rgba(255, 108, 26, .1));
+    }
+
+    .architecture-node:last-child::after {
+      display: none;
+    }
+
+    .erp-explainer {
+      border-radius: 28px;
+      background: linear-gradient(135deg, #ffffff, #f8fafc);
+      border: 1px solid var(--spark-border);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .erp-explainer-copy {
+      padding: 44px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .erp-flow-panel {
+      height: 100%;
+      min-height: 420px;
+      padding: 34px;
+      background:
+        linear-gradient(135deg, rgba(25, 42, 68, .96), rgba(25, 42, 68, .88)),
+        linear-gradient(135deg, rgba(255, 108, 26, .16), transparent);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .erp-flow-node {
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .16);
+      border-radius: 18px;
+      padding: 18px 20px;
+      color: var(--spark-white);
+      position: relative;
+    }
+
+    .erp-flow-node + .erp-flow-node {
+      margin-top: 36px;
+    }
+
+    .erp-flow-node + .erp-flow-node::before {
+      content: "";
+      position: absolute;
+      top: -28px;
+      left: 28px;
+      width: 2px;
+      height: 20px;
+      background: var(--spark-orange);
+    }
+
+    .erp-flow-node span {
+      display: block;
+      color: rgba(255, 255, 255, .64);
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .erp-flow-node strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.35;
+    }
+
+    .challenge-table {
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--spark-border);
+    }
+
+    .table {
+      margin-bottom: 0;
+    }
+
+    .table th {
+      background: var(--spark-navy);
+      color: var(--spark-white);
+      font-weight: 700;
+      padding: 20px;
+      border: 0;
+    }
+
+    .table td {
+      color: var(--spark-muted);
+      padding: 18px 20px;
+      border-color: var(--spark-border);
+      vertical-align: middle;
+      line-height: 1.6;
+    }
+
+    .feature-card {
+      padding: 28px;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .feature-card::before {
+      content: attr(data-number);
+      position: absolute;
+      right: 22px;
+      top: 20px;
+      color: rgba(255, 108, 26, .22);
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .feature-card h3 {
+      max-width: 86%;
+      min-height: 48px;
+      margin-bottom: 14px;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--spark-navy);
+    }
+
+    .feature-card p {
+      min-height: 108px;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .mini-list {
+      display: grid;
+      gap: 9px;
+      padding-left: 0;
+      margin: 18px 0 0;
+      list-style: none;
+    }
+
+    .mini-list li {
+      display: flex;
+      gap: 10px;
+      color: var(--spark-muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .mini-list li::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--spark-orange);
+      flex: 0 0 8px;
+      margin-top: 6px;
+    }
+
+    .cta-band {
+      background: linear-gradient(135deg, var(--spark-navy), #243b5f);
+      color: var(--spark-white);
+      border-radius: 28px;
+      padding: 44px;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .cta-band h2,
+    .cta-band h3,
+    .cta-band p {
+      color: var(--spark-white);
+    }
+
+    .cta-band p {
+      opacity: .82;
+    }
+
+    .process-board {
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--spark-white);
+      border: 1px solid var(--spark-border);
+      box-shadow: var(--shadow-md);
+    }
+
+    .process-row {
+      display: grid;
+      grid-template-columns: 96px minmax(220px, .9fr) minmax(0, 1.5fr);
+      align-items: stretch;
+      min-height: 118px;
+    }
+
+    .process-row + .process-row {
+      border-top: 1px solid var(--spark-border);
+    }
+
+    .process-index {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--spark-navy);
+      color: var(--spark-white);
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .process-name,
+    .process-detail {
+      display: flex;
+      align-items: center;
+      padding: 22px 28px;
+    }
+
+    .process-name {
+      background: rgba(255, 108, 26, .07);
+      border-right: 1px solid var(--spark-border);
+    }
+
+    .process-name h3 {
+      margin: 0;
+      color: var(--spark-navy);
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .process-name .step-label {
+      display: block;
+      color: var(--spark-orange);
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .process-name .step-title {
+      display: block;
+    }
+
+    .process-detail p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .process-row:hover .process-index {
+      background: linear-gradient(135deg, var(--spark-orange), var(--spark-orange-dark));
+    }
+
+    .integration-tabs .nav-link {
+      border: 1px solid var(--spark-border);
+      border-radius: 14px;
+      padding: 20px 22px;
+      color: var(--spark-navy);
+      background: var(--spark-white);
+      text-align: left;
+      width: 100%;
+      box-shadow: var(--shadow-sm);
+      line-height: 1.35;
+      font-weight: 700;
+    }
+
+    .integration-tabs .nav-link.active {
+      background: var(--spark-navy);
+      color: var(--spark-white);
+      border-color: var(--spark-navy);
+    }
+
+    .integration-visual {
+      position: relative;
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: var(--spark-bg);
+      aspect-ratio: 4 / 3;
+    }
+
+    .integration-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .risk-card {
+      border: 1px solid var(--spark-border);
+      border-radius: 20px;
+      background: var(--spark-white);
+      padding: 24px;
+      height: 100%;
+      box-shadow: var(--shadow-sm);
+      transition: all .3s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      min-height: 300px;
+    }
+
+    .risk-card:hover {
+      border-color: rgba(255, 108, 26, .4);
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .risk-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: rgba(255, 108, 26, .1);
+      color: var(--spark-orange);
+      font-weight: 800;
+      margin-bottom: 14px;
+      flex: 0 0 auto;
+    }
+
+    .risk-card h3 {
+      min-height: 28px;
+      margin: 0 0 8px;
+      color: var(--spark-navy);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.35;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .risk-card p {
+      font-size: 14px;
+      line-height: 1.65;
+      margin: 0;
+    }
+
+    .risk-card p:first-of-type {
+      min-height: 52px;
+    }
+
+    .risk-card .risk-impact {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--spark-border);
+      color: var(--spark-navy) !important;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 1.55;
+    }
+
+    .challenges-copy {
+      max-width: 760px;
+    }
+
+    .challenges-copy p {
+      max-width: 720px;
+    }
+
+    .risk-roadmap {
+      display: grid;
+      grid-template-columns: repeat(7, minmax(0, 1fr));
+      gap: 18px;
+      position: relative;
+      padding-top: 12px;
+    }
+
+    .risk-roadmap::before {
+      content: "";
+      position: absolute;
+      left: 7%;
+      right: 7%;
+      top: 42px;
+      height: 2px;
+      background: linear-gradient(90deg, rgba(255, 108, 26, .15), rgba(255, 108, 26, .65), rgba(255, 108, 26, .15));
+    }
+
+    .risk-step {
+      position: relative;
+      z-index: 1;
+      min-height: 142px;
+      padding: 0 0 18px;
+      text-align: center;
+    }
+
+    .risk-step-number {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 18px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: var(--spark-white);
+      border: 1px solid rgba(255, 108, 26, .32);
+      color: var(--spark-orange);
+      font-weight: 800;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .risk-step-label {
+      display: block;
+      color: var(--spark-navy);
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.45;
+      max-width: 150px;
+      margin: 0 auto;
+    }
+
+    .industry-panel {
+      border: 1px solid var(--spark-border);
+      border-radius: 28px;
+      overflow: hidden;
+      background: var(--spark-white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .industry-row {
+      display: grid;
+      grid-template-columns: minmax(220px, .8fr) minmax(0, 1.4fr) minmax(260px, 1fr);
+      gap: 0;
+      align-items: stretch;
+    }
+
+    .industry-row + .industry-row {
+      border-top: 1px solid var(--spark-border);
+    }
+
+    .industry-name,
+    .industry-summary,
+    .industry-focus {
+      padding: 26px 28px;
+    }
+
+    .industry-name {
+      background: rgba(25, 42, 68, .04);
+      border-right: 1px solid var(--spark-border);
+    }
+
+    .industry-name span {
+      display: block;
+      color: var(--spark-orange);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .industry-name h3 {
+      margin: 0;
+      color: var(--spark-navy);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .industry-summary {
+      border-right: 1px solid var(--spark-border);
+    }
+
+    .industry-summary p,
+    .industry-focus p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .industry-impact {
+      margin-top: 12px !important;
+      color: var(--spark-navy) !important;
+      font-weight: 700;
+    }
+
+    .industry-focus-label {
+      display: block;
+      color: var(--spark-navy);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .industry-chip-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .industry-chip {
+      display: inline-flex;
+      align-items: center;
+      min-height: 34px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 108, 26, .24);
+      color: var(--spark-navy);
+      background: rgba(255, 108, 26, .06);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .metric-card {
+      padding: 28px;
+      min-height: 220px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .metric-card h3 {
+      color: var(--spark-orange);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 14px;
+      min-height: 50px;
+      display: flex;
+      align-items: flex-start;
+    }
+
+    .metric-card p {
+      margin-top: 0 !important;
+      margin-bottom: 0;
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .cost-factor {
+      border-radius: 18px;
+      padding: 20px;
+      background: var(--spark-white);
+      border: 1px solid var(--spark-border);
+      box-shadow: var(--shadow-sm);
+      height: 100%;
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--spark-muted);
+    }
+
+    .cost-factor strong {
+      display: block;
+      color: var(--spark-navy);
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .cost-visual {
+      min-height: auto;
+      border-radius: 24px;
+      background:
+        linear-gradient(135deg, rgba(25, 42, 68, .96), rgba(25, 42, 68, .88)),
+        radial-gradient(circle at 80% 20%, rgba(255, 108, 26, .28), transparent 34%);
+      overflow: hidden;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .cost-visual-core {
+      grid-column: 1 / -1;
+      min-height: 76px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      color: var(--spark-white);
+      border: 1px solid rgba(255, 255, 255, .24);
+      background: rgba(255, 255, 255, .10);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .06);
+      font-size: 15px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .cost-orbit {
+      width: 100%;
+      min-height: 52px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 12px;
+      background: var(--spark-white);
+      border: 1px solid rgba(255, 108, 26, .24);
+      color: var(--spark-navy);
+      font-size: 12px;
+      font-weight: 800;
+      line-height: 1.25;
+      text-align: center;
+      white-space: normal;
+      box-shadow: var(--shadow-md);
+    }
+
+    .technology-architecture {
+      position: relative;
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 34px;
+      padding: 34px;
+      border: 1px solid var(--spark-border);
+      border-radius: 28px;
+      background:
+        radial-gradient(circle at 10% 20%, rgba(255, 108, 26, .10), transparent 28%),
+        linear-gradient(135deg, rgba(255, 255, 255, .96), rgba(248, 250, 252, .96));
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .technology-spine {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 0;
+    }
+
+    .technology-spine::before {
+      content: "";
+      position: absolute;
+      top: 38px;
+      bottom: 38px;
+      left: 50%;
+      width: 2px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, rgba(255, 108, 26, .18), rgba(25, 42, 68, .24), rgba(255, 108, 26, .18));
+    }
+
+    .technology-spine-dot {
+      position: relative;
+      z-index: 1;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: var(--spark-white);
+      border: 1px solid rgba(255, 108, 26, .28);
+      color: var(--spark-orange);
+      font-size: 23px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .technology-spine-dot svg,
+    .technology-icon svg,
+    .why-ledger-icon svg {
+      width: 1em;
+      height: 1em;
+      display: block;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      fill: none;
+    }
+
+    .technology-layers {
+      display: grid;
+      gap: 14px;
+    }
+
+    .technology-layer {
+      display: grid;
+      grid-template-columns: 58px minmax(210px, .42fr) minmax(0, 1fr);
+      gap: 18px;
+      align-items: center;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, .72);
+      border: 1px solid rgba(229, 231, 235, .82);
+      transition: transform .25s ease, border-color .25s ease, background .25s ease;
+    }
+
+    .technology-layer:hover {
+      transform: translateX(6px);
+      border-color: rgba(255, 108, 26, .34);
+      background: var(--spark-white);
+    }
+
+    .technology-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: rgba(255, 108, 26, .09);
+      color: var(--spark-orange);
+      font-size: 21px;
+    }
+
+    .technology-layer h3 {
+      margin: 0;
+      color: var(--spark-navy);
+      font-size: 17px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .tech-stack-line {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech-stack-line span {
+      display: inline-flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(25, 42, 68, .04);
+      border: 1px solid rgba(25, 42, 68, .08);
+      color: var(--spark-muted);
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .why-ledger {
+      position: relative;
+      display: grid;
+      gap: 0;
+      padding-left: 18px;
+    }
+
+    .why-ledger-row {
+      position: relative;
+      display: grid;
+      grid-template-columns: 64px minmax(0, 1fr);
+      gap: 22px;
+      align-items: start;
+      padding: 0 0 30px;
+    }
+
+    .why-ledger-row:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      left: 30px;
+      top: 62px;
+      bottom: 0;
+      width: 1px;
+      background: linear-gradient(180deg, rgba(255, 108, 26, .38), rgba(229, 231, 235, .9));
+    }
+
+    .why-ledger-row:last-child {
+      padding-bottom: 0;
+    }
+
+    .why-ledger-mark {
+      position: relative;
+      z-index: 1;
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: rgba(255, 108, 26, .09);
+      border: 1px solid rgba(255, 108, 26, .18);
+      color: var(--spark-orange);
+    }
+
+    .why-ledger-number {
+      position: absolute;
+      right: -8px;
+      top: -9px;
+      display: grid;
+      place-items: center;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--spark-white);
+      border: 1px solid rgba(255, 108, 26, .22);
+      color: var(--spark-orange);
+      font-size: 11px;
+      font-weight: 800;
+      line-height: 1;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .why-ledger-icon {
+      font-size: 22px;
+    }
+
+    .why-ledger-content {
+      padding-bottom: 2px;
+    }
+
+    .why-ledger-content h3 {
+      margin: 0;
+      color: var(--spark-navy);
+      font-size: 19px;
+      font-weight: 800;
+      line-height: 1.35;
+    }
+
+    .why-ledger-content p {
+      max-width: 640px;
+      font-size: 14px;
+      line-height: 1.65;
+      margin: 10px 0 0;
+    }
+
+    .why-ledger-row:hover .why-ledger-mark {
+      background: rgba(255, 108, 26, .14);
+      border-color: rgba(255, 108, 26, .32);
+    }
+
+    .hire-card {
+      padding: 28px;
+      height: 100%;
+    }
+
+    .hire-card h3 {
+      min-height: 50px;
+      color: var(--spark-navy);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .hire-card p {
+      font-size: 14px;
+      line-height: 1.65;
+      margin-top: 0 !important;
+    }
+
+    .source-panel h3,
+    .architecture-shell > h3 {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.35;
+    }
+
+    .tab-pane h3 {
+      color: var(--spark-navy);
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 12px;
+    }
+
+    .accordion-item {
+      border: 1px solid var(--spark-border);
+      border-radius: 16px !important;
+      overflow: hidden;
+      margin-bottom: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .accordion-button {
+      font-weight: 700;
+      color: var(--spark-navy);
+      padding: 22px 24px;
+      box-shadow: none !important;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background: rgba(255, 108, 26, .08);
+      color: var(--spark-navy);
+    }
+
+    .accordion-body {
+      color: var(--spark-muted);
+      line-height: 1.7;
+      padding: 0 24px 24px;
+    }
+
+    .final-cta {
+      background: linear-gradient(135deg, rgba(255, 108, 26, .12), rgba(25, 42, 68, .08));
+      border-radius: 28px;
+      padding: 50px;
+      border: 1px solid rgba(255, 108, 26, .16);
+      box-shadow: var(--shadow-lg);
+    }
+
+    @media (max-width: 1199.98px) {
+      .spark-container {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .architecture-node::after {
+        display: none;
+      }
+
+      .technology-architecture {
+        grid-template-columns: 96px minmax(0, 1fr);
+        gap: 24px;
+        padding: 28px;
+      }
+
+      .technology-layer {
+        grid-template-columns: 52px minmax(0, 1fr);
+      }
+
+      .technology-layer h3,
+      .tech-stack-line {
+        grid-column: 2;
+      }
+
+      .feature-card h3 {
+        min-height: auto;
+        max-width: 90%;
+      }
+
+      .feature-card p {
+        min-height: 76px;
+      }
+    }
+
+    @media (max-width: 767.98px) {
+      .page-section {
+        padding: 72px 0;
+      }
+
+      .hero {
+        padding: 108px 0 56px;
+      }
+
+      .spark-container {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+
+      .trust-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .why-ledger-row {
+        grid-template-columns: 54px minmax(0, 1fr);
+        gap: 16px;
+        padding-bottom: 26px;
+      }
+
+      .why-ledger-row:not(:last-child)::after {
+        left: 27px;
+        top: 56px;
+      }
+
+      .why-ledger-mark {
+        width: 54px;
+        height: 54px;
+        border-radius: 16px;
+      }
+
+      .why-ledger-content h3 {
+        font-size: 16px;
+      }
+
+      .why-ledger-content p {
+        font-size: 13px;
+      }
+
+      .dashboard-frame {
+        transform: none;
+        margin-top: 28px;
+      }
+
+      .erp-explainer-copy,
+      .erp-flow-panel {
+        padding: 26px;
+      }
+
+      .erp-flow-panel {
+        min-height: auto;
+      }
+
+      .feature-card {
+        padding: 24px;
+      }
+
+      .feature-card h3,
+      .feature-card p {
+        min-height: auto;
+        max-width: 100%;
+      }
+
+      .risk-card h3,
+      .risk-card p:first-of-type {
+        min-height: auto;
+      }
+
+      .risk-card {
+        min-height: auto;
+      }
+
+      .risk-roadmap {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px 18px;
+      }
+
+      .risk-roadmap::before {
+        display: none;
+      }
+
+      .risk-step {
+        min-height: auto;
+        padding: 18px;
+        border: 1px solid var(--spark-border);
+        border-radius: 18px;
+        background: rgba(255, 108, 26, .04);
+        text-align: left;
+      }
+
+      .risk-step-number {
+        width: 44px;
+        height: 44px;
+        margin: 0 0 14px;
+        border-radius: 14px;
+      }
+
+      .risk-step-label {
+        max-width: none;
+        margin: 0;
+      }
+
+      .industry-row {
+        grid-template-columns: 1fr;
+      }
+
+      .industry-name,
+      .industry-summary {
+        border-right: 0;
+        border-bottom: 1px solid var(--spark-border);
+      }
+
+      .cost-visual {
+        min-height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 20px;
+        align-items: stretch;
+      }
+
+      .cost-visual-core {
+        grid-column: 1 / -1;
+        min-height: 70px;
+        border-radius: 18px;
+      }
+
+      .cost-orbit {
+        width: 100%;
+        min-height: 44px;
+        font-size: 12px;
+        white-space: normal;
+      }
+
+      .technology-architecture {
+        grid-template-columns: 1fr;
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .technology-spine {
+        display: none;
+      }
+
+      .technology-layer {
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 14px;
+        padding: 16px;
+      }
+
+      .technology-icon {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        font-size: 19px;
+      }
+
+      .technology-layer h3 {
+        grid-column: 2;
+        font-size: 15px;
+      }
+
+      .tech-stack-line {
+        grid-column: 1 / -1;
+      }
+
+      .tech-stack-line span {
+        min-height: 30px;
+        font-size: 11px;
+      }
+
+      .metric-card,
+      .metric-card h3 {
+        min-height: auto;
+      }
+
+      .cta-band,
+      .final-cta {
+        padding: 28px;
+      }
+
+      .process-row {
+        grid-template-columns: 64px 1fr;
+      }
+
+      .process-detail {
+        grid-column: 1 / -1;
+        padding: 0 24px 24px 88px;
+      }
+
+      .process-name {
+        border-right: 0;
+        padding: 20px 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid spark-container">
+      <a class="navbar-brand" href="#">Sparkout ERP</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+          <li class="nav-item"><a class="nav-link" href="#industries">Industries</a></li>
+          <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+          <li class="nav-item"><a class="btn btn-spark ms-lg-2" href="#consultation">Book a Free ERP Consultation</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="top">
+    <div class="spark-container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="hero-copy">
+            <h1>ERP Software Implementation Services for Modern Enterprise Operations</h1>
+            <p class="mt-4">Enterprises fail to scale with speed and accuracy due to operational inefficiencies, siloed business systems, and fragmented data. Sparkout’s ERP software implementation services help businesses unify operations, streamline workflows, and deploy scalable ERP solutions that improve visibility, efficiency, and decision-making.</p>
+            <div class="hero-actions d-flex flex-column flex-sm-row gap-3">
+              <a class="btn btn-spark" href="#consultation">Book a Free ERP Consultation</a>
+              <a class="btn btn-outline-spark" href="#cost">Plan Your ERP Implementation Strategy</a>
+            </div>
+            <div class="trust-grid">
+              <div class="trust-card"><strong>Engineers</strong></div>
+              <div class="trust-card"><strong>10+ Years</strong><span>Enterprise Software Delivery</span></div>
+              <div class="trust-card"><strong>100+</strong><span>Successful ERP & Business System Implementations</span></div>
+              <div class="trust-card"><strong>98%</strong><span>Client Satisfaction Rate</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="dashboard-frame">
+            <img src="assets/images/erp-implementation-hero.png" alt="ERP implementation hero dashboard visual">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- What ERP -->
+  <section class="page-section" id="what">
+    <div class="spark-container">
+      <div class="erp-explainer">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-6">
+            <div class="erp-explainer-copy">
+              <h2>What is ERP Software Implementation &amp; How ERP Systems Work Across Businesses?</h2>
+              <p class="mt-4">ERP software implementation is the process of deploying, configuring, and integrating an Enterprise Resource Planning system to manage core business operations through a centralized platform. </p>
+              <p class="mt-3">Modern ERP system implementation helps enterprises connect finance, HR, inventory, procurement, sales, and operations within a unified environment. This enables teams to access real-time information, maintain data consistency, streamline workflows, &amp; manage enterprise operations more efficiently across the organization. </p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="erp-flow-panel">
+              <div class="erp-flow-node">
+                <span>01</span>
+                <strong>deploying</strong>
+              </div>
+              <div class="erp-flow-node">
+                <span>02</span>
+                <strong>configuring</strong>
+              </div>
+              <div class="erp-flow-node">
+                <span>03</span>
+                <strong>integrating</strong>
+              </div>
+              <div class="erp-flow-node">
+                <span>Result</span>
+                <strong>centralized platform</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why ERP -->
+  <section class="page-section light-band" id="why">
+    <div class="spark-container">
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-5">
+          <h2>Why Growing Enterprises Need ERP Software Implementation</h2>
+          <p class="mt-4">As enterprises grow, managing operations across multiple systems and departments becomes more difficult. Many enterprises often face challenges in maintaining smooth workflows, centralized operations, and consistent coordination across teams. </p>
+          <p class="mt-3">Sparkout delivers scalable ERP implementation services built for modern enterprise needs.</p>
+        </div>
+        <div class="col-lg-7">
+          <div class="challenge-table">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Operational Challenges</th>
+                  <th>Business Impact</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Disconnected Business Systems</td>
+                  <td>Creates gaps between departments and slows operational workflows</td>
+                </tr>
+                <tr>
+                  <td>Manual &amp; Repetitive Processes</td>
+                  <td>Increases operational delays and dependency on manual effort</td>
+                </tr>
+                <tr>
+                  <td>Limited Visibility Across Operations</td>
+                  <td>Makes tracking performance and managing processes more difficult</td>
+                </tr>
+                <tr>
+                  <td>Legacy Systems &amp; Workflow Limitations</td>
+                  <td>Restricts operational flexibility and business scalability</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="page-section" id="services">
+    <div class="spark-container">
+      <div class="row justify-content-between align-items-end g-4 mb-5">
+        <div class="col-lg-7">
+          <h2>End-to-End ERP Software Implementation Services Sparkout Offers</h2>
+          <p class="mt-4">Modern enterprises need ERP systems that support connected operations, scalable workflows, and long-term business growth. As an experienced ERP implementation consulting company, Sparkout delivers ERP software development services that help businesses optimize processes, modernize systems, and improve operational visibility across departments.</p>
+        </div>
+        <div class="col-lg-4">
+          <div class="visual-block">
+            <img src="assets/images/business-process-automation.png" alt="Business process automation visual">
+          </div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6 col-xl-3">
+          <article class="feature-card" data-number="01">
+            <h3>1. ERP Implementation Consulting</h3>
+            <p class="mt-3">We monitor operational workflows, system limitations, &amp; business needs to create a structured ERP implementation roadmap.</p>
+            <ul class="mini-list">
+              <li>Business workflow analysis</li>
+              <li>ERP implementation strategy</li>
+              <li>System requirement planning</li>
+              <li>ERP project consultation </li>
+            </ul>
+          </article>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <article class="feature-card" data-number="02">
+            <h3>2. ERP System Configuration</h3>
+            <p class="mt-3">Our team configures ERP environments based on operational structures, business rules, &amp; department-specific processes.</p>
+            <ul class="mini-list">
+              <li>Module configuration</li>
+              <li>User access setup</li>
+              <li>Operational workflow mapping</li>
+              <li>Approval hierarchy setup</li>
+            </ul>
+          </article>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <article class="feature-card" data-number="03">
+            <h3>3. ERP Customization Services</h3>
+            <p class="mt-3">As a reliable ERP software development company, we tailor ERP platforms to match unique enterprise operations &amp; needs.</p>
+            <ul class="mini-list">
+              <li>Custom software solutions</li>
+              <li>Dashboard personalization</li>
+              <li>Enterprise reporting setup</li>
+              <li>Process-specific enhancements</li>
+            </ul>
+          </article>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <article class="feature-card" data-number="04">
+            <h3>4. ERP Data Migration Services</h3>
+            <p class="mt-3">We securely transfer enterprise data from legacy systems into modern ERP environments with validation &amp; consistency checks.</p>
+            <ul class="mini-list">
+              <li>Legacy data transfer</li>
+              <li>Data cleansing</li>
+              <li>Record validation</li>
+              <li>Database restructuring</li>
+            </ul>
+          </article>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <article class="feature-card" data-number="05">
+            <h3>5. ERP System Integration Services</h3>
+            <p class="mt-3">We connect ERP platforms with enterprise applications to improve data synchronization &amp; operational connectivity.</p>
+            <ul class="mini-list">
+              <li>CRM connectivity</li>
+              <li>HRMS synchronization</li>
+              <li>API integration</li>
+              <li>Third-party system connection</li>
+            </ul>
+          </article>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <article class="feature-card" data-number="06">
+            <h3>6. ERP Cloud Deployment Services</h3>
+            <p class="mt-3">We deploy scalable ERP systems across cloud and hybrid infrastructures to ensure better operational flexibility &amp; accessibility.</p>
+            <ul class="mini-list">
+              <li>Cloud infrastructure setup</li>
+              <li>Hybrid deployment models</li>
+              <li>Remote system accessibility</li>
+              <li>Infrastructure scalability planning</li>
+            </ul>
+          </article>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <article class="feature-card" data-number="07">
+            <h3>7. ERP Testing &amp; Go-Live Support</h3>
+            <p class="mt-3">Our ERP implementation experts validate ERP environments before deployment to ensure operational readiness &amp; stable system performance.</p>
+            <ul class="mini-list">
+              <li>Functional testing</li>
+              <li>Security validation</li>
+              <li>Deployment readiness checks</li>
+              <li>Go-live assistance</li>
+            </ul>
+          </article>
+        </div>
+        <div class="col-lg-6 col-xl-3">
+          <article class="feature-card" data-number="08">
+            <h3>8. ERP Rollout Solutions &amp; Optimization</h3>
+            <p class="mt-3">We help enterprises improve ERP performance after deployment through continuous monitoring and operational refinement.</p>
+            <ul class="mini-list">
+              <li>Workflow optimization</li>
+              <li>ERP performance tuning</li>
+              <li>System scalability improvements</li>
+              <li>Operational process refinement</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+      <div class="cta-band mt-5">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <h2>Want to Build a Future-Ready ERP Ecosystem for Enterprise Growth?</h2>
+            <p class="mt-3">Partner with Sparkout to deploy scalable ERP solutions that simplify operations, improve coordination, and support long-term business expansion.</p>
+          </div>
+          <div class="col-lg-4 d-flex flex-column gap-3">
+            <a class="btn btn-spark" href="#consultation">Talk to Our ERP Experts</a>
+            <a class="btn btn-outline-light rounded-3 py-3 fw-semibold" href="#process">Plan ERP Deployment</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="page-section light-band" id="process">
+    <div class="spark-container">
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-5">
+          <h2>Our ERP Software Implementation Process for Scalable Enterprise Operations</h2>
+          <p class="mt-4">Successful ERP software implementation requires a structured process that aligns enterprise workflows, operational systems, and long-term business goals. Unlike other generic custom software development agencies, we follow a scalable ERP implementation methodology that is designed to improve deployment efficiency, streamline operations, and support enterprise growth.</p>
+          <div class="visual-block mt-4">
+            <img src="assets/images/erp-implementation-process.png" alt="ERP implementation process illustration">
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="process-board">
+            <div class="process-row">
+              <div class="process-index">01</div>
+              <div class="process-name">
+                <h3><span class="step-label">Step 1</span><span class="step-title">Business Discovery &amp; ERP Planning</span></h3>
+              </div>
+              <div class="process-detail">
+                <p>We analyse workflows, business requirements, &amp; system challenges to develop a structured ERP implementation strategy.</p>
+              </div>
+            </div>
+            <div class="process-row">
+              <div class="process-index">02</div>
+              <div class="process-name">
+                <h3><span class="step-label">Step 2</span><span class="step-title">ERP Architecture &amp; System Configuration</span></h3>
+              </div>
+              <div class="process-detail">
+                <p>Our team configures ERP environments, modules, workflows, &amp; user access structures based on enterprise operational needs.</p>
+              </div>
+            </div>
+            <div class="process-row">
+              <div class="process-index">03</div>
+              <div class="process-name">
+                <h3><span class="step-label">Step 3</span><span class="step-title">ERP Customization &amp; Process Automation</span></h3>
+              </div>
+              <div class="process-detail">
+                <p>We customize ERP platforms to support business-specific workflows, reporting structures, &amp; process automation requirements.</p>
+              </div>
+            </div>
+            <div class="process-row">
+              <div class="process-index">04</div>
+              <div class="process-name">
+                <h3><span class="step-label">Step 4</span><span class="step-title">ERP Data Migration &amp; System Integration</span></h3>
+              </div>
+              <div class="process-detail">
+                <p>Sparkout securely migrates enterprise data &amp; connects ERP systems with business apps for smooth business operations.</p>
+              </div>
+            </div>
+            <div class="process-row">
+              <div class="process-index">05</div>
+              <div class="process-name">
+                <h3><span class="step-label">Step 5</span><span class="step-title">ERP Testing, Deployment &amp; Go-Live Support</span></h3>
+              </div>
+              <div class="process-detail">
+                <p>We validate ERP environments, test workflows, &amp; support stable ERP software deployment across the organization.</p>
+              </div>
+            </div>
+            <div class="process-row">
+              <div class="process-index">06</div>
+              <div class="process-name">
+                <h3><span class="step-label">Step 6</span><span class="step-title">ERP Optimization &amp; Continuous Support</span></h3>
+              </div>
+              <div class="process-detail">
+                <p>Post-deployment, we optimize ERP performance, improve system scalability, and offer continuous ERP implementation support.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Integration -->
+  <section class="page-section" id="integration">
+    <div class="spark-container">
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-9 text-center">
+          <h2>Enterprise ERP Integration &amp; Deployment Solutions We Offer</h2>
+          <p class="mt-4">Modern enterprises require multiple business systems to manage operations, workflows, and enterprise data. Sparkout helps businesses build connected ERP ecosystems through secure ERP integration solutions and scalable deployment solutions that improve operational visibility, workflow coordination, and enterprise scalability.</p>
+        </div>
+      </div>
+      <div class="row g-4 integration-tabs">
+        <div class="col-lg-4">
+          <div class="nav flex-column gap-3" id="integration-tab" role="tablist" aria-orientation="vertical">
+            <button class="nav-link active" id="integration-one-tab" data-bs-toggle="pill" data-bs-target="#integration-one" type="button" role="tab" aria-controls="integration-one" aria-selected="true">1. ERP System Integration</button>
+            <button class="nav-link" id="integration-two-tab" data-bs-toggle="pill" data-bs-target="#integration-two" type="button" role="tab" aria-controls="integration-two" aria-selected="false">2. ERP Cloud Deployment</button>
+            <button class="nav-link" id="integration-three-tab" data-bs-toggle="pill" data-bs-target="#integration-three" type="button" role="tab" aria-controls="integration-three" aria-selected="false">3. Legacy System Modernization</button>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="tab-content architecture-shell" id="integration-tabContent">
+            <div class="tab-pane fade show active" id="integration-one" role="tabpanel" aria-labelledby="integration-one-tab" tabindex="0">
+              <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                  <h3>1. ERP System Integration</h3>
+                  <p class="mt-3">We connect ERP platforms with enterprise applications to simplify operations &amp; improve data flow across departments.</p>
+                  <ul class="mini-list">
+                    <li>ERP API integrations</li>
+                    <li>CRM integration</li>
+                    <li>HRMS integration</li>
+                    <li>Finance system integration</li>
+                    <li>Warehouse system connectivity</li>
+                    <li>Third-party platform integration </li>
+                  </ul>
+                </div>
+                <div class="col-md-6"><div class="integration-visual"><img src="assets/images/system-integration-flow.png" alt="System integration flow visual"></div></div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="integration-two" role="tabpanel" aria-labelledby="integration-two-tab" tabindex="0">
+              <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                  <h3>2. ERP Cloud Deployment</h3>
+                  <p class="mt-3">Our ERP cloud deployment solutions help enterprises build flexible and scalable operational environments.</p>
+                  <ul class="mini-list">
+                    <li>Cloud ERP deployment</li>
+                    <li>Hybrid ERP architecture</li>
+                    <li>Multi-location accessibility</li>
+                    <li>Scalable infrastructure setup</li>
+                    <li>Secure enterprise environments</li>
+                    <li>Centralized operational management</li>
+                  </ul>
+                </div>
+                <div class="col-md-6"><div class="integration-visual"><img src="assets/images/cloud-erp-architecture.png" alt="Cloud ERP architecture visual"></div></div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="integration-three" role="tabpanel" aria-labelledby="integration-three-tab" tabindex="0">
+              <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                  <h3>3. Legacy System Modernization</h3>
+                  <p class="mt-3">Sparkout delivers software modernization services that connects modern ERP platforms with existing enterprise infrastructure.</p>
+                  <ul class="mini-list">
+                    <li>Legacy workflow modernization</li>
+                    <li>Enterprise data consolidation</li>
+                    <li>System scalability improvements</li>
+                    <li>Connected operational environments</li>
+                    <li>Digital transformation services support</li>
+                    <li>Business process optimization</li>
+                  </ul>
+                </div>
+                <div class="col-md-6"><div class="integration-visual"><img src="assets/images/erp-dashboard.png" alt="ERP dashboard modernization visual"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Challenges -->
+  <section class="page-section light-band" id="challenges">
+    <div class="spark-container">
+      <div class="row g-5 align-items-end mb-5">
+        <div class="col-lg-7 challenges-copy">
+          <h2>Common ERP Implementation Challenges Enterprises Face</h2>
+          <p class="mt-4">Enterprise resource planning implementation involves multiple stages and that includes system integration, data migration, workflow setup, and enterprise-wide deployment. Without the right ERP implementation strategy, businesses may face technical and operational challenges that often require software project rescue and deployment restructuring. </p>
+          <p class="mt-3">Sparkout helps enterprises simplify these complexities through structured planning, scalable deployment, and connected business workflows.</p>
+        </div>
+        <div class="col-lg-5">
+          <div class="source-panel">
+            <h3 class="text-white">The ERP Implementation Challenge Landscape</h3>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-4">
+          <div class="risk-card">
+            <span class="risk-number">01</span>
+            <h3>Data Migration Complexity</h3>
+            <p>Moving business data from legacy systems can bring in errors, duplicate records, &amp; reporting issues.</p>
+            <p class="risk-impact">Impact: Data inconsistency • Reporting delays • Clean-up efforts</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="risk-card">
+            <span class="risk-number">02</span>
+            <h3>Legacy System Integration</h3>
+            <p>Older business systems may not integrate easily with modern ERP platforms.</p>
+            <p class="risk-impact">Impact: Integration delays • Workflow gaps • Operational silos</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="risk-card">
+            <span class="risk-number">03</span>
+            <h3>User Adoption Challenges</h3>
+            <p>Teams may find it hard to adapt to new ERP workflows without proper training and support.</p>
+            <p class="risk-impact">Impact: Low adoption • Productivity slowdown • Workflow resistance</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="risk-card">
+            <span class="risk-number">04</span>
+            <h3>Deployment Downtime</h3>
+            <p>Poor ERP deployment planning can affect daily business operations during rollout.</p>
+            <p class="risk-impact">Impact: Operational disruption • Delays • Business continuity risks</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="risk-card">
+            <span class="risk-number">05</span>
+            <h3>Workflow Misalignment</h3>
+            <p>ERP systems must match with real business processes to avoid operational inefficiencies.</p>
+            <p class="risk-impact">Impact: Process delays • Workflow confusion • Reduced efficiency</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="risk-card">
+            <span class="risk-number">06</span>
+            <h3>Scalability Limitations</h3>
+            <p>ERP environments should support future business growth and operational expansion.</p>
+            <p class="risk-impact">Impact: Performance issues • Infrastructure limits • Growth challenges </p>
+          </div>
+        </div>
+      </div>
+      <div class="architecture-shell mt-5">
+        <h3>How Sparkout Eliminates Implementation Risk</h3>
+        <div class="risk-roadmap mt-4">
+          <div class="risk-step">
+            <span class="risk-step-number">01</span>
+            <span class="risk-step-label">Secure Data Migration Frameworks</span>
+          </div>
+          <div class="risk-step">
+            <span class="risk-step-number">02</span>
+            <span class="risk-step-label">Pre-Built Integration Architecture</span>
+          </div>
+          <div class="risk-step">
+            <span class="risk-step-number">03</span>
+            <span class="risk-step-label">Role-Based Training Programs</span>
+          </div>
+          <div class="risk-step">
+            <span class="risk-step-number">04</span>
+            <span class="risk-step-label">Zero-Downtime Deployment Strategies</span>
+          </div>
+          <div class="risk-step">
+            <span class="risk-step-number">05</span>
+            <span class="risk-step-label">Process Alignment Workshops</span>
+          </div>
+          <div class="risk-step">
+            <span class="risk-step-number">06</span>
+            <span class="risk-step-label">Rigorous Change Control</span>
+          </div>
+          <div class="risk-step">
+            <span class="risk-step-number">07</span>
+            <span class="risk-step-label">Cloud-Native Scalability</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Industries -->
+  <section class="page-section" id="industries">
+    <div class="spark-container">
+      <div class="row align-items-center g-5 mb-5">
+        <div class="col-lg-6">
+          <h2>Industries We Serve with Custom ERP Implementation Solutions</h2>
+          <p class="mt-4">Different industries have unique operational needs, compliance requirements, and workflow structures. Sparkout delivers industry-specific ERP software implementation services that align with sector challenges, regulatory standards, and business processes across enterprise operations.</p>
+        </div>
+        <div class="col-lg-6">
+          <div class="visual-block">
+            <img src="assets/images/analytics-dashboard.png" alt="Analytics dashboard visual">
+          </div>
+        </div>
+      </div>
+      <div class="industry-panel">
+        <div class="industry-row">
+          <div class="industry-name">
+            <span>01</span>
+            <h3>Manufacturing &amp; Production</h3>
+          </div>
+          <div class="industry-summary">
+            <p>We help manufacturers better optimize production planning, inventory tracking, &amp; supply chain operations via connected ERP environments.</p>
+            <p class="industry-impact">Business Impact: Improve production visibility, reduce operational bottlenecks, &amp; streamline factory coordination across enterprise operations.</p>
+          </div>
+          <div class="industry-focus">
+            <span class="industry-focus-label">ERP Capabilities Include: </span>
+            <div class="industry-chip-list">
+              <span class="industry-chip">Production scheduling</span>
+              <span class="industry-chip">Inventory management</span>
+              <span class="industry-chip">Quality control tracking</span>
+              <span class="industry-chip">Supply chain visibility</span>
+              <span class="industry-chip">Vendor coordination</span>
+              <span class="industry-chip">Shop floor integration</span>
+            </div>
+          </div>
+        </div>
+        <div class="industry-row">
+          <div class="industry-name">
+            <span>02</span>
+            <h3>Retail &amp; E-Commerce</h3>
+          </div>
+          <div class="industry-summary">
+            <p>Our ERP solutions support retail businesses with inventory synchronization, order management, &amp; omnichannel operations.</p>
+          </div>
+          <div class="industry-focus">
+            <span class="industry-focus-label">Operational Focus Areas:</span>
+            <div class="industry-chip-list">
+              <span class="industry-chip">Multi-channel inventory</span>
+              <span class="industry-chip">Order processing</span>
+              <span class="industry-chip">Customer management</span>
+              <span class="industry-chip">Point-of-sale integration</span>
+              <span class="industry-chip">Warehouse coordination</span>
+              <span class="industry-chip">Sales analytics</span>
+            </div>
+          </div>
+        </div>
+        <div class="industry-row">
+          <div class="industry-name">
+            <span>03</span>
+            <h3>Healthcare &amp; Medical Services</h3>
+          </div>
+          <div class="industry-summary">
+            <p>Sparkout implements ERP systems that improve patient management, resource allocation, &amp; healthcare compliance tracking.</p>
+          </div>
+          <div class="industry-focus">
+            <span class="industry-focus-label">Operational Focus Areas:</span>
+            <div class="industry-chip-list">
+              <span class="industry-chip">Patient record management</span>
+              <span class="industry-chip">Billing automation</span>
+              <span class="industry-chip">Inventory control</span>
+              <span class="industry-chip">Compliance tracking</span>
+              <span class="industry-chip">Resource scheduling</span>
+              <span class="industry-chip">Medical equipment tracking</span>
+            </div>
+          </div>
+        </div>
+        <div class="industry-row">
+          <div class="industry-name">
+            <span>04</span>
+            <h3>Financial Services &amp; Banking</h3>
+          </div>
+          <div class="industry-summary">
+            <p>We deploy secure ERP platforms that manage transactions, regulatory compliance, &amp; financial reporting workflows. </p>
+          </div>
+          <div class="industry-focus">
+            <span class="industry-focus-label">Operational Focus Areas:</span>
+            <div class="industry-chip-list">
+              <span class="industry-chip">Transaction processing</span>
+              <span class="industry-chip">Compliance management</span>
+              <span class="industry-chip">Risk assessment</span>
+              <span class="industry-chip">Asset tracking</span>
+              <span class="industry-chip">Regulatory reporting</span>
+              <span class="industry-chip">Audit trail management</span>
+            </div>
+          </div>
+        </div>
+        <div class="industry-row">
+          <div class="industry-name">
+            <span>05</span>
+            <h3>Distribution &amp; Logistics</h3>
+          </div>
+          <div class="industry-summary">
+            <p>Our ERP implementation services optimize warehouse operations, fleet management, &amp; distribution workflows.</p>
+          </div>
+          <div class="industry-focus">
+            <span class="industry-focus-label">Operational Focus Areas:</span>
+            <div class="industry-chip-list">
+              <span class="industry-chip">Warehouse management</span>
+              <span class="industry-chip">Fleet tracking</span>
+              <span class="industry-chip">Route optimization</span>
+              <span class="industry-chip">Shipment coordination</span>
+              <span class="industry-chip">Carrier integration</span>
+              <span class="industry-chip">Delivery scheduling</span>
+            </div>
+          </div>
+        </div>
+        <div class="industry-row">
+          <div class="industry-name">
+            <span>06</span>
+            <h3>Professional Services</h3>
+          </div>
+          <div class="industry-summary">
+            <p>We help service enterprises manage projects, resource allocation, and client engagement through unified ERP platforms.</p>
+          </div>
+          <div class="industry-focus">
+            <span class="industry-focus-label">Operational Focus Areas:</span>
+            <div class="industry-chip-list">
+              <span class="industry-chip">Project management</span>
+              <span class="industry-chip">Resource allocation</span>
+              <span class="industry-chip">Time tracking</span>
+              <span class="industry-chip">Client billing</span>
+              <span class="industry-chip">Contract management</span>
+              <span class="industry-chip">Service delivery tracking </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact -->
+  <section class="page-section light-band" id="impact">
+    <div class="spark-container">
+      <div class="row justify-content-between align-items-end g-4 mb-5">
+        <div class="col-lg-8">
+          <h2>Business Impact of Choosing Our ERP Software Implementation</h2>
+          <p class="mt-4">Sparkout's ERP software implementation services help businesses centralize workflows, optimize enterprise operations, and improve operational efficiency through scalable ERP ecosystems. The business benefits of choosing our ERP software implementation services include: </p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-3">
+          <div class="metric-card">
+            <h3>1. Operational Visibility</h3>
+            <p class="mt-3">Sparkout unifies operational workflows to help businesses track processes &amp; manage operations better. </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="metric-card">
+            <h3>2. Cross-Department Coordination</h3>
+            <p class="mt-3">We connect enterprise departments through centralized ERP workflows that improve coordination across operations.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="metric-card">
+            <h3>3. Faster Reporting &amp; Forecasting</h3>
+            <p class="mt-3">Our ERP solutions help businesses improve reporting speed and planning accuracy across business operations.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-3">
+          <div class="metric-card">
+            <h3>4. Resource Optimization</h3>
+            <p class="mt-3">Sparkout deploys ERP automation tools that reduce manual effort and thereby improves operational efficiency.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="metric-card">
+            <h3>5. Enterprise Scalability</h3>
+            <p class="mt-3">We build scalable ERP environments that support business expansion and evolving operational needs.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-xl-4">
+          <div class="metric-card">
+            <h3>6. Workflow Standardization</h3>
+            <p class="mt-3">Our ERP systems help enterprises maintain consistent workflows across departments and business operations.</p>
+          </div>
+        </div>
+        <div class="col-md-12 col-xl-4">
+          <div class="metric-card">
+            <h3>7. Real-Time Business Intelligence</h3>
+            <p class="mt-3">We deliver AI-powered business solutions that improve operational visibility and strategic decision-making.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost -->
+  <section class="page-section" id="cost">
+    <div class="spark-container">
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-5">
+          <h2>ERP Software Implementation Cost &amp; Timeline Factors</h2>
+          <p class="mt-4">Sparkout helps enterprises estimate the cost of ERP software implementation based deployment scope, integrations, customization, and scalability requirements. Our ERP implementation consulting services focus on building scalable ERP ecosystems that better align with your enterprise workflows and business growth plans. </p>
+        </div>
+        <div class="col-lg-7">
+          <div class="challenge-table">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>ERP Implementation Scope</th>
+                  <th>Estimated Cost Range</th>
+                  <th>Estimated Timeline</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Small Business ERP Setup</td>
+                  <td>$15,000 &ndash; $40,000</td>
+                  <td>2&ndash;4 Months</td>
+                </tr>
+                <tr>
+                  <td>Mid-Scale ERP Implementation</td>
+                  <td>$40,000 &ndash; $120,000</td>
+                  <td>4&ndash;8 Months</td>
+                </tr>
+                <tr>
+                  <td>Enterprise ERP Ecosystem</td>
+                  <td>$120,000 &ndash; $500,000+</td>
+                  <td>8&ndash;12+ Months</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="architecture-shell mt-5">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-5">
+            <h3>How Sparkout Estimates ERP Implementation Costs</h3>
+            <div class="cost-visual mt-4" aria-label="ERP cost estimation architecture visual">
+              <div class="cost-visual-core">ERP Cost Estimate</div>
+              <div class="cost-orbit">Customization</div>
+              <div class="cost-orbit">User Scale</div>
+              <div class="cost-orbit">Integrations</div>
+              <div class="cost-orbit">Deployment</div>
+              <div class="cost-orbit">Migration</div>
+              <div class="cost-orbit">Support</div>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="row g-3">
+              <div class="col-md-6"><div class="cost-factor"><strong>ERP Customization</strong>Custom modules &amp; workflows increase implementation scope.</div></div>
+              <div class="col-md-6"><div class="cost-factor"><strong>User Scale</strong>More teams require broader ERP configuration.</div></div>
+              <div class="col-md-6"><div class="cost-factor"><strong>System Integrations</strong>Third-party integrations increase deployment complexity.</div></div>
+              <div class="col-md-6"><div class="cost-factor"><strong>Deployment Model</strong>Cloud &amp; on-premise ERP affect infrastructure costs.</div></div>
+              <div class="col-md-6"><div class="cost-factor"><strong>ERP Data Migration</strong>Legacy data clean-up impacts migration effort.</div></div>
+              <div class="col-md-6"><div class="cost-factor"><strong>Licensing &amp; Support</strong>Ongoing support &amp; licensing add to long-term costs.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-band mt-5">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <h2>Want a Clear ERP Implementation Roadmap Before You Invest? </h2>
+            <p class="mt-3">Partner with Sparkout to plan ERP timelines, deployment scope, and implementation strategy for scalable, efficient business operations.</p>
+          </div>
+          <div class="col-lg-4 d-flex flex-column gap-3">
+            <a class="btn btn-spark" href="#consultation">Talk to Our ERP Consultants</a>
+            <a class="btn btn-outline-light rounded-3 py-3 fw-semibold" href="#consultation">Estimate ERP Costs</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technology -->
+  <section class="page-section light-band" id="technology">
+    <div class="spark-container">
+      <div class="row justify-content-center text-center mb-5">
+        <div class="col-lg-9">
+          <h2>ERP Technologies and Software Architecture We Use</h2>
+          <p class="mt-4">At Sparkout, we build scalable ERP ecosystems using modern enterprise technologies designed for secure operations, connected workflows, and long-term business scalability. Our ERP software architecture ensures flexible, cloud-ready, AI-enabled, and enterprise-grade business environments.</p>
+        </div>
+      </div>
+      <div class="technology-architecture">
+        <div class="technology-spine" aria-hidden="true">
+          <span class="technology-spine-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 18H8a5 5 0 1 1 1.1-9.9A6 6 0 0 1 20 11.5a3.5 3.5 0 0 1-2.5 6.5Z"/><path d="m9.5 13 2 2 4-4"/></svg></span>
+          <span class="technology-spine-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="6" height="5" rx="1"/><rect x="14" y="3" width="6" height="5" rx="1"/><rect x="9" y="16" width="6" height="5" rx="1"/><path d="M7 8v3h5v5"/><path d="M17 8v3h-5"/></svg></span>
+          <span class="technology-spine-dot"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 19 6v5c0 4.5-2.8 8.5-7 10-4.2-1.5-7-5.5-7-10V6l7-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        </div>
+        <div class="technology-layers">
+          <div class="technology-layer">
+            <span class="technology-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="2"/><rect x="3" y="13" width="18" height="7" rx="2"/><path d="M7 8h.01"/><path d="M7 17h.01"/><path d="M12 8h5"/><path d="M12 17h5"/></svg></span>
+            <h3>Backend Technologies</h3>
+            <div class="tech-stack-line"><span>Java</span><span>.NET</span><span>Python</span><span>Node.js</span><span>PHP</span><span>Ruby</span></div>
+          </div>
+          <div class="technology-layer">
+            <span class="technology-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="13" rx="2"/><path d="M4 9h16"/><path d="M8 5v13"/><path d="M15 13h2"/></svg></span>
+            <h3>Frontend Technologies</h3>
+            <div class="tech-stack-line"><span>React</span><span>Angular</span><span>Vue.js</span><span>JavaScript</span><span>HTML5</span><span>CSS3</span></div>
+          </div>
+          <div class="technology-layer">
+            <span class="technology-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="7" ry="3"/><path d="M5 5v7c0 1.7 3.1 3 7 3s7-1.3 7-3V5"/><path d="M5 12v7c0 1.7 3.1 3 7 3s7-1.3 7-3v-7"/></svg></span>
+            <h3>Database Systems</h3>
+            <div class="tech-stack-line"><span>PostgreSQL</span><span>MySQL</span><span>MongoDB</span><span>Oracle</span><span>Microsoft SQL Server</span><span>Snowflake</span></div>
+          </div>
+          <div class="technology-layer">
+            <span class="technology-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M17.5 18H8a5 5 0 1 1 1.1-9.9A6 6 0 0 1 20 11.5a3.5 3.5 0 0 1-2.5 6.5Z"/></svg></span>
+            <h3>Cloud Infrastructure</h3>
+            <div class="tech-stack-line"><span>AWS</span><span>Microsoft Azure</span><span>Google Cloud</span><span>Oracle Cloud Infrastructure</span><span>IBM Cloud</span></div>
+          </div>
+          <div class="technology-layer">
+            <span class="technology-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="6" height="5" rx="1"/><rect x="14" y="4" width="6" height="5" rx="1"/><rect x="9" y="15" width="6" height="5" rx="1"/><path d="M7 9v3h5v3"/><path d="M17 9v3h-5"/></svg></span>
+            <h3>ERP Integration Technologies</h3>
+            <div class="tech-stack-line"><span>REST APIs</span><span>GraphQL</span><span>MuleSoft</span><span>Apache Kafka</span><span>Boomi</span><span>Event-Driven Architecture</span></div>
+          </div>
+          <div class="technology-layer">
+            <span class="technology-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 4c3 1 5 3 6 6l-5 5-5-5 4-6Z"/><path d="m9 10-4 1-2 4 6-1"/><path d="m14 15-1 6 4-2 1-4"/><path d="M8 16l-3 3"/><circle cx="15" cy="9" r="1.5"/></svg></span>
+            <h3>DevOps &amp; Deployment</h3>
+            <div class="tech-stack-line"><span>Docker</span><span>Kubernetes</span><span>Jenkins</span><span>Terraform</span><span>GitHub Actions</span><span>Ansible</span></div>
+          </div>
+          <div class="technology-layer">
+            <span class="technology-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="7" y="7" width="10" height="10" rx="2"/><path d="M10 2v3"/><path d="M14 2v3"/><path d="M10 19v3"/><path d="M14 19v3"/><path d="M2 10h3"/><path d="M2 14h3"/><path d="M19 10h3"/><path d="M19 14h3"/><path d="M10 12h4"/></svg></span>
+            <h3>AI &amp; Analytics Layer</h3>
+            <div class="tech-stack-line"><span>AI-powered business solutions</span><span>Predictive analytics</span><span>Workflow intelligence</span><span>AI agents</span><span>Enterprise dashboards</span><span>Real-time business analytics </span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Sparkout -->
+  <section class="page-section" id="why-sparkout">
+    <div class="spark-container">
+      <div class="row g-5 align-items-start">
+        <div class="col-lg-4">
+          <h2>Why Enterprises Choose Sparkout for ERP Implementation</h2>
+          <p class="mt-4">Enterprises rely on Sparkout for ERP software development service and implementation because of our strong engineering expertise, scalable delivery approach, and experience managing complex enterprise workflows across industries.</p>
+        </div>
+        <div class="col-lg-8">
+          <div class="why-ledger">
+            <div class="why-ledger-row">
+              <div class="why-ledger-mark"><span class="why-ledger-number">01</span><span class="why-ledger-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="m8.5 12.5-1 8 4.5-2.5 4.5 2.5-1-8"/><path d="m9.5 8 1.5 1.5L14.5 6"/></svg></span></div>
+              <div class="why-ledger-content">
+                <h3>1. Enterprise Delivery Experience</h3>
+                <p>8+ years of experience delivering enterprise software development and ERP implementation solutions.</p>
+              </div>
+            </div>
+            <div class="why-ledger-row">
+              <div class="why-ledger-mark"><span class="why-ledger-number">02</span><span class="why-ledger-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 19c.8-3 3-5 6-5s5.2 2 6 5"/><path d="M14.5 14.5c2.6.2 4.5 1.8 5.5 4.5"/></svg></span></div>
+              <div class="why-ledger-content">
+                <h3>2. Scalable Engineering Teams</h3>
+                <p>Our skilled engineers are experienced in enterprise application development and scalable ERP ecosystems.</p>
+              </div>
+            </div>
+            <div class="why-ledger-row">
+              <div class="why-ledger-mark"><span class="why-ledger-number">03</span><span class="why-ledger-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="6" height="5" rx="1"/><rect x="14" y="3" width="6" height="5" rx="1"/><rect x="9" y="16" width="6" height="5" rx="1"/><path d="M7 8v3h5v5"/><path d="M17 8v3h-5"/></svg></span></div>
+              <div class="why-ledger-content">
+                <h3>3. Enterprise Workflow Expertise</h3>
+                <p>We have strong understanding of enterprise operations, workflow structures, and connected business systems.</p>
+              </div>
+            </div>
+            <div class="why-ledger-row">
+              <div class="why-ledger-mark"><span class="why-ledger-number">04</span><span class="why-ledger-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.5 2.5L16 9"/></svg></span></div>
+              <div class="why-ledger-content">
+                <h3>4. Reliable Implementation Execution</h3>
+                <p>Our structured implementation approach ensures smooth deployment and operational stability.</p>
+              </div>
+            </div>
+            <div class="why-ledger-row">
+              <div class="why-ledger-mark"><span class="why-ledger-number">05</span><span class="why-ledger-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 18 3 21v-5a8 8 0 1 1 2 2Z"/><path d="M8 11h.01"/><path d="M12 11h.01"/><path d="M16 11h.01"/></svg></span></div>
+              <div class="why-ledger-content">
+                <h3>5. Transparent Communication</h3>
+                <p>Sparkout maintains clear collaboration and offers regular updates throughout the ERP implementation process. </p>
+              </div>
+            </div>
+            <div class="why-ledger-row">
+              <div class="why-ledger-mark"><span class="why-ledger-number">06</span><span class="why-ledger-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M20 7v5h-5"/><path d="M4 17v-5h5"/><path d="M18 12a6 6 0 0 0-10-4.5L4 12"/><path d="M6 12a6 6 0 0 0 10 4.5L20 12"/></svg></span></div>
+              <div class="why-ledger-content">
+                <h3>6. Long-Term ERP Support</h3>
+                <p>We ensure continuous optimization and operational support to help enterprises scale ERP environments confidently.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cta-band mt-5">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-8">
+            <h2>Partner With an Experienced ERP Implementation Company</h2>
+            <p class="mt-3">Sparkout helps enterprises modernize operations through scalable ERP ecosystems built for long-term business growth.</p>
+          </div>
+          <div class="col-lg-4 d-flex flex-column gap-3">
+            <a class="btn btn-spark" href="#consultation">Talk to ERP Experts</a>
+            <a class="btn btn-outline-light rounded-3 py-3 fw-semibold" href="#consultation">Start ERP Planning</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hiring -->
+  <section class="page-section light-band" id="hiring">
+    <div class="spark-container">
+      <div class="row justify-content-between align-items-end g-4 mb-5">
+        <div class="col-lg-8">
+          <h2>Flexible ERP Hiring Models Sparkout Offers for Enterprise Implementation</h2>
+          <p class="mt-4">Sparkout supports flexible ERP Hiring models based on enterprise goals, operational complexity, and implementation requirements.</p>
+        </div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-xl-3"><article class="hire-card"><h3>1. Dedicated ERP Implementation Teams</h3><p class="mt-3">Hire dedicated ERP experts for long-term implementation, optimization, and enterprise support.</p></article></div>
+        <div class="col-md-6 col-xl-3"><article class="hire-card"><h3>2. Project-Based ERP Implementation</h3><p class="mt-3">Choose structured ERP deployment with defined scope, timelines, &amp; delivery goals by hiring our EPR team.</p></article></div>
+        <div class="col-md-6 col-xl-3"><article class="hire-card"><h3>3. ERP Consulting &amp; Strategy Support</h3><p class="mt-3">Hire our ERP consultants to plan deployment and optimize enterprise workflows.</p></article></div>
+        <div class="col-md-6 col-xl-3"><article class="hire-card"><h3>4. Ongoing ERP Support &amp; Scaling</h3><p class="mt-3">Scale ERP operations by hiring our experts for continuous optimization, integration, and support services.</p></article></div>
+      </div>
+      <div class="final-cta mt-5" id="consultation">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-7">
+            <h2>Confused About the Right ERP Engagement Model?</h2>
+            <p class="mt-3">Sparkout helps you choose the right ERP support model based on your business and deployment needs.</p>
+            <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+              <a class="btn btn-spark" href="#top">Talk to ERP Consultants</a>
+              <a class="btn btn-outline-spark" href="#top">Choose the Right Model </a>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="cta-visual">
+              <img src="assets/images/final-cta-visual.png" alt="Final CTA ERP consultation visual">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="page-section" id="faq">
+    <div class="spark-container">
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <h2>FAQ</h2>
+        </div>
+        <div class="col-lg-8">
+          <div class="accordion" id="faqAccordion">
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqOne" aria-expanded="true" aria-controls="faqOne">1. How long does ERP software implementation take?</button></h3>
+              <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">The enterprise resource planning implementation timelines vary depending on the company’s size, the project’s complexity, customization needs, and integration needs. However, speaking of approximation, Sparkout delivers an enterprise ERP project between 3 months to a year. </div></div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqTwo" aria-expanded="false" aria-controls="faqTwo">2. What affects the cost of ERP software implementation? </button></h3>
+              <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">The cost of ERP software implementation depends on chosen ERP customization services, number of modules, and data volume. In the meantime, working with experienced ERP implementation experts can significantly shorten the timeline. </div></div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">3. Why do enterprises need ERP system implementation?</button></h3>
+              <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">ERP systems help enterprises centralize workflows, improve coordination, streamline operations, and manage business processes more efficiently across departments.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFour" aria-expanded="false" aria-controls="faqFour">4. What is ERP data migration and why is it critical?</button></h3>
+              <div id="faqFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">ERP data migration means transferring the existing business data (customers, inventory, vendors, and financials) into a new ERP system without any loss. Poor data migration is one of the leading causes for ERP implementation failure, which makes it a high-priority phase. Only a reliable ERP implementation partner can cleanse and validate the data before it goes live.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqFive" aria-expanded="false" aria-controls="faqFive">5. What are ERP system integration services?</button></h3>
+              <div id="faqFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">ERP system integration services connect ERP platforms with business applications like CRM, HRMS, finance, and inventory systems to improve operational connectivity.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSix" aria-expanded="false" aria-controls="faqSix">6. What is ERP cloud deployment and how is it different from on-premise?</button></h3>
+              <div id="faqSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">ERP cloud deployment hosts the system on remote servers. This offers flexibility, automatic updates, and lower initial cost. On the other hand, on-premises gives businesses more control, but it requires significant IT infrastructure and proper maintenance. Choosing between a cloud software development ecosystem and on-premises depends on your security needs and budget.</div></div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSeven" aria-expanded="false" aria-controls="faqSeven">7. What role does an ERP implementation consultant play?</button></h3>
+              <div id="faqSeven" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">An ERP implementation consultant or ERP software consulting services plays a vital role, guiding businesses through the entire lifecycle. They are the one that blends the industry expertise and technical knowledge to ensure the ERP system configuration fits your processes and not the other way around. A good service always acts as a bridge between your business goals and technical execution. </div></div>
+            </div>
+            <div class="accordion-item">
+              <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqEight" aria-expanded="false" aria-controls="faqEight">8. Does Sparkout provide ERP implementation consulting services?</button></h3>
+              <div id="faqEight" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. Sparkout offers ERP implementation consulting services that help enterprises plan deployment strategies, optimize workflows, and modernize operations.</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

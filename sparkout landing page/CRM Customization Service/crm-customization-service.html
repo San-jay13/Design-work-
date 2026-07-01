@@ -1,0 +1,2811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CRM Customization Service | Custom AI-Powered CRM Solutions</title>
+  <meta name="description" content="Sparkout delivers CRM Customization Services that automate workflows, connect business systems, & support scalable business growth with AI-powered capabilities." />
+  <meta name="keywords" content="CRM Customization Service, CRM customization solutions, custom CRM development services, CRM software customization, CRM system customization services, Custom CRM solutions, custom CRM development, crm customization company, tailor made CRM development, CRM integration services, CRM application development, user defined CRM development, CRM attributes development, CRM development company, CRM software development company" />
+
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts: Montserrat -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    /* =============================================
+       DESIGN SYSTEM TOKENS
+    ============================================= */
+    :root {
+      --primary: #FF6C1A;
+      --primary-end: #FF4D0D;
+      --navy: #192A44;
+      --white: #FFFFFF;
+      --font-default: #0B1220;
+      --border: #E5E7EB;
+      --stroke: #64748B;
+      --light-bg: #F8FAFC;
+      --muted: #6B7280;
+
+      --gradient: linear-gradient(135deg, #FF6C1A 0%, #FF4D0D 100%);
+
+      --shadow-sm: 0 2px 8px rgba(0,0,0,0.04);
+      --shadow-md: 0 10px 30px rgba(0,0,0,0.06);
+      --shadow-lg: 0 20px 50px rgba(0,0,0,0.08);
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 20px;
+      --radius-pill: 999px;
+
+      --transition: all 0.3s ease;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--font-default);
+      background: var(--white);
+      line-height: 1.7;
+      font-size: 16px;
+      overflow-x: hidden;
+    }
+
+    /* =============================================
+       TYPOGRAPHY
+    ============================================= */
+    h1 { font-size: 48px; font-weight: 700; line-height: 1.2; letter-spacing: -1px; }
+    h2 { font-size: 32px; font-weight: 700; line-height: 1.3; letter-spacing: -0.5px; }
+    h3 { font-size: 24px; font-weight: 600; line-height: 1.4; }
+    h4 { font-size: 20px; font-weight: 600; }
+    p { color: var(--muted); font-size: 16px; line-height: 1.7; }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 32px; }
+      h2 { font-size: 26px; }
+    }
+
+    /* =============================================
+       GLOBAL LAYOUT
+    ============================================= */
+    .section-wrap {
+      padding: 100px 80px;
+    }
+    .content-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    @media (max-width: 1200px) {
+      .section-wrap { padding: 80px 40px; }
+    }
+    @media (max-width: 768px) {
+      .section-wrap { padding: 60px 20px; }
+    }
+
+    /* =============================================
+       BUTTONS
+    ============================================= */
+    .btn-primary-spark {
+      background: var(--gradient);
+      color: var(--white);
+      border: none;
+      border-radius: var(--radius-md);
+      padding: 14px 28px;
+      font-weight: 600;
+      font-size: 15px;
+      font-family: 'Montserrat', sans-serif;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .btn-primary-spark:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(255, 108, 26, 0.35);
+      color: var(--white);
+    }
+
+    .btn-secondary-spark {
+      background: transparent;
+      border: 1.5px solid var(--navy);
+      color: var(--navy);
+      border-radius: var(--radius-md);
+      padding: 13px 28px;
+      font-weight: 600;
+      font-size: 15px;
+      font-family: 'Montserrat', sans-serif;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .btn-secondary-spark:hover {
+      background: var(--navy);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-spark {
+      background: transparent;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 13px 28px;
+      font-weight: 600;
+      font-size: 15px;
+      font-family: 'Montserrat', sans-serif;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .btn-outline-spark:hover {
+      background: rgba(255,255,255,0.15);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* =============================================
+       SECTION LABELS
+    ============================================= */
+    .section-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,108,26,0.08);
+      color: var(--primary);
+      border-radius: var(--radius-pill);
+      padding: 6px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    /* =============================================
+       NAVBAR
+    ============================================= */
+    #mainNav {
+      height: 88px;
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+    #mainNav.scrolled {
+      box-shadow: var(--shadow-md);
+    }
+    .nav-brand {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    .nav-brand span { color: var(--primary); }
+    .nav-link-item {
+      color: var(--font-default);
+      font-weight: 500;
+      font-size: 14px;
+      text-decoration: none;
+      transition: var(--transition);
+      padding: 4px 0;
+    }
+    .nav-link-item:hover { color: var(--primary); }
+
+    /* Scroll progress */
+    #scrollProgress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--gradient);
+      z-index: 9999;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* =============================================
+       HERO SECTION
+    ============================================= */
+    #hero {
+      background: var(--white);
+      padding: 100px 80px;
+      overflow: hidden;
+    }
+    .hero-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,108,26,0.08);
+      color: var(--primary);
+      border-radius: var(--radius-pill);
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 24px;
+    }
+    .hero-title {
+      font-size: 48px;
+      font-weight: 800;
+      line-height: 1.15;
+      letter-spacing: -1px;
+      color: var(--navy);
+      margin-bottom: 20px;
+    }
+    .hero-title .accent { color: var(--primary); }
+    .hero-desc {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .stat-num {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--muted);
+      font-weight: 500;
+      margin-top: 4px;
+    }
+    .hero-visual {
+      position: relative;
+    }
+    .hero-img-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background: var(--light-bg);
+      aspect-ratio: 4/3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+    .hero-img-wrap:hover img { transform: scale(1.02); }
+    .hero-float-card {
+      position: absolute;
+      background: var(--white);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-float-card.card-1 {
+      bottom: -20px;
+      left: -30px;
+    }
+    .hero-float-card.card-2 {
+      top: -20px;
+      right: -20px;
+    }
+    .float-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--gradient);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .float-label { font-size: 11px; color: var(--muted); font-weight: 500; }
+    .float-value { font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.2; }
+
+    @media (max-width: 992px) {
+      #hero { padding: 70px 40px; }
+      .hero-inner { grid-template-columns: 1fr; gap: 50px; }
+      .hero-title { font-size: 36px; }
+      .hero-float-card { display: none; }
+    }
+    @media (max-width: 768px) {
+      #hero { padding: 60px 20px; }
+    }
+
+    /* =============================================
+       WHAT IS CRM CUSTOMIZATION
+    ============================================= */
+    #what-is-crm {
+      background: var(--light-bg);
+    }
+    .what-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .customize-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-pill);
+      padding: 8px 16px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--font-default);
+      transition: var(--transition);
+    }
+    .pill:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+    .pill i { color: var(--primary); font-size: 12px; }
+    .what-right {
+      position: sticky;
+      top: 160px;
+    }
+    .what-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      background: var(--white);
+      aspect-ratio: 4/3;
+    }
+    .what-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .what-body { font-size: 16px; color: var(--muted); line-height: 1.75; margin-bottom: 16px; }
+    @media (max-width: 992px) {
+      .what-grid { grid-template-columns: 1fr; gap: 40px; }
+      .what-right { position: static; }
+    }
+
+    /* =============================================
+       WHY BUSINESSES NEED — PROBLEM CARDS
+    ============================================= */
+    #why-businesses {
+      background: var(--white);
+    }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .problem-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    .problem-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transition: var(--transition);
+    }
+    .problem-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+      border-color: transparent;
+    }
+    .problem-card:hover::before { transform: scaleX(1); }
+    .problem-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .problem-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255,108,26,0.08);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    .problem-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 10px;
+    }
+    .problem-desc {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.65;
+      margin: 0;
+    }
+    @media (max-width: 992px) {
+      .problem-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 576px) {
+      .problem-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Mid-section CTA Banner */
+    .cta-banner {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      margin-top: 60px;
+    }
+    .cta-banner-text h3 {
+      color: var(--white);
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .cta-banner-text p {
+      color: rgba(255,255,255,0.65);
+      margin: 0;
+      font-size: 15px;
+    }
+    .cta-banner-actions { display: flex; gap: 12px; flex-shrink: 0; flex-wrap: wrap; }
+    @media (max-width: 768px) {
+      .cta-banner { flex-direction: column; align-items: flex-start; padding: 32px 24px; }
+    }
+
+    /* =============================================
+       CRM SERVICES — TAB LAYOUT
+    ============================================= */
+    #crm-services {
+      background: var(--light-bg);
+    }
+    .services-tab-wrap {
+      display: block;
+      margin-top: 48px;
+    }
+    .services-tab-nav {
+      display: none;
+    }
+    .srv-tab-btn {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 18px;
+      text-align: left;
+      cursor: pointer;
+      transition: var(--transition);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .srv-tab-btn i { color: var(--primary); font-size: 18px; flex-shrink: 0; }
+    .srv-tab-btn:hover, .srv-tab-btn.active {
+      background: var(--navy);
+      color: var(--white);
+      border-color: var(--navy);
+    }
+    .srv-tab-btn.active i, .srv-tab-btn:hover i { color: var(--white); }
+    .services-tab-content {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      column-gap: 56px;
+      row-gap: 34px;
+    }
+    .srv-panel {
+      display: block;
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+      padding: 0 0 28px;
+      animation: fadeIn 0.3s ease;
+    }
+    .srv-panel.active {
+      display: block;
+      width: 100%;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+    .srv-panel-grid {
+      display: block;
+    }
+    .srv-panel h3 {
+      font-size: 20px;
+      color: var(--navy);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .srv-panel h3 i {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      background: rgba(255,108,26,0.08);
+      color: var(--primary);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .srv-panel p { font-size: 15px; color: var(--muted); line-height: 1.65; margin-bottom: 14px; }
+    #crm-services .srv-panel .btn-primary-spark {
+      background: transparent;
+      color: var(--primary);
+      border-radius: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+    #crm-services .srv-panel .btn-primary-spark:hover {
+      color: var(--primary-end);
+      transform: none;
+      box-shadow: none;
+    }
+    .srv-img {
+      display: none;
+    }
+    .srv-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 992px) {
+      .services-tab-content { grid-template-columns: 1fr; }
+    }
+
+    /* =============================================
+       CRM PLATFORMS
+    ============================================= */
+    #platforms {
+      background: var(--white);
+    }
+    .platforms-split {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 56px;
+      align-items: start;
+    }
+    .platforms-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0;
+      border-top: 1px solid var(--border);
+      border-left: 1px solid var(--border);
+    }
+    .platform-card {
+      background: var(--white);
+      border: 0;
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+      padding: 20px;
+      text-align: left;
+      transition: var(--transition);
+      cursor: default;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-height: 98px;
+    }
+    .platform-card:hover {
+      border-color: var(--primary);
+      background: var(--light-bg);
+      box-shadow: none;
+      transform: none;
+    }
+    .platform-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--light-bg);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      margin: 0;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+    .platform-card:hover .platform-icon {
+      background: var(--gradient);
+      color: white;
+    }
+    .platform-name { font-size: 15px; font-weight: 700; color: var(--navy); line-height: 1.4; }
+    @media (max-width: 992px) {
+      .platforms-split { grid-template-columns: 1fr; gap: 36px; }
+    }
+    @media (max-width: 768px) {
+      .platforms-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 480px) {
+      .platforms-grid { grid-template-columns: 1fr; }
+    }
+
+    /* =============================================
+       DEPLOYMENT MODELS
+    ============================================= */
+    #deployment {
+      background: var(--light-bg);
+    }
+    .deploy-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 44px;
+      margin-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .deploy-card {
+      background: transparent;
+      border: 0;
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+      padding: 24px 0;
+      transition: var(--transition);
+      position: relative;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      column-gap: 16px;
+      align-items: start;
+    }
+    .deploy-card:hover {
+      box-shadow: none;
+      transform: none;
+    }
+    .deploy-badge {
+      display: none;
+      background: rgba(255,108,26,0.08);
+      color: var(--primary);
+      border-radius: var(--radius-pill);
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      width: max-content;
+    }
+    .deploy-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--light-bg);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 20px;
+      margin-bottom: 0;
+      transition: var(--transition);
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
+    .deploy-card:hover .deploy-icon {
+      background: var(--gradient);
+      color: white;
+    }
+    .deploy-name { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 8px; grid-column: 2; }
+    .deploy-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin: 0; grid-column: 2; }
+    #deployment .cta-banner {
+      margin-top: 36px !important;
+      padding: 28px 32px;
+      border-radius: var(--radius-md);
+    }
+    @media (max-width: 992px) {
+      .deploy-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 576px) {
+      .deploy-card { grid-template-columns: 1fr; }
+      .deploy-icon, .deploy-badge, .deploy-name, .deploy-desc { grid-column: 1; }
+      .deploy-icon { grid-row: auto; margin-bottom: 12px; }
+    }
+
+    /* =============================================
+       BENEFITS — DASHBOARD GRID
+    ============================================= */
+    #benefits {
+      background: var(--white);
+    }
+    .benefits-outer {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: 56px;
+      align-items: start;
+    }
+    .benefits-summary {
+      position: sticky;
+      top: 140px;
+    }
+    .benefits-list { margin-top: 0; display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--border); }
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 0;
+      background: transparent;
+      border-bottom: 1px solid var(--border);
+      border-radius: 0;
+      transition: var(--transition);
+    }
+    .benefit-item:hover {
+      background: transparent;
+      box-shadow: none;
+      transform: none;
+    }
+    .benefit-icon-box {
+      width: 38px;
+      height: 38px;
+      background: rgba(255,108,26,0.08);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .benefit-title { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .benefit-desc { font-size: 13px; color: var(--muted); margin: 0; line-height: 1.6; }
+    .benefits-visual-right { position: relative; }
+    .benefits-img {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 1;
+    }
+    .benefits-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 992px) {
+      .benefits-outer { grid-template-columns: 1fr; gap: 40px; }
+      .benefits-summary { position: static; }
+      .benefits-visual-right { display: none; }
+    }
+
+    /* =============================================
+       PROCESS TIMELINE
+    ============================================= */
+    #process {
+      background: var(--navy);
+    }
+    #process h2, #process .section-label { color: var(--white); }
+    #process .section-label { background: rgba(255,108,26,0.2); }
+    .process-intro { color: rgba(255,255,255,0.65); font-size: 16px; line-height: 1.7; max-width: 600px; margin-bottom: 60px; }
+    .timeline-wrap {
+      position: relative;
+    }
+    .timeline-line {
+      position: absolute;
+      left: 28px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(255,255,255,0.1);
+    }
+    .timeline-progress {
+      position: absolute;
+      left: 28px;
+      top: 0;
+      width: 2px;
+      background: var(--gradient);
+      transition: height 0.5s ease;
+    }
+    .timeline-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 32px;
+      margin-bottom: 32px;
+      position: relative;
+      cursor: pointer;
+    }
+    .step-dot {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      border: 2px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.4);
+      flex-shrink: 0;
+      transition: var(--transition);
+      z-index: 1;
+    }
+    .timeline-step.active .step-dot,
+    .timeline-step:hover .step-dot {
+      background: var(--gradient);
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 0 20px rgba(255,108,26,0.4);
+    }
+    .step-body {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      flex: 1;
+      transition: var(--transition);
+    }
+    .timeline-step.active .step-body,
+    .timeline-step:hover .step-body {
+      background: rgba(255,108,26,0.08);
+      border-color: rgba(255,108,26,0.3);
+    }
+    .step-title { font-size: 17px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+    .step-desc { font-size: 14px; color: rgba(255,255,255,0.6); margin: 0; line-height: 1.65; }
+
+    /* =============================================
+       INDUSTRY SOLUTIONS — TABS
+    ============================================= */
+    #industries {
+      background: var(--white);
+      padding-top: 80px;
+      padding-bottom: 72px;
+    }
+    .industry-tabs-wrap {
+      display: block;
+      margin-top: 36px;
+      border-top: 0;
+    }
+    .industry-tab-btns {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 8px;
+      margin-bottom: 34px;
+      padding-bottom: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .industry-tab-btns::-webkit-scrollbar {
+      display: none;
+    }
+    .ind-tab-btn {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex: 1 1 0;
+      justify-content: center;
+      white-space: nowrap;
+    }
+    .ind-tab-btn:hover, .ind-tab-btn.active {
+      background: var(--gradient);
+      color: var(--white);
+      border-color: transparent;
+    }
+    .ind-panel {
+      display: none;
+    }
+    .ind-panel.active {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 0.85fr);
+      gap: 54px;
+      align-items: center;
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 54px;
+      overflow: hidden;
+      animation: fadeIn 0.3s ease;
+    }
+    .ind-content {
+      display: block;
+      padding: 0;
+    }
+    .ind-content h3 { font-size: 28px; color: var(--navy); margin-bottom: 18px; }
+    .ind-content p { font-size: 17px; color: var(--muted); line-height: 1.65; margin-bottom: 28px; }
+    .ind-metric {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,108,26,0.08);
+      border-radius: var(--radius-pill);
+      padding: 10px 16px;
+    }
+    .ind-metric-num { font-size: 24px; font-weight: 800; color: var(--primary); }
+    .ind-metric-text { font-size: 13px; color: var(--muted); font-weight: 500; line-height: 1.4; }
+    .ind-img {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      width: 100%;
+      height: 350px;
+      min-height: 0;
+      background: var(--white);
+      box-shadow: var(--shadow-lg);
+    }
+    .ind-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ind-panel.active .ind-img {
+      justify-self: stretch;
+      align-self: stretch;
+      margin-top: 0;
+    }
+    @media (max-width: 992px) {
+      .industry-tabs-wrap {
+        margin-top: 32px;
+      }
+      .industry-tab-btns {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+      }
+      .industry-tab-btns::-webkit-scrollbar {
+        display: none;
+      }
+      .ind-panel,
+      .ind-panel.active {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 32px;
+      }
+      .ind-panel.active .ind-img {
+        justify-self: stretch;
+        align-self: stretch;
+        margin-top: 0;
+      }
+      .ind-img { width: 100%; height: 240px; }
+    }
+    @media (max-width: 576px) {
+      .ind-panel.active { padding: 24px; }
+      .ind-img { display: none; }
+    }
+
+    /* =============================================
+       TECHNOLOGY STACK
+    ============================================= */
+    #technology {
+      background: var(--light-bg);
+    }
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .tech-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: var(--transition);
+    }
+    .tech-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .tech-cat {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+    }
+    .tech-name { font-size: 15px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .tech-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .tech-pill {
+      background: var(--light-bg);
+      border-radius: var(--radius-pill);
+      padding: 4px 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--muted);
+    }
+    @media (max-width: 1200px) {
+      .tech-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 576px) {
+      .tech-grid { grid-template-columns: 1fr; }
+    }
+
+    /* =============================================
+       COST TABLE
+    ============================================= */
+    #cost {
+      background: var(--white);
+    }
+    .cost-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+      margin-top: 48px;
+    }
+    .cost-table-wrap {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .cost-table { width: 100%; border-collapse: collapse; }
+    .cost-table thead { background: var(--navy); }
+    .cost-table thead th {
+      padding: 18px 24px;
+      color: var(--white);
+      font-size: 13px;
+      font-weight: 700;
+      text-align: left;
+    }
+    .cost-table tbody tr { border-bottom: 1px solid var(--border); transition: var(--transition); }
+    .cost-table tbody tr:last-child { border-bottom: none; }
+    .cost-table tbody tr:hover { background: var(--light-bg); }
+    .cost-table td {
+      padding: 16px 24px;
+      font-size: 14px;
+      color: var(--font-default);
+    }
+    .cost-table td:last-child { color: var(--primary); font-weight: 700; }
+    .cost-note {
+      background: var(--light-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      margin-top: 20px;
+    }
+    .cost-note strong { color: var(--navy); display: block; margin-bottom: 8px; font-size: 14px; }
+    .cost-note p { font-size: 13px; margin: 0; }
+    .cost-cta-side {
+      background: var(--light-bg);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      position: sticky;
+      top: 160px;
+    }
+    .cost-cta-side h3 { font-size: 22px; color: var(--navy); margin-bottom: 12px; }
+    .cost-cta-side p { font-size: 15px; color: var(--muted); line-height: 1.7; margin-bottom: 24px; }
+    @media (max-width: 992px) {
+      .cost-split { grid-template-columns: 1fr; gap: 32px; }
+      .cost-cta-side { position: static; }
+    }
+
+    /* =============================================
+       CASE STUDIES
+    ============================================= */
+    #case-studies {
+      background: var(--light-bg);
+    }
+    .cases-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .case-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .case-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-6px);
+    }
+    .case-img {
+      height: 200px;
+      background: var(--light-bg);
+      overflow: hidden;
+    }
+    .case-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+    .case-card:hover .case-img img { transform: scale(1.05); }
+    .case-body { padding: 28px; }
+    .case-tag {
+      display: inline-block;
+      background: rgba(255,108,26,0.08);
+      color: var(--primary);
+      border-radius: var(--radius-pill);
+      padding: 4px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    .case-name { font-size: 20px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .case-desc { font-size: 14px; color: var(--muted); line-height: 1.65; margin-bottom: 20px; }
+    .case-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .case-link:hover { gap: 10px; }
+    @media (max-width: 992px) {
+      .cases-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 576px) {
+      .cases-grid { grid-template-columns: 1fr; }
+    }
+
+    /* =============================================
+       HIRING MODELS
+    ============================================= */
+    #hiring {
+      background: var(--white);
+    }
+    .hiring-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .hiring-card {
+      display: flex;
+      gap: 20px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: var(--transition);
+    }
+    .hiring-card:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+    .hiring-num {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--border);
+      line-height: 1;
+      flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .hiring-card:hover .hiring-num { color: var(--primary); }
+    .hiring-title { font-size: 18px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .hiring-desc { font-size: 14px; color: var(--muted); line-height: 1.65; margin: 0; }
+    @media (max-width: 768px) {
+      .hiring-grid { grid-template-columns: 1fr; }
+    }
+
+    /* =============================================
+       WHY CHOOSE US
+    ============================================= */
+    #why-us {
+      background: var(--light-bg);
+    }
+    .why-trust-badges {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+      padding: 24px;
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+    }
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      min-width: 200px;
+    }
+    .trust-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--gradient);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .trust-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .trust-text strong { display: block; font-size: 14px; font-weight: 700; color: var(--navy); line-height: 1.25; }
+    .trust-text span { font-size: 12px; color: var(--muted); line-height: 1.35; }
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .why-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      transition: var(--transition);
+    }
+    .why-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+    .why-icon {
+      width: 52px;
+      height: 52px;
+      background: rgba(255,108,26,0.08);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      font-size: 24px;
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+    .why-card:hover .why-icon {
+      background: var(--gradient);
+      color: white;
+    }
+    .why-title { font-size: 17px; font-weight: 700; color: var(--navy); margin-bottom: 10px; }
+    .why-desc { font-size: 14px; color: var(--muted); line-height: 1.65; margin: 0; }
+    @media (max-width: 992px) {
+      .why-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 576px) {
+      .why-grid { grid-template-columns: 1fr; }
+    }
+
+    /* =============================================
+       FAQ ACCORDION
+    ============================================= */
+    #faq {
+      background: var(--white);
+    }
+    .faq-wrap {
+      max-width: 860px;
+      margin: 48px auto 0;
+    }
+    .faq-item {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      margin-bottom: 12px;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+    .faq-item:hover { box-shadow: var(--shadow-sm); }
+    .faq-question {
+      width: 100%;
+      background: var(--white);
+      border: none;
+      padding: 20px 24px;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--navy);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      transition: var(--transition);
+    }
+    .faq-question:hover { background: var(--light-bg); }
+    .faq-question.open { background: var(--navy); color: var(--white); }
+    .faq-chevron { font-size: 18px; flex-shrink: 0; transition: transform 0.3s ease; }
+    .faq-question.open .faq-chevron { transform: rotate(180deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s ease;
+    }
+    .faq-answer.open { max-height: 400px; }
+    .faq-answer-inner {
+      padding: 20px 24px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.7;
+      border-top: 1px solid var(--border);
+    }
+
+    /* =============================================
+       FINAL CTA SECTION
+    ============================================= */
+    #final-cta {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+    #final-cta::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(255,108,26,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    #final-cta::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255,77,13,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .cta-final-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .cta-final-text h2 { color: var(--white); font-size: 36px; margin-bottom: 16px; }
+    .cta-final-text p { color: rgba(255,255,255,0.65); font-size: 16px; line-height: 1.7; margin-bottom: 32px; }
+    .cta-final-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .cta-final-visual {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cta-visual-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      backdrop-filter: blur(10px);
+      width: 100%;
+    }
+    .cta-visual-img {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+    }
+    .cta-visual-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 992px) {
+      .cta-final-inner { grid-template-columns: 1fr; }
+      .cta-final-visual { display: none; }
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: #0F1D30;
+      padding: 60px 80px 32px;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      margin-bottom: 32px;
+    }
+    .footer-brand { font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 14px; }
+    .footer-brand span { color: var(--primary); }
+    .footer-tagline { font-size: 14px; color: rgba(255,255,255,0.5); line-height: 1.65; margin-bottom: 24px; }
+    .footer-heading { font-size: 13px; font-weight: 700; color: var(--white); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 16px; }
+    .footer-link {
+      display: block;
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: var(--transition);
+    }
+    .footer-link:hover { color: var(--primary); padding-left: 4px; }
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .footer-copy { font-size: 13px; color: rgba(255,255,255,0.4); }
+    .footer-socials { display: flex; gap: 10px; }
+    .social-link {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.5);
+      font-size: 16px;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .social-link:hover { background: var(--primary); color: white; }
+    @media (max-width: 992px) {
+      footer { padding: 50px 40px 28px; }
+      .footer-top { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 576px) {
+      footer { padding: 40px 20px 24px; }
+      .footer-top { grid-template-columns: 1fr; }
+    }
+
+    /* =============================================
+       ENTRANCE ANIMATIONS
+    ============================================= */
+    .animate-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .animate-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .animate-in.delay-1 { transition-delay: 0.1s; }
+    .animate-in.delay-2 { transition-delay: 0.2s; }
+    .animate-in.delay-3 { transition-delay: 0.3s; }
+    .animate-in.delay-4 { transition-delay: 0.4s; }
+    .animate-in.delay-5 { transition-delay: 0.5s; }
+
+    /* Divider */
+    .section-divider {
+      width: 56px;
+      height: 4px;
+      background: var(--gradient);
+      border-radius: var(--radius-pill);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS -->
+<div id="scrollProgress"></div>
+
+<!-- =============================================
+     NAVBAR
+============================================= -->
+<nav id="mainNav">
+  <div style="max-width:1280px; margin:0 auto; padding:0 80px; height:100%; display:flex; align-items:center; justify-content:space-between; gap:32px;">
+    <a href="https://www.sparkouttech.com" class="nav-brand">Spark<span>out</span></a>
+    <div class="d-none d-lg-flex align-items-center gap-4">
+      <a href="#what-is-crm" class="nav-link-item">What is CRM</a>
+      <a href="#crm-services" class="nav-link-item">Services</a>
+      <a href="#industries" class="nav-link-item">Industries</a>
+      <a href="#cost" class="nav-link-item">Pricing</a>
+      <a href="#faq" class="nav-link-item">FAQ</a>
+    </div>
+    <a href="#final-cta" class="btn-primary-spark d-none d-md-inline-flex">
+      Book a Strategy Call <i class="bi bi-arrow-right"></i>
+    </a>
+  </div>
+</nav>
+
+<!-- =============================================
+     HERO SECTION
+============================================= -->
+<section id="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <h1 class="hero-title animate-in delay-1">
+        CRM Customization Service for <span class="accent">Smarter, Faster,</span> and Scalable Business Growth
+      </h1>
+      <p class="hero-desc animate-in delay-2">Transform disconnected workflows into intelligent business systems with our CRM Customization Service. We deliver AI-driven custom CRM solutions, CRM integration services, and scalable CRM software customization that improve business visibility, automation, & operational efficiency.</p>
+      <div class="hero-ctas animate-in delay-3">
+        <a href="#final-cta" class="btn-primary-spark">
+          Book a CRM Strategy Call <i class="bi bi-arrow-right"></i>
+        </a>
+        <a href="#cost" class="btn-secondary-spark">
+          Get Custom CRM Roadmap
+        </a>
+      </div>
+    </div>
+    <div class="hero-visual animate-in delay-2">
+      <div class="hero-img-wrap">
+        <img src="assets/images/crm-customization-hero.png" alt="CRM Customization Dashboard" />
+      </div>
+      <div class="hero-float-card card-1">
+        <div class="float-icon"><i class="bi bi-graph-up-arrow"></i></div>
+        <div>
+          <div class="float-label">Sales Pipeline</div>
+          <div class="float-value">+60% Faster</div>
+        </div>
+      </div>
+      <div class="hero-float-card card-2">
+        <div class="float-icon"><i class="bi bi-cpu"></i></div>
+        <div>
+          <div class="float-label">AI Automation</div>
+          <div class="float-value">Active</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     WHAT IS CRM CUSTOMIZATION
+============================================= -->
+<section id="what-is-crm" class="section-wrap">
+  <div class="content-container">
+    <div class="what-grid">
+      <div class="what-left">
+        <h2 class="animate-in delay-1">What is CRM Customization &amp; What Can You Customize?</h2>
+        <div class="section-divider animate-in delay-1"></div>
+        <p class="what-body animate-in delay-2">CRM customization is the process of modifying CRM software to match your business workflows, customer operations, goals, and industry requirements. Instead of using rigid default systems, businesses can build tailored automation, dashboards, integrations, and workflows that improve efficiency and decision-making.</p>
+        <p class="what-body animate-in delay-2">Our CRM Customization Service helps companies create scalable custom CRM solutions with AI-driven automation, CRM integration services, and user-defined CRM development built around real business processes.</p>
+        <p class="what-body animate-in delay-3">As a trusted CRM customization company, we analyze existing workflows, find out operational gaps, customize CRM features, integrate business systems, and optimize automation to create a connected CRM ecosystem tailored to your organization.</p>
+        <h4 style="color:var(--navy); margin-bottom:16px;" class="animate-in delay-3">What Can Be Customized?</h4>
+        <div class="customize-pills animate-in delay-4">
+          <span class="pill"><i class="bi bi-check-circle-fill"></i> Workflow automation</span>
+          <span class="pill"><i class="bi bi-check-circle-fill"></i> Sales pipelines</span>
+          <span class="pill"><i class="bi bi-check-circle-fill"></i> CRM dashboards</span>
+          <span class="pill"><i class="bi bi-check-circle-fill"></i> AI-powered processes</span>
+          <span class="pill"><i class="bi bi-check-circle-fill"></i> CRM attributes development</span>
+          <span class="pill"><i class="bi bi-check-circle-fill"></i> Third-party integrations</span>
+          <span class="pill"><i class="bi bi-check-circle-fill"></i> Customer service workflows</span>
+          <span class="pill"><i class="bi bi-check-circle-fill"></i> Mobile CRM experiences</span>
+          <span class="pill"><i class="bi bi-check-circle-fill"></i> Industry-specific modules</span>
+        </div>
+      </div>
+      <div class="what-right animate-in delay-2">
+        <div class="what-img">
+          <img src="assets/images/crm-dashboard-preview.png" alt="CRM Dashboard Preview" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     WHY BUSINESSES NEED CRM CUSTOMIZATION
+============================================= -->
+<section id="why-businesses" class="section-wrap">
+  <div class="content-container">
+    <h2 class="animate-in delay-1">Why Do Businesses Need CRM Customization Services?</h2>
+    <div class="section-divider animate-in delay-1"></div>
+    <p style="max-width:680px;" class="animate-in delay-2">As businesses grow, managing standard CRM platforms becomes difficult due to disconnected workflows, limited automation, and complex features. Our CRM Customization Service helps businesses build flexible, AI-driven CRM customization solutions that support real operational needs.</p>
+
+    <div class="problem-grid">
+      <div class="problem-card animate-in delay-1">
+        <span class="problem-num">01</span>
+        <div class="problem-icon"><i class="bi bi-plug-fill"></i></div>
+        <div class="problem-title">Disconnected Systems &amp; Data</div>
+        <p class="problem-desc">When the team uses different tools, customer data becomes fragmented, creating data gaps and reducing business visibility.</p>
+      </div>
+      <div class="problem-card animate-in delay-2">
+        <span class="problem-num">02</span>
+        <div class="problem-icon"><i class="bi bi-arrow-repeat"></i></div>
+        <div class="problem-title">Manual Workflows &amp; Repetitive Tasks</div>
+        <p class="problem-desc">Manual updates, approvals, and follow-ups often consume valuable time and reduce overall business productivity.</p>
+      </div>
+      <div class="problem-card animate-in delay-3">
+        <span class="problem-num">03</span>
+        <div class="problem-icon"><i class="bi bi-lock-fill"></i></div>
+        <div class="problem-title">Limited CRM Flexibility</div>
+        <p class="problem-desc">Often, those generic, off-the-shelf CRM systems may not support your unique workflows or business processes.</p>
+      </div>
+      <div class="problem-card animate-in delay-1">
+        <span class="problem-num">04</span>
+        <div class="problem-icon"><i class="bi bi-bar-chart-line-fill"></i></div>
+        <div class="problem-title">Poor Reporting &amp; Visibility</div>
+        <p class="problem-desc">Default dashboards fail to provide the clear insights required to track performance & make informed decisions.</p>
+      </div>
+      <div class="problem-card animate-in delay-2">
+        <span class="problem-num">05</span>
+        <div class="problem-icon"><i class="bi bi-hourglass-split"></i></div>
+        <div class="problem-title">Outdated CRM Systems</div>
+        <p class="problem-desc">Legacy CRM platforms can create operational bottlenecks, limit scalability, complicate integrations, & reduce overall efficiency.</p>
+      </div>
+      <div class="problem-card animate-in delay-3">
+        <span class="problem-num">06</span>
+        <div class="problem-icon"><i class="bi bi-cpu-fill"></i></div>
+        <div class="problem-title">Lack of AI &amp; Automation</div>
+        <p class="problem-desc">Modern businesses need CRM customization with AI integration to improve smarter automation & customer engagement.</p>
+      </div>
+    </div>
+
+    <!-- Mid CTA Banner -->
+    <div class="cta-banner animate-in">
+      <div class="cta-banner-text">
+        <h3>Modernize Your CRM Workflows With Sparkout Tech</h3>
+        <p>We transform disconnected systems into scalable, AI-driven CRM solutions tailored to your business operations.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="#final-cta" class="btn-primary-spark">Book a CRM Strategy Call <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     CRM SERVICES — TAB LAYOUT
+============================================= -->
+<section id="crm-services" class="section-wrap">
+  <div class="content-container">
+    <h2 class="animate-in delay-1">Sparkout's Advanced CRM Customization Services for Growing Enterprises</h2>
+    <div class="section-divider animate-in delay-1"></div>
+    <p style="max-width:680px;" class="animate-in delay-2">We help businesses customize, modernize, and scale CRM platforms with intelligent automation, connected workflows, and flexible features tailored to real operational processes.</p>
+
+    <div class="services-tab-wrap animate-in delay-2">
+      <div class="services-tab-nav">
+        <button class="srv-tab-btn active" data-target="srv-1"><i class="bi bi-diagram-3-fill"></i> CRM Workflow Customization</button>
+        <button class="srv-tab-btn" data-target="srv-2"><i class="bi bi-share-fill"></i> CRM Integration Services</button>
+        <button class="srv-tab-btn" data-target="srv-3"><i class="bi bi-lightning-charge-fill"></i> CRM Automation Development</button>
+        <button class="srv-tab-btn" data-target="srv-4"><i class="bi bi-grid-3x3-gap-fill"></i> Dashboard &amp; Reporting</button>
+        <button class="srv-tab-btn" data-target="srv-5"><i class="bi bi-puzzle-fill"></i> Custom CRM Module Dev</button>
+        <button class="srv-tab-btn" data-target="srv-6"><i class="bi bi-cpu-fill"></i> AI-Powered CRM Solutions</button>
+        <button class="srv-tab-btn" data-target="srv-7"><i class="bi bi-arrow-up-circle-fill"></i> CRM Modernization</button>
+        <button class="srv-tab-btn" data-target="srv-8"><i class="bi bi-headset"></i> CRM Support &amp; Maintenance</button>
+      </div>
+      <div class="services-tab-content">
+        <div class="srv-panel active" id="srv-1">
+          <div class="srv-panel-grid">
+            <div>
+              <h3><i class="bi bi-diagram-3-fill"></i> CRM Workflow Customization</h3>
+              <p>We customize sales, support, approval, & customer management workflows based on operational goals and requirements.</p>
+            </div>
+            <div class="srv-img"><img src="assets/images/crm-workflow-automation.png" alt="CRM Workflow Customization" /></div>
+          </div>
+        </div>
+        <div class="srv-panel" id="srv-2">
+          <div class="srv-panel-grid">
+            <div>
+              <h3><i class="bi bi-share-fill"></i> CRM Integration Services</h3>
+              <p>Our team integrates CRM platforms with ERP systems, SaaS applications, marketing tools, payment gateways, and support platforms.</p>
+            </div>
+            <div class="srv-img"><img src="assets/images/crm-integration-flow.png" alt="CRM Integration Services" /></div>
+          </div>
+        </div>
+        <div class="srv-panel" id="srv-3">
+          <div class="srv-panel-grid">
+            <div>
+              <h3><i class="bi bi-lightning-charge-fill"></i> CRM Automation Development</h3>
+              <p>At Sparkout, we build automated workflows, task routing, notifications, and AI-powered process automation systems.</p>
+            </div>
+            <div class="srv-img"><img src="assets/images/crm-workflow-automation.png" alt="CRM Automation Development" /></div>
+          </div>
+        </div>
+        <div class="srv-panel" id="srv-4">
+          <div class="srv-panel-grid">
+            <div>
+              <h3><i class="bi bi-grid-3x3-gap-fill"></i> CRM Dashboard &amp; Reporting Solutions</h3>
+              <p>We design customized dashboards, analytics, and reporting systems for better operational visibility and decision-making.</p>
+            </div>
+            <div class="srv-img"><img src="assets/images/analytics-dashboard.png" alt="CRM Dashboard and Reporting" /></div>
+          </div>
+        </div>
+        <div class="srv-panel" id="srv-5">
+          <div class="srv-panel-grid">
+            <div>
+              <h3><i class="bi bi-puzzle-fill"></i> Custom CRM Module Development</h3>
+              <p>We develop industry-specific modules, fields, and features customized to your business workflows and operational needs.</p>
+            </div>
+            <div class="srv-img"><img src="assets/images/customer-data-platform.png" alt="Custom CRM Module Development" /></div>
+          </div>
+        </div>
+        <div class="srv-panel" id="srv-6">
+          <div class="srv-panel-grid">
+            <div>
+              <h3><i class="bi bi-cpu-fill"></i> AI-Powered CRM Solutions</h3>
+              <p>Our CRM customization with AI integration covers predictive workflows, intelligent automation, AI chatbots, and customer engagement systems.</p>
+            </div>
+            <div class="srv-img"><img src="assets/images/crm-dashboard-preview.png" alt="AI-Powered CRM Solutions" /></div>
+          </div>
+        </div>
+        <div class="srv-panel" id="srv-7">
+          <div class="srv-panel-grid">
+            <div>
+              <h3><i class="bi bi-arrow-up-circle-fill"></i> CRM Modernization Services</h3>
+              <p>We upgrade <a href="https://www.sparkouttech.com/enterprise-software-modernization-companies/">enterprise software modernization</a> services that upgrade outdated CRM with modern workflows, better performance, and scalable automation features.</p>
+            </div>
+            <div class="srv-img"><img src="assets/images/crm-integration-flow.png" alt="CRM Modernization Services" /></div>
+          </div>
+        </div>
+        <div class="srv-panel" id="srv-8">
+          <div class="srv-panel-grid">
+            <div>
+              <h3><i class="bi bi-headset"></i> CRM Support &amp; Maintenance</h3>
+              <p>We provide ongoing CRM optimization, performance monitoring, security updates, and workflow improvements.</p>
+            </div>
+            <div class="srv-img"><img src="assets/images/crm-workflow-automation.png" alt="CRM Support and Maintenance" /></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     CRM PLATFORMS
+============================================= -->
+<section id="platforms" class="section-wrap">
+  <div class="content-container">
+    <div class="platforms-split">
+      <div class="platforms-intro">
+        <h2 class="animate-in delay-1">Powerful CRM Platforms We Customize for Smarter, Scalable Business Operations</h2>
+        <div class="section-divider animate-in delay-1"></div>
+        <p style="max-width:680px;" class="animate-in delay-2">As one of the top software modernization companies, we customize, modernize, and optimize leading CRM platforms to match business workflows, automation needs, and customer management processes.</p>
+      </div>
+
+      <div class="platforms-grid">
+      <div class="platform-card animate-in delay-1">
+        <div class="platform-icon">☁️</div>
+        <div class="platform-name">Salesforce CRM Customization</div>
+      </div>
+      <div class="platform-card animate-in delay-2">
+        <div class="platform-icon">🧲</div>
+        <div class="platform-name">HubSpot CRM Customization</div>
+      </div>
+      <div class="platform-card animate-in delay-3">
+        <div class="platform-icon">⚡</div>
+        <div class="platform-name">Zoho CRM Software Customization</div>
+      </div>
+      <div class="platform-card animate-in delay-1">
+        <div class="platform-icon">🔷</div>
+        <div class="platform-name">Microsoft Dynamics 365 CRM Development</div>
+      </div>
+      <div class="platform-card animate-in delay-2">
+        <div class="platform-icon">🌿</div>
+        <div class="platform-name">Freshsales CRM Workflow Customization</div>
+      </div>
+      <div class="platform-card animate-in delay-3">
+        <div class="platform-icon">🛠️</div>
+        <div class="platform-name">Custom CRM Development</div>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     DEPLOYMENT MODELS
+============================================= -->
+<section id="deployment" class="section-wrap">
+  <div class="content-container">
+    <div class="section-label animate-in"><i class="bi bi-server"></i> Deployment</div>
+    <h2 class="animate-in delay-1">Powerful CRM Deployment Models We Support</h2>
+    <div class="section-divider animate-in delay-1"></div>
+    <p style="max-width:680px;" class="animate-in delay-2">We help businesses choose and implement CRM customization models based on operational needs, infrastructure goals, security needs, and scalability goals.</p>
+
+    <div class="deploy-grid">
+      <div class="deploy-card animate-in delay-1">
+        <span class="deploy-badge">Model 01</span>
+        <div class="deploy-icon"><i class="bi bi-cloud-fill"></i></div>
+        <div class="deploy-name">Cloud CRM Solutions</div>
+        <p class="deploy-desc">Ideal for businesses needing remote accessibility, automation, and faster deployment.</p>
+      </div>
+      <div class="deploy-card animate-in delay-2">
+        <span class="deploy-badge">Model 02</span>
+        <div class="deploy-icon"><i class="bi bi-building-fill"></i></div>
+        <div class="deploy-name">On-Premise CRM Deployment</div>
+        <p class="deploy-desc">Best suited for organizations requiring complete control over security, compliance, and internal systems.</p>
+      </div>
+      <div class="deploy-card animate-in delay-3">
+        <span class="deploy-badge">Model 03</span>
+        <div class="deploy-icon"><i class="bi bi-diagram-2-fill"></i></div>
+        <div class="deploy-name">Hybrid CRM Architecture</div>
+        <p class="deploy-desc">Combines cloud flexibility with on-premise control for businesses managing sensitive operational data.</p>
+      </div>
+      <div class="deploy-card animate-in delay-1">
+        <span class="deploy-badge">Model 04</span>
+        <div class="deploy-icon"><i class="bi bi-box-seam-fill"></i></div>
+        <div class="deploy-name">SaaS CRM Customization</div>
+        <p class="deploy-desc">Custom CRM development and SaaS application development solutions with scalable workflows, automation, and multi-user management.</p>
+      </div>
+      <div class="deploy-card animate-in delay-2">
+        <span class="deploy-badge">Model 05</span>
+        <div class="deploy-icon"><i class="bi bi-buildings-fill"></i></div>
+        <div class="deploy-name">Enterprise CRM Deployment</div>
+        <p class="deploy-desc">CRM software customization built for large-scale operations, complex workflows, and enterprise integrations.</p>
+      </div>
+      <div class="deploy-card animate-in delay-3">
+        <span class="deploy-badge">Model 06</span>
+        <div class="deploy-icon"><i class="bi bi-robot"></i></div>
+        <div class="deploy-name">AI-Enabled CRM Ecosystems</div>
+        <p class="deploy-desc">Modern CRM environments are powered by AI automation, predictive workflows, and intelligent customer engagement systems.</p>
+      </div>
+    </div>
+
+    <!-- Mid CTA -->
+    <div class="cta-banner animate-in" style="margin-top:48px;">
+      <div class="cta-banner-text">
+        <h3>Not Sure Which CRM Deployment Model Fits Your Business?</h3>
+        <p>We help you choose the right CRM setup for scalability, security, and automation.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="#final-cta" class="btn-primary-spark">Talk to CRM Experts <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     BENEFITS
+============================================= -->
+<section id="benefits" class="section-wrap">
+  <div class="content-container">
+    <div class="benefits-outer">
+      <div class="benefits-summary">
+        <div class="section-label animate-in"><i class="bi bi-stars"></i> Benefits</div>
+        <h2 class="animate-in delay-1">Business Benefits of Choosing CRM Customization Services</h2>
+        <div class="section-divider animate-in delay-1"></div>
+        <p class="animate-in delay-2">Our CRM Customization Service helps businesses improve operational efficiency, customer management, automation, and long-term scalability through tailored CRM customization solutions.</p>
+      </div>
+      <div class="benefits-list">
+        <div class="benefit-item animate-in delay-1">
+          <div class="benefit-icon-box"><i class="bi bi-lightning-charge-fill"></i></div>
+          <div>
+            <div class="benefit-title">Improved Workflow Efficiency</div>
+            <p class="benefit-desc">Optimize sales, support, & operations with automated CRM processes.</p>
+          </div>
+        </div>
+        <div class="benefit-item animate-in delay-2">
+          <div class="benefit-icon-box"><i class="bi bi-eye-fill"></i></div>
+          <div>
+            <div class="benefit-title">Better Customer Visibility</div>
+            <p class="benefit-desc">Access customer data, communication history, & reports across teams and systems.</p>
+          </div>
+        </div>
+        <div class="benefit-item animate-in delay-3">
+          <div class="benefit-icon-box"><i class="bi bi-speedometer2"></i></div>
+          <div>
+            <div class="benefit-title">Faster Business Operations</div>
+            <p class="benefit-desc">Reduce manual tasks & improve response times with AI-driven workflow automation.</p>
+          </div>
+        </div>
+        <div class="benefit-item animate-in delay-1">
+          <div class="benefit-icon-box"><i class="bi bi-arrows-expand"></i></div>
+          <div>
+            <div class="benefit-title">Scalable CRM Infrastructure</div>
+            <p class="benefit-desc">Build flexible CRM environments that connect teams, processes, & business needs.</p>
+          </div>
+        </div>
+        <div class="benefit-item animate-in delay-2">
+          <div class="benefit-icon-box"><i class="bi bi-graph-up-arrow"></i></div>
+          <div>
+            <div class="benefit-title">Smarter Decision-Making</div>
+            <p class="benefit-desc">Gain real-time insights via customized dashboards, analytics, and reporting systems.</p>
+          </div>
+        </div>
+        <div class="benefit-item animate-in delay-3">
+          <div class="benefit-icon-box"><i class="bi bi-link-45deg"></i></div>
+          <div>
+            <div class="benefit-title">Seamless System Integrations</div>
+            <p class="benefit-desc">Connect CRM platforms with enterprise tools, SaaS applications, and operational systems.</p>
+          </div>
+        </div>
+        <div class="benefit-item animate-in delay-1">
+          <div class="benefit-icon-box"><i class="bi bi-person-heart"></i></div>
+          <div>
+            <div class="benefit-title">Enhanced Customer Experience</div>
+            <p class="benefit-desc">Improve customer engagement, support workflows & customer communication across channels.</p>
+          </div>
+        </div>
+        <div class="benefit-item animate-in delay-2">
+          <div class="benefit-icon-box"><i class="bi bi-sliders2-vertical"></i></div>
+          <div>
+            <div class="benefit-title">Reduced Operational Complexity</div>
+            <p class="benefit-desc">Simplify business management with connected workflows & centralized CRM operations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     PROCESS TIMELINE
+============================================= -->
+<section id="process" class="section-wrap">
+  <div class="content-container">
+    <div class="section-label animate-in"><i class="bi bi-list-ol"></i> Our Process</div>
+    <h2 style="color:white;" class="animate-in delay-1">Our Proven CRM Customization Process for Scalable Business Operations</h2>
+    <div class="section-divider animate-in delay-1"></div>
+    <p class="process-intro animate-in delay-2">At Sparkout, we follow a structured CRM customization process to ensure automation, scalability, integrations, and long-term business efficiency.</p>
+
+    <div class="timeline-wrap animate-in delay-2">
+      <div class="timeline-line"></div>
+      <div class="timeline-progress" id="timelineProgress"></div>
+
+      <div class="timeline-step active" data-step="1">
+        <div class="step-dot">01</div>
+        <div class="step-body">
+          <div class="step-title">Business &amp; Workflow Analysis</div>
+          <p class="step-desc">We analyse existing workflows, gaps, & CRM needs to define the customization strategy.</p>
+        </div>
+      </div>
+      <div class="timeline-step" data-step="2">
+        <div class="step-dot">02</div>
+        <div class="step-body">
+          <div class="step-title">CRM Architecture Planning</div>
+          <p class="step-desc">Our team plans CRM structure, automation logic, integrations, and scalability needs.</p>
+        </div>
+      </div>
+      <div class="timeline-step" data-step="3">
+        <div class="step-dot">03</div>
+        <div class="step-body">
+          <div class="step-title">UI/UX &amp; Workflow Customization</div>
+          <p class="step-desc">We customize CRM dashboards, workflows, modules, & UX based on business operations.</p>
+        </div>
+      </div>
+      <div class="timeline-step" data-step="4">
+        <div class="step-dot">04</div>
+        <div class="step-body">
+          <div class="step-title">CRM Development &amp; Integrations</div>
+          <p class="step-desc">We implement CRM software customization, third-party integrations, & AI-powered automation features.</p>
+        </div>
+      </div>
+      <div class="timeline-step" data-step="5">
+        <div class="step-dot">05</div>
+        <div class="step-body">
+          <div class="step-title">Testing &amp; Quality Optimization</div>
+          <p class="step-desc">Every CRM system undergoes performance testing, security validation, & workflow optimization.</p>
+        </div>
+      </div>
+      <div class="timeline-step" data-step="6">
+        <div class="step-dot">06</div>
+        <div class="step-body">
+          <div class="step-title">Deployment &amp; Ongoing Support</div>
+          <p class="step-desc">We deploy scalable CRM solutions & offer continuous optimization, maintenance, and support services.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     INDUSTRY SOLUTIONS — TABS
+============================================= -->
+<section id="industries" class="section-wrap">
+  <div class="content-container">
+    <h2 class="animate-in delay-1">CRM Customization Solutions Built by Sparkout for Industry-Specific Business Operations</h2>
+    <div class="section-divider animate-in delay-1"></div>
+    <p style="max-width:680px;" class="animate-in delay-2">We deliver industry-focused CRM customization solutions that match your industry workflows, customer processes, and business operations.</p>
+
+    <div class="industry-tabs-wrap animate-in delay-2">
+      <div class="industry-tab-btns">
+        <button class="ind-tab-btn active" data-ind="ind-1"><i class="bi bi-heart-pulse-fill"></i> Healthcare</button>
+        <button class="ind-tab-btn" data-ind="ind-2"><i class="bi bi-house-fill"></i> Real Estate</button>
+        <button class="ind-tab-btn" data-ind="ind-3"><i class="bi bi-cart-fill"></i> Retail &amp; Ecommerce</button>
+        <button class="ind-tab-btn" data-ind="ind-4"><i class="bi bi-bank-fill"></i> Finance &amp; Insurance</button>
+        <button class="ind-tab-btn" data-ind="ind-5"><i class="bi bi-code-slash"></i> SaaS &amp; Technology</button>
+        <button class="ind-tab-btn" data-ind="ind-6"><i class="bi bi-truck-fill"></i> Logistics &amp; Supply Chain</button>
+        <button class="ind-tab-btn" data-ind="ind-7"><i class="bi bi-gear-fill"></i> Manufacturing</button>
+        <button class="ind-tab-btn" data-ind="ind-8"><i class="bi bi-mortarboard-fill"></i> Education</button>
+      </div>
+
+      <div class="ind-panel active" id="ind-1">
+        <div class="ind-content">
+          <h3>Healthcare</h3>
+          <p>We help healthcare providers improve patient communication, appointment management, and support operations with secure CRM customization solutions.</p>
+          <div class="ind-metric">
+            <div class="ind-metric-text">Reduce manual appointment coordination by up to 45%</div>
+          </div>
+        </div>
+        <div class="ind-img"><img src="assets/images/crm-dashboard-preview.png" alt="Healthcare CRM" /></div>
+      </div>
+      <div class="ind-panel" id="ind-2">
+        <div class="ind-content">
+          <h3>Real Estate</h3>
+          <p>Our CRM software customization solutions help real estate businesses manage property inquiries, automate follow-ups, and improve sales team productivity.</p>
+          <div class="ind-metric">
+            <div class="ind-metric-text">Improve lead response time by up to 60%</div>
+          </div>
+        </div>
+        <div class="ind-img"><img src="assets/images/sales-pipeline-dashboard.png" alt="Real Estate CRM" /></div>
+      </div>
+      <div class="ind-panel" id="ind-3">
+        <div class="ind-content">
+          <h3>Retail &amp; Ecommerce</h3>
+          <p>We build scalable custom CRM solutions for retail brands to <a href="https://www.salesgenie.com/blog/importance-of-centralizing-your-customer-data-in-one-crm/">centralize customer data</a>, improve retention, and personalize customer experiences.</p>
+          <div class="ind-metric">
+            <div class="ind-metric-text">Increase repeat customer engagement by up to 35%</div>
+          </div>
+        </div>
+        <div class="ind-img"><img src="assets/images/customer-data-platform.png" alt="Retail and Ecommerce CRM" /></div>
+      </div>
+      <div class="ind-panel" id="ind-4">
+        <div class="ind-content">
+          <h3>Finance &amp; Insurance</h3>
+          <p>Our CRM integration services help finance and insurance companies improve client management, workflow visibility, and document-driven workflows securely.</p>
+          <div class="ind-metric">
+            <div class="ind-metric-text">Reduce customer processing delays by up to 40%</div>
+          </div>
+        </div>
+        <div class="ind-img"><img src="assets/images/analytics-dashboard.png" alt="Finance and Insurance CRM" /></div>
+      </div>
+      <div class="ind-panel" id="ind-5">
+        <div class="ind-content">
+          <h3>SaaS &amp; Technology</h3>
+          <p>We develop AI-driven CRM customization solutions for SaaS businesses to improve onboarding, subscription management, customer success, and growth operations.</p>
+          <div class="ind-metric">
+            <div class="ind-metric-text">Improve customer onboarding efficiency by up to 50%</div>
+          </div>
+        </div>
+        <div class="ind-img"><img src="assets/images/crm-dashboard-preview.png" alt="SaaS and Technology CRM" /></div>
+      </div>
+      <div class="ind-panel" id="ind-6">
+        <div class="ind-content">
+          <h3>Logistics &amp; Supply Chain</h3>
+          <p>Our CRM customization services help logistics companies handle shipment coordination, customer communication, & workflow visibility.</p>
+          <div class="ind-metric">
+            <div class="ind-metric-text">Improve operational tracking visibility by up to 55%</div>
+          </div>
+        </div>
+        <div class="ind-img"><img src="assets/images/crm-integration-flow.png" alt="Logistics CRM" /></div>
+      </div>
+      <div class="ind-panel" id="ind-7">
+        <div class="ind-content">
+          <h3>Manufacturing</h3>
+          <p>We customize CRM systems for manufacturers to streamline distributor management, sales operations, and customer lifecycle tracking across regions.</p>
+          <div class="ind-metric">
+            <div class="ind-metric-text">Reduce sales workflow delays by up to 38%</div>
+          </div>
+        </div>
+        <div class="ind-img"><img src="assets/images/crm-workflow-automation.png" alt="Manufacturing CRM" /></div>
+      </div>
+      <div class="ind-panel" id="ind-8">
+        <div class="ind-content">
+          <h3>Education</h3>
+          <p>We help educational institutions modernize admissions, student communication, & engagement workflows through scalable CRM software customization.</p>
+          <div class="ind-metric">
+            <div class="ind-metric-text">Improve student inquiry response efficiency by up to 47%</div>
+          </div>
+        </div>
+        <div class="ind-img"><img src="assets/images/customer-data-platform.png" alt="Education CRM" /></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================================
+     INDUSTRY CTA
+============================================= -->
+<section id="industry-cta" class="section-wrap">
+  <div class="content-container">
+    <div class="cta-banner animate-in">
+      <div class="cta-banner-text">
+        <h3>Need CRM Customization Built Around Your Business Workflows?</h3>
+        <p>Our team helps businesses build industry-focused CRM solutions for scalable operations and automation.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="#final-cta" class="btn-primary-spark">Book a CRM Consultation <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     TECHNOLOGY STACK
+============================================= -->
+<section id="technology" class="section-wrap">
+  <div class="content-container">
+    <div class="section-label animate-in"><i class="bi bi-code-square"></i> Technology</div>
+    <h2 class="animate-in delay-1">Technologies Powering Our CRM Customization Solutions</h2>
+    <div class="section-divider animate-in delay-1"></div>
+    <p style="max-width:680px;" class="animate-in delay-2">We use modern development frameworks, AI technologies, and scalable cloud infrastructure to build secure, enterprise-grade CRM customization solutions.</p>
+
+    <div class="tech-grid">
+      <div class="tech-card animate-in delay-1">
+        <div class="tech-cat">Frontend Technologies</div>
+        <div class="tech-name">UI Development</div>
+        <div class="tech-pills">
+          <span class="tech-pill">React</span>
+          <span class="tech-pill">Next.js</span>
+          <span class="tech-pill">Angular</span>
+          <span class="tech-pill">Vue.js</span>
+          <span class="tech-pill">TypeScript</span>
+        </div>
+      </div>
+      <div class="tech-card animate-in delay-2">
+        <div class="tech-cat">Backend Technologies</div>
+        <div class="tech-name">Server & API</div>
+        <div class="tech-pills">
+          <span class="tech-pill">Node.js</span>
+          <span class="tech-pill">Python</span>
+          <span class="tech-pill">.NET</span>
+          <span class="tech-pill">Java</span>
+          <span class="tech-pill">PHP</span>
+        </div>
+      </div>
+      <div class="tech-card animate-in delay-3">
+        <div class="tech-cat">CRM Platforms</div>
+        <div class="tech-name">CRM Ecosystem</div>
+        <div class="tech-pills">
+          <span class="tech-pill">Salesforce</span>
+          <span class="tech-pill">HubSpot</span>
+          <span class="tech-pill">Zoho CRM</span>
+          <span class="tech-pill">Dynamics 365</span>
+          <span class="tech-pill">Freshsales</span>
+        </div>
+      </div>
+      <div class="tech-card animate-in delay-4">
+        <div class="tech-cat">AI & Intelligent Automation</div>
+        <div class="tech-name">AI Stack</div>
+        <div class="tech-pills">
+          <span class="tech-pill">OpenAI</span>
+          <span class="tech-pill">Claude</span>
+          <span class="tech-pill">LangChain</span>
+          <span class="tech-pill">AI Agents</span>
+          <span class="tech-pill">Workflow AI</span>
+        </div>
+      </div>
+      <div class="tech-card animate-in delay-1">
+        <div class="tech-cat">Cloud & DevOps Infrastructure</div>
+        <div class="tech-name">Cloud & DevOps</div>
+        <div class="tech-pills">
+          <span class="tech-pill">AWS</span>
+          <span class="tech-pill">Azure</span>
+          <span class="tech-pill">Google Cloud</span>
+          <span class="tech-pill">Docker</span>
+          <span class="tech-pill">Kubernetes</span>
+          <span class="tech-pill">CI/CD</span>
+        </div>
+      </div>
+      <div class="tech-card animate-in delay-2">
+        <div class="tech-cat">Databases & Data Management</div>
+        <div class="tech-name">Data Layer</div>
+        <div class="tech-pills">
+          <span class="tech-pill">PostgreSQL</span>
+          <span class="tech-pill">MongoDB</span>
+          <span class="tech-pill">MySQL</span>
+          <span class="tech-pill">SQL Server</span>
+          <span class="tech-pill">Vector DBs</span>
+        </div>
+      </div>
+      <div class="tech-card animate-in delay-3">
+        <div class="tech-cat">APIs & Enterprise Integrations</div>
+        <div class="tech-name">Integration Layer</div>
+        <div class="tech-pills">
+          <span class="tech-pill">REST APIs</span>
+          <span class="tech-pill">GraphQL</span>
+          <span class="tech-pill">Webhooks</span>
+          <span class="tech-pill">ERP Integrations</span>
+          <span class="tech-pill">SaaS Connectivity</span>
+        </div>
+      </div>
+      <div class="tech-card animate-in delay-4">
+        <div class="tech-cat">Security & Performance</div>
+        <div class="tech-name">Security Stack</div>
+        <div class="tech-pills">
+          <span class="tech-pill">OAuth 2.0</span>
+          <span class="tech-pill">JWT</span>
+          <span class="tech-pill">RBAC</span>
+          <span class="tech-pill">Encryption</span>
+          <span class="tech-pill">Real-time Monitoring</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     COST TABLE
+============================================= -->
+<section id="cost" class="section-wrap">
+  <div class="content-container">
+    <div class="section-label animate-in"><i class="bi bi-currency-dollar"></i> Pricing</div>
+    <h2 class="animate-in delay-1">CRM Customization Cost &amp; Engagement Scope</h2>
+    <div class="section-divider animate-in delay-1"></div>
+    <p style="max-width:680px;" class="animate-in delay-2">At Sparkout Tech, CRM customization costs vary often and are based on workflow complexity, integration requirements, AI capabilities, and long-term scalability goals. Our team helps businesses choose the right CRM customization approach based on operational needs, growth stage, and deployment requirements.</p>
+
+    <div class="cost-split">
+      <div class="animate-in delay-2">
+        <div class="cost-table-wrap">
+          <table class="cost-table">
+            <thead>
+              <tr>
+                <th>CRM Customization Scope</th>
+                <th>Estimated Cost</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Workflow &amp; Dashboard Customization</td>
+                <td>$5,000 – $15,000</td>
+              </tr>
+              <tr>
+                <td>CRM Integrations &amp; Automation</td>
+                <td>$10,000 – $30,000</td>
+              </tr>
+              <tr>
+                <td>AI-Driven CRM Customization</td>
+                <td>$20,000 – $60,000+</td>
+              </tr>
+              <tr>
+                <td>Custom CRM Development</td>
+                <td>$30,000 – $120,000+</td>
+              </tr>
+              <tr>
+                <td>Enterprise CRM Modernization</td>
+                <td>$50,000 – $250,000+</td>
+              </tr>
+              <tr>
+                <td>SaaS CRM Platform Development</td>
+                <td>$60,000 – $300,000+</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="cost-note">
+          <strong>Important Note:</strong>
+          <p>Factors that decide your exact CRM customization cost include Workflow complexity, AI automation requirements, Third-party integrations, CRM modernization scope, Deployment infrastructure, & Scalability & support needs.</p>
+        </div>
+      </div>
+      <div class="cost-cta-side animate-in delay-3">
+        <div class="section-label" style="margin-bottom:20px;"><i class="bi bi-chat-dots-fill"></i> Get an Estimate</div>
+        <h3>Need a tailored CRM estimate?</h3>
+        <p>Get a tailored CRM roadmap and project estimate for your business needs. Our team will analyze your requirements and provide a detailed scope and cost breakdown with no commitment.</p>
+        <a href="#final-cta" class="btn-primary-spark" style="width:100%; justify-content:center;">
+          Get in Touch <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     CASE STUDIES
+============================================= -->
+<section id="case-studies" class="section-wrap">
+  <div class="content-container">
+    <div class="section-label animate-in"><i class="bi bi-award-fill"></i> Case Studies</div>
+    <h2 class="animate-in delay-1">Success Stories Behind Our CRM Customization Expertise</h2>
+    <div class="section-divider animate-in delay-1"></div>
+    <p style="max-width:680px;" class="animate-in delay-2">Explore how we helped businesses improve workflows, automation, and customer management through scalable CRM customization solutions.</p>
+
+    <div class="cases-grid">
+      <div class="case-card animate-in delay-1">
+        <div class="case-img">
+          <img src="assets/images/crm-dashboard-preview.png" alt="First Track It Case Study" />
+        </div>
+        <div class="case-body">
+          <span class="case-tag">Operations Platform</span>
+          <div class="case-name">First Track It</div>
+          <p class="case-desc">Sparkout built a real-time operations and workflow management platform that improves tracking, process visibility, and business coordination.</p>
+          <a href="#" class="case-link">Read More <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="case-card animate-in delay-2">
+        <div class="case-img">
+          <img src="assets/images/crm-workflow-automation.png" alt="FirstPageIt Case Study" />
+        </div>
+        <div class="case-body">
+          <span class="case-tag">B2B Automation</span>
+          <div class="case-name">FirstPageIt</div>
+          <p class="case-desc">We developed a B2B workflow automation platform that streamlines communication, operational management, and multi-user business processes.</p>
+          <a href="#" class="case-link">Read More <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+      <div class="case-card animate-in delay-3">
+        <div class="case-img">
+          <img src="assets/images/analytics-dashboard.png" alt="HolidayKeepers Case Study" />
+        </div>
+        <div class="case-body">
+          <span class="case-tag">AI-Powered CRM</span>
+          <div class="case-name">HolidayKeepers</div>
+          <p class="case-desc">We created an AI-powered customer and booking management platform with automated workflows, smart pricing, and engagement features.</p>
+          <a href="#" class="case-link">Read More <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     HIRING MODELS
+============================================= -->
+<section id="hiring" class="section-wrap">
+  <div class="content-container">
+    <div class="section-label animate-in"><i class="bi bi-people-fill"></i> Hiring Models</div>
+    <h2 class="animate-in delay-1">Flexible Hiring &amp; Engagement Models for CRM Customization</h2>
+    <div class="section-divider animate-in delay-1"></div>
+    <p style="max-width:680px;" class="animate-in delay-2">We offer flexible engagement models that help businesses scale CRM customization projects based on budget, delivery timelines, and operational requirements.</p>
+
+    <div class="hiring-grid">
+      <div class="hiring-card animate-in delay-1">
+        <div class="hiring-num">01</div>
+        <div>
+          <div class="hiring-title">Dedicated CRM Developers</div>
+          <p class="hiring-desc">Hire dedicated CRM developers for long-term customization, integrations, and workflow optimization.</p>
+        </div>
+      </div>
+      <div class="hiring-card animate-in delay-2">
+        <div class="hiring-num">02</div>
+        <div>
+          <div class="hiring-title">Project-Based CRM Development</div>
+          <p class="hiring-desc">Choose end-to-end CRM customization services with fixed scope, timelines, and delivery plans.</p>
+        </div>
+      </div>
+      <div class="hiring-card animate-in delay-3">
+        <div class="hiring-num">03</div>
+        <div>
+          <div class="hiring-title">CRM Staff Augmentation</div>
+          <p class="hiring-desc">Extend your in-house team by hiring experienced CRM developers and integration specialists.</p>
+        </div>
+      </div>
+      <div class="hiring-card animate-in delay-4">
+        <div class="hiring-num">04</div>
+        <div>
+          <div class="hiring-title">Hourly CRM Development</div>
+          <p class="hiring-desc">Hire our team to scale development resources flexibly based on evolving customization and support needs.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-banner animate-in" style="margin-top:48px;">
+      <div class="cta-banner-text">
+        <h3>Need the Right CRM Hiring Model for Your Project?</h3>
+        <p>Choose flexible CRM hiring models based on your project scope and business goals.</p>
+      </div>
+      <div class="cta-banner-actions">
+        <a href="#final-cta" class="btn-primary-spark">Hire CRM Developers <i class="bi bi-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     WHY CHOOSE US
+============================================= -->
+<section id="why-us" class="section-wrap">
+  <div class="content-container">
+    <div class="section-label animate-in"><i class="bi bi-shield-check-fill"></i> Why Sparkout</div>
+    <h2 class="animate-in delay-1">Why Businesses Choose Our CRM Customization Company</h2>
+    <div class="section-divider animate-in delay-1"></div>
+    <p style="max-width:680px;" class="animate-in delay-2">Businesses choose our CRM customization company to build flexible, scalable, and AI-driven CRM systems that support long-term business growth. Whether you are modernizing an existing CRM or looking to switch software development partners, Sparkout ensures a smooth transition and continuous business support.</p>
+
+    <!-- Trust Badges -->
+    <div class="why-trust-badges animate-in delay-2">
+      <div class="trust-badge">
+        <div class="trust-icon"><i class="bi bi-trophy-fill"></i></div>
+        <div class="trust-text">
+          <strong>150+ Projects</strong>
+          <span>Digital Transformation Projects Delivered</span>
+        </div>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-icon"><i class="bi bi-cpu-fill"></i></div>
+        <div class="trust-text">
+          <strong>AI-Driven</strong>
+          <span>AI-Driven Development Expertise</span>
+        </div>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-icon"><i class="bi bi-globe2"></i></div>
+        <div class="trust-text">
+          <strong>Cross-Industry</strong>
+          <span>Cross-Industry CRM Experience</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-grid">
+      <div class="why-card animate-in delay-1">
+        <div class="why-icon"><i class="bi bi-bullseye"></i></div>
+        <div class="why-title">Business-Focused CRM Solutions</div>
+        <p class="why-desc">We customize CRM systems as per your workflows, operational needs, and customer management processes.</p>
+      </div>
+      <div class="why-card animate-in delay-2">
+        <div class="why-icon"><i class="bi bi-cpu-fill"></i></div>
+        <div class="why-title">AI-Driven CRM Expertise</div>
+        <p class="why-desc">Our team builds CRM solutions with automation, AI workflows, and intelligent customer engagement features.</p>
+      </div>
+      <div class="why-card animate-in delay-3">
+        <div class="why-icon"><i class="bi bi-arrows-fullscreen"></i></div>
+        <div class="why-title">Scalable CRM Development</div>
+        <p class="why-desc">Sparkout delivers CRM systems that support growing teams, expanding workflows, and evolving business operations.</p>
+      </div>
+      <div class="why-card animate-in delay-1">
+        <div class="why-icon"><i class="bi bi-share-fill"></i></div>
+        <div class="why-title">Seamless System Integrations</div>
+        <p class="why-desc">We connect your CRM platforms with business tools, SaaS applications, and third-party systems.</p>
+      </div>
+      <div class="why-card animate-in delay-2">
+        <div class="why-icon"><i class="bi bi-arrow-up-circle-fill"></i></div>
+        <div class="why-title">CRM Modernization Experience</div>
+        <p class="why-desc">We help businesses upgrade outdated CRM systems with modern workflows and scalable infrastructure.</p>
+      </div>
+      <div class="why-card animate-in delay-3">
+        <div class="why-icon"><i class="bi bi-headset"></i></div>
+        <div class="why-title">Ongoing Support &amp; Improvements</div>
+        <p class="why-desc">Our team offers continuous CRM optimization, maintenance, and workflow enhancements after deployment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     FAQ ACCORDION
+============================================= -->
+<section id="faq" class="section-wrap">
+  <div class="content-container">
+    <div style="text-align:center; max-width:640px; margin:0 auto 0;">
+      <div class="section-label animate-in" style="justify-content:center;">
+        <i class="bi bi-question-circle-fill"></i> FAQ
+      </div>
+      <h2 class="animate-in delay-1">Frequently Asked Questions</h2>
+      <div class="section-divider animate-in delay-1" style="margin:16px auto 0;"></div>
+    </div>
+
+    <div class="faq-wrap">
+      <div class="faq-item animate-in delay-1">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Why do businesses need CRM customization services?
+          <i class="bi bi-chevron-down faq-chevron"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Businesses use CRM customization services to improve workflow efficiency, automate operations, integrate business systems, and support scalable growth.</div>
+        </div>
+      </div>
+      <div class="faq-item animate-in delay-2">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What can be customized in a CRM system?
+          <i class="bi bi-chevron-down faq-chevron"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Workflows, dashboards, reports, automation, customer pipelines, integrations, AI features, mobile experiences, and industry-specific modules can all be customized.</div>
+        </div>
+      </div>
+      <div class="faq-item animate-in delay-3">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can you integrate AI into CRM systems?
+          <i class="bi bi-chevron-down faq-chevron"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes. At Sparkout, we provide CRM customization with AI integration for workflow automation, predictive insights, intelligent reporting, and customer engagement.</div>
+        </div>
+      </div>
+      <div class="faq-item animate-in delay-1">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Which CRM platforms do you customize?
+          <i class="bi bi-chevron-down faq-chevron"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">We customize Salesforce, HubSpot, Zoho CRM, Microsoft Dynamics 365, Freshsales, and custom CRM platforms.</div>
+        </div>
+      </div>
+      <div class="faq-item animate-in delay-2">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Do you provide CRM integration services?
+          <i class="bi bi-chevron-down faq-chevron"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes. We integrate CRM systems with ERP platforms, SaaS applications, marketing tools, payment systems, and customer support software.</div>
+        </div>
+      </div>
+      <div class="faq-item animate-in delay-3">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can you modernize outdated CRM systems?
+          <i class="bi bi-chevron-down faq-chevron"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes. Our software modernization services help businesses upgrade legacy CRM systems with modern workflows, automation, and scalable infrastructure.</div>
+        </div>
+      </div>
+      <div class="faq-item animate-in delay-1">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How long does CRM customization take?
+          <i class="bi bi-chevron-down faq-chevron"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">CRM customization timelines depend on workflow complexity, integrations, features, and business requirements.</div>
+        </div>
+      </div>
+      <div class="faq-item animate-in delay-2">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can you build a custom CRM from scratch?
+          <i class="bi bi-chevron-down faq-chevron"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes. We offer custom CRM development services for businesses requiring fully tailored CRM solutions and scalable operational systems.</div>
+        </div>
+      </div>
+      <div class="faq-item animate-in delay-3">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What is the difference between CRM customization and custom CRM development?
+          <i class="bi bi-chevron-down faq-chevron"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">CRM customization improves existing CRM platforms through workflows, automation, integrations, and dashboards. Whereas, the custom CRM development involves building a CRM system from scratch based on business requirements.</div>
+        </div>
+      </div>
+      <div class="faq-item animate-in delay-1">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can Sparkout build CSR software with CRM capabilities?
+          <i class="bi bi-chevron-down faq-chevron"></i>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Yes. Along with CRM customization services, we help businesses build CSR software, customer management platforms, & custom operational systems customized to specific business needs.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     FINAL CTA SECTION
+============================================= -->
+<section id="final-cta" class="section-wrap">
+  <div class="content-container">
+    <div class="cta-final-inner">
+      <div class="cta-final-text animate-in">
+        <div class="section-label" style="background:rgba(255,108,26,0.2); color:#FF6C1A;">
+          <i class="bi bi-rocket-takeoff-fill"></i> Get Started Today
+        </div>
+        <h2>Ready to Transform Your CRM Into a Business Growth Engine?</h2>
+        <p>Connect with our CRM experts to explore how we can build a tailored CRM customization solution for your business needs, workflows, and growth goals.</p>
+        <div class="cta-final-actions">
+          <a href="https://www.sparkouttech.com/contact" class="btn-primary-spark">
+            Book a CRM Strategy Call <i class="bi bi-arrow-right"></i>
+          </a>
+          <a href="https://www.sparkouttech.com/contact" class="btn-outline-spark">
+            Get Custom CRM Roadmap
+          </a>
+        </div>
+      </div>
+      <div class="cta-final-visual animate-in delay-2">
+        <div class="cta-visual-card">
+          <div class="cta-visual-img">
+            <img src="assets/images/final-cta-visual.png" alt="CRM Transformation" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     FOOTER
+============================================= -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-brand">Spark<span>out</span></div>
+        <p class="footer-tagline">Delivering AI-driven custom software, CRM customization, and digital transformation solutions for growing enterprises worldwide.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-heading">CRM Services</div>
+        <a href="#crm-services" class="footer-link">CRM Workflow Customization</a>
+        <a href="#crm-services" class="footer-link">CRM Integration Services</a>
+        <a href="#crm-services" class="footer-link">CRM Automation Development</a>
+        <a href="#crm-services" class="footer-link">AI-Powered CRM Solutions</a>
+        <a href="#crm-services" class="footer-link">CRM Modernization</a>
+        <a href="#crm-services" class="footer-link">CRM Support &amp; Maintenance</a>
+      </div>
+      <div>
+        <div class="footer-heading">CRM Platforms</div>
+        <a href="#platforms" class="footer-link">Salesforce Customization</a>
+        <a href="#platforms" class="footer-link">HubSpot Customization</a>
+        <a href="#platforms" class="footer-link">Zoho CRM</a>
+        <a href="#platforms" class="footer-link">Microsoft Dynamics 365</a>
+        <a href="#platforms" class="footer-link">Freshsales</a>
+        <a href="#platforms" class="footer-link">Custom CRM Development</a>
+      </div>
+      <div>
+        <div class="footer-heading">Company</div>
+        <a href="https://www.sparkouttech.com/about" class="footer-link">About Sparkout</a>
+        <a href="https://www.sparkouttech.com/case-studies" class="footer-link">Case Studies</a>
+        <a href="https://www.sparkouttech.com/blog" class="footer-link">Blog &amp; Insights</a>
+        <a href="https://www.sparkouttech.com/contact" class="footer-link">Contact Us</a>
+        <a href="https://www.sparkouttech.com/careers" class="footer-link">Careers</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 Sparkout Tech. All rights reserved.</div>
+      <div style="display:flex; gap:24px; flex-wrap:wrap;">
+        <a href="#" class="footer-link" style="margin:0;">Privacy Policy</a>
+        <a href="#" class="footer-link" style="margin:0;">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Bootstrap 5 JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  // =============================================
+  // SCROLL PROGRESS BAR
+  // =============================================
+  window.addEventListener('scroll', () => {
+    const scrollTop = document.documentElement.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const progress = (scrollTop / scrollHeight) * 100;
+    document.getElementById('scrollProgress').style.width = progress + '%';
+  });
+
+  // =============================================
+  // STICKY NAV SHADOW
+  // =============================================
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('mainNav');
+    if (window.scrollY > 20) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  // =============================================
+  // SMOOTH SCROLL
+  // =============================================
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 160;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // =============================================
+  // ENTRANCE ANIMATIONS
+  // =============================================
+  const animObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        animObs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.animate-in').forEach(el => animObs.observe(el));
+
+  // =============================================
+  // SERVICES TABS
+  // =============================================
+  document.querySelectorAll('.srv-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.srv-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.srv-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.target).classList.add('active');
+    });
+  });
+
+  // =============================================
+  // INDUSTRY TABS
+  // =============================================
+  document.querySelectorAll('.ind-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.ind-tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.ind-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById(btn.dataset.ind).classList.add('active');
+    });
+  });
+
+  // =============================================
+  // PROCESS TIMELINE
+  // =============================================
+  document.querySelectorAll('.timeline-step').forEach((step, i, all) => {
+    step.addEventListener('click', () => {
+      all.forEach(s => s.classList.remove('active'));
+      step.classList.add('active');
+      const idx = Array.from(all).indexOf(step);
+      const progress = ((idx + 1) / all.length) * 100;
+      document.getElementById('timelineProgress').style.height = progress + '%';
+    });
+  });
+
+  // Auto-progress timeline on scroll
+  const timelineSection = document.getElementById('process');
+  const timelineSteps = document.querySelectorAll('.timeline-step');
+  const timelineScrollObs = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      let i = 0;
+      const interval = setInterval(() => {
+        timelineSteps.forEach(s => s.classList.remove('active'));
+        if (timelineSteps[i]) {
+          timelineSteps[i].classList.add('active');
+          document.getElementById('timelineProgress').style.height = ((i + 1) / timelineSteps.length * 100) + '%';
+        }
+        i++;
+        if (i >= timelineSteps.length) clearInterval(interval);
+      }, 400);
+    }
+  }, { threshold: 0.2 });
+  if (timelineSection) timelineScrollObs.observe(timelineSection);
+
+  // =============================================
+  // FAQ ACCORDION
+  // =============================================
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    // close all
+    document.querySelectorAll('.faq-question.open').forEach(q => {
+      q.classList.remove('open');
+      q.nextElementSibling.classList.remove('open');
+    });
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+</script>
+
+</body>
+</html>
